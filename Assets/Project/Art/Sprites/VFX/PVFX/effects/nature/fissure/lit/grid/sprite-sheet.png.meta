@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 8deff2ace3a433b4f88fd120df850842
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: sprite-sheet_0
+  - first:
+      213: -1426790471357470633
+    second: sprite-sheet_1
+  - first:
+      213: -2506210909196879853
+    second: sprite-sheet_2
+  - first:
+      213: -8907015550746980148
+    second: sprite-sheet_3
+  - first:
+      213: -3085487725770422062
+    second: sprite-sheet_4
+  - first:
+      213: -7371053094594084745
+    second: sprite-sheet_5
+  - first:
+      213: -3062665138650254500
+    second: sprite-sheet_6
+  - first:
+      213: -1924591734268745998
+    second: sprite-sheet_7
+  - first:
+      213: 2940483688060090369
+    second: sprite-sheet_8
+  - first:
+      213: 4123475054659131201
+    second: sprite-sheet_9
+  - first:
+      213: -7328016140542092180
+    second: sprite-sheet_10
+  - first:
+      213: 573168479056981123
+    second: sprite-sheet_11
+  - first:
+      213: -2052979034590239150
+    second: sprite-sheet_12
+  - first:
+      213: -599754731956233123
+    second: sprite-sheet_13
+  - first:
+      213: 8364850724636403409
+    second: sprite-sheet_14
+  - first:
+      213: -6650122099543898603
+    second: sprite-sheet_15
+  - first:
+      213: -4952747364788223248
+    second: sprite-sheet_16
+  - first:
+      213: -4558533973277291694
+    second: sprite-sheet_17
+  - first:
+      213: 192454500139917738
+    second: sprite-sheet_18
+  - first:
+      213: -3988586098559631296
+    second: sprite-sheet_19
+  - first:
+      213: 4585784099227081989
+    second: sprite-sheet_20
+  - first:
+      213: 7910205142894628472
+    second: sprite-sheet_21
+  - first:
+      213: -5453835138508083989
+    second: sprite-sheet_22
+  - first:
+      213: 1334599240327533485
+    second: sprite-sheet_23
+  - first:
+      213: -6627865198301778148
+    second: sprite-sheet_24
+  - first:
+      213: -260948941826079365
+    second: sprite-sheet_25
+  - first:
+      213: 7410530569769358565
+    second: sprite-sheet_26
+  - first:
+      213: -576870600854793513
+    second: sprite-sheet_27
+  - first:
+      213: -4818556106472641470
+    second: sprite-sheet_28
+  - first:
+      213: -2579015654255774944
+    second: sprite-sheet_29
+  - first:
+      213: -5849064155817607363
+    second: sprite-sheet_30
+  - first:
+      213: 7450129226475530389
+    second: fissure_0
+  - first:
+      213: 4545713075234220689
+    second: fissure_1
+  - first:
+      213: 5900504771748099032
+    second: fissure_2
+  - first:
+      213: -8577345887521794594
+    second: fissure_3
+  - first:
+      213: 7319601284436336333
+    second: fissure_4
+  - first:
+      213: 4421156914154973951
+    second: fissure_5
+  - first:
+      213: -4253007575666519786
+    second: fissure_6
+  - first:
+      213: -6130443133766911955
+    second: fissure_7
+  - first:
+      213: 7240026851577127950
+    second: fissure_8
+  - first:
+      213: 1466093404260105438
+    second: fissure_9
+  - first:
+      213: -4217814790080411533
+    second: fissure_10
+  - first:
+      213: -4687083829260662015
+    second: fissure_11
+  - first:
+      213: -507832053495389298
+    second: fissure_12
+  - first:
+      213: -8091547267267861793
+    second: fissure_13
+  - first:
+      213: 1313608539419420692
+    second: fissure_14
+  - first:
+      213: 1752066891876387224
+    second: fissure_15
+  - first:
+      213: -7533771223316599026
+    second: fissure_16
+  - first:
+      213: 1976647461748471026
+    second: fissure_17
+  - first:
+      213: 662637071541392895
+    second: fissure_18
+  - first:
+      213: 7136574004890247646
+    second: fissure_19
+  - first:
+      213: -8204840275499338126
+    second: fissure_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fissure_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59864da1f0d246760800000000000000
+      internalID: 7450129226475530389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19a2f2c25fd951f30800000000000000
+      internalID: 4545713075234220689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_2
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3fa83e3ddc2e150800000000000000
+      internalID: 5900504771748099032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed51b9a2c5527f880800000000000000
+      internalID: -8577345887521794594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_4
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce12585692749560800000000000000
+      internalID: 7319601284436336333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_5
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa28740aca1b5d30800000000000000
+      internalID: 4421156914154973951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_6
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6111a51b4284af4c0800000000000000
+      internalID: -4253007575666519786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_7
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 80
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d283718437a4ceaa0800000000000000
+      internalID: -6130443133766911955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e046b8cef0eb97460800000000000000
+      internalID: 7240026851577127950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_9
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc7778fe2c985410800000000000000
+      internalID: 1466093404260105438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_10
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3784edc9bcf4775c0800000000000000
+      internalID: -4217814790080411533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_11
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10bc07c271224feb0800000000000000
+      internalID: -4687083829260662015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_12
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83a9dd1071d3f8f0800000000000000
+      internalID: -507832053495389298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_13
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2673b91ac05bf80800000000000000
+      internalID: -8091547267267861793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418a30eb100ea3210800000000000000
+      internalID: 1313608539419420692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_15
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 40
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899c3092e87905810800000000000000
+      internalID: 1752066891876387224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f672fecfaa27790800000000000000
+      internalID: -7533771223316599026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f4f1bbc4667e6b10800000000000000
+      internalID: 1976647461748471026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5da30e7e8223900800000000000000
+      internalID: 662637071541392895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_19
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed125ca0f343a0360800000000000000
+      internalID: 7136574004890247646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fissure_20
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 112
+        height: 40
+      alignment: 9
+      pivot: {x: 0.071428575, y: 0.325}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2763b049d3d822e80800000000000000
+      internalID: -8204840275499338126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      fissure_0: 7450129226475530389
+      fissure_1: 4545713075234220689
+      fissure_10: -4217814790080411533
+      fissure_11: -4687083829260662015
+      fissure_12: -507832053495389298
+      fissure_13: -8091547267267861793
+      fissure_14: 1313608539419420692
+      fissure_15: 1752066891876387224
+      fissure_16: -7533771223316599026
+      fissure_17: 1976647461748471026
+      fissure_18: 662637071541392895
+      fissure_19: 7136574004890247646
+      fissure_2: 5900504771748099032
+      fissure_20: -8204840275499338126
+      fissure_3: -8577345887521794594
+      fissure_4: 7319601284436336333
+      fissure_5: 4421156914154973951
+      fissure_6: -4253007575666519786
+      fissure_7: -6130443133766911955
+      fissure_8: 7240026851577127950
+      fissure_9: 1466093404260105438
+      sprite-sheet_0: 7773031391787181946
+      sprite-sheet_1: -1426790471357470633
+      sprite-sheet_10: -7328016140542092180
+      sprite-sheet_11: 573168479056981123
+      sprite-sheet_12: -2052979034590239150
+      sprite-sheet_13: -599754731956233123
+      sprite-sheet_14: 8364850724636403409
+      sprite-sheet_15: -6650122099543898603
+      sprite-sheet_16: -4952747364788223248
+      sprite-sheet_17: -4558533973277291694
+      sprite-sheet_18: 192454500139917738
+      sprite-sheet_19: -3988586098559631296
+      sprite-sheet_2: -2506210909196879853
+      sprite-sheet_20: 4585784099227081989
+      sprite-sheet_21: 7910205142894628472
+      sprite-sheet_22: -5453835138508083989
+      sprite-sheet_23: 1334599240327533485
+      sprite-sheet_24: -6627865198301778148
+      sprite-sheet_25: -260948941826079365
+      sprite-sheet_26: 7410530569769358565
+      sprite-sheet_27: -576870600854793513
+      sprite-sheet_28: -4818556106472641470
+      sprite-sheet_29: -2579015654255774944
+      sprite-sheet_3: -8907015550746980148
+      sprite-sheet_30: -5849064155817607363
+      sprite-sheet_4: -3085487725770422062
+      sprite-sheet_5: -7371053094594084745
+      sprite-sheet_6: -3062665138650254500
+      sprite-sheet_7: -1924591734268745998
+      sprite-sheet_8: 2940483688060090369
+      sprite-sheet_9: 4123475054659131201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

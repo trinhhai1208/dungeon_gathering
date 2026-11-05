@@ -1,0 +1,1049 @@
+fileFormatVersion: 2
+guid: 4b939f8a96fc3c846969e91405adefdb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: sprite-sheet_0
+  - first:
+      213: -1426790471357470633
+    second: sprite-sheet_1
+  - first:
+      213: -2506210909196879853
+    second: sprite-sheet_2
+  - first:
+      213: -8907015550746980148
+    second: sprite-sheet_3
+  - first:
+      213: -3085487725770422062
+    second: sprite-sheet_4
+  - first:
+      213: -7371053094594084745
+    second: sprite-sheet_5
+  - first:
+      213: -3062665138650254500
+    second: sprite-sheet_6
+  - first:
+      213: -1924591734268745998
+    second: sprite-sheet_7
+  - first:
+      213: 2940483688060090369
+    second: sprite-sheet_8
+  - first:
+      213: 4123475054659131201
+    second: sprite-sheet_9
+  - first:
+      213: -7328016140542092180
+    second: sprite-sheet_10
+  - first:
+      213: 573168479056981123
+    second: sprite-sheet_11
+  - first:
+      213: -2052979034590239150
+    second: sprite-sheet_12
+  - first:
+      213: -599754731956233123
+    second: sprite-sheet_13
+  - first:
+      213: 8364850724636403409
+    second: sprite-sheet_14
+  - first:
+      213: -6650122099543898603
+    second: sprite-sheet_15
+  - first:
+      213: -4952747364788223248
+    second: sprite-sheet_16
+  - first:
+      213: -4558533973277291694
+    second: sprite-sheet_17
+  - first:
+      213: 192454500139917738
+    second: sprite-sheet_18
+  - first:
+      213: -3988586098559631296
+    second: sprite-sheet_19
+  - first:
+      213: 4585784099227081989
+    second: sprite-sheet_20
+  - first:
+      213: 7910205142894628472
+    second: sprite-sheet_21
+  - first:
+      213: -5453835138508083989
+    second: sprite-sheet_22
+  - first:
+      213: 1334599240327533485
+    second: sprite-sheet_23
+  - first:
+      213: -6627865198301778148
+    second: sprite-sheet_24
+  - first:
+      213: -260948941826079365
+    second: sprite-sheet_25
+  - first:
+      213: 7410530569769358565
+    second: sprite-sheet_26
+  - first:
+      213: -576870600854793513
+    second: sprite-sheet_27
+  - first:
+      213: -4818556106472641470
+    second: sprite-sheet_28
+  - first:
+      213: -2579015654255774944
+    second: sprite-sheet_29
+  - first:
+      213: -5849064155817607363
+    second: sprite-sheet_30
+  - first:
+      213: -7150693180217069502
+    second: sprite-sheet_31
+  - first:
+      213: 8586753166698750598
+    second: sprite-sheet_32
+  - first:
+      213: -1881072028268831973
+    second: sprite-sheet_33
+  - first:
+      213: 3323518892673604388
+    second: sprite-sheet_34
+  - first:
+      213: 4358674376539340698
+    second: sprite-sheet_35
+  - first:
+      213: -5415372385674030642
+    second: sprite-sheet_36
+  - first:
+      213: -8377541152210016672
+    second: sprite-sheet_37
+  - first:
+      213: -9057413479102639183
+    second: sprite-sheet_38
+  - first:
+      213: -666522333043579535
+    second: sprite-sheet_39
+  - first:
+      213: -6367429555072558050
+    second: sprite-sheet_40
+  - first:
+      213: -2555984197896547298
+    second: sprite-sheet_41
+  - first:
+      213: 4119624559787451193
+    second: sprite-sheet_42
+  - first:
+      213: 5693928975956558133
+    second: sprite-sheet_43
+  - first:
+      213: -6656713893227441336
+    second: sprite-sheet_44
+  - first:
+      213: -3170275824180026498
+    second: sprite-sheet_45
+  - first:
+      213: -1202161053390842638
+    second: sprite-sheet_46
+  - first:
+      213: -6462548254926894001
+    second: sprite-sheet_47
+  - first:
+      213: -9152561538167434704
+    second: sprite-sheet_48
+  - first:
+      213: -6481807663511273300
+    second: sprite-sheet_49
+  - first:
+      213: 2004642959564479735
+    second: sprite-sheet_50
+  - first:
+      213: -7791906488117113912
+    second: sprite-sheet_51
+  - first:
+      213: 1361885084696287952
+    second: sprite-sheet_52
+  - first:
+      213: 2837955390697593690
+    second: sprite-sheet_53
+  - first:
+      213: 698192235857672500
+    second: sprite-sheet_54
+  - first:
+      213: -356921412501542221
+    second: sprite-sheet_55
+  - first:
+      213: -7045386414016817542
+    second: sprite-sheet_56
+  - first:
+      213: 7171855863094968449
+    second: sprite-sheet_57
+  - first:
+      213: 4263846846056321979
+    second: sprite-sheet_58
+  - first:
+      213: -4630944412281283851
+    second: sprite-sheet_59
+  - first:
+      213: 2618808410244790396
+    second: sprite-sheet_60
+  - first:
+      213: 2795016883442299630
+    second: sprite-sheet_61
+  - first:
+      213: 8411149080903120891
+    second: sprite-sheet_62
+  - first:
+      213: -2189619333375998213
+    second: sprite-sheet_63
+  - first:
+      213: -6352044120538940533
+    second: ice-spike_0
+  - first:
+      213: 7620307417607329462
+    second: ice-spike_1
+  - first:
+      213: 8127582929872356966
+    second: ice-spike_2
+  - first:
+      213: 3390342204530339027
+    second: ice-spike_3
+  - first:
+      213: 4874239105598145040
+    second: ice-spike_4
+  - first:
+      213: 1799254027981180371
+    second: ice-spike_5
+  - first:
+      213: 7403908951617727835
+    second: ice-spike_6
+  - first:
+      213: -6086400604265540673
+    second: ice-spike_7
+  - first:
+      213: 3453787833538624954
+    second: ice-spike_8
+  - first:
+      213: -5522680837147990701
+    second: ice-spike_9
+  - first:
+      213: 5598675066502838618
+    second: ice-spike_10
+  - first:
+      213: 1269136647989493976
+    second: ice-spike_11
+  - first:
+      213: -5877207852587517971
+    second: ice-spike_12
+  - first:
+      213: 7656573071333383246
+    second: ice-spike_13
+  - first:
+      213: 5823694691985344942
+    second: ice-spike_14
+  - first:
+      213: 2049732959817866725
+    second: ice-spike_15
+  - first:
+      213: -3626476225354292992
+    second: ice-spike_16
+  - first:
+      213: -2528824389851352356
+    second: ice-spike_17
+  - first:
+      213: 3706018482744883269
+    second: ice-spike_18
+  - first:
+      213: 445644126849272195
+    second: ice-spike_19
+  - first:
+      213: 1100384398481265262
+    second: ice-spike_20
+  - first:
+      213: -3098153775180875129
+    second: ice-spike_21
+  - first:
+      213: -4373022169240320625
+    second: ice-spike_22
+  - first:
+      213: -7580266702111704986
+    second: ice-spike_23
+  - first:
+      213: 5397528864648961355
+    second: ice-spike_24
+  - first:
+      213: 7743410202834490956
+    second: ice-spike_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ice-spike_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bfaa5e68109d7a0800000000000000
+      internalID: -6352044120538940533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b652c1e835c0c960800000000000000
+      internalID: 7620307417607329462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6660299ec99fac070800000000000000
+      internalID: 8127582929872356966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dcab00b54aec0f20800000000000000
+      internalID: 3390342204530339027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012ce7744a6c4a340800000000000000
+      internalID: 4874239105598145040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd428e610c38f810800000000000000
+      internalID: 1799254027981180371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d6282c6f7ffb660800000000000000
+      internalID: 7403908951617727835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 240
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb39706c5e2c88ba0800000000000000
+      internalID: -6086400604265540673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abdb2a35cb15eef20800000000000000
+      internalID: 3453787833538624954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355efedf90f7b53b0800000000000000
+      internalID: -5522680837147990701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a59fcb75f4d72bd40800000000000000
+      internalID: 5598675066502838618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d008d2ae01ec9110800000000000000
+      internalID: 1269136647989493976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7726bc896ff6ea0800000000000000
+      internalID: -5877207852587517971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4cd5a164ac914a60800000000000000
+      internalID: 7656573071333383246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea94d14977be1d050800000000000000
+      internalID: 5823694691985344942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_15
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 160
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed9a5a544d127c10800000000000000
+      internalID: 2049732959817866725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001ab51461b2cadc0800000000000000
+      internalID: -3626476225354292992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2f09f9d9fc7ecd0800000000000000
+      internalID: -2528824389851352356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5487a0bbc2c6e6330800000000000000
+      internalID: 3706018482744883269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3890715e8fe3f2600800000000000000
+      internalID: 445644126849272195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e629bd3c7c9554f00800000000000000
+      internalID: 1100384398481265262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_21
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78afec26e852105d0800000000000000
+      internalID: -3098153775180875129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85c58f9187ef43c0800000000000000
+      internalID: -4373022169240320625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_23
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 80
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668f8eda89b7dc690800000000000000
+      internalID: -7580266702111704986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d9152b7efd7ea40800000000000000
+      internalID: 5397528864648961355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ice-spike_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 80
+      alignment: 9
+      pivot: {x: 0.47916666, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46d51a9d8e167b60800000000000000
+      internalID: 7743410202834490956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ice-spike_0: -6352044120538940533
+      ice-spike_1: 7620307417607329462
+      ice-spike_10: 5598675066502838618
+      ice-spike_11: 1269136647989493976
+      ice-spike_12: -5877207852587517971
+      ice-spike_13: 7656573071333383246
+      ice-spike_14: 5823694691985344942
+      ice-spike_15: 2049732959817866725
+      ice-spike_16: -3626476225354292992
+      ice-spike_17: -2528824389851352356
+      ice-spike_18: 3706018482744883269
+      ice-spike_19: 445644126849272195
+      ice-spike_2: 8127582929872356966
+      ice-spike_20: 1100384398481265262
+      ice-spike_21: -3098153775180875129
+      ice-spike_22: -4373022169240320625
+      ice-spike_23: -7580266702111704986
+      ice-spike_24: 5397528864648961355
+      ice-spike_25: 7743410202834490956
+      ice-spike_3: 3390342204530339027
+      ice-spike_4: 4874239105598145040
+      ice-spike_5: 1799254027981180371
+      ice-spike_6: 7403908951617727835
+      ice-spike_7: -6086400604265540673
+      ice-spike_8: 3453787833538624954
+      ice-spike_9: -5522680837147990701
+      sprite-sheet_0: 7773031391787181946
+      sprite-sheet_1: -1426790471357470633
+      sprite-sheet_10: -7328016140542092180
+      sprite-sheet_11: 573168479056981123
+      sprite-sheet_12: -2052979034590239150
+      sprite-sheet_13: -599754731956233123
+      sprite-sheet_14: 8364850724636403409
+      sprite-sheet_15: -6650122099543898603
+      sprite-sheet_16: -4952747364788223248
+      sprite-sheet_17: -4558533973277291694
+      sprite-sheet_18: 192454500139917738
+      sprite-sheet_19: -3988586098559631296
+      sprite-sheet_2: -2506210909196879853
+      sprite-sheet_20: 4585784099227081989
+      sprite-sheet_21: 7910205142894628472
+      sprite-sheet_22: -5453835138508083989
+      sprite-sheet_23: 1334599240327533485
+      sprite-sheet_24: -6627865198301778148
+      sprite-sheet_25: -260948941826079365
+      sprite-sheet_26: 7410530569769358565
+      sprite-sheet_27: -576870600854793513
+      sprite-sheet_28: -4818556106472641470
+      sprite-sheet_29: -2579015654255774944
+      sprite-sheet_3: -8907015550746980148
+      sprite-sheet_30: -5849064155817607363
+      sprite-sheet_31: -7150693180217069502
+      sprite-sheet_32: 8586753166698750598
+      sprite-sheet_33: -1881072028268831973
+      sprite-sheet_34: 3323518892673604388
+      sprite-sheet_35: 4358674376539340698
+      sprite-sheet_36: -5415372385674030642
+      sprite-sheet_37: -8377541152210016672
+      sprite-sheet_38: -9057413479102639183
+      sprite-sheet_39: -666522333043579535
+      sprite-sheet_4: -3085487725770422062
+      sprite-sheet_40: -6367429555072558050
+      sprite-sheet_41: -2555984197896547298
+      sprite-sheet_42: 4119624559787451193
+      sprite-sheet_43: 5693928975956558133
+      sprite-sheet_44: -6656713893227441336
+      sprite-sheet_45: -3170275824180026498
+      sprite-sheet_46: -1202161053390842638
+      sprite-sheet_47: -6462548254926894001
+      sprite-sheet_48: -9152561538167434704
+      sprite-sheet_49: -6481807663511273300
+      sprite-sheet_5: -7371053094594084745
+      sprite-sheet_50: 2004642959564479735
+      sprite-sheet_51: -7791906488117113912
+      sprite-sheet_52: 1361885084696287952
+      sprite-sheet_53: 2837955390697593690
+      sprite-sheet_54: 698192235857672500
+      sprite-sheet_55: -356921412501542221
+      sprite-sheet_56: -7045386414016817542
+      sprite-sheet_57: 7171855863094968449
+      sprite-sheet_58: 4263846846056321979
+      sprite-sheet_59: -4630944412281283851
+      sprite-sheet_6: -3062665138650254500
+      sprite-sheet_60: 2618808410244790396
+      sprite-sheet_61: 2795016883442299630
+      sprite-sheet_62: 8411149080903120891
+      sprite-sheet_63: -2189619333375998213
+      sprite-sheet_7: -1924591734268745998
+      sprite-sheet_8: 2940483688060090369
+      sprite-sheet_9: 4123475054659131201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

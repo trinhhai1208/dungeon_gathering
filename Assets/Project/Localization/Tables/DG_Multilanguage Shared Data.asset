@@ -1,0 +1,1232 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: DG_Multilanguage Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: DG_Multilanguage
+  m_TableCollectionNameGuidString: 8a06e3b1806a38f4787d036248e596a4
+  m_Entries:
+  - m_Id: 1263054848
+    m_Key: common.coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163712
+    m_Key: common.back_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163713
+    m_Key: common.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163714
+    m_Key: common.empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358016
+    m_Key: common.none
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358017
+    m_Key: common.all
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358018
+    m_Key: common.all_lc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358019
+    m_Key: common.equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358020
+    m_Key: common.weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358021
+    m_Key: common.unequip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358022
+    m_Key: common.max_active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358023
+    m_Key: common.merchant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358024
+    m_Key: common.continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358025
+    m_Key: common.to_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358026
+    m_Key: common.retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358027
+    m_Key: common.total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358028
+    m_Key: common.filter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358029
+    m_Key: common.on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358030
+    m_Key: common.off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358031
+    m_Key: common.lang
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358032
+    m_Key: stat.hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358033
+    m_Key: stat.armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358034
+    m_Key: stat.mana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358035
+    m_Key: stat.dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358036
+    m_Key: stat.dmg_pct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358037
+    m_Key: stat.aspd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358038
+    m_Key: stat.aspd_pct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358039
+    m_Key: stat.spd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358040
+    m_Key: stat.spd_pct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358041
+    m_Key: stat.crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358042
+    m_Key: stat.crit_pct
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358043
+    m_Key: stat.range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358044
+    m_Key: stat.mana_hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358045
+    m_Key: stat.synergy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358046
+    m_Key: stat.floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358047
+    m_Key: stat.time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358048
+    m_Key: stat.kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358049
+    m_Key: stat.rooms
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358050
+    m_Key: slot.helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358051
+    m_Key: slot.gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358052
+    m_Key: slot.boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358053
+    m_Key: slot.neck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358054
+    m_Key: slot.acc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358055
+    m_Key: item.horn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358056
+    m_Key: item.fire_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358057
+    m_Key: item.night_gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358058
+    m_Key: item.wind_boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358059
+    m_Key: item.rune_book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358060
+    m_Key: item.holy_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358061
+    m_Key: item.silver_armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358062
+    m_Key: item.mage_hat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358063
+    m_Key: item.ice_mask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358064
+    m_Key: item.silver_gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358065
+    m_Key: item.wind_necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358066
+    m_Key: item.red_boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358067
+    m_Key: item.gold_ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358068
+    m_Key: item.potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358069
+    m_Key: sword.iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358070
+    m_Key: sword.iron_lc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358071
+    m_Key: sword.ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358072
+    m_Key: sword.dark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358073
+    m_Key: sword.old
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358074
+    m_Key: sword.holy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358075
+    m_Key: sword.fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358076
+    m_Key: sword.thunder
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358077
+    m_Key: sword.void
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358078
+    m_Key: sword.gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358079
+    m_Key: sword.lava
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358080
+    m_Key: sword.thorn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358081
+    m_Key: sword.venom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358082
+    m_Key: sword.purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358083
+    m_Key: eq.horn.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358084
+    m_Key: eq.fire.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358085
+    m_Key: eq.night.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358086
+    m_Key: eq.wind.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358087
+    m_Key: eq.book.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358088
+    m_Key: eq.book.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358089
+    m_Key: eq.shield.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358090
+    m_Key: eq.shield.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358091
+    m_Key: eq.no_role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358092
+    m_Key: eq.hat.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358093
+    m_Key: eq.mask.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358094
+    m_Key: eq.gwhite.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358095
+    m_Key: eq.neck.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358096
+    m_Key: equip.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358097
+    m_Key: equip.flat_stats
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358098
+    m_Key: equip.passive_role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358099
+    m_Key: equip.active_hdr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358100
+    m_Key: equip.pick_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358101
+    m_Key: equip.bag_note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358102
+    m_Key: equip.worn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358103
+    m_Key: equip.replaces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358104
+    m_Key: equip.slot_empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358105
+    m_Key: equip.slot_prefix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358106
+    m_Key: equip.badge_none
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358107
+    m_Key: equip.badge_on
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358108
+    m_Key: equip.badge_need
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358109
+    m_Key: equip.limit_warn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358110
+    m_Key: weapon.carry_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358111
+    m_Key: weapon.type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358112
+    m_Key: weapon.passive_hdr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358113
+    m_Key: weapon.active_hdr
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358114
+    m_Key: weapon.armory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358115
+    m_Key: weapon.limit_warn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552320
+    m_Key: weapon.in_slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552321
+    m_Key: weapon.in_armory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552322
+    m_Key: weapon.to_slot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552323
+    m_Key: weapon.slot1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552324
+    m_Key: weapon.slot2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552325
+    m_Key: weapon.stats_of
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552326
+    m_Key: weapon.if_swap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552327
+    m_Key: wp.fire.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552328
+    m_Key: wp.fire.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552329
+    m_Key: wp.thunder.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552330
+    m_Key: wp.thunder.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552331
+    m_Key: wp.void.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552332
+    m_Key: wp.void.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552333
+    m_Key: wp.gold.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552334
+    m_Key: wp.lava.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552335
+    m_Key: wp.ice.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552336
+    m_Key: wp.ice.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552337
+    m_Key: wp.thorn.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552338
+    m_Key: wp.holy.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552339
+    m_Key: wp.holy.active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552340
+    m_Key: wp.dark.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552341
+    m_Key: wp.venom.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552342
+    m_Key: wp.iron.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552343
+    m_Key: lobby.pick_char
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552344
+    m_Key: lobby.enter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552345
+    m_Key: lobby.locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552346
+    m_Key: lobby.unlock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552347
+    m_Key: lobby.hall_alt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552348
+    m_Key: lobby.merchant_alt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552349
+    m_Key: lobby.to_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552350
+    m_Key: lobby.close_info
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552351
+    m_Key: lobby.no_active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552352
+    m_Key: char.knight.skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552353
+    m_Key: char.knight.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552354
+    m_Key: char.ranger.skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552355
+    m_Key: char.ranger.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552356
+    m_Key: char.wizard.skill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552357
+    m_Key: char.wizard.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552358
+    m_Key: char.tbd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552359
+    m_Key: char.rogue.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552360
+    m_Key: char.paladin.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552361
+    m_Key: skill.frost_field
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552362
+    m_Key: skill.arcane_storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552363
+    m_Key: skill.holy_light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552364
+    m_Key: menu.tap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552365
+    m_Key: menu.settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552366
+    m_Key: menu.play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552367
+    m_Key: menu.sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552368
+    m_Key: menu.music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552369
+    m_Key: hud.floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552370
+    m_Key: hud.room_alt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552371
+    m_Key: hud.pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552372
+    m_Key: hud.joystick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552373
+    m_Key: hud.attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552374
+    m_Key: hud.swap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552375
+    m_Key: hud.act1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552376
+    m_Key: hud.act2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552377
+    m_Key: pause.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552378
+    m_Key: pause.class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552379
+    m_Key: pause.gear_note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552380
+    m_Key: pause.quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552381
+    m_Key: pause.settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552382
+    m_Key: pause.dec
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552383
+    m_Key: pause.inc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552384
+    m_Key: pause.bgm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552385
+    m_Key: pause.sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552386
+    m_Key: pause.aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552387
+    m_Key: pause.aim_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552388
+    m_Key: pause.vib
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552389
+    m_Key: pause.vib_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552390
+    m_Key: end.over
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552391
+    m_Key: end.fallen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552392
+    m_Key: end.killed_by
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552393
+    m_Key: end.record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552394
+    m_Key: end.found
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552395
+    m_Key: end.coin_back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552396
+    m_Key: end.conv_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552397
+    m_Key: end.conv_floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552398
+    m_Key: end.conv_boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552399
+    m_Key: end.new
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552400
+    m_Key: win.sub
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552401
+    m_Key: win.title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552402
+    m_Key: win.defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552403
+    m_Key: win.first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552404
+    m_Key: win.record
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552405
+    m_Key: win.continue_note
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552406
+    m_Key: win.chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552407
+    m_Key: win.coin_if
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552408
+    m_Key: win.to_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552409
+    m_Key: win.next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552410
+    m_Key: win.conv_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552411
+    m_Key: win.conv_floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552412
+    m_Key: win.conv_boss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746624
+    m_Key: win.conv_first
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746625
+    m_Key: shop.role_match
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746626
+    m_Key: shop.buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746627
+    m_Key: shop.close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746628
+    m_Key: shop.kind_purple
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746629
+    m_Key: shop.purple_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746630
+    m_Key: shop.rate09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746631
+    m_Key: shop.purple_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746632
+    m_Key: shop.kind_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746633
+    m_Key: shop.armor2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746634
+    m_Key: shop.shield_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746635
+    m_Key: shop.kind_neck
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746636
+    m_Key: shop.spd10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746637
+    m_Key: shop.crit5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746638
+    m_Key: shop.neck_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746639
+    m_Key: shop.kind_mask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746640
+    m_Key: shop.armor1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746641
+    m_Key: shop.crit6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746642
+    m_Key: shop.mask_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746643
+    m_Key: shop.kind_boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746644
+    m_Key: shop.spd5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746645
+    m_Key: shop.consumable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746646
+    m_Key: shop.hp30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746647
+    m_Key: shop.potion_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746648
+    m_Key: shop.kind_fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746649
+    m_Key: shop.fire_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746650
+    m_Key: shop.rate10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746651
+    m_Key: shop.fire_desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746652
+    m_Key: shop.kind_ice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746653
+    m_Key: shop.ice_dmg
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746654
+    m_Key: shop.slow30
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746655
+    m_Key: shop.where_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746656
+    m_Key: shop.where_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746657
+    m_Key: shop.back_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746658
+    m_Key: shop.back_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746659
+    m_Key: shop.weapon_prefix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746660
+    m_Key: shop.bought_weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746661
+    m_Key: shop.used
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746662
+    m_Key: shop.bought_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746663
+    m_Key: shop.bought_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746664
+    m_Key: shop.no_coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746665
+    m_Key: shop.role_miss
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746666
+    m_Key: shop.hint_lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746667
+    m_Key: shop.hint_run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216416276480
+    m_Key: common.loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745472
+    m_Key: loading.step_engine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745473
+    m_Key: loading.step_core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745474
+    m_Key: loading.step_ui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745475
+    m_Key: loading.step_menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745476
+    m_Key: loading.done
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745477
+    m_Key: loading.tip_label
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745478
+    m_Key: loading.tip1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745479
+    m_Key: loading.tip2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745480
+    m_Key: loading.tip3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745481
+    m_Key: loading.error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745482
+    m_Key: loading.retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745483
+    m_Key: loading.first_time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313503121408
+    m_Key: weapon.to_slot1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313570230272
+    m_Key: weapon.to_slot2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313570230273
+    m_Key: settings.close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786690666496
+    m_Key: char.knight.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775360
+    m_Key: char.paladin.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775361
+    m_Key: char.ranger.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775362
+    m_Key: char.wizard.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775363
+    m_Key: char.rogue.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775364
+    m_Key: char.monk.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775365
+    m_Key: char.monk.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775366
+    m_Key: char.lancer.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775367
+    m_Key: char.lancer.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775368
+    m_Key: char.hunter.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775369
+    m_Key: char.hunter.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775370
+    m_Key: char.necromancer.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775371
+    m_Key: char.necromancer.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775372
+    m_Key: char.frost_wraith.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775373
+    m_Key: char.frost_wraith.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775374
+    m_Key: char.berserker.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775375
+    m_Key: char.berserker.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775376
+    m_Key: char.shadow_knight.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775377
+    m_Key: char.shadow_knight.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775378
+    m_Key: char.coming_soon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775379
+    m_Key: char.coming_soon_hint
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775380
+    m_Key: skill.dual_wield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775381
+    m_Key: skill.dodge_roll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775382
+    m_Key: skill.dragon_flame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775383
+    m_Key: skill.thunder_judgement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775384
+    m_Key: skill.rift_cut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775385
+    m_Key: skill.raise_shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775386
+    m_Key: enemy.skeleton_spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775387
+    m_Key: enemy.skeleton_warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775388
+    m_Key: enemy.zombie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775389
+    m_Key: enemy.vampire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775390
+    m_Key: enemy.skull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775391
+    m_Key: enemy.elite_warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775392
+    m_Key: enemy.elite_vampire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775393
+    m_Key: boss.vampire_lord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041187336192
+    m_Key: gun.pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639360
+    m_Key: gun.rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639361
+    m_Key: gun.shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639362
+    m_Key: gun.launcher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639363
+    m_Key: wp.pistol.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639364
+    m_Key: wp.rifle.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639365
+    m_Key: wp.shotgun.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639366
+    m_Key: wp.launcher.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359145291689984
+    m_Key: hud.open_chest
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 462465678260044023
+  references:
+    version: 2
+    RefIds:
+    - rid: 462465678260044023
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1793778230672

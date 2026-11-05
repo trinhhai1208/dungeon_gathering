@@ -1,0 +1,301 @@
+Key,en,vi
+common.coin,Coin,Coin
+common.back_lobby,Back to lobby,Quay lại sảnh
+common.active,Active,Kích hoạt
+common.empty,Empty,Trống
+common.none,None.,Không có.
+common.all,ALL,TẤT CẢ
+common.all_lc,All,Tất cả
+common.equip,EQUIP,TRANG BỊ
+common.weapons,WEAPONS,VŨ KHÍ
+common.unequip,UNEQUIP,THÁO RA
+common.max_active,2 ACTIVES MAX,ĐỦ 2 KỸ NĂNG
+common.merchant,MERCHANT,THƯƠNG NHÂN
+common.continue,CONTINUE,TIẾP TỤC
+common.to_lobby,TO LOBBY,VỀ SẢNH
+common.retry,RETRY,CHƠI LẠI
+common.total,Total,Tổng nhận
+common.filter,Filter:,Lọc:
+common.on,ON,BẬT
+common.off,OFF,TẮT
+common.lang,Language,Ngôn ngữ
+common.loading,Loading…,Đang tải…
+loading.step_engine,Loading game engine,Đang tải engine game
+loading.step_core,Loading core data,Đang tải dữ liệu chung
+loading.step_ui,Loading interface,Đang tải giao diện
+loading.step_menu,Preparing the menu,Đang chuẩn bị màn chính
+loading.done,Ready!,Sẵn sàng!
+loading.tip_label,TIP,MẸO
+loading.tip1,Gear found in the dungeon goes to your bag. Swap it in the lobby.,Đồ nhặt trong dungeon vào túi. Thay đồ ở sảnh.
+loading.tip2,A run can carry at most 2 items with active skills.,Mỗi run chỉ mang tối đa 2 món có kỹ năng kích hoạt.
+loading.tip3,Gear matching your hero's Role unlocks a bonus passive.,Trang bị đúng Role của nhân vật sẽ kích hoạt hiệu ứng thêm.
+loading.error,Could not load the game. Check your connection.,Không tải được game. Kiểm tra kết nối mạng.
+loading.retry,RETRY,THỬ LẠI
+loading.first_time,First load may take a moment. Next time is faster.,Lần đầu tải có thể hơi lâu. Lần sau sẽ nhanh hơn.
+stat.hp,HP,Máu
+stat.armor,Armor,Giáp
+stat.mana,Mana,Mana
+stat.dmg,Damage,Sát thương
+stat.dmg_pct,% Damage,% Sát thương
+stat.aspd,Attack speed,Tốc đánh
+stat.aspd_pct,% Attack speed,% Tốc đánh
+stat.spd,Move speed,Tốc chạy
+stat.spd_pct,% Move speed,% Tốc chạy
+stat.crit,Crit,Chí mạng
+stat.crit_pct,% Crit,% Chí mạng
+stat.range,Range,Tầm đánh
+stat.mana_hit,Mana / hit,Mana / đòn
+stat.synergy,Synergy,Synergy
+stat.floor,Floor,Tầng
+stat.time,Time,Thời gian
+stat.kills,Kills,Hạ quái
+stat.rooms,Rooms cleared,Phòng clear
+slot.helmet,Helmet,Mũ
+slot.gloves,Gloves,Găng
+slot.boots,Boots,Giày
+slot.neck,Necklace,Vòng
+slot.acc,Accessory,Phụ kiện
+item.horn,Horn Helm,Mũ Sừng
+item.fire_armor,Flame Knight Armor,Giáp Lửa Kỵ Sĩ
+item.night_gloves,Nightshade Gloves,Găng Tay Bóng Đêm
+item.wind_boots,Windstep Boots,Giày Phong Vũ
+item.rune_book,Ancient Rune Book,Sách Cổ Ngữ
+item.holy_shield,Holy Shield,Khiên Thánh
+item.silver_armor,Silver Armor,Giáp Bạc
+item.mage_hat,Mage Hat,Mũ Pháp Sư
+item.ice_mask,Ice Mask,Mặt Nạ Băng
+item.silver_gloves,Silver Gloves,Găng Bạc
+item.wind_necklace,Wind Necklace,Dây Chuyền Gió
+item.red_boots,Red Boots,Giày Đỏ
+item.gold_ring,Gold Ring,Nhẫn Vàng
+item.potion,Health Potion,Bình Máu
+sword.iron,Iron Sword,Kiếm Sắt
+sword.iron_lc,Iron Sword,Kiếm sắt
+sword.ice,Frost Sword,Kiếm Băng
+sword.dark,Dark Sword,Kiếm Đen
+sword.old,Rotten Wood Sword,Kiếm Gỗ Mục
+sword.holy,Holy Sword,Kiếm Thánh
+sword.fire,Flame Sword,Kiếm Lửa
+sword.thunder,Thunder Sword,Kiếm Sấm
+sword.void,Void Sword,Kiếm Hư Không
+sword.gold,Golden Sword,Kiếm Hoàng Kim
+sword.lava,Lava Sword,Kiếm Dung Nham
+sword.thorn,Thorn Sword,Kiếm Gai Rừng
+sword.venom,Venom Sword,Kiếm Độc
+sword.purple,Purple Sword,Kiếm Tím
+gun.pistol,Arcane Pistol,Súng Lục Phép
+gun.rifle,Plasma Rifle,Súng Trường Plasma
+gun.shotgun,Spark Shotgun,Súng Hoa Cải Điện
+gun.launcher,Rocket Launcher,Súng Phóng Tên Lửa
+wp.pistol.passive,Fires steady arcane bolts. Low mana cost.,Bắn đạn phép ổn định. Tốn ít Mana.
+wp.rifle.passive,Rapid plasma fire. Grants +10% Crit chance while held.,Bắn plasma liên thanh. Tăng +10% Chí mạng khi cầm.
+wp.shotgun.passive,Fires a 5-spark spread that shocks nearby foes.,Bắn chùm 5 tia điện sát thương diện rộng tầm gần.
+wp.launcher.passive,Fires heavy rockets that explode in a 2.2m radius.,Bắn tên lửa hạng nặng phát nổ bán kính 2.2m.
+eq.horn.passive,Warrior: +10% slash damage.,Warrior: +10% sát thương đòn đánh.
+eq.fire.passive,"When your armor breaks, a ring of fire bursts out, damaging and knocking back nearby enemies.","Khi bị vỡ giáp, phát nổ vòng lửa gây sát thương và đẩy lùi quái xung quanh."
+eq.night.passive,Crits instantly restore 2 Mana and give +20% move speed for 1.5s.,Đòn chí mạng hồi ngay 2 Mana và +20% tốc chạy trong 1.5s.
+eq.wind.passive,Stand still 1s: your next shot pierces and deals +40% damage.,Đứng yên 1s: đòn bắn tiếp theo xuyên thấu và +40% sát thương.
+eq.book.passive,Every 3rd hit summons an arcane vortex on the target.,Mỗi đòn đánh thứ 3 triệu hồi vòng xoáy phép tại vị trí mục tiêu.
+eq.book.active,Arcane Storm · 20s cooldown: a large arcane vortex around you for 3s.,Bão Phép · hồi 20s: vòng xoáy phép lớn quanh người 3s.
+eq.shield.passive,Warrior: +2 Armor and +1 Max HP.,Warrior: +2 Giáp và +1 Máu tối đa.
+eq.shield.active,Raise Shield · 18s cooldown: immune to all damage for 2s.,Giơ Khiên · hồi 18s: miễn mọi sát thương trong 2s.
+eq.no_role,No Role effect.,Không có hiệu ứng Role.
+eq.hat.passive,Mage: +20 Max Mana and +10% Attack Speed.,Mage: +20 Mana tối đa và +10% Tốc đánh.
+eq.mask.passive,Assassin: +12% Crit chance and +15% Attack Damage.,Assassin: +12% Chí mạng và +15% Sát thương.
+eq.gwhite.passive,Warrior: +1 Max Armor and +10% Attack Speed.,Warrior: +1 Giáp tối đa và +10% Tốc đánh.
+eq.neck.passive,Ranger: +10% Crit chance and +10% Move Speed.,Ranger: +10% Chí mạng và +10% Tốc chạy.
+equip.title,BAG & GEAR,TÚI ĐỒ & TRANG BỊ
+equip.flat_stats,FLAT STATS · ANY ROLE,CHỈ SỐ CỘNG THẲNG · MỌI ROLE
+equip.passive_role,PASSIVE · ROLE,BỊ ĐỘNG · ROLE
+equip.active_hdr,ACTIVE · USE IN RUN,CHỦ ĐỘNG · KÍCH HOẠT TRONG TRẬN
+equip.pick_hint,Pick an item in the bag or a worn slot to see details.,Chọn một món trong túi hoặc một ô đang mặc để xem chi tiết.
+equip.bag_note,"items · found in dungeons, swap only in lobby","món · nhặt trong dungeon, chỉ thay ở sảnh"
+equip.worn,EQUIPPED,ĐANG MẶC
+equip.replaces,Replaces ,Sẽ thay 
+equip.slot_empty, slot is empty, đang trống
+equip.slot_prefix,,Ô 
+equip.badge_none,NONE,KHÔNG CÓ
+equip.badge_on,ACTIVE,KÍCH HOẠT
+equip.badge_need,NEEDS ,CẦN 
+equip.limit_warn,Already 2 items with active skills. Unequip one first.,Đã đủ 2 món có kỹ năng kích hoạt. Tháo một món trước.
+weapon.carry_hint,Carry 2 weapons · tap the weapon slot in a run to swap,Mang 2 vũ khí · trong trận bấm ô vũ khí để đổi
+weapon.type,Sword · Melee · Rarity,Kiếm · Cận chiến · Rarity
+weapon.passive_hdr,PASSIVE · AUTO,BỊ ĐỘNG · TỰ KÍCH HOẠT
+weapon.active_hdr,ACTIVE · TAP IN RUN,CHỦ ĐỘNG · BẤM TRONG TRẬN
+weapon.armory,weapons in the armory,vũ khí trong kho
+weapon.limit_warn,Already 2 items with active skills (max 2 per run).,Đã đủ 2 món có kỹ năng kích hoạt (tối đa 2 khi vào trận).
+weapon.in_slot,IN SLOT ,ĐANG Ở Ô 
+weapon.in_armory,In armory · vs slot ,Trong kho · so với Ô 
+weapon.to_slot,TO SLOT ,VÀO Ô 
+weapon.to_slot1,TO SLOT 1,VÀO Ô 1
+weapon.to_slot2,TO SLOT 2,VÀO Ô 2
+settings.close,Close settings,Đóng cài đặt
+weapon.slot1,Slot 1 · held at start,Ô 1 · cầm khi vào trận
+weapon.slot2,Slot 2,Ô 2
+weapon.stats_of,SLOT STATS ,CHỈ SỐ Ô 
+weapon.if_swap,  →  if swapped to ,  →  nếu đổi sang 
+wp.fire.passive,Attacks burn enemies for 6 damage per second over 2s.,Đòn đánh thiêu đốt quái 6 sát thương mỗi giây trong 2s.
+wp.fire.active,Dragon Flame Slash · 20s cooldown: a huge wave of fire ahead.,Hỏa Long Trảm · hồi 20s: chém một sóng lửa lớn phía trước.
+wp.thunder.passive,25% chance on hit to chain lightning to 3 enemies.,25% tỉ lệ khi đánh phóng tia sét nảy sang 3 quái.
+wp.thunder.active,Thunder Judgement · 18s cooldown: 5 bolts strike the nearest enemies.,Lôi Phạt · hồi 18s: gọi 5 tia sét xuống quái gần nhất.
+wp.void.passive,Grants +15% Attack Damage and +10% Attack Speed while held.,Tăng +15% Sát thương và +10% Tốc đánh khi cầm.
+wp.void.active,Rift Cut · 15s cooldown: dash through enemies and slash twice.,Xé Không Gian · hồi 15s: lướt xuyên qua quái và chém 2 lần.
+wp.gold.passive,Kills restore 4 Mana.,Hạ quái hồi 4 Mana.
+wp.lava.passive,Slashes burn enemies for 5 damage per second over 2s.,Đòn chém thiêu đốt quái 5 sát thương mỗi giây trong 2s.
+wp.ice.passive,Slashes slow enemies by 30% for 1s.,Đòn chém làm chậm quái 30% trong 1s.
+wp.ice.active,Frost Field · 16s cooldown: freeze nearby enemies for 2s.,Băng Trận · hồi 16s: đóng băng quái xung quanh 2s.
+wp.thorn.passive,Grants +8% Crit chance and +10% Attack Damage while held.,Tăng +8% Chí mạng và +10% Sát thương khi cầm.
+wp.holy.passive,"Drains life on hit, restoring 1 HP per 20 damage dealt.","Hút máu khi đánh trúng, hồi 1 Máu mỗi 20 sát thương gây ra."
+wp.holy.active,Holy Light · 25s cooldown: restore 2 HP.,Thánh Quang · hồi 25s: hồi 2 Máu.
+wp.dark.passive,Kills restore 5 Mana.,Hạ quái hồi 5 Mana.
+wp.venom.passive,Poisons for 4 damage per second over 3s.,Gây độc 4 sát thương mỗi giây trong 3s.
+wp.iron.passive,None. Knight's starting weapon.,Không có. Vũ khí khởi đầu của Knight.
+lobby.pick_char,CHOOSE A HERO TO START,CHỌN NHÂN VẬT ĐỂ BẮT ĐẦU
+lobby.enter,SELECT · ENTER PORTAL,CHỌN · VÀO PORTAL
+lobby.locked,Locked. Unlock with coins brought back from runs.,Chưa mở khóa. Mở bằng coin mang về từ các run.
+lobby.unlock,UNLOCK ·,MỞ KHÓA ·
+lobby.hall_alt,"Lobby: portal, NPC counters, center table","Sảnh: portal, quầy NPC, bàn giữa phòng"
+lobby.merchant_alt,Merchant – open shop,Thương nhân – mở cửa hàng
+lobby.to_menu,Back to menu,Về menu
+lobby.close_info,"Close info, back to lobby","Đóng thông tin, quay lại sảnh"
+lobby.no_active,no item yet,chưa có món nào
+char.knight.skill,Dual Wield · 12s cooldown,Dual Wield · hồi chiêu 12s
+char.knight.desc,"Melee, heavy armor, slashes cut through basic bullets.","Cận chiến, giáp dày, chém tan đạn thường."
+char.ranger.skill,Dodge Roll · 4s cooldown,Dodge Roll · hồi chiêu 4s
+char.ranger.desc,Agile marksman with high crit and ranged firearm mastery.,"Xạ thủ nhanh nhẹn, chí mạng cao, thông thạo súng tầm xa."
+char.wizard.skill,Arcane Storm · 15s cooldown,Arcane Storm · hồi chiêu 15s
+char.wizard.desc,"Elemental magic, lots of Mana, low HP.","Phép nguyên tố, nhiều Mana, máu mỏng."
+char.tbd,[Skill TBD],[Skill chưa chốt]
+char.rogue.desc,"Fast attacks, big crits, mobile.","Tốc đánh cao, bạo kích, cơ động."
+char.paladin.desc,"Holy knight: thickest armor, slow.","Kỵ sĩ thánh: giáp dày nhất, chậm."
+char.knight.name,Knight,Hiệp Sĩ
+char.paladin.name,Paladin,Thánh Kỵ Sĩ
+char.ranger.name,Ranger,Xạ Thủ
+char.wizard.name,Wizard,Pháp Sư
+char.rogue.name,Rogue,Đạo Tặc
+char.monk.name,Monk,Tu Sĩ
+char.monk.desc,Staff fighter who heals allies and himself.,"Đánh gậy, hồi máu cho bản thân."
+char.lancer.name,Lancer,Thương Binh
+char.lancer.desc,"Long spear reach, steady armor, pushes enemies back.","Giáo dài, giáp vững, đẩy lùi quái."
+char.hunter.name,Hunter,Thợ Săn
+char.hunter.desc,"Traps and daggers, strikes weakened foes harder.","Bẫy và dao găm, đánh mạnh hơn quái đang yếu."
+char.necromancer.name,Necromancer,Chiêu Hồn Sư
+char.necromancer.desc,"Raises bones to fight alongside, fragile body.","Gọi xương chiến đấu cùng, thân thể yếu."
+char.frost_wraith.name,Frost Wraith,Oan Hồn Băng
+char.frost_wraith.desc,Floating spirit that freezes everything it touches.,"Linh hồn lơ lửng, đóng băng mọi thứ chạm vào."
+char.berserker.name,Berserker,Cuồng Chiến Binh
+char.berserker.desc,"Hits harder the lower his HP, light armor.","Càng ít máu càng đánh mạnh, giáp mỏng."
+char.shadow_knight.name,Shadow Knight,Hiệp Sĩ Bóng Tối
+char.shadow_knight.desc,Dark blade that drains life from crits.,"Lưỡi kiếm bóng tối, chí mạng hút máu."
+char.coming_soon,COMING SOON,CHƯA RA MẮT
+char.coming_soon_hint,This hero is still in development and will arrive in a later update.,"Nhân vật đang được phát triển, sẽ có trong bản cập nhật sau."
+skill.dual_wield,Dual Wield,Song Kiếm
+skill.dodge_roll,Dodge Roll,Lộn Né
+skill.dragon_flame,Dragon Flame Slash,Hỏa Long Trảm
+skill.thunder_judgement,Thunder Judgement,Lôi Phạt
+skill.rift_cut,Rift Cut,Xé Không Gian
+skill.raise_shield,Raise Shield,Giơ Khiên
+enemy.skeleton_spear,Skeleton Spearman,Lính Giáo Xương
+enemy.skeleton_warrior,Skeleton Warrior,Chiến Binh Xương
+enemy.zombie,Zombie,Xác Sống
+enemy.vampire,Vampire,Ma Cà Rồng
+enemy.skull,Floating Skull,Đầu Lâu Bay
+enemy.elite_warrior,Elite Skeleton Warrior,Chiến Binh Xương Tinh Nhuệ
+enemy.elite_vampire,Elder Vampire,Ma Cà Rồng Lão Luyện
+boss.vampire_lord,Vampire Lord,Chúa Tể Ma Cà Rồng
+skill.frost_field,Frost Field,Băng Trận
+skill.arcane_storm,Arcane Storm,Bão Phép
+skill.holy_light,Holy Light,Thánh Quang
+menu.tap,TAP TO PLAY,CHẠM ĐỂ CHƠI
+menu.settings,Settings,Cài đặt
+menu.play,Play,Chơi
+menu.sound,Sound,Âm thanh
+menu.music,Music,Nhạc
+hud.floor,FLOOR {0}/{1},TẦNG {0}/{1}
+hud.room_alt,"Combat room, doors locked",Phòng Combat đang khóa cửa
+hud.pause,Pause,Tạm dừng
+hud.joystick,Movement joystick,Joystick di chuyển
+hud.attack,Attack,Tấn công
+hud.swap,"Swap weapon, holding","Đổi vũ khí, đang cầm"
+hud.act1,Frost Field (Frost Sword) · 9s,Băng Trận (Kiếm Băng) · hồi 9s
+hud.act2,Arcane Storm (Rune Book) · ready,Bão Phép (Sách Cổ Ngữ) · sẵn sàng
+pause.title,PAUSED,TẠM DỪNG
+pause.class,Class,Lớp
+pause.gear_note,2 weapons · worn gear · active 2/2 · bag: 3 new items (swap in lobby),2 vũ khí · trang bị đang mặc · kích hoạt 2/2 · túi: 3 món mới (thay ở sảnh)
+pause.quit,TO LOBBY (quit run),VỀ SẢNH (bỏ run)
+pause.settings,SETTINGS,CÀI ĐẶT
+pause.dec,Lower,Giảm
+pause.inc,Raise,Tăng
+pause.bgm,Music,Nhạc nền
+pause.sfx,Effects,Hiệu ứng
+pause.aim,Auto-Aim,Auto-Aim
+pause.aim_hint,Turn the sword to the nearest enemy,Tự quay kiếm về quái gần nhất
+pause.vib,Vibration,Rung
+pause.vib_hint,Vibrate on hit and on Boss kill,Rung khi trúng đòn và khi hạ Boss
+end.over,RUN OVER,RUN KẾT THÚC
+end.fallen,YOU HAVE FALLEN,BẠN ĐÃ GỤC NGÃ
+end.killed_by,Killed by,Bị hạ bởi
+end.record,NEW RECORD · Floor 1-5,KỶ LỤC MỚI · Tầng 1-5
+end.found,Weapons & gear found (saved to collection),Vũ khí & trang bị khám phá (lưu vào bộ sưu tập)
+end.coin_back,Coins brought to lobby,Coin mang về sảnh
+end.conv_run,Run coins 312 × 10%,Coin gom trong run 312 × 10%
+end.conv_floor,Floor bonus (1 floor × 20),Thưởng tầng (1 tầng × 20)
+end.conv_boss,Boss damage dealt,Gây sát thương Boss
+end.new,(new),(mới)
+win.sub,BOSS DEFEATED · FLOOR 3,ĐÃ HẠ BOSS · TẦNG 3
+win.title,VICTORY!,CHIẾN THẮNG!
+win.defeated,Defeated,Đã hạ
+win.first,FIRST CLEAR,LẦN ĐẦU CLEAR
+win.record,RECORD 14:32,KỶ LỤC 14:32
+win.continue_note,"Continue: keep run gear & coins, stronger enemies","Tiếp tục: giữ đồ & coin của run, quái mạnh hơn"
+win.chest,"Boss chest · into bag, swap in lobby","Rương Boss · vào túi, thay ở sảnh"
+win.coin_if,Coins if you return to lobby,Coin mang về nếu về sảnh
+win.to_lobby,TO LOBBY · +346,VỀ SẢNH · NHẬN +346
+win.next,CONTINUE · FLOOR 4,TIẾP TỤC · TẦNG 4
+win.conv_run,Run coins 860 × 10%,Coin gom trong run 860 × 10%
+win.conv_floor,Floor bonus (3 floors × 20),Thưởng tầng (3 tầng × 20)
+win.conv_boss,Boss defeated,Hạ Boss
+win.conv_first,First Boss kill on floor 3,Lần đầu hạ Boss tầng 3
+shop.role_match,ROLE MATCH,HỢP ROLE
+shop.buy,BUY ·,MUA ·
+shop.close,"Close, back to","Đóng, quay lại"
+shop.kind_purple,Weapon · Melee · A,Vũ khí · Melee · A
+shop.purple_dmg,22 damage,22 sát thương
+shop.rate09,0.9 hits/s,0.9 đòn/giây
+shop.purple_desc,[Proposal] Every 4th slash fires a long-range sword wave. Weapons have no Role Synergy.,[Đề xuất] Đòn chém thứ 4 tạo vệt kiếm khí bay xa. Vũ khí không có Role Synergy.
+shop.kind_shield,Accessory · Warrior · C,Phụ kiện · Warrior · C
+shop.armor2,+2 Armor,+2 Giáp
+shop.shield_desc,[Proposal] Warrior: fully blocks 1 hit every 8s.,[Đề xuất] Warrior: chặn hoàn toàn 1 đòn mỗi 8s.
+shop.kind_neck,Accessory · Ranger · B,Phụ kiện · Ranger · B
+shop.spd10,+10% Move speed,+10% Tốc chạy
+shop.crit5,+5% Crit,+5% Chí mạng
+shop.neck_desc,"[Proposal] Ranger: after a dash, the next hit is a guaranteed crit.","[Đề xuất] Ranger: lướt xong, đòn kế tiếp chắc chắn chí mạng."
+shop.kind_mask,Helmet · Assassin · A,Mũ · Assassin · A
+shop.armor1,+1 Armor,+1 Giáp
+shop.crit6,+6% Crit,+6% Chí mạng
+shop.mask_desc,[Proposal] Assassin: hits from behind deal +50% damage.,[Đề xuất] Assassin: đòn đánh sau lưng quái +50% sát thương.
+shop.kind_boots,Boots · Any Role · F,Giày · Mọi Role · F
+shop.spd5,+5% Move speed,+5% Tốc chạy
+shop.consumable,Consumable,Tiêu hao
+shop.hp30,+30 HP,+30 Máu
+shop.potion_desc,Used on purchase. The only way to heal during a run.,Dùng ngay khi mua. Cách duy nhất hồi Máu trong run.
+shop.kind_fire,Weapon · Sword · S,Vũ khí · Kiếm · S
+shop.fire_dmg,28 damage,28 sát thương
+shop.rate10,1.0 hits/s,1.0 đòn/giây
+shop.fire_desc,"[Proposal] Every 5s, the next hit fires a cone of flame. Goes to the armory; set it on the Weapons screen.","[Đề xuất] Mỗi 5s, đòn kế tiếp phóng sóng lửa hình nón. Vào kho vũ khí, đặt ở màn Vũ khí."
+shop.kind_ice,Weapon · Sword · B,Vũ khí · Kiếm · B
+shop.ice_dmg,18 damage,18 sát thương
+shop.slow30,Slow 30%,Làm chậm 30%
+shop.where_lobby,LOBBY · permanent coins,SẢNH · coin vĩnh viễn
+shop.where_run,IN RUN · run coins,TRONG RUN · coin của run
+shop.back_lobby,lobby,sảnh
+shop.back_run,run,trận
+shop.weapon_prefix,Weapon,Vũ khí
+shop.bought_weapon,Bought · sent to armory.,Đã mua · vào kho vũ khí.
+shop.used,Used.,Đã dùng.
+shop.bought_lobby,"Bought · in bag, equip on the Gear screen.","Đã mua · vào túi, mặc ở màn Trang bị."
+shop.bought_run,"Bought · in bag, swap in lobby.","Đã mua · vào túi, thay ở sảnh."
+shop.no_coin,Not enough coins.,Không đủ coin.
+shop.role_miss,Not Warrior: flat stats only.,Khác Role Warrior: chỉ nhận chỉ số cộng thẳng.
+shop.hint_lobby,Talk to the Merchant in the lobby to open the shop.,Nói chuyện với Thương nhân ở sảnh để mở cửa hàng.
+shop.hint_run,Stand near the ShopStand and press Interact to buy.,Đứng gần ShopStand và bấm Interact để mua.

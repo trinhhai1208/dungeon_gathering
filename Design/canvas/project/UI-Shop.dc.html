@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&amp;family=Tiny5&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#efe6dc}a:hover{color:#f2b33d}
+img{image-rendering:pixelated}
+button{font:inherit;color:inherit;background:none;margin:0;padding:0;cursor:pointer}
+.f-dark,.f-dark-s,.f-mid,.f-mid-s,.f-light,.f-light-s{border-style:solid;image-rendering:pixelated;box-sizing:border-box}
+.f-dark{border-width:24px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 24px stretch}
+.f-dark-s{border-width:12px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 12px stretch}
+.f-mid{border-width:24px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 24px stretch}
+.f-mid-s{border-width:12px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 12px stretch}
+.f-light{border-width:24px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 24px stretch}
+.f-light-s{border-width:12px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 12px stretch}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #1b1420; color: #efe6dc; font-family: {{font}}">
+  <img src="/_blob/3fd317f700eb857c179e70844c22d21a" alt="" style="position: absolute; left: 40px; top: -80px; width: 1200px; height: 880px; opacity: 0.45">
+  <div style="position: absolute; inset: 0; background: rgba(27,20,32,0.5)"></div>
+
+  <a href="{{backHref}}" aria-label="{{tx.shop_close}} {{backLabel}}" style="position: absolute; top: 18px; left: 24px; display: block"><img src="/_blob/6c13802bc87c3805e6cc83316fd4567f" alt="" style="height: 56px; display: block"></a>
+  <div style="position: absolute; top: 18px; left: 100px; display: flex; align-items: center; gap: 12px"><img src="/_blob/45d37ae8e2735383fd9110fe39e4b7f4" alt="" style="height: 56px"><span style="font-size: 36px">{{tx.common_merchant}}</span><span class="f-dark-s" style="padding: 0 6px; height: 40px; display: flex; align-items: center; font-size: 13px">{{where}}</span></div>
+  <div class="f-dark-s" style="position: absolute; top: 18px; right: 24px; display: flex; align-items: center; gap: 8px; height: 56px; padding: 0 6px; font-size: 24px"><img src="/_blob/0f6ec1698dc6971c0a7fbf24da9d3abe" alt="{{tx.common_coin}}" style="height: 26px">{{coin}}</div>
+
+  <div class="f-dark" style="position: absolute; left: 24px; top: 96px; width: 760px; height: 600px; padding: 0 4px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: start">
+    <sc-for list="{{items}}" as="it" hint-placeholder-count="6">
+      <button type="button" class="{{it.cls}}" onClick="{{it.pick}}" aria-pressed="{{it.sel}}" style="height: 270px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: #1b1420; position: relative">
+        <sc-if value="{{it.syn}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; top: -4px; left: -4px; display: flex; align-items: center; gap: 4px; font-size: 11px; letter-spacing: 1px"><img src="/_blob/99c80cdd52c01dc18c8d675418d70347" alt="" style="height: 16px">{{tx.shop_role_match}}</span></sc-if>
+        <img src="{{it.img}}" alt="" style="width: 96px; margin-top: 18px">
+        <span style="font-size: 18px; text-align: center; line-height: 1.15">{{it.name}}</span>
+        <span style="font-size: 12px">{{it.kind}}</span>
+        <span style="display: flex; align-items: center; gap: 6px; font-size: 22px"><img src="/_blob/0f6ec1698dc6971c0a7fbf24da9d3abe" alt="" style="height: 20px">{{it.price}}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 800px; top: 96px; width: 456px; height: 600px; padding: 0 4px; display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; align-items: center; gap: 14px"><img src="{{cur.img}}" alt="" style="width: 96px"><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 26px; line-height: 1.1">{{cur.name}}</span><span style="font-size: 13px; color: #e6e9f2">{{cur.kind}}</span></div></div>
+    <div class="f-mid-s" style="display: flex; flex-direction: column; gap: 2px; padding: 2px 6px; color: #1b1420">
+      <sc-for list="{{cur.mods}}" as="m" hint-placeholder-count="2"><div style="font-size: 20px; color: #14532d">{{m}}</div></sc-for>
+    </div>
+    <div style="font-size: 14px; line-height: 1.5; color: {{cur.pc}}; font-style: {{cur.fs}}">{{cur.desc}}</div>
+    <div style="margin-top: auto; display: flex; flex-direction: column; gap: 8px; align-items: stretch">
+      <div style="font-size: 13px; color: #e6e9f2">{{msg}}</div>
+      <button type="button" class="f-light" onClick="{{buy}}" style="height: 76px; display: flex; align-items: center; justify-content: center; gap: 10px; color: #1b1420; font-size: 24px">{{tx.shop_buy}} <img src="/_blob/0f6ec1698dc6971c0a7fbf24da9d3abe" alt="" style="height: 22px">{{cur.price}}</button>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","vi"],"default":"en"},"context":{"editor":"enum","options":["lobby","run"],"default":"lobby"},"$preview":{"width":1280,"height":720}}'>
+const STR = { "common_coin": [ "Coin", "Coin" ], "common_merchant": [ "MERCHANT", "THƯƠNG NHÂN" ], "eq_no_role": [ "No Role effect.", "Không có hiệu ứng Role." ], "item_holy_shield": [ "Holy Shield", "Khiên Thánh" ], "item_ice_mask": [ "Ice Mask", "Mặt Nạ Băng" ], "item_potion": [ "Health Potion", "Bình Máu" ], "item_red_boots": [ "Red Boots", "Giày Đỏ" ], "item_wind_necklace": [ "Wind Necklace", "Dây Chuyền Gió" ], "shop_armor1": [ "+1 Armor", "+1 Giáp" ], "shop_armor2": [ "+2 Armor", "+2 Giáp" ], "shop_back_lobby": [ "lobby", "sảnh" ], "shop_back_run": [ "run", "trận" ], "shop_bought_lobby": [ "Bought · in bag, equip on the Gear screen.", "Đã mua · vào túi, mặc ở màn Trang bị." ], "shop_bought_run": [ "Bought · in bag, swap in lobby.", "Đã mua · vào túi, thay ở sảnh." ], "shop_bought_weapon": [ "Bought · sent to armory.", "Đã mua · vào kho vũ khí." ], "shop_buy": [ "BUY ·", "MUA ·" ], "shop_close": [ "Close, back to", "Đóng, quay lại" ], "shop_consumable": [ "Consumable", "Tiêu hao" ], "shop_crit5": [ "+5% Crit", "+5% Chí mạng" ], "shop_crit6": [ "+6% Crit", "+6% Chí mạng" ], "shop_fire_desc": [ "[Proposal] Every 5s, the next hit fires a cone of flame. Goes to the armory; set it on the Weapons screen.", "[Đề xuất] Mỗi 5s, đòn kế tiếp phóng sóng lửa hình nón. Vào kho vũ khí, đặt ở màn Vũ khí." ], "shop_fire_dmg": [ "28 damage", "28 sát thương" ], "shop_hint_lobby": [ "Talk to the Merchant in the lobby to open the shop.", "Nói chuyện với Thương nhân ở sảnh để mở cửa hàng." ], "shop_hint_run": [ "Stand near the ShopStand and press Interact to buy.", "Đứng gần ShopStand và bấm Interact để mua." ], "shop_hp30": [ "+30 HP", "+30 Máu" ], "shop_ice_dmg": [ "18 damage", "18 sát thương" ], "shop_kind_boots": [ "Boots · Any Role · F", "Giày · Mọi Role · F" ], "shop_kind_fire": [ "Weapon · Sword · S", "Vũ khí · Kiếm · S" ], "shop_kind_ice": [ "Weapon · Sword · B", "Vũ khí · Kiếm · B" ], "shop_kind_mask": [ "Helmet · Assassin · A", "Mũ · Assassin · A" ], "shop_kind_neck": [ "Accessory · Ranger · B", "Phụ kiện · Ranger · B" ], "shop_kind_purple": [ "Weapon · Melee · A", "Vũ khí · Melee · A" ], "shop_kind_shield": [ "Accessory · Warrior · C", "Phụ kiện · Warrior · C" ], "shop_mask_desc": [ "[Proposal] Assassin: hits from behind deal +50% damage.", "[Đề xuất] Assassin: đòn đánh sau lưng quái +50% sát thương." ], "shop_neck_desc": [ "[Proposal] Ranger: after a dash, the next hit is a guaranteed crit.", "[Đề xuất] Ranger: lướt xong, đòn kế tiếp chắc chắn chí mạng." ], "shop_no_coin": [ "Not enough coins.", "Không đủ coin." ], "shop_potion_desc": [ "Used on purchase. The only way to heal during a run.", "Dùng ngay khi mua. Cách duy nhất hồi Máu trong run." ], "shop_purple_desc": [ "[Proposal] Every 4th slash fires a long-range sword wave. Weapons have no Role Synergy.", "[Đề xuất] Đòn chém thứ 4 tạo vệt kiếm khí bay xa. Vũ khí không có Role Synergy." ], "shop_purple_dmg": [ "22 damage", "22 sát thương" ], "shop_rate09": [ "0.9 hits/s", "0.9 đòn/giây" ], "shop_rate10": [ "1.0 hits/s", "1.0 đòn/giây" ], "shop_role_match": [ "ROLE MATCH", "HỢP ROLE" ], "shop_role_miss": [ "Not Warrior: flat stats only.", "Khác Role Warrior: chỉ nhận chỉ số cộng thẳng." ], "shop_shield_desc": [ "[Proposal] Warrior: fully blocks 1 hit every 8s.", "[Đề xuất] Warrior: chặn hoàn toàn 1 đòn mỗi 8s." ], "shop_slow30": [ "Slow 30%", "Làm chậm 30%" ], "shop_spd10": [ "+10% Move speed", "+10% Tốc chạy" ], "shop_spd5": [ "+5% Move speed", "+5% Tốc chạy" ], "shop_used": [ "Used.", "Đã dùng." ], "shop_weapon_prefix": [ "Weapon", "Vũ khí" ], "shop_where_lobby": [ "LOBBY · permanent coins", "SẢNH · coin vĩnh viễn" ], "shop_where_run": [ "IN RUN · run coins", "TRONG RUN · coin của run" ], "sword_fire": [ "Flame Sword", "Kiếm Lửa" ], "sword_ice": [ "Frost Sword", "Kiếm Băng" ], "sword_purple": [ "Purple Sword", "Kiếm Tím" ], "wp_ice_passive": [ "[Proposal] Slashes slow enemies by 30% for 1s.", "[Đề xuất] Đòn chém làm chậm quái 30% trong 1s." ] };
+class Component extends DCLogic {
+  componentDidMount() {
+    this._dgLang = () => this.forceUpdate();
+    window.addEventListener('storage', this._dgLang);
+    window.addEventListener('dg-lang', this._dgLang);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this._dgLang);
+    window.removeEventListener('dg-lang', this._dgLang);
+  }
+  lang() {
+    let v = null;
+    try { v = window.localStorage.getItem('dg-lang'); } catch (e) {}
+    return v === 'vi' || v === 'en' ? v : (this.props.lang === 'vi' ? 'vi' : 'en');
+  }
+  setLang(v) {
+    try { window.localStorage.setItem('dg-lang', v); } catch (e) {}
+    try { window.dispatchEvent(new Event('dg-lang')); } catch (e) {}
+    this.forceUpdate();
+  }
+  font() { return this.lang() === 'vi' ? "'Tiny5', monospace" : "'Pixelify Sans', monospace"; }
+  strs() {
+    const i = this.lang() === 'vi' ? 1 : 0, o = {};
+    Object.keys(STR).forEach(k => { o[k] = STR[k][i]; });
+    return o;
+  }
+
+  constructor(p) { super(p); this.state = { sel: 0, spent: 0, bought: [] }; }
+  renderVals() {
+    const S = this.strs();
+    const s = this.state, lobby = (this.props.context ?? 'lobby') === 'lobby';
+    const coin = (lobby ? 1240 : 186) - s.spent;
+    const runItems = [
+      { name: S.sword_purple, kind: S.shop_kind_purple, img: '/_blob/8754d4b075f4006a02c3a5d853d5d553', price: 120, mods: [S.shop_purple_dmg, S.shop_rate09], desc: S.shop_purple_desc, syn: false, eq: false },
+      { name: S.item_holy_shield, kind: S.shop_kind_shield, img: '/_blob/6ff7a44d97180351d5fdcdf4866eb2e1', price: 60, mods: [S.shop_armor2], desc: S.shop_shield_desc, syn: true, eq: true },
+      { name: S.item_wind_necklace, kind: S.shop_kind_neck, img: '/_blob/0880aef328b4055631caaef46c3cb6c9', price: 80, mods: [S.shop_spd10, S.shop_crit5], desc: S.shop_neck_desc, syn: false, eq: true },
+      { name: S.item_ice_mask, kind: S.shop_kind_mask, img: '/_blob/2a6f9589d15bc1100402d4fb8fb1d362', price: 110, mods: [S.shop_armor1, S.shop_crit6], desc: S.shop_mask_desc, syn: false, eq: true },
+      { name: S.item_red_boots, kind: S.shop_kind_boots, img: '/_blob/dd15361189e053c56684a86e5e2b8086', price: 30, mods: [S.shop_spd5], desc: S.eq_no_role, syn: false, eq: false },
+      { name: S.item_potion, kind: S.shop_consumable, img: '/_blob/a0417d0afe6360b0c6cb9da68661b24c', price: 30, mods: [S.shop_hp30], desc: S.shop_potion_desc, syn: false, eq: false }
+    ];
+    const lobbyItems = [
+      { name: S.sword_fire, kind: S.shop_kind_fire, img: '/_blob/80806e9fc35f81456a89617880fd4176', price: 600, mods: [S.shop_fire_dmg, S.shop_rate10], desc: S.shop_fire_desc, syn: false, eq: false },
+      { name: S.sword_ice, kind: S.shop_kind_ice, img: '/_blob/b7309a422bec545deda9d4104492539e', price: 220, mods: [S.shop_ice_dmg, S.shop_slow30], desc: S.wp_ice_passive, syn: false, eq: false },
+      runItems[1], runItems[2], runItems[3], runItems[4]
+    ];
+    const items = lobby ? lobbyItems : runItems;
+    const c = items[s.sel];
+    const bought = s.bought.includes(s.sel);
+    const ok = coin >= c.price && !bought;
+    const roleMismatch = c.eq && !c.syn;
+    return { tx: S, font: this.font(),
+      coin: coin.toLocaleString('en-US'), where: lobby ? S.shop_where_lobby : S.shop_where_run, backHref: lobby ? 'UI-Lobby.dc.html' : 'UI-HUD.dc.html', backLabel: lobby ? S.shop_back_lobby : S.shop_back_run,
+      items: items.map((it, i) => ({ ...it, sel: i === s.sel ? 'true' : 'false', cls: i === s.sel ? 'f-light' : 'f-mid', pick: () => this.setState({ sel: i }) })),
+      cur: { ...c, pc: roleMismatch ? '#c9cdd8' : '#ffffff', fs: roleMismatch ? 'italic' : 'normal' },
+      msg: bought ? (c.kind.startsWith(S.shop_weapon_prefix) ? S.shop_bought_weapon : c.kind === S.shop_consumable ? S.shop_used : (lobby ? S.shop_bought_lobby : S.shop_bought_run)) : (coin < c.price ? S.shop_no_coin : (roleMismatch ? S.shop_role_miss : (lobby ? S.shop_hint_lobby : S.shop_hint_run))),
+      buy: () => { if (ok) this.setState({ spent: s.spent + c.price, bought: [...s.bought, s.sel] }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

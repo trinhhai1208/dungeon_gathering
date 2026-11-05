@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: f8cd9e97b35dd414483eeed36fbcfbd2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: sprite-sheet_0
+  - first:
+      213: -1426790471357470633
+    second: sprite-sheet_1
+  - first:
+      213: -2506210909196879853
+    second: sprite-sheet_2
+  - first:
+      213: -8907015550746980148
+    second: sprite-sheet_3
+  - first:
+      213: -3085487725770422062
+    second: sprite-sheet_4
+  - first:
+      213: -7371053094594084745
+    second: sprite-sheet_5
+  - first:
+      213: -3062665138650254500
+    second: sprite-sheet_6
+  - first:
+      213: -1924591734268745998
+    second: sprite-sheet_7
+  - first:
+      213: 2940483688060090369
+    second: sprite-sheet_8
+  - first:
+      213: 4123475054659131201
+    second: sprite-sheet_9
+  - first:
+      213: -7328016140542092180
+    second: sprite-sheet_10
+  - first:
+      213: 573168479056981123
+    second: sprite-sheet_11
+  - first:
+      213: -2052979034590239150
+    second: sprite-sheet_12
+  - first:
+      213: -599754731956233123
+    second: sprite-sheet_13
+  - first:
+      213: 8364850724636403409
+    second: sprite-sheet_14
+  - first:
+      213: -6650122099543898603
+    second: sprite-sheet_15
+  - first:
+      213: -4952747364788223248
+    second: sprite-sheet_16
+  - first:
+      213: -4558533973277291694
+    second: sprite-sheet_17
+  - first:
+      213: 192454500139917738
+    second: sprite-sheet_18
+  - first:
+      213: -3988586098559631296
+    second: sprite-sheet_19
+  - first:
+      213: 4585784099227081989
+    second: sprite-sheet_20
+  - first:
+      213: 7910205142894628472
+    second: sprite-sheet_21
+  - first:
+      213: -5453835138508083989
+    second: sprite-sheet_22
+  - first:
+      213: 1334599240327533485
+    second: sprite-sheet_23
+  - first:
+      213: -6627865198301778148
+    second: sprite-sheet_24
+  - first:
+      213: -260948941826079365
+    second: sprite-sheet_25
+  - first:
+      213: 7410530569769358565
+    second: sprite-sheet_26
+  - first:
+      213: -576870600854793513
+    second: sprite-sheet_27
+  - first:
+      213: -4818556106472641470
+    second: sprite-sheet_28
+  - first:
+      213: -2579015654255774944
+    second: sprite-sheet_29
+  - first:
+      213: -5849064155817607363
+    second: sprite-sheet_30
+  - first:
+      213: -7150693180217069502
+    second: sprite-sheet_31
+  - first:
+      213: 8586753166698750598
+    second: sprite-sheet_32
+  - first:
+      213: -1881072028268831973
+    second: sprite-sheet_33
+  - first:
+      213: 3323518892673604388
+    second: sprite-sheet_34
+  - first:
+      213: 4358674376539340698
+    second: sprite-sheet_35
+  - first:
+      213: -5415372385674030642
+    second: sprite-sheet_36
+  - first:
+      213: -8377541152210016672
+    second: sprite-sheet_37
+  - first:
+      213: -9057413479102639183
+    second: sprite-sheet_38
+  - first:
+      213: 6894929934875589815
+    second: curse_0
+  - first:
+      213: 6677409377973552444
+    second: curse_1
+  - first:
+      213: 4954194803443919842
+    second: curse_2
+  - first:
+      213: 9122183769907020171
+    second: curse_3
+  - first:
+      213: 4779285532181880893
+    second: curse_4
+  - first:
+      213: -3257860123689160136
+    second: curse_5
+  - first:
+      213: -5306052072337606692
+    second: curse_6
+  - first:
+      213: 1402368700516795250
+    second: curse_7
+  - first:
+      213: 2904338761942096472
+    second: curse_8
+  - first:
+      213: 2896880974203920795
+    second: curse_9
+  - first:
+      213: 5343321765997709535
+    second: curse_10
+  - first:
+      213: -9011011618119778237
+    second: curse_11
+  - first:
+      213: 4956690372044837209
+    second: curse_12
+  - first:
+      213: -8391610982976024414
+    second: curse_13
+  - first:
+      213: 2924104365114341624
+    second: curse_14
+  - first:
+      213: -8742904267270727945
+    second: curse_15
+  - first:
+      213: 9032387046677005595
+    second: curse_16
+  - first:
+      213: 4311023638274469825
+    second: curse_17
+  - first:
+      213: 3360221786676464817
+    second: curse_18
+  - first:
+      213: 9016946812389229564
+    second: curse_19
+  - first:
+      213: 7905181732174890189
+    second: curse_20
+  - first:
+      213: 4289810989744747218
+    second: curse_21
+  - first:
+      213: 2528748328600080047
+    second: curse_22
+  - first:
+      213: -9109656008852532774
+    second: curse_23
+  - first:
+      213: 7770194430070939099
+    second: curse_24
+  - first:
+      213: -3896384438697225944
+    second: curse_25
+  - first:
+      213: -3810722043512187915
+    second: curse_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: curse_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc777fae36bfaf50800000000000000
+      internalID: 6894929934875589815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c35c9f9637ceaac50800000000000000
+      internalID: 6677409377973552444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb6c5fdce5d0c440800000000000000
+      internalID: 4954194803443919842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81442daec1889e70800000000000000
+      internalID: 9122183769907020171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d306dd9aede635240800000000000000
+      internalID: 4779285532181880893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 832f8977a71c9c2d0800000000000000
+      internalID: -3257860123689160136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd7779cb0cd1d56b0800000000000000
+      internalID: -5306052072337606692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 336
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2730e6e27e6367310800000000000000
+      internalID: 1402368700516795250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ad4f457b84e4820800000000000000
+      internalID: 2904338761942096472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b912300d5e9c33820800000000000000
+      internalID: 2896880974203920795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd808e606da472a40800000000000000
+      internalID: 5343321765997709535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3408d0bfca472f280800000000000000
+      internalID: -9011011618119778237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 951d457b1a3b9c440800000000000000
+      internalID: 4956690372044837209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0927a85420b8b80800000000000000
+      internalID: -8391610982976024414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f83fc07d61849820800000000000000
+      internalID: 2924104365114341624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_15
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 224
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f6d41c04e6faa680800000000000000
+      internalID: -8742904267270727945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15c50fc92c795d70800000000000000
+      internalID: 9032387046677005595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf69a18825d3db30800000000000000
+      internalID: 4311023638274469825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bc016969e7e1ae20800000000000000
+      internalID: 3360221786676464817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf30d0f1a51a22d70800000000000000
+      internalID: 9016946812389229564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc40137e6e8d4bd60800000000000000
+      internalID: 7905181732174890189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_21
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d27d45ed58788b30800000000000000
+      internalID: 4289810989744747218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fae029cf43be71320800000000000000
+      internalID: 2528748328600080047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_23
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 112
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1975eff10049180800000000000000
+      internalID: -9109656008852532774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bddd8187aa645db60800000000000000
+      internalID: 7770194430070939099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82197173ff24de9c0800000000000000
+      internalID: -3896384438697225944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: curse_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 112
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4107143}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f394b2dd789d1bc0800000000000000
+      internalID: -3810722043512187915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      curse_0: 6894929934875589815
+      curse_1: 6677409377973552444
+      curse_10: 5343321765997709535
+      curse_11: -9011011618119778237
+      curse_12: 4956690372044837209
+      curse_13: -8391610982976024414
+      curse_14: 2924104365114341624
+      curse_15: -8742904267270727945
+      curse_16: 9032387046677005595
+      curse_17: 4311023638274469825
+      curse_18: 3360221786676464817
+      curse_19: 9016946812389229564
+      curse_2: 4954194803443919842
+      curse_20: 7905181732174890189
+      curse_21: 4289810989744747218
+      curse_22: 2528748328600080047
+      curse_23: -9109656008852532774
+      curse_24: 7770194430070939099
+      curse_25: -3896384438697225944
+      curse_26: -3810722043512187915
+      curse_3: 9122183769907020171
+      curse_4: 4779285532181880893
+      curse_5: -3257860123689160136
+      curse_6: -5306052072337606692
+      curse_7: 1402368700516795250
+      curse_8: 2904338761942096472
+      curse_9: 2896880974203920795
+      sprite-sheet_0: 7773031391787181946
+      sprite-sheet_1: -1426790471357470633
+      sprite-sheet_10: -7328016140542092180
+      sprite-sheet_11: 573168479056981123
+      sprite-sheet_12: -2052979034590239150
+      sprite-sheet_13: -599754731956233123
+      sprite-sheet_14: 8364850724636403409
+      sprite-sheet_15: -6650122099543898603
+      sprite-sheet_16: -4952747364788223248
+      sprite-sheet_17: -4558533973277291694
+      sprite-sheet_18: 192454500139917738
+      sprite-sheet_19: -3988586098559631296
+      sprite-sheet_2: -2506210909196879853
+      sprite-sheet_20: 4585784099227081989
+      sprite-sheet_21: 7910205142894628472
+      sprite-sheet_22: -5453835138508083989
+      sprite-sheet_23: 1334599240327533485
+      sprite-sheet_24: -6627865198301778148
+      sprite-sheet_25: -260948941826079365
+      sprite-sheet_26: 7410530569769358565
+      sprite-sheet_27: -576870600854793513
+      sprite-sheet_28: -4818556106472641470
+      sprite-sheet_29: -2579015654255774944
+      sprite-sheet_3: -8907015550746980148
+      sprite-sheet_30: -5849064155817607363
+      sprite-sheet_31: -7150693180217069502
+      sprite-sheet_32: 8586753166698750598
+      sprite-sheet_33: -1881072028268831973
+      sprite-sheet_34: 3323518892673604388
+      sprite-sheet_35: 4358674376539340698
+      sprite-sheet_36: -5415372385674030642
+      sprite-sheet_37: -8377541152210016672
+      sprite-sheet_38: -9057413479102639183
+      sprite-sheet_4: -3085487725770422062
+      sprite-sheet_5: -7371053094594084745
+      sprite-sheet_6: -3062665138650254500
+      sprite-sheet_7: -1924591734268745998
+      sprite-sheet_8: 2940483688060090369
+      sprite-sheet_9: 4123475054659131201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Enemies_Dungeon
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Enemies_Dungeon
+  m_GUID: 72410e5c825dc204292225093679b3af
+  m_SerializeEntries:
+  - m_GUID: 44fd4bbc36af0f5418d347b2befc3d00
+    m_Address: enemy/zombie
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54ccd536d57d26e4199e94e998e90013
+    m_Address: boss/elite-vampire
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 579a651852a011a4e94a8a600cbeaead
+    m_Address: enemy/skull
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c3ae17edae397c4b83a31ad46960363
+    m_Address: enemy/skeleton-warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1573e0907479b5448dd151880177580
+    m_Address: boss/elite-warrior
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c01340b25f8ccd748955ab29fe91665b
+    m_Address: enemy/skeleton-spear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c62bc986e02c2f949bd74a471501c84e
+    m_Address: enemy/vampire
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - enemies-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 54ec67e5e38dfa3449ed30b3e068c979, type: 2}
+    - {fileID: 11400000, guid: 054a4c7751606934ea30fb39dc9ef9c6, type: 2}

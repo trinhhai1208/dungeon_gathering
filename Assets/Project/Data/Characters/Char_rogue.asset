@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164143709f3901b45a8e7df499848c3f, type: 3}
+  m_Name: Char_rogue
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.CharacterData
+  characterId: rogue
+  nameKey: char.rogue.name
+  descKey: char.rogue.desc
+  role: 4
+  unlockPrice: 800
+  released: 0
+  portrait: {fileID: 7812070969208665739, guid: 3aca81b0ecb075f4ea381b3db2bb4e29, type: 3}
+  animator: {fileID: 0}
+  baseStats:
+    maxHp: 5
+    maxArmor: 3
+    maxMana: 140
+    attackDamage: 1
+    attackSpeed: 1.2
+    moveSpeed: 5.5
+    critChance: 0.2
+  armorRegenDelay: 4
+  armorRegenRate: 1
+  manaRegen: 2
+  startingWeapon: {fileID: 11400000, guid: c95ac0d2760e4a14a9d99d129517b709, type: 2}
+  activeSkill: {fileID: 0}

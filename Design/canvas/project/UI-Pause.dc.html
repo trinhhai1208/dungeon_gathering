@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pause &amp; Settings</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&amp;family=Tiny5&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#efe6dc}a:hover{color:#f2b33d}
+img{image-rendering:pixelated}
+button{font:inherit;color:inherit;background:none;margin:0;padding:0;border:0;cursor:pointer}
+.f-dark,.f-dark-s,.f-mid,.f-mid-s,.f-light,.f-light-s,.f-btn,.f-btn-s,.f-slot{border-style:solid;image-rendering:pixelated;box-sizing:border-box}
+.f-dark{border-width:24px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 24px stretch}
+.f-dark-s{border-width:12px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 12px stretch}
+.f-mid{border-width:24px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 24px stretch}
+.f-mid-s{border-width:12px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 12px stretch}
+.f-light{border-width:24px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 24px stretch}
+.f-light-s{border-width:12px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 12px stretch}
+.f-btn{border-width:24px;border-image:url(/_blob/3fa1daebff64e0db2fa846fc67ed87d9) 24 fill / 24px stretch}
+.f-btn-s{border-width:12px;border-image:url(/_blob/3fa1daebff64e0db2fa846fc67ed87d9) 24 fill / 12px stretch}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #1b1420; color: #efe6dc; font-family: {{font}}">
+  <img src="/_blob/1e99563c5c5f5bd4e09f4c4a3cbfdea0" alt="" style="position: absolute; left: 32px; top: -60px; width: 1216px; height: 960px; opacity: 0.35">
+  <div style="position: absolute; inset: 0; background: rgba(27,20,32,0.6)"></div>
+
+  <div class="f-dark" style="position: absolute; left: 130px; top: 60px; width: 470px; height: 600px; padding: 4px; display: flex; flex-direction: column; gap: 16px">
+    <div style="font-size: 44px; line-height: 1">{{tx.pause_title}}</div>
+    <div class="f-mid-s" style="display: flex; gap: 14px; align-items: center; padding: 2px 4px; color: #1b1420">
+      <img src="/_blob/74e8cf0ba507499ee8499fb411e8c035" alt="" style="height: 60px">
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; font-size: 14px; flex: 1">
+        <div>{{tx.pause_class}}</div><div style="font-weight: 700">Knight · Warrior</div>
+        <div>{{tx.stat_floor}}</div><div style="font-weight: 700">1-3</div>
+        <div>{{tx.stat_time}}</div><div style="font-variant-numeric: tabular-nums">06:42</div>
+        <div>{{tx.stat_kills}}</div><div style="font-weight: 700">23</div>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 6px">
+      <div style="display: flex; gap: 6px; align-items: center">
+        <img src="/_blob/c23b64f4ab8221b90c0a1070dbee108c" alt="{{tx.sword_iron_lc}}" style="width: 56px">
+        <img src="/_blob/b7309a422bec545deda9d4104492539e" alt="{{tx.sword_ice}}" style="width: 56px">
+        <span style="width: 8px"></span>
+        <img src="/_blob/7ffc1a1317705ba00a00a3429fc03a92" alt="{{tx.item_horn}}" style="width: 48px">
+        <img src="/_blob/c53749c8a73f92a192d18c89bebe71e4" alt="{{tx.item_fire_armor}}" style="width: 48px">
+        <img src="/_blob/3b2479ad5a3406938c4332bace4c62e7" alt="{{tx.item_night_gloves}}" style="width: 48px">
+        <img src="/_blob/ff0663a6673101cad686807c05ac5011" alt="{{tx.item_wind_boots}}" style="width: 48px">
+        <img src="/_blob/d74730072c3d826fbcbf102a822c8485" alt="{{tx.item_rune_book}}" style="width: 48px">
+      </div>
+      <div style="font-size: 13px; color: #e6e9f2">{{tx.pause_gear_note}}</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto">
+      <a href="UI-HUD.dc.html" class="f-light" style="display: flex; justify-content: center; padding: 0; height: 72px; align-items: center; color: #1b1420; text-decoration: none; font-size: 26px">{{tx.common_continue}}</a>
+      <a href="UI-RunEnd.dc.html" class="f-btn" style="display: flex; justify-content: center; align-items: center; gap: 10px; padding: 0; height: 64px; color: #1b1420; text-decoration: none; font-size: 20px">{{tx.pause_quit}}</a>
+    </div>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 640px; top: 60px; width: 510px; height: 600px; padding: 4px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; gap: 12px"><img src="/_blob/bd98f4a6dc99486bb86cc8cab365bcc0" alt="" style="height: 48px"><div style="font-size: 34px">{{tx.pause_settings}}</div></div>
+    <sc-for list="{{vols}}" as="v" hint-placeholder-count="2">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div style="display: flex; align-items: center; gap: 10px; font-size: 15px"><img src="{{v.icon}}" alt="" style="height: 36px">{{v.label}}<span style="margin-left: auto; font-size: 18px">{{v.pct}}%</span></div>
+        <div style="display: flex; align-items: center; gap: 8px">
+          <button type="button" onClick="{{v.dec}}" aria-label="{{tx.pause_dec}} {{v.label}}"><img src="/_blob/6c13802bc87c3805e6cc83316fd4567f" alt="" style="height: 48px; display: block"></button>
+          <div style="display: flex; gap: 3px; flex: 1; justify-content: center"><sc-for list="{{v.cells}}" as="c" hint-placeholder-count="10"><img src="{{c}}" alt="" style="height: 26px"></sc-for></div>
+          <button type="button" onClick="{{v.inc}}" aria-label="{{tx.pause_inc}} {{v.label}}"><img src="/_blob/22809a33cb74678617fb4dabe8444757" alt="" style="height: 48px; display: block"></button>
+        </div>
+      </div>
+    </sc-for>
+    <sc-for list="{{toggles}}" as="t" hint-placeholder-count="2">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px">{{t.label}}</span><span style="font-size: 13px; color: #e6e9f2">{{t.hint}}</span></div>
+        <button type="button" class="{{t.cls}}" onClick="{{t.flip}}" aria-pressed="{{t.pressed}}" aria-label="{{t.label}}" style="width: 104px; height: 56px; flex: none; display: flex; align-items: center; justify-content: center; font-size: 18px; color: {{t.fg}}">{{t.text}}</button>
+      </div>
+    </sc-for>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+      <span style="font-size: 16px">{{tx.common_lang}}</span>
+      <div style="display: flex; gap: 10px">
+        <sc-for list="{{langs}}" as="l" hint-placeholder-count="2">
+          <button type="button" class="{{l.cls}}" onClick="{{l.pick}}" aria-pressed="{{l.on}}" aria-label="{{l.name}}" style="height: 64px; padding: 0 6px; display: flex; align-items: center; gap: 8px; color: {{l.fg}}; font-size: 16px"><img src="{{l.flag}}" alt="" style="width: 60px; height: 42px; display: block">{{l.code}}</button>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","vi"],"default":"en"},"$preview":{"width":1280,"height":720}}'>
+const STR = {"common_lang": ["Language", "Ngôn ngữ"],  "common_continue": [ "CONTINUE", "TIẾP TỤC" ], "common_off": [ "OFF", "TẮT" ], "common_on": [ "ON", "BẬT" ], "item_fire_armor": [ "Flame Knight Armor", "Giáp Lửa Kỵ Sĩ" ], "item_horn": [ "Horn Helm", "Mũ Sừng" ], "item_night_gloves": [ "Nightshade Gloves", "Găng Tay Bóng Đêm" ], "item_rune_book": [ "Ancient Rune Book", "Sách Cổ Ngữ" ], "item_wind_boots": [ "Windstep Boots", "Giày Phong Vũ" ], "pause_aim": [ "Auto-Aim", "Auto-Aim" ], "pause_aim_hint": [ "Turn the sword to the nearest enemy", "Tự quay kiếm về quái gần nhất" ], "pause_bgm": [ "Music", "Nhạc nền" ], "pause_class": [ "Class", "Lớp" ], "pause_dec": [ "Lower", "Giảm" ], "pause_gear_note": [ "2 weapons · worn gear · active 2/2 · bag: 3 new items (swap in lobby)", "2 vũ khí · trang bị đang mặc · kích hoạt 2/2 · túi: 3 món mới (thay ở sảnh)" ], "pause_inc": [ "Raise", "Tăng" ], "pause_quit": [ "TO LOBBY (quit run)", "VỀ SẢNH (bỏ run)" ], "pause_settings": [ "SETTINGS", "CÀI ĐẶT" ], "pause_sfx": [ "Effects", "Hiệu ứng" ], "pause_title": [ "PAUSED", "TẠM DỪNG" ], "pause_vib": [ "Vibration", "Rung" ], "pause_vib_hint": [ "Vibrate on hit and on Boss kill", "Rung khi trúng đòn và khi hạ Boss" ], "stat_floor": [ "Floor", "Tầng" ], "stat_kills": [ "Kills", "Hạ quái" ], "stat_time": [ "Time", "Thời gian" ], "sword_ice": [ "Frost Sword", "Kiếm Băng" ], "sword_iron_lc": [ "Iron Sword", "Kiếm sắt" ] };
+class Component extends DCLogic {
+  componentDidMount() {
+    this._dgLang = () => this.forceUpdate();
+    window.addEventListener('storage', this._dgLang);
+    window.addEventListener('dg-lang', this._dgLang);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this._dgLang);
+    window.removeEventListener('dg-lang', this._dgLang);
+  }
+  lang() {
+    let v = null;
+    try { v = window.localStorage.getItem('dg-lang'); } catch (e) {}
+    return v === 'vi' || v === 'en' ? v : (this.props.lang === 'vi' ? 'vi' : 'en');
+  }
+  setLang(v) {
+    try { window.localStorage.setItem('dg-lang', v); } catch (e) {}
+    try { window.dispatchEvent(new Event('dg-lang')); } catch (e) {}
+    this.forceUpdate();
+  }
+  font() { return this.lang() === 'vi' ? "'Tiny5', monospace" : "'Pixelify Sans', monospace"; }
+  strs() {
+    const i = this.lang() === 'vi' ? 1 : 0, o = {};
+    Object.keys(STR).forEach(k => { o[k] = STR[k][i]; });
+    return o;
+  }
+
+  constructor(p) { super(p); this.state = { bgm: 7, sfx: 9, aim: true, vib: false }; }
+  renderVals() {
+    const S = this.strs();
+    const s = this.state, ON = '/_blob/da08957845af8b412ad40c26cdca6a75', OFF = '/_blob/64d5edfdd86238a6f7bdd2bf59e93d79';
+    const vol = (key, label, icon) => ({
+      label, icon, pct: s[key] * 10,
+      cells: Array.from({ length: 10 }, (_, i) => i < s[key] ? ON : OFF),
+      dec: () => this.setState({ [key]: Math.max(0, s[key] - 1) }),
+      inc: () => this.setState({ [key]: Math.min(10, s[key] + 1) })
+    });
+    const tg = (key, label, hint) => ({
+      label, hint, pressed: s[key] ? 'true' : 'false',
+      cls: s[key] ? 'f-light-s' : 'f-dark-s', fg: s[key] ? '#1b1420' : '#efe6dc', text: s[key] ? S.common_on : S.common_off,
+      flip: () => this.setState({ [key]: !s[key] })
+    });
+    return { tx: S, font: this.font(),
+      langs: [['vi', 'VI', 'Tiếng Việt', '/_blob/87574eee0fe83b8dabf75477b285c709'], ['en', 'EN', 'English', '/_blob/e9f9b9e47cf8130bfd7483eefc8309f4']].map(([id, code, name, flag]) => {
+        const on = this.lang() === id;
+        return { code, name, flag, on: on ? 'true' : 'false', cls: on ? 'f-light-s' : 'f-dark-s', fg: on ? '#1b1420' : '#efe6dc', pick: () => this.setLang(id) };
+      }),
+      vols: [ vol('bgm', S.pause_bgm, '/_blob/02d99b5e7747d1edfa45d1efa6d80daf'), vol('sfx', S.pause_sfx, '/_blob/af5410a2c4a93a888d94d472e9ef0a7c') ],
+      toggles: [ tg('aim', S.pause_aim, S.pause_aim_hint), tg('vib', S.pause_vib, S.pause_vib_hint) ]
+    };
+  }
+}
+</script>
+</body>
+</html>

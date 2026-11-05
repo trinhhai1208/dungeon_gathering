@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 8f070c1677a5aa8428eba6a2cc9c843a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: sprite-sheet_0
+  - first:
+      213: -1426790471357470633
+    second: sprite-sheet_1
+  - first:
+      213: -2506210909196879853
+    second: sprite-sheet_2
+  - first:
+      213: -8907015550746980148
+    second: sprite-sheet_3
+  - first:
+      213: -3085487725770422062
+    second: sprite-sheet_4
+  - first:
+      213: -7371053094594084745
+    second: sprite-sheet_5
+  - first:
+      213: -3062665138650254500
+    second: sprite-sheet_6
+  - first:
+      213: -1924591734268745998
+    second: sprite-sheet_7
+  - first:
+      213: 2940483688060090369
+    second: sprite-sheet_8
+  - first:
+      213: 4123475054659131201
+    second: sprite-sheet_9
+  - first:
+      213: -7328016140542092180
+    second: sprite-sheet_10
+  - first:
+      213: 573168479056981123
+    second: sprite-sheet_11
+  - first:
+      213: -2052979034590239150
+    second: sprite-sheet_12
+  - first:
+      213: -599754731956233123
+    second: sprite-sheet_13
+  - first:
+      213: 8364850724636403409
+    second: sprite-sheet_14
+  - first:
+      213: -6650122099543898603
+    second: sprite-sheet_15
+  - first:
+      213: -4952747364788223248
+    second: sprite-sheet_16
+  - first:
+      213: -4558533973277291694
+    second: sprite-sheet_17
+  - first:
+      213: 192454500139917738
+    second: sprite-sheet_18
+  - first:
+      213: -3988586098559631296
+    second: sprite-sheet_19
+  - first:
+      213: 4585784099227081989
+    second: sprite-sheet_20
+  - first:
+      213: 7910205142894628472
+    second: sprite-sheet_21
+  - first:
+      213: -5453835138508083989
+    second: sprite-sheet_22
+  - first:
+      213: 1334599240327533485
+    second: sprite-sheet_23
+  - first:
+      213: -6627865198301778148
+    second: sprite-sheet_24
+  - first:
+      213: -260948941826079365
+    second: sprite-sheet_25
+  - first:
+      213: 7410530569769358565
+    second: sprite-sheet_26
+  - first:
+      213: -576870600854793513
+    second: sprite-sheet_27
+  - first:
+      213: -4818556106472641470
+    second: sprite-sheet_28
+  - first:
+      213: -2579015654255774944
+    second: sprite-sheet_29
+  - first:
+      213: -5849064155817607363
+    second: sprite-sheet_30
+  - first:
+      213: -7150693180217069502
+    second: sprite-sheet_31
+  - first:
+      213: 8586753166698750598
+    second: sprite-sheet_32
+  - first:
+      213: -1881072028268831973
+    second: sprite-sheet_33
+  - first:
+      213: 3323518892673604388
+    second: sprite-sheet_34
+  - first:
+      213: 4358674376539340698
+    second: sprite-sheet_35
+  - first:
+      213: -5415372385674030642
+    second: sprite-sheet_36
+  - first:
+      213: -8377541152210016672
+    second: sprite-sheet_37
+  - first:
+      213: -9057413479102639183
+    second: sprite-sheet_38
+  - first:
+      213: -666522333043579535
+    second: sprite-sheet_39
+  - first:
+      213: -6367429555072558050
+    second: sprite-sheet_40
+  - first:
+      213: -2555984197896547298
+    second: sprite-sheet_41
+  - first:
+      213: 4119624559787451193
+    second: sprite-sheet_42
+  - first:
+      213: 5693928975956558133
+    second: sprite-sheet_43
+  - first:
+      213: -6656713893227441336
+    second: sprite-sheet_44
+  - first:
+      213: -3170275824180026498
+    second: sprite-sheet_45
+  - first:
+      213: -1202161053390842638
+    second: sprite-sheet_46
+  - first:
+      213: -6462548254926894001
+    second: sprite-sheet_47
+  - first:
+      213: -9152561538167434704
+    second: sprite-sheet_48
+  - first:
+      213: -6481807663511273300
+    second: sprite-sheet_49
+  - first:
+      213: 2004642959564479735
+    second: sprite-sheet_50
+  - first:
+      213: -7791906488117113912
+    second: sprite-sheet_51
+  - first:
+      213: 1361885084696287952
+    second: sprite-sheet_52
+  - first:
+      213: 2837955390697593690
+    second: sprite-sheet_53
+  - first:
+      213: 698192235857672500
+    second: sprite-sheet_54
+  - first:
+      213: -356921412501542221
+    second: sprite-sheet_55
+  - first:
+      213: -7045386414016817542
+    second: sprite-sheet_56
+  - first:
+      213: 7171855863094968449
+    second: sprite-sheet_57
+  - first:
+      213: 4263846846056321979
+    second: sprite-sheet_58
+  - first:
+      213: -4630944412281283851
+    second: sprite-sheet_59
+  - first:
+      213: 2618808410244790396
+    second: sprite-sheet_60
+  - first:
+      213: 2795016883442299630
+    second: sprite-sheet_61
+  - first:
+      213: 8411149080903120891
+    second: sprite-sheet_62
+  - first:
+      213: -2189619333375998213
+    second: sprite-sheet_63
+  - first:
+      213: 6343034514782461771
+    second: sprite-sheet_64
+  - first:
+      213: -2120906408079667602
+    second: sprite-sheet_65
+  - first:
+      213: 7526071954347184349
+    second: sprite-sheet_66
+  - first:
+      213: -1825632140400186248
+    second: sprite-sheet_67
+  - first:
+      213: 5097349114197365233
+    second: sprite-sheet_68
+  - first:
+      213: -1476467260587343275
+    second: sprite-sheet_69
+  - first:
+      213: -1116472461916682122
+    second: sprite-sheet_70
+  - first:
+      213: -6503603696017769773
+    second: sprite-sheet_71
+  - first:
+      213: -5639023789736551593
+    second: sprite-sheet_72
+  - first:
+      213: 1560468509149753182
+    second: sprite-sheet_73
+  - first:
+      213: 6186885507555390087
+    second: sprite-sheet_74
+  - first:
+      213: -3716630357400187344
+    second: sprite-sheet_75
+  - first:
+      213: -4563773482389391755
+    second: sprite-sheet_76
+  - first:
+      213: -8124891151345785089
+    second: sprite-sheet_77
+  - first:
+      213: -3008414969239136308
+    second: sprite-sheet_78
+  - first:
+      213: 3265471381764963667
+    second: sprite-sheet_79
+  - first:
+      213: -8989968933460827138
+    second: sprite-sheet_80
+  - first:
+      213: 6333822017459196935
+    second: sprite-sheet_81
+  - first:
+      213: -4825729505180291346
+    second: sprite-sheet_82
+  - first:
+      213: -2599722262859573220
+    second: sprite-sheet_83
+  - first:
+      213: 7427453103625178625
+    second: sprite-sheet_84
+  - first:
+      213: -3413660542491729403
+    second: sprite-sheet_85
+  - first:
+      213: 3172520383287296319
+    second: sprite-sheet_86
+  - first:
+      213: -5600892236678766987
+    second: sprite-sheet_87
+  - first:
+      213: 8677906948529670312
+    second: sprite-sheet_88
+  - first:
+      213: 2775447716722235074
+    second: sprite-sheet_89
+  - first:
+      213: 6747165812129993417
+    second: sprite-sheet_90
+  - first:
+      213: 8344740937980804128
+    second: bleeding_0
+  - first:
+      213: 827361036592994766
+    second: bleeding_1
+  - first:
+      213: -3536089490519222457
+    second: bleeding_2
+  - first:
+      213: 2671467913873401697
+    second: bleeding_3
+  - first:
+      213: 6788983659311853594
+    second: bleeding_4
+  - first:
+      213: 1208806727567380673
+    second: bleeding_5
+  - first:
+      213: -8432827958941951139
+    second: bleeding_6
+  - first:
+      213: 8026910953656229478
+    second: bleeding_7
+  - first:
+      213: 5162224718545878785
+    second: bleeding_8
+  - first:
+      213: -4320957621052708679
+    second: bleeding_9
+  - first:
+      213: -3355670134043404526
+    second: bleeding_10
+  - first:
+      213: 2288387610194978877
+    second: bleeding_11
+  - first:
+      213: -5658512017701555945
+    second: bleeding_12
+  - first:
+      213: 6022910595316525450
+    second: bleeding_13
+  - first:
+      213: 710099532784809817
+    second: bleeding_14
+  - first:
+      213: -5849738103516985562
+    second: bleeding_15
+  - first:
+      213: -5102658634760080527
+    second: bleeding_16
+  - first:
+      213: -8241541601301943079
+    second: bleeding_17
+  - first:
+      213: 6579445572730109905
+    second: bleeding_18
+  - first:
+      213: 102338361401852038
+    second: bleeding_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bleeding_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c7107bba97ec370800000000000000
+      internalID: 8344740937980804128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9df1faa706b7b00800000000000000
+      internalID: 827361036592994766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7471c97e7594deec0800000000000000
+      internalID: -3536089490519222457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1672743e9e5f21520800000000000000
+      internalID: 2671467913873401697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_4
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10f6372ba0573e50800000000000000
+      internalID: 6788983659311853594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c091ce605b86c010800000000000000
+      internalID: 1208806727567380673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b584f76a398fa80800000000000000
+      internalID: -8432827958941951139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e1f54ebf0556f60800000000000000
+      internalID: 8026910953656229478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ffaa7e708e3a740800000000000000
+      internalID: 5162224718545878785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_9
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8e2a3efefd804c0800000000000000
+      internalID: -4320957621052708679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_10
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21794fccac34e61d0800000000000000
+      internalID: -3355670134043404526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_11
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38a316386cf1cf10800000000000000
+      internalID: 2288387610194978877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_12
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711be9bcc4de871b0800000000000000
+      internalID: -5658512017701555945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_13
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8927c3964da59350800000000000000
+      internalID: 6022910595316525450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9573fc643c7cad900800000000000000
+      internalID: 710099532784809817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_15
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 56
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6278dc6203e81dea0800000000000000
+      internalID: -5849738103516985562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173bb09b107bf29b0800000000000000
+      internalID: -5102658634760080527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc2bc4449920ad80800000000000000
+      internalID: -8241541601301943079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_18
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df389593e2ee4b50800000000000000
+      internalID: 6579445572730109905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleeding_19
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 40
+        height: 56
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680c04e82349b6100800000000000000
+      internalID: 102338361401852038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bleeding_0: 8344740937980804128
+      bleeding_1: 827361036592994766
+      bleeding_10: -3355670134043404526
+      bleeding_11: 2288387610194978877
+      bleeding_12: -5658512017701555945
+      bleeding_13: 6022910595316525450
+      bleeding_14: 710099532784809817
+      bleeding_15: -5849738103516985562
+      bleeding_16: -5102658634760080527
+      bleeding_17: -8241541601301943079
+      bleeding_18: 6579445572730109905
+      bleeding_19: 102338361401852038
+      bleeding_2: -3536089490519222457
+      bleeding_3: 2671467913873401697
+      bleeding_4: 6788983659311853594
+      bleeding_5: 1208806727567380673
+      bleeding_6: -8432827958941951139
+      bleeding_7: 8026910953656229478
+      bleeding_8: 5162224718545878785
+      bleeding_9: -4320957621052708679
+      sprite-sheet_0: 7773031391787181946
+      sprite-sheet_1: -1426790471357470633
+      sprite-sheet_10: -7328016140542092180
+      sprite-sheet_11: 573168479056981123
+      sprite-sheet_12: -2052979034590239150
+      sprite-sheet_13: -599754731956233123
+      sprite-sheet_14: 8364850724636403409
+      sprite-sheet_15: -6650122099543898603
+      sprite-sheet_16: -4952747364788223248
+      sprite-sheet_17: -4558533973277291694
+      sprite-sheet_18: 192454500139917738
+      sprite-sheet_19: -3988586098559631296
+      sprite-sheet_2: -2506210909196879853
+      sprite-sheet_20: 4585784099227081989
+      sprite-sheet_21: 7910205142894628472
+      sprite-sheet_22: -5453835138508083989
+      sprite-sheet_23: 1334599240327533485
+      sprite-sheet_24: -6627865198301778148
+      sprite-sheet_25: -260948941826079365
+      sprite-sheet_26: 7410530569769358565
+      sprite-sheet_27: -576870600854793513
+      sprite-sheet_28: -4818556106472641470
+      sprite-sheet_29: -2579015654255774944
+      sprite-sheet_3: -8907015550746980148
+      sprite-sheet_30: -5849064155817607363
+      sprite-sheet_31: -7150693180217069502
+      sprite-sheet_32: 8586753166698750598
+      sprite-sheet_33: -1881072028268831973
+      sprite-sheet_34: 3323518892673604388
+      sprite-sheet_35: 4358674376539340698
+      sprite-sheet_36: -5415372385674030642
+      sprite-sheet_37: -8377541152210016672
+      sprite-sheet_38: -9057413479102639183
+      sprite-sheet_39: -666522333043579535
+      sprite-sheet_4: -3085487725770422062
+      sprite-sheet_40: -6367429555072558050
+      sprite-sheet_41: -2555984197896547298
+      sprite-sheet_42: 4119624559787451193
+      sprite-sheet_43: 5693928975956558133
+      sprite-sheet_44: -6656713893227441336
+      sprite-sheet_45: -3170275824180026498
+      sprite-sheet_46: -1202161053390842638
+      sprite-sheet_47: -6462548254926894001
+      sprite-sheet_48: -9152561538167434704
+      sprite-sheet_49: -6481807663511273300
+      sprite-sheet_5: -7371053094594084745
+      sprite-sheet_50: 2004642959564479735
+      sprite-sheet_51: -7791906488117113912
+      sprite-sheet_52: 1361885084696287952
+      sprite-sheet_53: 2837955390697593690
+      sprite-sheet_54: 698192235857672500
+      sprite-sheet_55: -356921412501542221
+      sprite-sheet_56: -7045386414016817542
+      sprite-sheet_57: 7171855863094968449
+      sprite-sheet_58: 4263846846056321979
+      sprite-sheet_59: -4630944412281283851
+      sprite-sheet_6: -3062665138650254500
+      sprite-sheet_60: 2618808410244790396
+      sprite-sheet_61: 2795016883442299630
+      sprite-sheet_62: 8411149080903120891
+      sprite-sheet_63: -2189619333375998213
+      sprite-sheet_64: 6343034514782461771
+      sprite-sheet_65: -2120906408079667602
+      sprite-sheet_66: 7526071954347184349
+      sprite-sheet_67: -1825632140400186248
+      sprite-sheet_68: 5097349114197365233
+      sprite-sheet_69: -1476467260587343275
+      sprite-sheet_7: -1924591734268745998
+      sprite-sheet_70: -1116472461916682122
+      sprite-sheet_71: -6503603696017769773
+      sprite-sheet_72: -5639023789736551593
+      sprite-sheet_73: 1560468509149753182
+      sprite-sheet_74: 6186885507555390087
+      sprite-sheet_75: -3716630357400187344
+      sprite-sheet_76: -4563773482389391755
+      sprite-sheet_77: -8124891151345785089
+      sprite-sheet_78: -3008414969239136308
+      sprite-sheet_79: 3265471381764963667
+      sprite-sheet_8: 2940483688060090369
+      sprite-sheet_80: -8989968933460827138
+      sprite-sheet_81: 6333822017459196935
+      sprite-sheet_82: -4825729505180291346
+      sprite-sheet_83: -2599722262859573220
+      sprite-sheet_84: 7427453103625178625
+      sprite-sheet_85: -3413660542491729403
+      sprite-sheet_86: 3172520383287296319
+      sprite-sheet_87: -5600892236678766987
+      sprite-sheet_88: 8677906948529670312
+      sprite-sheet_89: 2775447716722235074
+      sprite-sheet_9: 4123475054659131201
+      sprite-sheet_90: 6747165812129993417
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

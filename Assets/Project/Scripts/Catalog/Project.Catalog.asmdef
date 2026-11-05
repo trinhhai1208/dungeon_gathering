@@ -1,0 +1,6 @@
+{
+    "name": "Project.Catalog",
+    "rootNamespace": "DungeonGathering.Catalog",
+    "references": [ "Project.Core", "Unity.Addressables", "Unity.ResourceManager" ],
+    "autoReferenced": true
+}

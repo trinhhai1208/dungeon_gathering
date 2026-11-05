@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Theme_Dungeon
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Theme_Dungeon
+  m_GUID: 47509ff80ddd8e64b8f59171c5ef46b2
+  m_SerializeEntries:
+  - m_GUID: 035d300c57c117241846f21013b8a140
+    m_Address: theme/dungeon/roomtemplate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d153d98ddc227b49ad4cd9d1119fa3c
+    m_Address: theme/dungeon/room_treasure
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c99dd0ec1614b742b4d55310789c03b
+    m_Address: theme/dungeon/trap_flamehazard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 302dc583c3b18e24abfd1425cba3ed8d
+    m_Address: theme/dungeon/trap_spiketrigger
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34dc084db0ccb54469ae9730f6271d86
+    m_Address: theme/dungeon/room_combat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f772a6238b16344cb55a4875d71db40
+    m_Address: theme/dungeon/roomdoor
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4911267d0d395dc40b4af766181525e8
+    m_Address: theme/dungeon/config/floor-3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5001bff3f89424e4fa74fe7412b3a3a6
+    m_Address: theme/dungeon/trap_spiketimed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5017cf9c3b8ef094eb83aad6ca4c9700
+    m_Address: theme/dungeon/room_boss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5848d5c5f9012b740a313bc4130db9be
+    m_Address: theme/dungeon/chest
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e541955259ccda4f8c25b0d54439e6d
+    m_Address: theme/dungeon/room_shop
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 762cf3c19f3c3ed4e871596156a13f8b
+    m_Address: theme/dungeon/prop_torch_left
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f3a8c3aa83cdcb428e6e88ec277afe2
+    m_Address: theme/dungeon/prop_torch_right
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8855981437caa66418918bb1d3a9660c
+    m_Address: theme/dungeon/room_start
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b0f89fe02263404a8787a057d242d2b
+    m_Address: theme/dungeon/prop_vase_shining
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcfd2ac754887524aafff51e2c683115
+    m_Address: theme/dungeon/shopstand
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdf4de8d1affcf449a5be7ee82b68ec0
+    m_Address: theme/dungeon/config/floor-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d95e36f54d2f73742bac54c52df47fdf
+    m_Address: theme/dungeon/portal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e012db2efdb43754a9f0166b1c6a2722
+    m_Address: theme/dungeon/config/floor-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6baad70c2aec0046b9d8db6d43e08b3
+    m_Address: theme/dungeon/prop_torch_wall
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - theme-dungeon
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 9e77705f90a5c3c46b9909d053d891b8, type: 2}
+    - {fileID: 11400000, guid: 5c90f0ef77250b244bed34ad961f8d49, type: 2}

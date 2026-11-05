@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa38af9cc2560a4fb952b8e1f20b93b, type: 3}
+  m_Name: Skill_thunder-judgement
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
+  skillId: thunder-judgement
+  nameKey: skill.thunder_judgement
+  descKey: wp.thunder.active
+  icon: {fileID: 21300000, guid: 4339ce85934eb114da1b80523625ece5, type: 3}
+  cooldown: 18
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  damage: 25
+  radius: 1.5
+  knockback: 2
+  centerOnNearestEnemy: 1
+  targetRange: 8
+  pulses: 5
+  pulseInterval: 0.25
+  status:
+    slowPercent: 0
+    slowDuration: 0
+    dotDps: 0
+    dotDuration: 0
+    dotId: 
+    dotLoopVfx: {fileID: 0}
+    stunDuration: 0.3
+    freeze: 0
+  vfx: {fileID: 7005583192970223368, guid: 7be4374beb4a00240a6f7819d9e4f887, type: 3}

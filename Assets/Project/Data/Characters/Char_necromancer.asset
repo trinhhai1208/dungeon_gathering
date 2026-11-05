@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164143709f3901b45a8e7df499848c3f, type: 3}
+  m_Name: Char_necromancer
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.CharacterData
+  characterId: necromancer
+  nameKey: char.necromancer.name
+  descKey: char.necromancer.desc
+  role: 3
+  unlockPrice: 2000
+  released: 0
+  portrait: {fileID: 416807584, guid: 3aca81b0ecb075f4ea381b3db2bb4e29, type: 3}
+  animator: {fileID: 0}
+  baseStats:
+    maxHp: 4
+    maxArmor: 2
+    maxMana: 240
+    attackDamage: 1.1
+    attackSpeed: 1
+    moveSpeed: 4.8
+    critChance: 0.05
+  armorRegenDelay: 4
+  armorRegenRate: 1
+  manaRegen: 2
+  startingWeapon: {fileID: 11400000, guid: 71849f9c75f1e97408ac202ee4da9dab, type: 2}
+  activeSkill: {fileID: 0}

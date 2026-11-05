@@ -1,0 +1,6 @@
+{
+    "name": "Project.Lobby",
+    "rootNamespace": "DungeonGathering.Lobby",
+    "references": [ "Project.Core", "Unity.Addressables", "Unity.ResourceManager", "Project.Shared", "Project.Catalog", "UnityEngine.UI", "Unity.TextMeshPro", "Unity.InputSystem" ],
+    "autoReferenced": true
+}

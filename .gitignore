@@ -1,0 +1,77 @@
+# ==========================================
+# Unity .gitignore (Hỗ trợ cả thư mục gốc lẫn thư mục con)
+# ==========================================
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Asset meta data: luôn luôn theo dõi .meta đi kèm với assets
+!/[Aa]ssets/**/*.meta
+
+# IDE / Code Editor files (Visual Studio, VS Code, Rider)
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity crash reports & temp files
+sysinfo.txt
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Builds output
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Agent workspace (log/briefing của các agent AI — không commit)
+.agents/
+
+# File solution do Unity 6 tự sinh (mẫu *.sln ở trên không bắt được .slnx)
+*.slnx
+
+# Ảnh preview UI — Tools ▸ UI Preview tự render lại
+/Design/previews/
+
+# Kết quả build Addressables / WebGL
+/[Ss]erver[Dd]ata/
+/[Aa]ssets/[Ss]treaming[Aa]ssets/aa/
+/[Aa]ssets/[Ss]treaming[Aa]ssets/aa.meta
+/[Aa]ssets/AddressableAssetsData/*/*.bin*
+*.zip
+
+# Log, kết quả test, crash report
+*.log
+TestResults*.xml
+crashlytics-build.properties

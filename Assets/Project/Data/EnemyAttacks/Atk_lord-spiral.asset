@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7de0bdaea43b6f468a7579efeb9ad23, type: 3}
+  m_Name: Atk_lord-spiral
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ShootAttackSO
+  range: 9
+  cooldown: 4
+  windupTime: 0.6
+  weight: 1
+  requireLineOfSight: 1
+  stopWhileAttacking: 1
+  projectilePrefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
+  impactVfx: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  damage: 1
+  speed: 5
+  knockback: 2
+  lifetime: 4
+  count: 10
+  spreadAngle: 0
+  radial: 1
+  bursts: 4
+  burstInterval: 0.2
+  radialSpin: 12

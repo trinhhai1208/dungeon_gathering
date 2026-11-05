@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96eaa6e9e465757489bb3c4d78f3887c, type: 3}
+  m_Name: Skill_holy-light
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.ShieldHealSkill
+  skillId: holy-light
+  nameKey: skill.holy_light
+  descKey: wp.holy.active
+  icon: {fileID: 21300000, guid: 03d22b0a5eb118a489c913e472ff8b74, type: 3}
+  cooldown: 25
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  heal: 2
+  armor: 2
+  mana: 0
+  invulnerableDuration: 1
+  vfx: {fileID: 2890952299872522546, guid: cbc048527ebba1048a863bd038fff34d, type: 3}

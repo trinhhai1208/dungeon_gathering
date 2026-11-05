@@ -1,0 +1,1047 @@
+fileFormatVersion: 2
+guid: 68f977ff25c162a43905f3b57bc0ce0f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7773031391787181946
+    second: sprite-sheet_0
+  - first:
+      213: -1426790471357470633
+    second: sprite-sheet_1
+  - first:
+      213: -2506210909196879853
+    second: sprite-sheet_2
+  - first:
+      213: -8907015550746980148
+    second: sprite-sheet_3
+  - first:
+      213: -3085487725770422062
+    second: sprite-sheet_4
+  - first:
+      213: -7371053094594084745
+    second: sprite-sheet_5
+  - first:
+      213: -3062665138650254500
+    second: sprite-sheet_6
+  - first:
+      213: -1924591734268745998
+    second: sprite-sheet_7
+  - first:
+      213: 2940483688060090369
+    second: sprite-sheet_8
+  - first:
+      213: 4123475054659131201
+    second: sprite-sheet_9
+  - first:
+      213: -7328016140542092180
+    second: sprite-sheet_10
+  - first:
+      213: 573168479056981123
+    second: sprite-sheet_11
+  - first:
+      213: -2052979034590239150
+    second: sprite-sheet_12
+  - first:
+      213: -599754731956233123
+    second: sprite-sheet_13
+  - first:
+      213: 8364850724636403409
+    second: sprite-sheet_14
+  - first:
+      213: -6650122099543898603
+    second: sprite-sheet_15
+  - first:
+      213: -4952747364788223248
+    second: sprite-sheet_16
+  - first:
+      213: -4558533973277291694
+    second: sprite-sheet_17
+  - first:
+      213: 192454500139917738
+    second: sprite-sheet_18
+  - first:
+      213: -3988586098559631296
+    second: sprite-sheet_19
+  - first:
+      213: 4585784099227081989
+    second: sprite-sheet_20
+  - first:
+      213: 7910205142894628472
+    second: sprite-sheet_21
+  - first:
+      213: -5453835138508083989
+    second: sprite-sheet_22
+  - first:
+      213: 1334599240327533485
+    second: sprite-sheet_23
+  - first:
+      213: -6627865198301778148
+    second: sprite-sheet_24
+  - first:
+      213: -260948941826079365
+    second: sprite-sheet_25
+  - first:
+      213: 7410530569769358565
+    second: sprite-sheet_26
+  - first:
+      213: -576870600854793513
+    second: sprite-sheet_27
+  - first:
+      213: -4818556106472641470
+    second: sprite-sheet_28
+  - first:
+      213: -2579015654255774944
+    second: sprite-sheet_29
+  - first:
+      213: -5849064155817607363
+    second: sprite-sheet_30
+  - first:
+      213: -7150693180217069502
+    second: sprite-sheet_31
+  - first:
+      213: 8586753166698750598
+    second: sprite-sheet_32
+  - first:
+      213: -1881072028268831973
+    second: sprite-sheet_33
+  - first:
+      213: 3323518892673604388
+    second: sprite-sheet_34
+  - first:
+      213: 4358674376539340698
+    second: sprite-sheet_35
+  - first:
+      213: -5415372385674030642
+    second: sprite-sheet_36
+  - first:
+      213: -8377541152210016672
+    second: sprite-sheet_37
+  - first:
+      213: -9057413479102639183
+    second: sprite-sheet_38
+  - first:
+      213: -666522333043579535
+    second: sprite-sheet_39
+  - first:
+      213: -6367429555072558050
+    second: sprite-sheet_40
+  - first:
+      213: -2555984197896547298
+    second: sprite-sheet_41
+  - first:
+      213: 4119624559787451193
+    second: sprite-sheet_42
+  - first:
+      213: 5693928975956558133
+    second: sprite-sheet_43
+  - first:
+      213: -6656713893227441336
+    second: sprite-sheet_44
+  - first:
+      213: -3170275824180026498
+    second: sprite-sheet_45
+  - first:
+      213: -1202161053390842638
+    second: sprite-sheet_46
+  - first:
+      213: -6462548254926894001
+    second: sprite-sheet_47
+  - first:
+      213: -9152561538167434704
+    second: sprite-sheet_48
+  - first:
+      213: -6481807663511273300
+    second: sprite-sheet_49
+  - first:
+      213: 2004642959564479735
+    second: sprite-sheet_50
+  - first:
+      213: -7791906488117113912
+    second: sprite-sheet_51
+  - first:
+      213: 1361885084696287952
+    second: sprite-sheet_52
+  - first:
+      213: 2837955390697593690
+    second: sprite-sheet_53
+  - first:
+      213: 698192235857672500
+    second: sprite-sheet_54
+  - first:
+      213: -356921412501542221
+    second: sprite-sheet_55
+  - first:
+      213: -7045386414016817542
+    second: sprite-sheet_56
+  - first:
+      213: -7626216621099395106
+    second: acid-splash_0
+  - first:
+      213: -3099801594257408464
+    second: acid-splash_1
+  - first:
+      213: 3788172501863244619
+    second: acid-splash_2
+  - first:
+      213: 67041402371943348
+    second: acid-splash_3
+  - first:
+      213: 8545891683679919005
+    second: acid-splash_4
+  - first:
+      213: -6666448953657254548
+    second: acid-splash_5
+  - first:
+      213: -4724556950139092284
+    second: acid-splash_6
+  - first:
+      213: 7196566252759345907
+    second: acid-splash_7
+  - first:
+      213: -65327693841628975
+    second: acid-splash_8
+  - first:
+      213: -7464641904479965759
+    second: acid-splash_9
+  - first:
+      213: 2413390451132710103
+    second: acid-splash_10
+  - first:
+      213: -8745081933804798624
+    second: acid-splash_11
+  - first:
+      213: -7837667414784034754
+    second: acid-splash_12
+  - first:
+      213: 6285356792168533734
+    second: acid-splash_13
+  - first:
+      213: -6787678423513568949
+    second: acid-splash_14
+  - first:
+      213: 6832028383000951538
+    second: acid-splash_15
+  - first:
+      213: -1676413500506353051
+    second: acid-splash_16
+  - first:
+      213: 344135452165334852
+    second: acid-splash_17
+  - first:
+      213: -4984508104707063882
+    second: acid-splash_18
+  - first:
+      213: -4965342394760167405
+    second: acid-splash_19
+  - first:
+      213: -8559038594362516749
+    second: acid-splash_20
+  - first:
+      213: 5509615444452009096
+    second: acid-splash_21
+  - first:
+      213: 3658972000731312900
+    second: acid-splash_22
+  - first:
+      213: -7120474870526012935
+    second: acid-splash_23
+  - first:
+      213: -9041998336530284801
+    second: acid-splash_24
+  - first:
+      213: 1752656019773542158
+    second: acid-splash_25
+  - first:
+      213: -7487542427701707768
+    second: acid-splash_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: acid-splash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7d037736c3a2690800000000000000
+      internalID: -7626216621099395106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03ef81c9fda4bf4d0800000000000000
+      internalID: -3099801594257408464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b432671e1da429430800000000000000
+      internalID: 3788172501863244619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbaf9ddccd2ee000800000000000000
+      internalID: 67041402371943348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bd4be453b199670800000000000000
+      internalID: 8545891683679919005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d1cfb3ff30c73a0800000000000000
+      internalID: -6666448953657254548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c24bd15c700f6eb0800000000000000
+      internalID: -4724556950139092284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 216
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fae84ab0e65fd360800000000000000
+      internalID: 7196566252759345907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0039efec8e71ff0800000000000000
+      internalID: -65327693841628975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cde9fbbcb3486890800000000000000
+      internalID: -7464641904479965759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dcb51024d51e7120800000000000000
+      internalID: 2413390451132710103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06df0eb805a33a680800000000000000
+      internalID: -8745081933804798624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38b42213030b3390800000000000000
+      internalID: -7837667414784034754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_13
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee4bc383b21a3750800000000000000
+      internalID: 6285356792168533734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_14
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b49e3ecbf625dc1a0800000000000000
+      internalID: -6787678423513568949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_15
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 144
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa7820ed9d30de50800000000000000
+      internalID: 6832028383000951538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56256a5adce2cb8e0800000000000000
+      internalID: -1676413500506353051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_17
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447eee4de5d96c400800000000000000
+      internalID: 344135452165334852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf31eea94873dab0800000000000000
+      internalID: -4984508104707063882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3100224466f871bb0800000000000000
+      internalID: -4965342394760167405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_20
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fad9240fbf283980800000000000000
+      internalID: -8559038594362516749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_21
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88461973e06167c40800000000000000
+      internalID: 5509615444452009096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403b0ba06a747c230800000000000000
+      internalID: 3658972000731312900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_23
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 72
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f19336c4ddfe2d90800000000000000
+      internalID: -7120474870526012935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe70736b6e548280800000000000000
+      internalID: -9041998336530284801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_25
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f4d003d5fa25810800000000000000
+      internalID: 1752656019773542158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: acid-splash_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.11111111}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80c7c2c25d7e61890800000000000000
+      internalID: -7487542427701707768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      acid-splash_0: -7626216621099395106
+      acid-splash_1: -3099801594257408464
+      acid-splash_10: 2413390451132710103
+      acid-splash_11: -8745081933804798624
+      acid-splash_12: -7837667414784034754
+      acid-splash_13: 6285356792168533734
+      acid-splash_14: -6787678423513568949
+      acid-splash_15: 6832028383000951538
+      acid-splash_16: -1676413500506353051
+      acid-splash_17: 344135452165334852
+      acid-splash_18: -4984508104707063882
+      acid-splash_19: -4965342394760167405
+      acid-splash_2: 3788172501863244619
+      acid-splash_20: -8559038594362516749
+      acid-splash_21: 5509615444452009096
+      acid-splash_22: 3658972000731312900
+      acid-splash_23: -7120474870526012935
+      acid-splash_24: -9041998336530284801
+      acid-splash_25: 1752656019773542158
+      acid-splash_26: -7487542427701707768
+      acid-splash_3: 67041402371943348
+      acid-splash_4: 8545891683679919005
+      acid-splash_5: -6666448953657254548
+      acid-splash_6: -4724556950139092284
+      acid-splash_7: 7196566252759345907
+      acid-splash_8: -65327693841628975
+      acid-splash_9: -7464641904479965759
+      sprite-sheet_0: 7773031391787181946
+      sprite-sheet_1: -1426790471357470633
+      sprite-sheet_10: -7328016140542092180
+      sprite-sheet_11: 573168479056981123
+      sprite-sheet_12: -2052979034590239150
+      sprite-sheet_13: -599754731956233123
+      sprite-sheet_14: 8364850724636403409
+      sprite-sheet_15: -6650122099543898603
+      sprite-sheet_16: -4952747364788223248
+      sprite-sheet_17: -4558533973277291694
+      sprite-sheet_18: 192454500139917738
+      sprite-sheet_19: -3988586098559631296
+      sprite-sheet_2: -2506210909196879853
+      sprite-sheet_20: 4585784099227081989
+      sprite-sheet_21: 7910205142894628472
+      sprite-sheet_22: -5453835138508083989
+      sprite-sheet_23: 1334599240327533485
+      sprite-sheet_24: -6627865198301778148
+      sprite-sheet_25: -260948941826079365
+      sprite-sheet_26: 7410530569769358565
+      sprite-sheet_27: -576870600854793513
+      sprite-sheet_28: -4818556106472641470
+      sprite-sheet_29: -2579015654255774944
+      sprite-sheet_3: -8907015550746980148
+      sprite-sheet_30: -5849064155817607363
+      sprite-sheet_31: -7150693180217069502
+      sprite-sheet_32: 8586753166698750598
+      sprite-sheet_33: -1881072028268831973
+      sprite-sheet_34: 3323518892673604388
+      sprite-sheet_35: 4358674376539340698
+      sprite-sheet_36: -5415372385674030642
+      sprite-sheet_37: -8377541152210016672
+      sprite-sheet_38: -9057413479102639183
+      sprite-sheet_39: -666522333043579535
+      sprite-sheet_4: -3085487725770422062
+      sprite-sheet_40: -6367429555072558050
+      sprite-sheet_41: -2555984197896547298
+      sprite-sheet_42: 4119624559787451193
+      sprite-sheet_43: 5693928975956558133
+      sprite-sheet_44: -6656713893227441336
+      sprite-sheet_45: -3170275824180026498
+      sprite-sheet_46: -1202161053390842638
+      sprite-sheet_47: -6462548254926894001
+      sprite-sheet_48: -9152561538167434704
+      sprite-sheet_49: -6481807663511273300
+      sprite-sheet_5: -7371053094594084745
+      sprite-sheet_50: 2004642959564479735
+      sprite-sheet_51: -7791906488117113912
+      sprite-sheet_52: 1361885084696287952
+      sprite-sheet_53: 2837955390697593690
+      sprite-sheet_54: 698192235857672500
+      sprite-sheet_55: -356921412501542221
+      sprite-sheet_56: -7045386414016817542
+      sprite-sheet_6: -3062665138650254500
+      sprite-sheet_7: -1924591734268745998
+      sprite-sheet_8: 2940483688060090369
+      sprite-sheet_9: 4123475054659131201
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

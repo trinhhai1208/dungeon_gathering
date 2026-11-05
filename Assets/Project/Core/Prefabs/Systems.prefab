@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5302881677285526715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7979747914894796670}
+  - component: {fileID: 5576388123952840631}
+  - component: {fileID: 3009687282493931762}
+  m_Layer: 0
+  m_Name: Systems
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7979747914894796670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302881677285526715}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1013814183408010176}
+  - {fileID: 6628897607714621282}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5576388123952840631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302881677285526715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d37f8871a61888042844f081bfed8bb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Project.Core::DungeonGathering.Core.Systems
+  uiRoot: {fileID: 914443920879664384}
+  loadingOverlay: {fileID: 385060694960832557}
+  audioManager: {fileID: 3009687282493931762}
+  moduleRegistry: {fileID: 11400000, guid: 9bcddda135fb4ab489e36079f52564da, type: 2}
+  poolRoot: {fileID: 1013814183408010176}
+  firstSceneAddress: scene/menu
+--- !u!114 &3009687282493931762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5302881677285526715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1de6102628ac616419fd5f849c4202c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Project.Core::DungeonGathering.Core.AudioManager
+  mixer: {fileID: 0}
+  bgmGroup: {fileID: 0}
+  sfxGroup: {fileID: 0}
+  sfxVoices: 12
+  sfxLibrary: {fileID: 0}
+  maxPan: 0.45
+--- !u!1 &8737038974287998448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013814183408010176}
+  m_Layer: 0
+  m_Name: PoolRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1013814183408010176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8737038974287998448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7979747914894796670}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &6425334621916683036
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7979747914894796670}
+    m_Modifications:
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105222390183439865, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+      propertyPath: m_Name
+      value: UIRoot
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+--- !u!114 &385060694960832557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6661770952558762801, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+  m_PrefabInstance: {fileID: 6425334621916683036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296495790895c4c4dbef07035ecdd984, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Project.Core::DungeonGathering.Core.LoadingOverlay
+--- !u!114 &914443920879664384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6168698031149475356, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+  m_PrefabInstance: {fileID: 6425334621916683036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4564aeb2718ce254c8fb1bf76f8ae44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Project.Core::DungeonGathering.Core.UIRoot
+--- !u!224 &6628897607714621282 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 204294255724239998, guid: 4edc7b1a594ce524d906f413ec7f1417, type: 3}
+  m_PrefabInstance: {fileID: 6425334621916683036}
+  m_PrefabAsset: {fileID: 0}

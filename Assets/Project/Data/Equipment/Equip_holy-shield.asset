@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851a27d9a0d51a1419d2f1297173c272, type: 3}
+  m_Name: Equip_holy-shield
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentData
+  id: holy-shield
+  rarity: 3
+  icon: {fileID: 1321308803, guid: 5e972451c203e0b45963009650a405bf, type: 3}
+  nameKey: item.holy_shield
+  descKey: eq.shield.passive
+  activeSkill: {fileID: 11400000, guid: 72d9043ecaafc2e46bb685ec848baf36, type: 2}
+  shopPrice: 60
+  slot: 5
+  baseModifiers:
+  - Stat: 1
+    FlatValue: 2
+    PercentValue: 0
+  synergyRole: 1
+  synergyPassive: {fileID: 11400000, guid: 26f8fadd878f78544aa8c2058d895669, type: 2}

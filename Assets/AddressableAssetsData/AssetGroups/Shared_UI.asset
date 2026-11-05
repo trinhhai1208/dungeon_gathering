@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Shared_UI
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Shared_UI
+  m_GUID: 192389f5680623143bc7a966f1522131
+  m_SerializeEntries:
+  - m_GUID: 7e64ed5dc10ac414a86a6f2522cfd547
+    m_Address: ui/shared/item-tile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - shared-ui
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a468a2d3b89d3e144b7db75e8d0c38df
+    m_Address: ui/popup/settings
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - shared-ui
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eab10d5400d1bc94e968d327089ae980
+    m_Address: ui/shared/virtual-joystick
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - shared-ui
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2556e81d5c7367a44acc3b3472cb8758, type: 2}
+    - {fileID: 11400000, guid: 1ea8a014f1887334bb5f6b03373c2124, type: 2}

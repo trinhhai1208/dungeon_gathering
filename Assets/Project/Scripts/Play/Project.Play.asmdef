@@ -1,0 +1,6 @@
+{
+    "name": "Project.Play",
+    "rootNamespace": "DungeonGathering.Play",
+    "references": [ "Project.Core", "Unity.Addressables", "Unity.ResourceManager", "Project.Shared", "Project.Catalog", "Project.Combat", "Project.Enemy", "Unity.Cinemachine", "Unity.InputSystem", "Unity.TextMeshPro", "UnityEngine.UI", "Unity.2D.Tilemap.Extras", "Unity.AI.Navigation" ],
+    "autoReferenced": true
+}

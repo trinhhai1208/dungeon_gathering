@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96eaa6e9e465757489bb3c4d78f3887c, type: 3}
+  m_Name: Skill_raise-shield
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.ShieldHealSkill
+  skillId: raise-shield
+  nameKey: skill.raise_shield
+  descKey: eq.shield.active
+  icon: {fileID: 21300000, guid: 472925c591e513f48b245122f730cf60, type: 3}
+  cooldown: 18
+  duration: 2
+  manaCost: 0
+  activateSfx: 0
+  heal: 0
+  armor: 0
+  mana: 0
+  invulnerableDuration: 2
+  vfx: {fileID: 2256055265636997213, guid: badbe71c1067e33489bcad88a60730ce, type: 3}

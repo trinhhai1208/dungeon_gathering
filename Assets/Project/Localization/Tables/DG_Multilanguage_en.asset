@@ -1,0 +1,1233 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: DG_Multilanguage_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 8a06e3b1806a38f4787d036248e596a4, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1263054848
+    m_Localized: Coin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163712
+    m_Localized: Back to lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163713
+    m_Localized: Active
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1330163714
+    m_Localized: Empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358016
+    m_Localized: None.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358017
+    m_Localized: ALL
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358018
+    m_Localized: All
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358019
+    m_Localized: EQUIP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358020
+    m_Localized: WEAPONS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358021
+    m_Localized: UNEQUIP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358022
+    m_Localized: 2 ACTIVES MAX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358023
+    m_Localized: MERCHANT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358024
+    m_Localized: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358025
+    m_Localized: TO LOBBY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358026
+    m_Localized: RETRY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358027
+    m_Localized: Total
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358028
+    m_Localized: 'Filter:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358029
+    m_Localized: ON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358030
+    m_Localized: OFF
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358031
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358032
+    m_Localized: HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358033
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358034
+    m_Localized: Mana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358035
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358036
+    m_Localized: '% Damage'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358037
+    m_Localized: Attack speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358038
+    m_Localized: '% Attack speed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358039
+    m_Localized: Move speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358040
+    m_Localized: '% Move speed'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358041
+    m_Localized: Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358042
+    m_Localized: '% Crit'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358043
+    m_Localized: Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358044
+    m_Localized: Mana / hit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358045
+    m_Localized: Synergy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358046
+    m_Localized: Floor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358047
+    m_Localized: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358048
+    m_Localized: Kills
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358049
+    m_Localized: Rooms cleared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358050
+    m_Localized: Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358051
+    m_Localized: Gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358052
+    m_Localized: Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358053
+    m_Localized: Necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358054
+    m_Localized: Accessory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358055
+    m_Localized: Horn Helm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358056
+    m_Localized: Flame Knight Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358057
+    m_Localized: Nightshade Gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358058
+    m_Localized: Windstep Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358059
+    m_Localized: Ancient Rune Book
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358060
+    m_Localized: Holy Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358061
+    m_Localized: Silver Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358062
+    m_Localized: Mage Hat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358063
+    m_Localized: Ice Mask
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358064
+    m_Localized: Silver Gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358065
+    m_Localized: Wind Necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358066
+    m_Localized: Red Boots
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358067
+    m_Localized: Gold Ring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358068
+    m_Localized: Health Potion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358069
+    m_Localized: Iron Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358070
+    m_Localized: Iron Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358071
+    m_Localized: Frost Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358072
+    m_Localized: Dark Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358073
+    m_Localized: Rotten Wood Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358074
+    m_Localized: Holy Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358075
+    m_Localized: Flame Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358076
+    m_Localized: Thunder Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358077
+    m_Localized: Void Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358078
+    m_Localized: Golden Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358079
+    m_Localized: Lava Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358080
+    m_Localized: Thorn Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358081
+    m_Localized: Venom Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358082
+    m_Localized: Purple Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358083
+    m_Localized: 'Warrior: +10% slash damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358084
+    m_Localized: When your armor breaks, a ring of fire bursts out, damaging and
+      knocking back nearby enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358085
+    m_Localized: Crits instantly restore 2 Mana and give +20% move speed for 1.5s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358086
+    m_Localized: 'Stand still 1s: your next shot pierces and deals +40% damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358087
+    m_Localized: Every 3rd hit summons an arcane vortex on the target.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358088
+    m_Localized: "Arcane Storm \xB7 20s cooldown: a large arcane vortex around you
+      for 3s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358089
+    m_Localized: 'Warrior: +2 Armor and +1 Max HP.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358090
+    m_Localized: "Raise Shield \xB7 18s cooldown: immune to all damage for 2s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358091
+    m_Localized: No Role effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358092
+    m_Localized: 'Mage: +20 Max Mana and +10% Attack Speed.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358093
+    m_Localized: 'Assassin: +12% Crit chance and +15% Attack Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358094
+    m_Localized: 'Warrior: +1 Max Armor and +10% Attack Speed.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358095
+    m_Localized: 'Ranger: +10% Crit chance and +10% Move Speed.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358096
+    m_Localized: BAG & GEAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358097
+    m_Localized: "FLAT STATS \xB7 ANY ROLE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358098
+    m_Localized: "PASSIVE \xB7 ROLE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358099
+    m_Localized: "ACTIVE \xB7 USE IN RUN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358100
+    m_Localized: Pick an item in the bag or a worn slot to see details.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358101
+    m_Localized: "items \xB7 found in dungeons, swap only in lobby"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358102
+    m_Localized: EQUIPPED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358103
+    m_Localized: 'Replaces '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358104
+    m_Localized: ' slot is empty'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358105
+    m_Localized: 
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358106
+    m_Localized: NONE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358107
+    m_Localized: ACTIVE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358108
+    m_Localized: 'NEEDS '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358109
+    m_Localized: Already 2 items with active skills. Unequip one first.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358110
+    m_Localized: "Carry 2 weapons \xB7 tap the weapon slot in a run to swap"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358111
+    m_Localized: "Sword \xB7 Melee \xB7 Rarity"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358112
+    m_Localized: "PASSIVE \xB7 AUTO"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358113
+    m_Localized: "ACTIVE \xB7 TAP IN RUN"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358114
+    m_Localized: weapons in the armory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1334358115
+    m_Localized: Already 2 items with active skills (max 2 per run).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552320
+    m_Localized: 'IN SLOT '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552321
+    m_Localized: "In armory \xB7 vs slot "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552322
+    m_Localized: 'TO SLOT '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552323
+    m_Localized: "Slot 1 \xB7 held at start"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552324
+    m_Localized: Slot 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552325
+    m_Localized: 'SLOT STATS '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552326
+    m_Localized: "  \u2192  if swapped to "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552327
+    m_Localized: Attacks burn enemies for 6 damage per second over 2s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552328
+    m_Localized: "Dragon Flame Slash \xB7 20s cooldown: a huge wave of fire ahead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552329
+    m_Localized: 25% chance on hit to chain lightning to 3 enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552330
+    m_Localized: "Thunder Judgement \xB7 18s cooldown: 5 bolts strike the nearest
+      enemies."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552331
+    m_Localized: Grants +15% Attack Damage and +10% Attack Speed while held.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552332
+    m_Localized: "Rift Cut \xB7 15s cooldown: dash through enemies and slash twice."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552333
+    m_Localized: Kills restore 4 Mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552334
+    m_Localized: Slashes burn enemies for 5 damage per second over 2s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552335
+    m_Localized: Slashes slow enemies by 30% for 1s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552336
+    m_Localized: "Frost Field \xB7 16s cooldown: freeze nearby enemies for 2s."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552337
+    m_Localized: Grants +8% Crit chance and +10% Attack Damage while held.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552338
+    m_Localized: Drains life on hit, restoring 1 HP per 20 damage dealt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552339
+    m_Localized: "Holy Light \xB7 25s cooldown: restore 2 HP."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552340
+    m_Localized: Kills restore 5 Mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552341
+    m_Localized: Poisons for 4 damage per second over 3s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552342
+    m_Localized: None. Knight's starting weapon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552343
+    m_Localized: CHOOSE A HERO TO START
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552344
+    m_Localized: "SELECT \xB7 ENTER PORTAL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552345
+    m_Localized: Locked. Unlock with coins brought back from runs.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552346
+    m_Localized: "UNLOCK \xB7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552347
+    m_Localized: 'Lobby: portal, NPC counters, center table'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552348
+    m_Localized: "Merchant \u2013 open shop"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552349
+    m_Localized: Back to menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552350
+    m_Localized: Close info, back to lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552351
+    m_Localized: no item yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552352
+    m_Localized: "Dual Wield \xB7 12s cooldown"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552353
+    m_Localized: Melee, heavy armor, slashes cut through basic bullets.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552354
+    m_Localized: "Dodge Roll \xB7 4s cooldown"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552355
+    m_Localized: Agile marksman with high crit and ranged firearm mastery.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552356
+    m_Localized: "Arcane Storm \xB7 15s cooldown"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552357
+    m_Localized: Elemental magic, lots of Mana, low HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552358
+    m_Localized: '[Skill TBD]'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552359
+    m_Localized: Fast attacks, big crits, mobile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552360
+    m_Localized: 'Holy knight: thickest armor, slow.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552361
+    m_Localized: Frost Field
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552362
+    m_Localized: Arcane Storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552363
+    m_Localized: Holy Light
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552364
+    m_Localized: TAP TO PLAY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552365
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552366
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552367
+    m_Localized: Sound
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552368
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552369
+    m_Localized: FLOOR {0}/{1}
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552370
+    m_Localized: Combat room, doors locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552371
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552372
+    m_Localized: Movement joystick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552373
+    m_Localized: Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552374
+    m_Localized: Swap weapon, holding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552375
+    m_Localized: "Frost Field (Frost Sword) \xB7 9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552376
+    m_Localized: "Arcane Storm (Rune Book) \xB7 ready"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552377
+    m_Localized: PAUSED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552378
+    m_Localized: Class
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552379
+    m_Localized: "2 weapons \xB7 worn gear \xB7 active 2/2 \xB7 bag: 3 new items
+      (swap in lobby)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552380
+    m_Localized: TO LOBBY (quit run)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552381
+    m_Localized: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552382
+    m_Localized: Lower
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552383
+    m_Localized: Raise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552384
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552385
+    m_Localized: Effects
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552386
+    m_Localized: Auto-Aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552387
+    m_Localized: Turn the sword to the nearest enemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552388
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552389
+    m_Localized: Vibrate on hit and on Boss kill
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552390
+    m_Localized: RUN OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552391
+    m_Localized: YOU HAVE FALLEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552392
+    m_Localized: Killed by
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552393
+    m_Localized: "NEW RECORD \xB7 Floor 1-5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552394
+    m_Localized: Weapons & gear found (saved to collection)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552395
+    m_Localized: Coins brought to lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552396
+    m_Localized: "Run coins 312 \xD7 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552397
+    m_Localized: "Floor bonus (1 floor \xD7 20)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552398
+    m_Localized: Boss damage dealt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552399
+    m_Localized: (new)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552400
+    m_Localized: "BOSS DEFEATED \xB7 FLOOR 3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552401
+    m_Localized: VICTORY!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552402
+    m_Localized: Defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552403
+    m_Localized: FIRST CLEAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552404
+    m_Localized: RECORD 14:32
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552405
+    m_Localized: 'Continue: keep run gear & coins, stronger enemies'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552406
+    m_Localized: "Boss chest \xB7 into bag, swap in lobby"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552407
+    m_Localized: Coins if you return to lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552408
+    m_Localized: "TO LOBBY \xB7 +346"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552409
+    m_Localized: "CONTINUE \xB7 FLOOR 4"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552410
+    m_Localized: "Run coins 860 \xD7 10%"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552411
+    m_Localized: "Floor bonus (3 floors \xD7 20)"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1338552412
+    m_Localized: Boss defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746624
+    m_Localized: First Boss kill on floor 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746625
+    m_Localized: ROLE MATCH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746626
+    m_Localized: "BUY \xB7"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746627
+    m_Localized: Close, back to
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746628
+    m_Localized: "Weapon \xB7 Melee \xB7 A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746629
+    m_Localized: 22 damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746630
+    m_Localized: 0.9 hits/s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746631
+    m_Localized: '[Proposal] Every 4th slash fires a long-range sword wave. Weapons
+      have no Role Synergy.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746632
+    m_Localized: "Accessory \xB7 Warrior \xB7 C"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746633
+    m_Localized: +2 Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746634
+    m_Localized: '[Proposal] Warrior: fully blocks 1 hit every 8s.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746635
+    m_Localized: "Accessory \xB7 Ranger \xB7 B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746636
+    m_Localized: +10% Move speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746637
+    m_Localized: +5% Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746638
+    m_Localized: '[Proposal] Ranger: after a dash, the next hit is a guaranteed crit.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746639
+    m_Localized: "Helmet \xB7 Assassin \xB7 A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746640
+    m_Localized: +1 Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746641
+    m_Localized: +6% Crit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746642
+    m_Localized: '[Proposal] Assassin: hits from behind deal +50% damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746643
+    m_Localized: "Boots \xB7 Any Role \xB7 F"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746644
+    m_Localized: +5% Move speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746645
+    m_Localized: Consumable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746646
+    m_Localized: +30 HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746647
+    m_Localized: Used on purchase. The only way to heal during a run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746648
+    m_Localized: "Weapon \xB7 Sword \xB7 S"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746649
+    m_Localized: 28 damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746650
+    m_Localized: 1.0 hits/s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746651
+    m_Localized: '[Proposal] Every 5s, the next hit fires a cone of flame. Goes to
+      the armory; set it on the Weapons screen.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746652
+    m_Localized: "Weapon \xB7 Sword \xB7 B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746653
+    m_Localized: 18 damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746654
+    m_Localized: Slow 30%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746655
+    m_Localized: "LOBBY \xB7 permanent coins"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746656
+    m_Localized: "IN RUN \xB7 run coins"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746657
+    m_Localized: lobby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746658
+    m_Localized: run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746659
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746660
+    m_Localized: "Bought \xB7 sent to armory."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746661
+    m_Localized: Used.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746662
+    m_Localized: "Bought \xB7 in bag, equip on the Gear screen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746663
+    m_Localized: "Bought \xB7 in bag, swap in lobby."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746664
+    m_Localized: Not enough coins.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746665
+    m_Localized: 'Not Warrior: flat stats only.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746666
+    m_Localized: Talk to the Merchant in the lobby to open the shop.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1342746667
+    m_Localized: Stand near the ShopStand and press Interact to buy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216416276480
+    m_Localized: "Loading\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745472
+    m_Localized: Loading game engine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745473
+    m_Localized: Loading core data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745474
+    m_Localized: Loading interface
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745475
+    m_Localized: Preparing the menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745476
+    m_Localized: Ready!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745477
+    m_Localized: TIP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745478
+    m_Localized: Gear found in the dungeon goes to your bag. Swap it in the lobby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745479
+    m_Localized: A run can carry at most 2 items with active skills.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745480
+    m_Localized: Gear matching your hero's Role unlocks a bonus passive.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745481
+    m_Localized: Could not load the game. Check your connection.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745482
+    m_Localized: RETRY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6216512745483
+    m_Localized: First load may take a moment. Next time is faster.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313503121408
+    m_Localized: TO SLOT 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313570230272
+    m_Localized: TO SLOT 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 59313570230273
+    m_Localized: Close settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786690666496
+    m_Localized: Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775360
+    m_Localized: Paladin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775361
+    m_Localized: Ranger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775362
+    m_Localized: Wizard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775363
+    m_Localized: Rogue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775364
+    m_Localized: Monk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775365
+    m_Localized: Staff fighter who heals allies and himself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775366
+    m_Localized: Lancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775367
+    m_Localized: Long spear reach, steady armor, pushes enemies back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775368
+    m_Localized: Hunter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775369
+    m_Localized: Traps and daggers, strikes weakened foes harder.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775370
+    m_Localized: Necromancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775371
+    m_Localized: Raises bones to fight alongside, fragile body.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775372
+    m_Localized: Frost Wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775373
+    m_Localized: Floating spirit that freezes everything it touches.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775374
+    m_Localized: Berserker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775375
+    m_Localized: Hits harder the lower his HP, light armor.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775376
+    m_Localized: Shadow Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775377
+    m_Localized: Dark blade that drains life from crits.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775378
+    m_Localized: COMING SOON
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775379
+    m_Localized: This hero is still in development and will arrive in a later update.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775380
+    m_Localized: Dual Wield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775381
+    m_Localized: Dodge Roll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775382
+    m_Localized: Dragon Flame Slash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775383
+    m_Localized: Thunder Judgement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775384
+    m_Localized: Rift Cut
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775385
+    m_Localized: Raise Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775386
+    m_Localized: Skeleton Spearman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775387
+    m_Localized: Skeleton Warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775388
+    m_Localized: Zombie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775389
+    m_Localized: Vampire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775390
+    m_Localized: Floating Skull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775391
+    m_Localized: Elite Skeleton Warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775392
+    m_Localized: Elder Vampire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 284786757775393
+    m_Localized: Vampire Lord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041187336192
+    m_Localized: Arcane Pistol
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639360
+    m_Localized: Plasma Rifle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639361
+    m_Localized: Spark Shotgun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639362
+    m_Localized: Rocket Launcher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639363
+    m_Localized: Fires steady arcane bolts. Low mana cost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639364
+    m_Localized: Rapid plasma fire. Grants +10% Crit chance while held.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639365
+    m_Localized: Fires a 5-spark spread that shocks nearby foes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301041258639366
+    m_Localized: Fires heavy rockets that explode in a 2.2m radius.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359145291689984
+    m_Localized: Click to open chest
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

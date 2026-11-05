@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Audio_BGM
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Audio_BGM
+  m_GUID: 684ccacf414098342a1838946be6bb7e
+  m_SerializeEntries:
+  - m_GUID: 1f633ad35b1b0f44bbbdb9e615d0c3a0
+    m_Address: audio/bgm/menu
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bgm-menu
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78df11c646760d54fb06c505e1efd761
+    m_Address: audio/bgm/play
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bgm-play
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e11e24977edea54bb789adbffd3a28a
+    m_Address: audio/bgm/boss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bgm-boss
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9a56275ad42ac641aad46c9131f5267
+    m_Address: audio/bgm/lobby
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - bgm-lobby
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3512538d88a65e84792b4b906ca8f48d, type: 2}
+    - {fileID: 11400000, guid: e82c20fe5e1627242ab9bfe9eae48429, type: 2}

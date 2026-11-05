@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Core_Local
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Core_Local
+  m_GUID: 3cdef7af62c5b144e8bfb11a57c36942
+  m_SerializeEntries:
+  - m_GUID: 9bcddda135fb4ab489e36079f52564da
+    m_Address: core/module-registry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - core
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c70505f01bb477441bcab5b3cc494549
+    m_Address: font/pixelify-sans
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - core
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc269f539994e8943968a37171059b46
+    m_Address: core/localization/font-config
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - core
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1ba4f13a300243b4898c822fb29f1ec8, type: 2}
+    - {fileID: 11400000, guid: 525e11488d1a7064ea2777c03e669241, type: 2}

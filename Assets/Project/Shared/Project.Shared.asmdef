@@ -1,0 +1,6 @@
+{
+    "name": "Project.Shared",
+    "rootNamespace": "DungeonGathering.UI",
+    "references": [ "Project.Core", "Unity.TextMeshPro", "UnityEngine.UI", "Unity.InputSystem" ],
+    "autoReferenced": true
+}

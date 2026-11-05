@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Túi đồ &amp; Trang bị</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&amp;family=Tiny5&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#efe6dc}a:hover{color:#f2b33d}
+img{image-rendering:pixelated}
+button{font:inherit;color:inherit;background:none;margin:0;padding:0;border:0;cursor:pointer}
+.f-dark,.f-dark-s,.f-mid-s,.f-light,.f-light-s,.f-btn,.f-slot{border-style:solid;image-rendering:pixelated;box-sizing:border-box}
+.f-dark{border-width:24px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 24px stretch}
+.f-dark-s{border-width:12px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 12px stretch}
+.f-mid-s{border-width:12px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 12px stretch}
+.f-light{border-width:24px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 24px stretch}
+.f-light-s{border-width:12px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 12px stretch}
+.f-btn{border-width:24px;border-image:url(/_blob/3fa1daebff64e0db2fa846fc67ed87d9) 24 fill / 24px stretch}
+.f-slot{border-width:24px;border-image:url(/_blob/52f45e9825703a936ced893a8ddc2f3a) 24 fill / 24px stretch}
+.sel{border-style:solid;border-width:20px;border-image:url(/_blob/755409c43ba52a3378cfef7e9ccbc388) 16 / 20px stretch;box-sizing:border-box;image-rendering:pixelated;pointer-events:none}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #1b1420; color: #efe6dc; font-family: {{font}}">
+  <img src="/_blob/62a6ce7362d83e29e4f67a8a0bed879b" alt="" style="position: absolute; left: 0; top: -15px; width: 1280px; height: 750px; opacity: 0.3">
+  <div style="position: absolute; inset: 0; background: rgba(27,20,32,0.65)"><div class="f-light-s" style="position: absolute; top: 15px; left: 537px; display: flex; align-items: center; gap: 8px; padding: 0 6px; height: 48px; color: #1b1420; font-size: 18px"><img src="/_blob/99c80cdd52c01dc18c8d675418d70347" alt="" style="height: 24px">Knight · WARRIOR</div></div>
+
+  <a href="UI-Lobby.dc.html" aria-label="{{tx.common_back_lobby}}" style="position: absolute; top: 16px; left: 24px; display: block"><img src="/_blob/6c13802bc87c3805e6cc83316fd4567f" alt="" style="height: 56px; display: block"></a>
+  <div style="position: absolute; top: 22px; left: 100px; font-size: 34px">{{tx.equip_title}}</div>
+  
+  <div class="f-dark-s" style="position: absolute; top: 18px; right: 244px; display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 6px; font-size: 14px">{{tx.common_active}} <span style="font-size: 22px; color: #9fd0ff">{{actNow}} / 2</span></div>
+  <div class="f-dark-s" style="position: absolute; top: 18px; right: 24px; display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 6px; font-size: 14px">Role Synergy <span style="font-size: 22px; color: #ffd27a">{{synCount}} / 6</span></div>
+
+  <div class="f-dark" style="position: absolute; left: 20px; top: 84px; width: 372px; height: 620px; padding: 0 4px; display: flex; flex-direction: column; gap: 10px">
+    <sc-if value="{{hasSel}}" hint-placeholder-val="{{ true }}">
+      <div style="display: flex; gap: 12px; align-items: center">
+        <span style="position: relative; display: block; flex: none"><img src="{{cur.img}}" alt="" style="width: 96px; display: block"><img src="{{cur.let}}" alt="" style="position: absolute; left: 6px; top: 6px; width: 21px; height: 24px"></span>
+        <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+          <div style="font-size: 24px; line-height: 1.1">{{cur.name}}</div>
+          <div style="font-size: 13px; color: #e6e9f2">{{cur.slotName}} · Rarity {{cur.rar}}</div>
+          <div style="font-size: 12px; color: #ffd27a">{{cur.state}}</div>
+        </div>
+      </div>
+      <div class="f-mid-s" style="display: flex; flex-direction: column; gap: 2px; padding: 2px 6px; color: #1b1420">
+        <div style="font-size: 11px; letter-spacing: 1.5px">{{tx.equip_flat_stats}}</div>
+        <sc-for list="{{cur.modText}}" as="m" hint-placeholder-count="2"><div style="font-size: 19px; color: #14532d">{{m}}</div></sc-for>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <div style="display: flex; align-items: center; gap: 8px">
+          <span style="font-size: 11px; letter-spacing: 1.5px">{{tx.equip_passive_role}}</span>
+          <span class="{{cur.badgeCls}}" style="display: flex; align-items: center; gap: 6px; padding: 0 4px; font-size: 13px; color: {{cur.badgeFg}}"><sc-if value="{{cur.roleIcon}}" hint-placeholder-val="{{ true }}"><img src="{{cur.roleIcon}}" alt="" style="height: 16px"></sc-if>{{cur.badge}}</span>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: flex-start; opacity: {{cur.op}}">
+          <sc-if value="{{cur.vfx}}" hint-placeholder-val="{{ false }}"><img src="{{cur.vfx}}" alt="" style="width: 64px; height: 64px; flex: none"></sc-if>
+          <div style="font-size: 13px; line-height: 1.5; color: {{cur.pc}}; font-style: {{cur.fs}}">{{cur.passive}}</div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px">
+        <span style="font-size: 11px; letter-spacing: 1.5px">{{tx.equip_active_hdr}}</span>
+        <div style="font-size: 13px; line-height: 1.45; color: {{cur.actColor}}">{{cur.actText}}</div>
+        <div style="font-size: 12px; color: #ff8a84">{{cur.warn}}</div>
+      </div>
+      <button type="button" class="{{cur.btnCls}}" onClick="{{cur.act}}" style="margin-top: auto; height: 68px; display: flex; align-items: center; justify-content: center; color: #1b1420; font-size: 22px">{{cur.btn}}</button>
+    </sc-if>
+    <sc-if value="{{noSel}}" hint-placeholder-val="{{ false }}">
+      <div style="margin: auto 0; text-align: center; font-size: 14px; line-height: 1.6; color: #e6e9f2">{{tx.equip_pick_hint}}</div>
+    </sc-if>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 404px; top: 84px; width: 472px; height: 620px; padding: 0">
+    <div style="position: relative; height: 284px">
+      <img src="/_blob/91623d653ebf913d972612acd2846ecd" alt="Knight" style="position: absolute; left: 146px; top: 46px; width: 135px; height: 144px">
+      <sc-for list="{{slots}}" as="s" hint-placeholder-count="6">
+        <button type="button" onClick="{{s.pick}}" aria-pressed="{{s.sel}}" aria-label="{{s.label}}: {{s.name}}" style="position: absolute; left: {{s.x}}; top: {{s.y}}; width: 96px; display: flex; flex-direction: column; align-items: center">
+          <span style="position: relative; display: block">
+            <img src="{{s.img}}" alt="" style="width: 64px; display: block"><sc-if value="{{s.let}}" hint-placeholder-val="{{ true }}"><img src="{{s.let}}" alt="" style="position: absolute; left: 4px; top: 4px; width: 14px; height: 16px"></sc-if>
+            <sc-if value="{{s.sel}}" hint-placeholder-val="{{ false }}"><span class="sel" style="position: absolute; inset: -8px"></span></sc-if>
+          </span>
+          <span style="font-size: 11px">{{s.label}}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px">
+      <sc-for list="{{stats}}" as="r" hint-placeholder-count="8">
+        <div class="f-mid-s" style="display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 4px; color: #1b1420">
+          <span style="font-size: 12px">{{r.k}}</span>
+          <span style="display: flex; align-items: baseline; gap: 6px"><span style="font-size: 18px">{{r.v}}</span><span style="font-size: 15px; color: {{r.dc}}">{{r.d}}</span></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 888px; top: 84px; width: 372px; height: 620px; padding: 0 4px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; gap: 4px">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="7">
+        <button type="button" class="{{t.cls}}" onClick="{{t.pick}}" aria-pressed="{{t.on}}" aria-label="{{tx.common_filter}} {{t.label}}" style="height: 44px; width: {{t.w}}; display: flex; align-items: center; justify-content: center; color: {{t.fg}}; font-size: 11px">
+          <sc-if value="{{t.icon}}" hint-placeholder-val="{{ true }}"><img src="{{t.icon}}" alt="" style="height: 22px; max-width: 22px"></sc-if>
+          <sc-if value="{{t.text}}" hint-placeholder-val="{{ false }}">{{t.text}}</sc-if>
+        </button>
+      </sc-for>
+    </div>
+    <div style="font-size: 12px; color: #e6e9f2">{{bagCount}} {{tx.equip_bag_note}}</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{bag}}" as="b" hint-placeholder-count="8">
+        <button type="button" onClick="{{b.pick}}" aria-pressed="{{b.sel}}" aria-label="{{b.name}}" style="position: relative; display: flex; justify-content: center">
+          <span style="position: relative; display: block"><img src="{{b.img}}" alt="" style="width: 64px; display: block"><img src="{{b.let}}" alt="" style="position: absolute; left: 4px; top: 4px; width: 14px; height: 16px"><sc-if value="{{b.sel}}" hint-placeholder-val="{{ false }}"><span class="sel" style="position: absolute; inset: -6px"></span></sc-if></span>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","vi"],"default":"en"},"$preview":{"width":1280,"height":720}}'>
+const STR = { "common_active": [ "Active", "Kích hoạt" ], "common_all": [ "ALL", "TẤT CẢ" ], "common_back_lobby": [ "Back to lobby", "Quay lại sảnh" ], "common_empty": [ "Empty", "Trống" ], "common_equip": [ "EQUIP", "TRANG BỊ" ], "common_filter": [ "Filter:", "Lọc:" ], "common_max_active": [ "2 ACTIVES MAX", "ĐỦ 2 KỸ NĂNG" ], "common_none": [ "None.", "Không có." ], "common_unequip": [ "UNEQUIP", "THÁO RA" ], "eq_book_active": [ "Arcane Storm · 20s cooldown: a large arcane vortex around you for 3s.", "Bão Phép · hồi 20s: vòng xoáy phép lớn quanh người 3s." ], "eq_book_passive": [ "Every 3rd hit summons an arcane vortex on the target.", "Mỗi đòn đánh thứ 3 triệu hồi vòng xoáy phép tại vị trí mục tiêu." ], "eq_fire_passive": [ "When your armor breaks, a ring of fire bursts out, damaging and knocking back nearby enemies.", "Khi bị vỡ giáp, phát nổ vòng lửa gây sát thương và đẩy lùi quái xung quanh." ], "eq_gwhite_passive": [ "[Proposal] 3 hits in a row restore 1 Armor.", "[Đề xuất] Chém trúng 3 lần liên tiếp hồi 1 Giáp." ], "eq_hat_passive": [ "[Proposal] Skills cool down 20% faster.", "[Đề xuất] Kỹ năng hồi chiêu nhanh hơn 20%." ], "eq_horn_passive": [ "[Proposal] At full Armor, slashes deal +10% damage.", "[Đề xuất] Khi Giáp đầy, đòn chém +10% sát thương." ], "eq_mask_passive": [ "[Proposal] Hits from behind deal +50% damage.", "[Đề xuất] Đánh sau lưng quái +50% sát thương." ], "eq_neck_passive": [ "[Proposal] After a dash, your next hit is a guaranteed crit.", "[Đề xuất] Lướt xong, đòn kế tiếp chắc chắn chí mạng." ], "eq_night_passive": [ "Crits instantly restore 2 Mana and give +20% move speed for 1.5s.", "Đòn chí mạng hồi ngay 2 Mana và +20% tốc chạy trong 1.5s." ], "eq_no_role": [ "No Role effect.", "Không có hiệu ứng Role." ], "eq_shield_active": [ "Raise Shield · 18s cooldown: immune to all damage for 2s.", "Giơ Khiên · hồi 18s: miễn mọi sát thương trong 2s." ], "eq_shield_passive": [ "[Proposal] Fully blocks 1 hit every 8s.", "[Đề xuất] Chặn hoàn toàn 1 đòn mỗi 8s." ], "eq_wind_passive": [ "Stand still 1s: your next shot pierces and deals +40% damage.", "Đứng yên 1s: đòn bắn tiếp theo xuyên thấu và +40% sát thương." ], "equip_active_hdr": [ "ACTIVE · USE IN RUN", "CHỦ ĐỘNG · KÍCH HOẠT TRONG TRẬN" ], "equip_badge_need": [ "NEEDS ", "CẦN " ], "equip_badge_none": [ "NONE", "KHÔNG CÓ" ], "equip_badge_on": [ "ACTIVE", "KÍCH HOẠT" ], "equip_flat_stats": [ "FLAT STATS · ANY ROLE", "CHỈ SỐ CỘNG THẲNG · MỌI ROLE" ], "equip_limit_warn": [ "Already 2 items with active skills. Unequip one first.", "Đã đủ 2 món có kỹ năng kích hoạt. Tháo một món trước." ], "equip_passive_role": [ "PASSIVE · ROLE", "BỊ ĐỘNG · ROLE" ], "equip_pick_hint": [ "Pick an item in the bag or a worn slot to see details.", "Chọn một món trong túi hoặc một ô đang mặc để xem chi tiết." ], "equip_replaces": [ "Replaces ", "Sẽ thay " ], "equip_slot_empty": [ " slot is empty", " đang trống" ], "equip_slot_prefix": [ "", "Ô " ], "equip_title": [ "BAG & GEAR", "TÚI ĐỒ & TRANG BỊ" ], "equip_worn": [ "EQUIPPED", "ĐANG MẶC" ], "item_fire_armor": [ "Flame Knight Armor", "Giáp Lửa Kỵ Sĩ" ], "item_gold_ring": [ "Gold Ring", "Nhẫn Vàng" ], "item_holy_shield": [ "Holy Shield", "Khiên Thánh" ], "item_horn": [ "Horn Helm", "Mũ Sừng" ], "item_ice_mask": [ "Ice Mask", "Mặt Nạ Băng" ], "item_mage_hat": [ "Mage Hat", "Mũ Pháp Sư" ], "item_night_gloves": [ "Nightshade Gloves", "Găng Tay Bóng Đêm" ], "item_red_boots": [ "Red Boots", "Giày Đỏ" ], "item_rune_book": [ "Ancient Rune Book", "Sách Cổ Ngữ" ], "item_silver_armor": [ "Silver Armor", "Giáp Bạc" ], "item_silver_gloves": [ "Silver Gloves", "Găng Bạc" ], "item_wind_boots": [ "Windstep Boots", "Giày Phong Vũ" ], "item_wind_necklace": [ "Wind Necklace", "Dây Chuyền Gió" ], "slot_acc": [ "Accessory", "Phụ kiện" ], "slot_boots": [ "Boots", "Giày" ], "slot_gloves": [ "Gloves", "Găng" ], "slot_helmet": [ "Helmet", "Mũ" ], "slot_neck": [ "Necklace", "Vòng" ], "stat_armor": [ "Armor", "Giáp" ], "stat_aspd": [ "Attack speed", "Tốc đánh" ], "stat_aspd_pct": [ "% Attack speed", "% Tốc đánh" ], "stat_crit": [ "Crit", "Chí mạng" ], "stat_crit_pct": [ "% Crit", "% Chí mạng" ], "stat_dmg": [ "Damage", "Sát thương" ], "stat_dmg_pct": [ "% Damage", "% Sát thương" ], "stat_hp": [ "HP", "Máu" ], "stat_mana": [ "Mana", "Mana" ], "stat_spd": [ "Move speed", "Tốc chạy" ], "stat_spd_pct": [ "% Move speed", "% Tốc chạy" ], "stat_synergy": [ "Synergy", "Synergy" ] };
+class Component extends DCLogic {
+  componentDidMount() {
+    this._dgLang = () => this.forceUpdate();
+    window.addEventListener('storage', this._dgLang);
+    window.addEventListener('dg-lang', this._dgLang);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this._dgLang);
+    window.removeEventListener('dg-lang', this._dgLang);
+  }
+  lang() {
+    let v = null;
+    try { v = window.localStorage.getItem('dg-lang'); } catch (e) {}
+    return v === 'vi' || v === 'en' ? v : (this.props.lang === 'vi' ? 'vi' : 'en');
+  }
+  setLang(v) {
+    try { window.localStorage.setItem('dg-lang', v); } catch (e) {}
+    try { window.dispatchEvent(new Event('dg-lang')); } catch (e) {}
+    this.forceUpdate();
+  }
+  font() { return this.lang() === 'vi' ? "'Tiny5', monospace" : "'Pixelify Sans', monospace"; }
+  strs() {
+    const i = this.lang() === 'vi' ? 1 : 0, o = {};
+    Object.keys(STR).forEach(k => { o[k] = STR[k][i]; });
+    return o;
+  }
+
+  constructor(p) {
+    super(p);
+    this.state = { eq: { helmet: 'horn', armor: 'fire', gloves: 'night', boots: 'wind', neck: null, acc: 'book' }, sel: 'shield', filter: 'all' };
+  }
+  renderVals() {
+    const S = this.strs();
+    const ROLE = 'WARRIOR';
+    const RI = { WARRIOR: '/_blob/99c80cdd52c01dc18c8d675418d70347', RANGER: '/_blob/ff0e6af587cd37c8d5e171bae4517051', MAGE: '/_blob/84119a9343c0cb9d91f6cbfe7446b0ae', ASSASSIN: '/_blob/3f67213c67a39b302013b8d0bae91a18' };
+    const SLOT = { helmet: S.slot_helmet, armor: S.stat_armor, gloves: S.slot_gloves, boots: S.slot_boots, neck: S.slot_neck, acc: S.slot_acc };
+    const EMPTY = { helmet: '/_blob/172889bebfd70fbd4af805b76ba90ebf', armor: '/_blob/d1c9f95833810a6c39a3000af9b1a967', gloves: '/_blob/99098725ed349d21bb69972959971f05', boots: '/_blob/38763d1dedc50d31f0515534d17a5c2c', neck: '/_blob/c491269debf421041de0f971ee1b93e5', acc: '/_blob/c4f097bea6fa36c81a280c331d32b849' };
+    const IT = {
+      horn: { slot: 'helmet', name: S.item_horn, rar: 'C', img: '/_blob/7ffc1a1317705ba00a00a3429fc03a92', m: { armor: 1 }, role: 'WARRIOR', passive: S.eq_horn_passive },
+      fire: { slot: 'armor', name: S.item_fire_armor, rar: 'A', img: '/_blob/c53749c8a73f92a192d18c89bebe71e4', m: { armor: 2, hp: 10 }, role: 'WARRIOR', passive: S.eq_fire_passive, vfx: '/_blob/4cd99481eafd67d3a2e320b39badc6dc' },
+      night: { slot: 'gloves', name: S.item_night_gloves, rar: 'A', img: '/_blob/3b2479ad5a3406938c4332bace4c62e7', m: { crit: 8, aspd: 10 }, role: 'ASSASSIN', passive: S.eq_night_passive },
+      wind: { slot: 'boots', name: S.item_wind_boots, rar: 'B', img: '/_blob/ff0663a6673101cad686807c05ac5011', m: { spd: 15 }, role: 'RANGER', passive: S.eq_wind_passive, vfx: '/_blob/ce02d96ce1d7564bc148fdf8ce7c8b38' },
+      book: { slot: 'acc', name: S.item_rune_book, rar: 'B', img: '/_blob/d74730072c3d826fbcbf102a822c8485', m: { mana: 30, atk: 10 }, role: 'MAGE', passive: S.eq_book_passive, act: S.eq_book_active, vfx: '/_blob/449cc2a40e7e66140cdd9aad133db8d5' },
+      shield: { slot: 'acc', name: S.item_holy_shield, rar: 'C', img: '/_blob/6ff7a44d97180351d5fdcdf4866eb2e1', m: { armor: 2 }, role: 'WARRIOR', passive: S.eq_shield_passive, act: S.eq_shield_active },
+      silver: { slot: 'armor', name: S.item_silver_armor, rar: 'C', img: '/_blob/87d1e2acd5fbf46b91415f375be098d6', m: { armor: 1, hp: 5 }, role: '', passive: S.eq_no_role },
+      hat: { slot: 'helmet', name: S.item_mage_hat, rar: 'B', img: '/_blob/8dfc75f4b02f927b654a654f536306e9', m: { mana: 20, atk: 5 }, role: 'MAGE', passive: S.eq_hat_passive },
+      mask: { slot: 'helmet', name: S.item_ice_mask, rar: 'A', img: '/_blob/2a6f9589d15bc1100402d4fb8fb1d362', m: { armor: 1, crit: 6 }, role: 'ASSASSIN', passive: S.eq_mask_passive },
+      gwhite: { slot: 'gloves', name: S.item_silver_gloves, rar: 'C', img: '/_blob/de9e42bf13538042031b2aa5837a7afb', m: { armor: 1, aspd: 5 }, role: 'WARRIOR', passive: S.eq_gwhite_passive },
+      neck: { slot: 'neck', name: S.item_wind_necklace, rar: 'B', img: '/_blob/0880aef328b4055631caaef46c3cb6c9', m: { spd: 10, crit: 5 }, role: 'RANGER', passive: S.eq_neck_passive },
+      redb: { slot: 'boots', name: S.item_red_boots, rar: 'F', img: '/_blob/dd15361189e053c56684a86e5e2b8086', m: { spd: 5 }, role: '', passive: S.eq_no_role },
+      ring: { slot: 'acc', name: S.item_gold_ring, rar: 'F', img: '/_blob/52dac4e49debfeb246f335f6d1d26e08', m: { hp: 5, mana: 10 }, role: '', passive: S.eq_no_role }
+    };
+    const LBL = { hp: S.stat_hp, armor: S.stat_armor, mana: S.stat_mana, atk: S.stat_dmg_pct, aspd: S.stat_aspd_pct, spd: S.stat_spd_pct, crit: S.stat_crit_pct };
+    const s = this.state;
+    const LET = { S: '/_blob/c04911b55cda3c35c672b6de5b2608de', A: '/_blob/5ab2dfa420835a27a80274756ebe07c6', B: '/_blob/520ce0ed0fca6b027f29471e6726bc28', C: '/_blob/6ce73af3c47c07ecb1e4177b5049d482', F: '/_blob/2a8c8dbb1a05c4b01ac9490c5e4f0ce1' };
+    const WEAPON_ACTIVE = 1; // Kiếm Băng (Ô 2) có kỹ năng kích hoạt
+    const actCount = eq => WEAPON_ACTIVE + Object.values(eq).filter(id => id && IT[id].act).length;
+    const calc = (eq) => {
+      const t = { hp: 80, armor: 6, mana: 120, atk: 0, aspd: 0, spd: 0, crit: 5 };
+      Object.values(eq).forEach(id => { if (id) Object.entries(IT[id].m).forEach(([k, v]) => { t[k] += v; }); });
+      return { hp: t.hp, armor: t.armor, mana: t.mana, atk: Math.round(14 * (1 + t.atk / 100)), aspd: +(1.0 * (1 + t.aspd / 100)).toFixed(2), spd: +(5.0 * (1 + t.spd / 100)).toFixed(2), crit: t.crit };
+    };
+    const now = calc(s.eq);
+    const sel = s.sel ? IT[s.sel] : null;
+    const equipped = sel && s.eq[sel.slot] === s.sel;
+    const prev = sel && !equipped ? calc({ ...s.eq, [sel.slot]: s.sel }) : null;
+    const fmt = (k, v) => k === 'crit' ? v + '%' : String(v);
+    const statRows = [['hp', S.stat_hp], ['armor', S.stat_armor], ['mana', S.stat_mana], ['atk', S.stat_dmg], ['aspd', S.stat_aspd], ['spd', S.stat_spd], ['crit', S.stat_crit]].map(([k, l]) => {
+      const d = prev ? +(prev[k] - now[k]).toFixed(2) : 0;
+      return { k: l, v: fmt(k, prev ? prev[k] : now[k]), d: d > 0 ? '+' + d : d < 0 ? String(d) : '', dc: d > 0 ? '#14532d' : '#7f1d1d' };
+    });
+    statRows.push({ k: S.stat_synergy, v: Object.values(s.eq).filter(id => id && IT[id].role === ROLE).length + '/6', d: '', dc: '#1b1420' });
+    const pos = { helmet: [0, 4], armor: [0, 96], gloves: [0, 188], boots: [328, 4], neck: [328, 96], acc: [328, 188] };
+    const filters = [['all', S.common_all, ''], ['helmet', S.slot_helmet, '/_blob/4e9fbee6ad662bdbf4ae6452115cabdb'], ['armor', S.stat_armor, '/_blob/ff1d0f48c1e9b3a1a352066eec707091'], ['gloves', S.slot_gloves, '/_blob/755f6cfbd090f973cd08b7a0f93632c6'], ['boots', S.slot_boots, '/_blob/b2152be708ecfc832cd0c4cb970ea66d'], ['neck', S.slot_neck, '/_blob/47b44efd716c17cba50ba96989de4b53'], ['acc', S.slot_acc, '/_blob/7f45bd491c7425fc892010ec0bd10573']];
+    const bagIds = Object.keys(IT).filter(id => !Object.values(s.eq).includes(id) && (s.filter === 'all' || IT[id].slot === s.filter));
+    const match = sel && sel.role === ROLE;
+    const nextCount = sel && !equipped ? actCount({ ...s.eq, [sel.slot]: s.sel }) : actCount(s.eq);
+    const blocked = !!sel && !equipped && nextCount > 2;
+    const cur = sel ? {
+      ...sel, slotName: SLOT[sel.slot], roleIcon: RI[sel.role] || '', vfx: sel.vfx || '',
+      state: equipped ? S.equip_worn : (s.eq[sel.slot] ? S.equip_replaces + IT[s.eq[sel.slot]].name : S.equip_slot_prefix + SLOT[sel.slot] + S.equip_slot_empty),
+      modText: Object.entries(sel.m).map(([k, v]) => '+' + v + ' ' + LBL[k]),
+      badge: !sel.role ? S.equip_badge_none : (match ? S.equip_badge_on : S.equip_badge_need + sel.role),
+      badgeCls: match ? 'f-light-s' : 'f-dark-s', badgeFg: match ? '#1b1420' : '#efe6dc',
+      op: match ? 1 : 0.6, pc: match ? '#ffffff' : '#c9cdd8', fs: match ? 'normal' : 'italic',
+      let: LET[sel.rar], actText: sel.act || S.common_none, actColor: sel.act ? '#ffffff' : '#c9cdd8',
+      warn: blocked ? S.equip_limit_warn : '',
+      btn: equipped ? S.common_unequip : (blocked ? S.common_max_active : S.common_equip), btnCls: equipped ? 'f-btn' : (blocked ? 'f-dark-s' : 'f-light'),
+      act: () => equipped ? this.setState({ eq: { ...s.eq, [sel.slot]: null } }) : (blocked ? null : this.setState({ eq: { ...s.eq, [sel.slot]: s.sel } }))
+    } : { modText: [] };
+    const actNow = actCount(s.eq);
+    return { tx: S, font: this.font(),
+      hasSel: !!sel, noSel: !sel, cur, stats: statRows,
+      actNow,
+      synCount: Object.values(s.eq).filter(id => id && IT[id].role === ROLE).length,
+      slots: Object.keys(SLOT).map(k => {
+        const id = s.eq[k];
+        return { label: SLOT[k], name: id ? IT[id].name : S.common_empty, img: id ? IT[id].img : EMPTY[k], x: pos[k][0] + 'px', y: pos[k][1] + 'px',
+          sel: !!id && id === s.sel, let: id ? LET[IT[id].rar] : '', pick: () => this.setState({ sel: id || null, filter: id ? s.filter : k }) };
+      }),
+      tabs: filters.map(([k, label, icon]) => ({ label, icon, text: icon ? '' : label, w: icon ? '36px' : '68px', on: s.filter === k ? 'true' : 'false',
+        cls: s.filter === k ? 'f-light-s' : 'f-dark-s', fg: s.filter === k ? '#1b1420' : '#efe6dc', pick: () => this.setState({ filter: k }) })),
+      bagCount: bagIds.length,
+      bag: bagIds.map(id => ({ ...IT[id], sel: id === s.sel, let: LET[IT[id].rar], pick: () => this.setState({ sel: id }) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

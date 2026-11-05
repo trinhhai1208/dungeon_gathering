@@ -1,0 +1,224 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Main.dc.html": {
+      "h": 1180,
+      "page": "concept",
+      "title": "Concept & core loop",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Map-Boss.dc.html": {
+      "h": 1100,
+      "page": "maps",
+      "title": "Map · Boss arena",
+      "w": 1680,
+      "x": 3760,
+      "y": 0
+    },
+    "Map-Floor1.dc.html": {
+      "h": 1360,
+      "page": "maps",
+      "title": "Map · Tầng 1 (seed demo)",
+      "w": 2000,
+      "x": 0,
+      "y": 0
+    },
+    "Map-Lobby.dc.html": {
+      "h": 980,
+      "page": "maps",
+      "title": "Map · Lobby",
+      "w": 1440,
+      "x": 5520,
+      "y": 0
+    },
+    "Map-Rooms.dc.html": {
+      "h": 1360,
+      "page": "maps",
+      "title": "Map · Room templates",
+      "w": 1600,
+      "x": 2080,
+      "y": 0
+    },
+    "StyleGuide.dc.html": {
+      "h": 1180,
+      "page": "concept",
+      "title": "Style guide & sprite map",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "UI-Equipment.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Trang bị & Role Synergy",
+      "w": 1280,
+      "x": 0,
+      "y": 1120
+    },
+    "UI-HUD.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Play HUD",
+      "w": 1280,
+      "x": 2720,
+      "y": 0
+    },
+    "UI-Lobby.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Sảnh – chọn nhân vật",
+      "w": 1280,
+      "x": 1360,
+      "y": 0
+    },
+    "UI-Menu.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Menu",
+      "w": 1280,
+      "x": 0,
+      "y": 0
+    },
+    "UI-Pause.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Pause & Settings",
+      "w": 1280,
+      "x": 4080,
+      "y": 0
+    },
+    "UI-RunEnd.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Kết thúc – Thua",
+      "w": 1280,
+      "x": 4080,
+      "y": 1120
+    },
+    "UI-Shop.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Thương nhân (tweak: sảnh / trong run)",
+      "w": 1280,
+      "x": 2720,
+      "y": 1120
+    },
+    "UI-Weapon.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Vũ khí (2 ô)",
+      "w": 1280,
+      "x": 1360,
+      "y": 1120
+    },
+    "UI-Victory.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Kết thúc – Thắng",
+      "w": 1280,
+      "x": 5440,
+      "y": 1120
+    },
+    "UI-Loading.dc.html": {
+      "h": 720,
+      "is_interactive": true,
+      "page": "ui",
+      "title": "UI · Loading khi mở game (tweak: state)",
+      "w": 1280,
+      "x": -1360,
+      "y": 0
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-11-04T09:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "page": "ui",
+    "view": "canvas"
+  },
+  "notes": {
+    "t-concept": {
+      "kind": "title1",
+      "maxW": 2960,
+      "page": "concept",
+      "text": "Concept (bản cũ, chưa cập nhật Role)",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t-maps": {
+      "kind": "title1",
+      "maxW": 6960,
+      "page": "maps",
+      "text": "Maps & Level — để sau",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "t-ui": {
+      "kind": "title1",
+      "maxW": 6720,
+      "page": "ui",
+      "text": "UI — luồng chính (1280×720)",
+      "w": 240,
+      "x": -1360,
+      "y": -300
+    },
+    "t-ui2": {
+      "kind": "title1",
+      "maxW": 6720,
+      "page": "ui",
+      "text": "Trang bị · Vũ khí · Shop · Kết thúc (thua / thắng)",
+      "w": 240,
+      "x": 0,
+      "y": 820
+    }
+  },
+  "order": [
+    "UI-Loading.dc.html",
+    "UI-Menu.dc.html",
+    "UI-Lobby.dc.html",
+    "UI-HUD.dc.html",
+    "UI-Pause.dc.html",
+    "UI-Equipment.dc.html",
+    "UI-Weapon.dc.html",
+    "UI-Shop.dc.html",
+    "UI-RunEnd.dc.html",
+    "UI-Victory.dc.html",
+    "Main.dc.html",
+    "StyleGuide.dc.html",
+    "Map-Floor1.dc.html",
+    "Map-Rooms.dc.html",
+    "Map-Boss.dc.html",
+    "Map-Lobby.dc.html"
+  ],
+  "pages": [
+    {
+      "id": "ui",
+      "name": "UI"
+    },
+    {
+      "id": "concept",
+      "name": "Concept"
+    },
+    {
+      "id": "maps",
+      "name": "Maps & Level · để sau"
+    }
+  ],
+  "title": "Dungeon Gathering — UI, Maps & Concept"
+}

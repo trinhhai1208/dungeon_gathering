@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Mod_Results
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Mod_Results
+  m_GUID: 060a0f5ec31931448853f326069194dd
+  m_SerializeEntries:
+  - m_GUID: 18796204fbe85334bbf3d4da3d583323
+    m_Address: ui/screen/victory
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - results
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8960dae5ec21e544abe8a6d0d0e9cfef
+    m_Address: ui/screen/defeat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - results
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4f1f98bdc42039c4090d5015ffeb3805, type: 2}
+    - {fileID: 11400000, guid: b3adbe6ae80cd8e4d8f942aee87619ad, type: 2}

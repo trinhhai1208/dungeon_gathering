@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164143709f3901b45a8e7df499848c3f, type: 3}
+  m_Name: Char_shadow-knight
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.CharacterData
+  characterId: shadow-knight
+  nameKey: char.shadow_knight.name
+  descKey: char.shadow_knight.desc
+  role: 4
+  unlockPrice: 2500
+  released: 1
+  portrait: {fileID: -3697937407313181593, guid: b7db2372d73da2043a6e744c1958a8d1, type: 3}
+  animator: {fileID: 9100000, guid: 322f1acde5f59b645a8f3c38086c697f, type: 2}
+  baseStats:
+    maxHp: 6
+    maxArmor: 4
+    maxMana: 120
+    attackDamage: 1.05
+    attackSpeed: 1.1
+    moveSpeed: 5.3
+    critChance: 0.15
+  armorRegenDelay: 4
+  armorRegenRate: 1
+  manaRegen: 2
+  startingWeapon: {fileID: 11400000, guid: c95ac0d2760e4a14a9d99d129517b709, type: 2}
+  activeSkill: {fileID: 11400000, guid: 8d149eb8284324b479a3e3a16bf98122, type: 2}

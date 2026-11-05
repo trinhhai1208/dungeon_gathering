@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vũ khí</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&amp;family=Tiny5&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#efe6dc}a:hover{color:#f2b33d}
+img{image-rendering:pixelated}
+button{font:inherit;color:inherit;background:none;margin:0;padding:0;border:0;cursor:pointer}
+.f-dark,.f-dark-s,.f-dark-xs,.f-mid-s,.f-light,.f-light-s,.f-btn,.f-slot,.f-slot-s{border-style:solid;image-rendering:pixelated;box-sizing:border-box}
+.f-dark{border-width:24px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 24px stretch}
+.f-dark-s{border-width:12px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 12px stretch}
+.f-dark-xs{border-width:8px;border-image:url(/_blob/024dff5380443d6487e6f7e32a22dcf1) 24 fill / 8px stretch}
+.f-mid-s{border-width:12px;border-image:url(/_blob/98548f07bfaec0e750207463097f3048) 24 fill / 12px stretch}
+.f-light{border-width:24px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 24px stretch}
+.f-light-s{border-width:12px;border-image:url(/_blob/7d20ff926ea413b147f7dfb810cee5cd) 24 fill / 12px stretch}
+.f-btn{border-width:24px;border-image:url(/_blob/3fa1daebff64e0db2fa846fc67ed87d9) 24 fill / 24px stretch}
+.f-slot{border-width:24px;border-image:url(/_blob/52f45e9825703a936ced893a8ddc2f3a) 24 fill / 24px stretch}
+.f-slot-s{border-width:12px;border-image:url(/_blob/52f45e9825703a936ced893a8ddc2f3a) 24 fill / 12px stretch}
+.sel{border-style:solid;border-width:20px;border-image:url(/_blob/755409c43ba52a3378cfef7e9ccbc388) 16 / 20px stretch;box-sizing:border-box;image-rendering:pixelated;pointer-events:none}
+</style>
+</helmet>
+<div style="width: 1280px; height: 720px; position: relative; overflow: hidden; background: #1b1420; color: #efe6dc; font-family: {{font}}">
+  <a href="UI-Lobby.dc.html" aria-label="{{tx.common_back_lobby}}" style="position: absolute; top: 16px; left: 24px; display: block"><img src="/_blob/6c13802bc87c3805e6cc83316fd4567f" alt="" style="height: 56px; display: block"></a>
+  <div style="position: absolute; top: 22px; left: 100px; font-size: 34px">{{tx.common_weapons}}</div>
+  <div class="f-dark-s" style="position: absolute; top: 20px; left: 367px; display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 6px; font-size: 14px">{{tx.common_active}} <span style="font-size: 22px; color: #9fd0ff">{{actNow}} / 2</span></div>
+  <div class="f-light-s" style="position: absolute; top: 19px; left: 555px; display: flex; align-items: center; gap: 8px; padding: 0 6px; height: 48px; color: #1b1420; font-size: 18px"><img src="/_blob/99c80cdd52c01dc18c8d675418d70347" alt="" style="height: 24px">Knight · WARRIOR</div>
+  <div class="f-dark-s" style="position: absolute; top: 18px; right: 24px; display: flex; align-items: center; gap: 8px; height: 48px; padding: 0 6px; font-size: 13px"><img src="/_blob/f4a133e2814bd816130ed7fd8430a7c7" alt="" style="height: 22px">{{tx.weapon_carry_hint}}</div>
+
+  <div class="f-dark" style="position: absolute; left: 20px; top: 84px; width: 372px; height: 620px; padding: 0 4px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; gap: 12px; align-items: center">
+      <span style="position: relative; display: block; flex: none"><img src="{{cur.img}}" alt="" style="width: 96px; display: block"><img src="{{cur.let}}" alt="" style="position: absolute; left: 6px; top: 6px; width: 21px; height: 24px"></span>
+      <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+        <div style="font-size: 24px; line-height: 1.1">{{cur.name}}</div>
+        <div style="font-size: 13px; color: #e6e9f2">{{tx.weapon_type}} {{cur.rar}}</div>
+        <div style="font-size: 12px; color: #ffd27a">{{cur.state}}</div>
+      </div>
+    </div>
+    <div class="f-mid-s" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 12px; padding: 2px 6px; color: #1b1420">
+      <sc-for list="{{cur.rows}}" as="r" hint-placeholder-count="4">
+        <div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-size: 12px">{{r.k}}</span><span style="font-size: 20px">{{r.v}}</span></div>
+      </sc-for>
+    </div>
+    <div style="font-size: 11px; letter-spacing: 1.5px">{{tx.weapon_passive_hdr}}</div>
+    <div style="font-size: 13px; line-height: 1.45; color: #ffffff">{{cur.passive}}</div>
+    <div style="font-size: 11px; letter-spacing: 1.5px">{{tx.weapon_active_hdr}}</div>
+    <div style="font-size: 13px; line-height: 1.45; color: {{cur.actColor}}">{{cur.actText}}</div>
+    <div style="font-size: 12px; color: #ff8a84">{{cur.warn}}</div>
+    
+    <div style="margin-top: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{cur.btns}}" as="b" hint-placeholder-count="2">
+        <button type="button" class="{{b.cls}}" onClick="{{b.act}}" aria-pressed="{{b.on}}" style="height: 68px; display: flex; align-items: center; justify-content: center; color: {{b.fg}}; font-size: 18px">{{b.text}}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 404px; top: 84px; width: 472px; height: 620px; padding: 0">
+    <div style="position: relative; height: 290px">
+      <img src="/_blob/91623d653ebf913d972612acd2846ecd" alt="Knight" style="position: absolute; left: 146px; top: 56px; width: 135px; height: 144px">
+      <sc-for list="{{slots}}" as="s" hint-placeholder-count="2">
+        <button type="button" onClick="{{s.pick}}" aria-pressed="{{s.on}}" aria-label="{{s.label}}: {{s.name}}" style="position: absolute; left: {{s.x}}; top: 40px; width: 120px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+          <span style="position: relative; display: block">
+            <img src="{{s.img}}" alt="" style="width: 84px; display: block"><img src="{{s.let}}" alt="" style="position: absolute; left: 6px; top: 6px; width: 21px; height: 24px">
+            <sc-if value="{{s.sel}}" hint-placeholder-val="{{ false }}"><span class="sel" style="position: absolute; inset: -8px"></span></sc-if>
+          </span>
+          <span style="font-size: 12px">{{s.label}}</span>
+          <span style="font-size: 12px; color: #e6e9f2">{{s.name}}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="font-size: 12px; letter-spacing: 1.5px; margin-bottom: 6px">{{statTitle}}</div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 10px">
+      <sc-for list="{{stats}}" as="r" hint-placeholder-count="6">
+        <div class="f-mid-s" style="display: flex; align-items: center; justify-content: space-between; height: 44px; padding: 0 4px; color: #1b1420">
+          <span style="font-size: 12px">{{r.k}}</span>
+          <span style="display: flex; align-items: baseline; gap: 6px"><span style="font-size: 18px">{{r.v}}</span><span style="font-size: 15px; color: {{r.dc}}">{{r.d}}</span></span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div class="f-dark" style="position: absolute; left: 888px; top: 84px; width: 372px; height: 620px; padding: 0 4px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; gap: 4px">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+        <button type="button" class="{{t.cls}}" onClick="{{t.pick}}" aria-pressed="{{t.on}}" aria-label="{{tx.common_filter}} {{t.label}}" style="height: 44px; width: {{t.w}}; display: flex; align-items: center; justify-content: center; color: {{t.fg}}; font-size: 15px">{{t.label}}</button>
+      </sc-for>
+    </div>
+    <div style="font-size: 12px; color: #e6e9f2">{{bagCount}} {{tx.weapon_armory}}</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px">
+      <sc-for list="{{bag}}" as="b" hint-placeholder-count="8">
+        <button type="button" onClick="{{b.pick}}" aria-pressed="{{b.sel}}" aria-label="{{b.name}}, rarity {{b.rar}}" style="position: relative; display: block; width: 64px; justify-self: center">
+          <img src="{{b.img}}" alt="" style="width: 64px; display: block"><img src="{{b.let}}" alt="" style="position: absolute; left: 4px; top: 4px; width: 14px; height: 16px">
+          <sc-if value="{{b.sel}}" hint-placeholder-val="{{ false }}"><span class="sel" style="position: absolute; inset: -8px"></span></sc-if>
+          <sc-if value="{{b.eq}}" hint-placeholder-val="{{ false }}"><span class="f-light-s" style="position: absolute; right: -4px; bottom: -6px; height: 26px; padding: 0 2px; display: flex; align-items: center; color: #1b1420; font-size: 11px">{{b.eq}}</span></sc-if>
+        </button>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","vi"],"default":"en"},"$preview":{"width":1280,"height":720}}'>
+const STR = { "common_active": [ "Active", "Kích hoạt" ], "common_all_lc": [ "All", "Tất cả" ], "common_back_lobby": [ "Back to lobby", "Quay lại sảnh" ], "common_filter": [ "Filter:", "Lọc:" ], "common_max_active": [ "2 ACTIVES MAX", "ĐỦ 2 KỸ NĂNG" ], "common_none": [ "None.", "Không có." ], "common_weapons": [ "WEAPONS", "VŨ KHÍ" ], "stat_aspd": [ "Attack speed", "Tốc đánh" ], "stat_crit": [ "Crit", "Chí mạng" ], "stat_dmg": [ "Damage", "Sát thương" ], "stat_mana_hit": [ "Mana / hit", "Mana / đòn" ], "stat_range": [ "Range", "Tầm đánh" ], "sword_dark": [ "Dark Sword", "Kiếm Đen" ], "sword_fire": [ "Flame Sword", "Kiếm Lửa" ], "sword_gold": [ "Golden Sword", "Kiếm Hoàng Kim" ], "sword_holy": [ "Holy Sword", "Kiếm Thánh" ], "sword_ice": [ "Frost Sword", "Kiếm Băng" ], "sword_iron": [ "Iron Sword", "Kiếm Sắt" ], "sword_lava": [ "Lava Sword", "Kiếm Dung Nham" ], "sword_old": [ "Rotten Wood Sword", "Kiếm Gỗ Mục" ], "sword_thorn": [ "Thorn Sword", "Kiếm Gai Rừng" ], "sword_thunder": [ "Thunder Sword", "Kiếm Sấm" ], "sword_venom": [ "Venom Sword", "Kiếm Độc" ], "sword_void": [ "Void Sword", "Kiếm Hư Không" ], "weapon_active_hdr": [ "ACTIVE · TAP IN RUN", "CHỦ ĐỘNG · BẤM TRONG TRẬN" ], "weapon_carry_hint": [ "Carry 2 weapons · tap the weapon slot in a run to swap", "Mang 2 vũ khí · trong trận bấm ô vũ khí để đổi" ], "weapon_if_swap": [ "  →  if swapped to ", "  →  nếu đổi sang " ], "weapon_in_armory": [ "In armory · vs slot ", "Trong kho · so với Ô " ], "weapon_in_slot": [ "IN SLOT ", "ĐANG Ở Ô " ], "weapon_limit_warn": [ "Already 2 items with active skills (max 2 per run).", "Đã đủ 2 món có kỹ năng kích hoạt (tối đa 2 khi vào trận)." ], "weapon_passive_hdr": [ "PASSIVE · AUTO", "BỊ ĐỘNG · TỰ KÍCH HOẠT" ], "weapon_slot1": [ "Slot 1 · held at start", "Ô 1 · cầm khi vào trận" ], "weapon_stats_of": [ "SLOT STATS ", "CHỈ SỐ Ô " ], "weapon_to_slot": [ "TO SLOT ", "VÀO Ô " ], "wp_dark_passive": [ "[Proposal] Kills: +5% damage for 3s, stacks 3 times.", "[Đề xuất] Hạ quái: +5% sát thương trong 3s, cộng dồn 3 lần." ], "wp_fire_active": [ "Dragon Flame Slash · 20s cooldown: a huge wave of fire ahead.", "Hỏa Long Trảm · hồi 20s: chém một sóng lửa lớn phía trước." ], "wp_fire_passive": [ "[Proposal] Every 5s, your next hit fires a cone of flame.", "[Đề xuất] Mỗi 5s, đòn kế tiếp phóng sóng lửa hình nón." ], "wp_gold_passive": [ "[Proposal] Kills drop 1 extra coin.", "[Đề xuất] Hạ quái rơi thêm 1 coin." ], "wp_holy_active": [ "Holy Light · 25s cooldown: restore 15 HP.", "Thánh Quang · hồi 25s: hồi 15 Máu." ], "wp_holy_passive": [ "[Proposal] Kills restore 1 HP (max 5 per room).", "[Đề xuất] Hạ quái hồi 1 Máu (tối đa 5 mỗi phòng)." ], "wp_ice_active": [ "Frost Field · 16s cooldown: freeze nearby enemies for 2s.", "Băng Trận · hồi 16s: đóng băng quái xung quanh 2s." ], "wp_ice_passive": [ "[Proposal] Slashes slow enemies by 30% for 1s.", "[Đề xuất] Đòn chém làm chậm quái 30% trong 1s." ], "wp_iron_passive": [ "None. Knight's starting weapon.", "Không có. Vũ khí khởi đầu của Knight." ], "wp_lava_passive": [ "[Proposal] Slashes leave burning ground for 2s.", "[Đề xuất] Đòn chém để lại vệt lửa trên sàn 2s." ], "wp_thorn_passive": [ "[Proposal] Every 3rd hit shoots a thorn piercing 2 enemies.", "[Đề xuất] Đòn thứ 3 bắn gai xuyên 2 quái." ], "wp_thunder_active": [ "Thunder Judgement · 18s cooldown: 5 bolts strike the nearest enemies.", "Lôi Phạt · hồi 18s: gọi 5 tia sét xuống quái gần nhất." ], "wp_thunder_passive": [ "[Proposal] Crits chain lightning to 3 enemies.", "[Đề xuất] Chí mạng phóng tia sét nảy sang 3 quái." ], "wp_venom_passive": [ "[Proposal] Poisons for 4 damage per second over 3s.", "[Đề xuất] Gây độc 4 sát thương mỗi giây trong 3s." ], "wp_void_active": [ "Rift Cut · 15s cooldown: dash through enemies and slash twice.", "Xé Không Gian · hồi 15s: lướt xuyên qua quái và chém 2 lần." ], "wp_void_passive": [ "[Proposal] Every 4th slash fires a long-range sword wave.", "[Đề xuất] Đòn chém thứ 4 tạo vệt kiếm khí bay xa." ] };
+class Component extends DCLogic {
+  componentDidMount() {
+    this._dgLang = () => this.forceUpdate();
+    window.addEventListener('storage', this._dgLang);
+    window.addEventListener('dg-lang', this._dgLang);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('storage', this._dgLang);
+    window.removeEventListener('dg-lang', this._dgLang);
+  }
+  lang() {
+    let v = null;
+    try { v = window.localStorage.getItem('dg-lang'); } catch (e) {}
+    return v === 'vi' || v === 'en' ? v : (this.props.lang === 'vi' ? 'vi' : 'en');
+  }
+  setLang(v) {
+    try { window.localStorage.setItem('dg-lang', v); } catch (e) {}
+    try { window.dispatchEvent(new Event('dg-lang')); } catch (e) {}
+    this.forceUpdate();
+  }
+  font() { return this.lang() === 'vi' ? "'Tiny5', monospace" : "'Pixelify Sans', monospace"; }
+  strs() {
+    const i = this.lang() === 'vi' ? 1 : 0, o = {};
+    Object.keys(STR).forEach(k => { o[k] = STR[k][i]; });
+    return o;
+  }
+
+  constructor(p) { super(p); this.state = { w: ['iron', 'ice'], sel: 'void', cmp: 0, filter: 'all' }; }
+  renderVals() {
+    const S = this.strs();
+    const s = this.state;
+    const W = {
+      fire:    { name: S.sword_fire, rar: 'S', img: '/_blob/80806e9fc35f81456a89617880fd4176', dmg: 28, aspd: 1.0, rng: 1.6, crit: 10, passive: S.wp_fire_passive, act: S.wp_fire_active },
+      thunder: { name: S.sword_thunder, rar: 'S', img: '/_blob/87342acc1ca590d5bc566d390583927f', dmg: 25, aspd: 1.2, rng: 1.5, crit: 12, passive: S.wp_thunder_passive, act: S.wp_thunder_active },
+      void:    { name: S.sword_void, rar: 'A', img: '/_blob/8754d4b075f4006a02c3a5d853d5d553', dmg: 22, aspd: 0.9, rng: 1.5, crit: 8, passive: S.wp_void_passive, act: S.wp_void_active },
+      gold:    { name: S.sword_gold, rar: 'A', img: '/_blob/ae6463e104446f8da9a8cf4369b33560', dmg: 20, aspd: 1.0, rng: 1.4, crit: 6, passive: S.wp_gold_passive },
+      lava:    { name: S.sword_lava, rar: 'A', img: '/_blob/53f42315db7134aeb8a244ab170eecb4', dmg: 24, aspd: 0.8, rng: 1.4, crit: 5, passive: S.wp_lava_passive },
+      ice:     { name: S.sword_ice, rar: 'B', img: '/_blob/b7309a422bec545deda9d4104492539e', dmg: 18, aspd: 0.9, rng: 1.4, crit: 5, passive: S.wp_ice_passive, act: S.wp_ice_active },
+      thorn:   { name: S.sword_thorn, rar: 'B', img: '/_blob/1297f0da512f13df72c60c7febbc7539', dmg: 17, aspd: 1.0, rng: 1.3, crit: 5, passive: S.wp_thorn_passive },
+      holy:    { name: S.sword_holy, rar: 'B', img: '/_blob/29671a62c2060dad79752491f17c1a8a', dmg: 15, aspd: 1.1, rng: 1.3, crit: 5, passive: S.wp_holy_passive, act: S.wp_holy_active },
+      dark:    { name: S.sword_dark, rar: 'C', img: '/_blob/c93fc4324a0a8aa9f6270ac3279102a6', dmg: 16, aspd: 0.9, rng: 1.2, crit: 5, passive: S.wp_dark_passive },
+      venom:   { name: S.sword_venom, rar: 'C', img: '/_blob/0fcfd73061b8baa296aaff2bcd8ea649', dmg: 13, aspd: 1.1, rng: 1.2, crit: 5, passive: S.wp_venom_passive },
+      iron:    { name: S.sword_iron, rar: 'F', img: '/_blob/c23b64f4ab8221b90c0a1070dbee108c', dmg: 14, aspd: 1.0, rng: 1.2, crit: 5, passive: S.wp_iron_passive },
+      old:     { name: S.sword_old, rar: 'F', img: '/_blob/5fdfc102936c977fce08fa438cdb80fb', dmg: 10, aspd: 1.3, rng: 1.0, crit: 5, passive: S.common_none }
+    };
+    const LET = { S: '/_blob/c04911b55cda3c35c672b6de5b2608de', A: '/_blob/5ab2dfa420835a27a80274756ebe07c6', B: '/_blob/520ce0ed0fca6b027f29471e6726bc28', C: '/_blob/6ce73af3c47c07ecb1e4177b5049d482', F: '/_blob/2a8c8dbb1a05c4b01ac9490c5e4f0ce1' };
+    const EQUIP_ACTIVE = 1; // Sách Cổ Ngữ đang mặc có kỹ năng kích hoạt
+    const actCount = w => EQUIP_ACTIVE + w.filter(id => W[id].act).length;
+    const G = '#14532d', Rd = '#7f1d1d', N = '#1b1420';
+    const dps = x => +(x.dmg * x.aspd).toFixed(1);
+    const fmt = (v, dp) => dp ? v.toFixed(dp) : String(v);
+    const c = W[s.sel];
+    const inSlot = s.w.indexOf(s.sel);
+    const base = W[s.w[s.cmp]];
+    const preview = inSlot < 0;
+    const nextW = k => { const w = [...s.w]; if (inSlot >= 0) w[inSlot] = w[k]; w[k] = s.sel; return w; };
+    const blockedAt = k => inSlot < 0 && actCount(nextW(k)) > 2;
+    const equip = k => {
+      const w = [...s.w];
+      if (inSlot >= 0) { w[inSlot] = w[k]; }
+      w[k] = s.sel;
+      this.setState({ w, cmp: k });
+    };
+    const KEYS = [
+      { k: S.stat_dmg, f: x => x.dmg, dp: 0 }, { k: S.stat_aspd, f: x => x.aspd, dp: 1 },
+      { k: S.stat_range, f: x => x.rng, dp: 1 }, { k: 'DPS', f: dps, dp: 1 },
+      { k: S.stat_crit, f: x => x.crit, dp: 0, pct: true }, { k: S.stat_mana_hit, f: () => 0, dp: 0 }
+    ];
+    const stats = KEYS.map(r => {
+      const a = r.f(base), b = r.f(c), d = +(b - a).toFixed(r.dp);
+      const show = preview && d !== 0;
+      return { k: r.k, v: fmt(a, r.dp) + (r.pct ? '%' : ''), d: show ? (d > 0 ? '+' : '') + fmt(d, r.dp) : '', dc: d > 0 ? G : d < 0 ? Rd : N };
+    });
+    const ids = Object.keys(W);
+    const tabs = [S.common_all_lc, 'S', 'A', 'B', 'C', 'F'].map((label, i) => {
+      const key = i === 0 ? 'all' : label, on = s.filter === key;
+      return { label, on: on ? 'true' : 'false', w: i === 0 ? '84px' : '44px', cls: on ? 'f-light-s' : 'f-dark-s', fg: on ? N : '#efe6dc', pick: () => this.setState({ filter: key }) };
+    });
+    return { tx: S, font: this.font(),
+      cur: {
+        ...c,
+        let: LET[c.rar], actText: c.act || S.common_none, actColor: c.act ? '#ffffff' : '#c9cdd8',
+        warn: inSlot < 0 && blockedAt(0) && blockedAt(1) ? S.weapon_limit_warn : '',
+        state: inSlot >= 0 ? S.weapon_in_slot + (inSlot + 1) : S.weapon_in_armory + (s.cmp + 1) + ' (' + base.name + ')',
+        rows: [ { k: S.stat_dmg, v: c.dmg }, { k: S.stat_aspd, v: fmt(c.aspd, 1) }, { k: S.stat_range, v: fmt(c.rng, 1) }, { k: 'DPS', v: fmt(dps(c), 1) } ],
+        btns: [0, 1].map(k => {
+          const here = inSlot === k, bl = blockedAt(k);
+          return { text: here ? S.weapon_in_slot + (k + 1) : (bl ? S.common_max_active : S.weapon_to_slot + (k + 1)), on: here ? 'true' : 'false', cls: here || bl ? 'f-dark-s' : (k === s.cmp ? 'f-light' : 'f-btn'), fg: here || bl ? '#efe6dc' : N, act: () => { if (!here && !bl) equip(k); } };
+        })
+      },
+      slots: [0, 1].map(k => ({
+        label: k === 0 ? S.weapon_slot1 : 'Ô 2', name: W[s.w[k]].name, img: W[s.w[k]].img, let: LET[W[s.w[k]].rar],
+        x: k === 0 ? '18px' : '310px', on: k === s.cmp ? 'true' : 'false', sel: k === s.cmp,
+        pick: () => this.setState({ cmp: k, sel: s.w[k] })
+      })),
+      statTitle: S.weapon_stats_of + (s.cmp + 1) + ' · ' + base.name.toUpperCase() + (preview ? S.weapon_if_swap + c.name : ''),
+      stats, tabs, actNow: actCount(s.w),
+      bagCount: ids.length,
+      bag: ids.filter(id => s.filter === 'all' || W[id].rar === s.filter).map(id => {
+        const k = s.w.indexOf(id);
+        return { name: W[id].name, img: W[id].img, rar: W[id].rar, let: LET[W[id].rar], sel: id === s.sel, eq: k >= 0 ? 'Ô' + (k + 1) : '', pick: () => this.setState({ sel: id, cmp: k >= 0 ? k : s.cmp }) };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Lobby map</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;family=Pixelify+Sans:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+img{image-rendering:pixelated}
+</style>
+</helmet>
+<div style="width: 1440px; height: 980px; box-sizing: border-box; padding: 48px 56px; background: #1b1420; color: #efe6dc; font-family: 'Be Vietnam Pro', system-ui, sans-serif; display: flex; flex-direction: column; gap: 22px">
+  <div style="display: flex; justify-content: space-between; align-items: flex-end">
+    <h1 style="margin: 0; font-family: 'Pixelify Sans', monospace; font-size: 52px; line-height: 1">Lobby · Sảnh tụ họp</h1>
+    <div style="font-size: 15px; color: #b9a9b8">29×17 tile · không quái · Player prefab dùng chung với Play</div>
+  </div>
+  <div style="position: relative; width: 1160px; height: 680px; align-self: center">
+    <img src="/_blob/62a6ce7362d83e29e4f67a8a0bed879b" alt="Lobby 29×17" style="width: 1160px; height: 680px; display: block; border-radius: 4px">
+    <sc-for list="{{pins}}" as="p" hint-placeholder-count="5">
+      <div style="position: absolute; left: {{p.x}}; top: {{p.y}}; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; background: #f2b33d; color: #1b1420; border: 3px solid #1b1420; display: flex; align-items: center; justify-content: center; font-family: 'Pixelify Sans', monospace; font-size: 20px; font-weight: 700">{{p.n}}</div>
+    </sc-for>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px">
+    <sc-for list="{{pins}}" as="p" hint-placeholder-count="5">
+      <div style="display: flex; gap: 10px; align-items: flex-start">
+        <div style="width: 28px; height: 28px; flex: none; border-radius: 50%; background: #f2b33d; color: #1b1420; display: flex; align-items: center; justify-content: center; font-family: 'Pixelify Sans', monospace; font-size: 16px; font-weight: 700">{{p.n}}</div>
+        <div style="font-size: 14px; line-height: 1.45"><b>{{p.t}}</b><br><span style="color: #c9bcc7">{{p.d}}</span></div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const P = (n, tx, ty, t, d) => ({ n, x: Math.round(tx * 40 + 20) + 'px', y: Math.round(ty * 40) + 'px', t, d });
+    return {
+      pins: [
+        P(1, 14.5, 3.0, 'Portal', 'Interact → ghi DungeonConfig vào SessionData, Load(Play).'),
+        P(2, 14, 9.6, '4 bệ nhân vật', 'Đứng lên bệ để đổi class. Bệ khóa hiện giá gems.'),
+        P(3, 4, 3.0, 'NPC Thương nhân', 'Mua vật phẩm khởi đầu run (1 bình máu, 1 vũ khí C).'),
+        P(4, 24, 3.0, 'NPC Rèn', 'Nâng cấp chỉ số vĩnh viễn: +HP, +Giáp, +Mana.'),
+        P(5, 14, 12.4, 'Player spawn', 'Về đây sau mỗi run. Tường 2 bên tạo khu thử súng.')
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

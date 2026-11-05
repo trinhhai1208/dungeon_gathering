@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede2df24fc42525419a8bf8a2267d944, type: 3}
+  m_Name: Weapon_sword-void
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.WeaponData
+  id: sword-void
+  rarity: 1
+  icon: {fileID: -1136435792311686488, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+  nameKey: sword.void
+  descKey: wp.void.passive
+  activeSkill: {fileID: 11400000, guid: 8d149eb8284324b479a3e3a16bf98122, type: 2}
+  shopPrice: 110
+  weaponType: 0
+  fireMode: 0
+  weaponSprite: {fileID: -1136435792311686488, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+  holdOffset: {x: 0, y: 0}
+  muzzleOffset: {x: 0.5, y: 0}
+  weaponPrefab: {fileID: 0}
+  damage: 22
+  fireRate: 1.8
+  attackRange: 1.5
+  spread: 0
+  knockback: 5
+  critBonus: 0.08
+  manaCost: 0
+  projectileSpeed: 14
+  projectileCount: 1
+  pierce: 0
+  explosionRadius: 0
+  swingArc: 110
+  swingDuration: 0.15
+  destroysProjectiles: 1
+  slashVfxPrefab: {fileID: 1822799776828151798, guid: b07d8fef20eeefb46a4ebec97d87f178, type: 3}
+  projectilePrefab: {fileID: 0}
+  muzzleVfxPrefab: {fileID: 0}
+  hitImpactVfxPrefab: {fileID: 223004030011534324, guid: 955cc2ed8b95f964e8bb4a62b4d7a34f, type: 3}
+  attackSfx: {fileID: 0}
+  passive: {fileID: 11400000, guid: 2962c406912a2004ba128889e0a28679, type: 2}

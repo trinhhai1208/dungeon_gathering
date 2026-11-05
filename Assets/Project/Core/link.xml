@@ -1,0 +1,19 @@
+<linker>
+  <!--
+    Chỉ giữ những gì thật sự cần cho reflection / serialization (managed code stripping, WebGL).
+    - Project.Core / Project.Shared: SaveData đọc/ghi bằng JsonUtility, ScriptableObject (ModuleRegistry,
+      LocalizationFontConfig, SfxLibrary...) và MonoBehaviour chỉ được tham chiếu từ asset Addressables.
+    - Các assembly module (Catalog, Combat, Enemy, Menu, Lobby, Play, Results): KHÔNG cần preserve="all":
+      không dùng reflection, không có UnityEvent persistent call, không có SerializeReference; kiểu nằm trong
+      bundle được Addressables tự sinh link.xml lúc build.
+    - Addressables / ResourceManager: provider được tạo bằng tên kiểu (reflection) → giữ nguyên (đã biết bị strip sai).
+    - Localization: dùng [SerializeReference] (selector, metadata, SmartFormat) trong LocalizationSettings → giữ nguyên.
+    - TilemapModule: Tilemap chỉ nằm trong scene Addressables → "Strip Engine Code" có thể bỏ mất module.
+  -->
+  <assembly fullname="Project.Core" preserve="all" />
+  <assembly fullname="Project.Shared" preserve="all" />
+  <assembly fullname="Unity.ResourceManager" preserve="all" />
+  <assembly fullname="Unity.Addressables" preserve="all" />
+  <assembly fullname="Unity.Localization" preserve="all" />
+  <assembly fullname="UnityEngine.TilemapModule" preserve="all" />
+</linker>

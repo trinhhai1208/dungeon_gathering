@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164143709f3901b45a8e7df499848c3f, type: 3}
+  m_Name: Char_knight
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.CharacterData
+  characterId: knight
+  nameKey: char.knight.name
+  descKey: char.knight.desc
+  role: 1
+  unlockPrice: 0
+  released: 1
+  portrait: {fileID: -9130546134006538124, guid: 17808b85e774f83459a6720ffc3cd881, type: 3}
+  animator: {fileID: 9100000, guid: 95b3aa290aa7a584593b4bf3e1917c4b, type: 2}
+  baseStats:
+    maxHp: 7
+    maxArmor: 6
+    maxMana: 120
+    attackDamage: 1.0769231
+    attackSpeed: 1
+    moveSpeed: 5
+    critChance: 0.05
+  armorRegenDelay: 4
+  armorRegenRate: 1
+  manaRegen: 2
+  startingWeapon: {fileID: 11400000, guid: 71849f9c75f1e97408ac202ee4da9dab, type: 2}
+  activeSkill: {fileID: 11400000, guid: bb55fd1b7cf36314d94ac4021395a3e3, type: 2}

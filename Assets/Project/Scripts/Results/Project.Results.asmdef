@@ -1,0 +1,6 @@
+{
+    "name": "Project.Results",
+    "rootNamespace": "DungeonGathering.Results",
+    "references": [ "Project.Core", "Project.Shared", "Project.Catalog", "UnityEngine.UI", "Unity.TextMeshPro" ],
+    "autoReferenced": true
+}

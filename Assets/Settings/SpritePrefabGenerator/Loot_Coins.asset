@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e688b7f68f55142842e3172f4ad9ea, type: 3}
+  m_Name: Loot_Coins
+  m_EditorClassIdentifier: HaiTNDev.SpritePrefabGenerator.Editor::HaiTNDev.SpritePrefabGenerator.PrefabGeneratorSettings
+  sourceFolder: {fileID: 102900000, guid: 9ff3d9ba1193b78459ef698dc0c2d907, type: 3}
+  outputFolder: Assets/Project/Prefabs/Loot
+  mirrorFolderStructure: 0
+  collapseFolderRegex: (?i)\banimations?\b
+  excludePathRegex: (?i)\.gif$
+  fromAnimatorControllers: 0
+  fromSpriteSheets: 1
+  fromStaticSprites: 0
+  grouping: 2
+  namePrefixSeparators: 
+  frameRate: 10
+  minFrames: 2
+  nonLoopingRegex: (?i)(death|die|dead)
+  defaultStateRegex: (?i)idle
+  animatedNamePattern: '{name}'
+  staticNamePattern: '{name}'
+  template: {fileID: 0}
+  overrideSorting: 0
+  sortingLayerName: Default
+  orderInLayer: 0

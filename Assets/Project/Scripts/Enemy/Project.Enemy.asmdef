@@ -1,0 +1,6 @@
+{
+    "name": "Project.Enemy",
+    "rootNamespace": "DungeonGathering.Enemies",
+    "references": [ "Project.Core", "Unity.Addressables", "Unity.ResourceManager", "Project.Catalog", "Project.Combat" ],
+    "autoReferenced": true
+}

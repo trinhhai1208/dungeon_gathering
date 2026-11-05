@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede2df24fc42525419a8bf8a2267d944, type: 3}
+  m_Name: Weapon_sword-lava
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.WeaponData
+  id: sword-lava
+  rarity: 1
+  icon: {fileID: -5094286353425474703, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+  nameKey: sword.lava
+  descKey: wp.lava.passive
+  activeSkill: {fileID: 0}
+  shopPrice: 110
+  weaponType: 0
+  fireMode: 0
+  weaponSprite: {fileID: -5094286353425474703, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+  holdOffset: {x: 0, y: 0}
+  muzzleOffset: {x: 0.5, y: 0}
+  weaponPrefab: {fileID: 0}
+  damage: 24
+  fireRate: 1.6
+  attackRange: 1.4
+  spread: 0
+  knockback: 5
+  critBonus: 0.05
+  manaCost: 0
+  projectileSpeed: 14
+  projectileCount: 1
+  pierce: 0
+  explosionRadius: 0
+  swingArc: 110
+  swingDuration: 0.15
+  destroysProjectiles: 1
+  slashVfxPrefab: {fileID: 1822799776828151798, guid: b07d8fef20eeefb46a4ebec97d87f178, type: 3}
+  projectilePrefab: {fileID: 0}
+  muzzleVfxPrefab: {fileID: 0}
+  hitImpactVfxPrefab: {fileID: 2534004437307525629, guid: 3cb8d1534870aee41b721edd7d0e19bf, type: 3}
+  attackSfx: {fileID: 0}
+  passive: {fileID: 11400000, guid: 93eaac704e775244f800826e4a8d4413, type: 2}

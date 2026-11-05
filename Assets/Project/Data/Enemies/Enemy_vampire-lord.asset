@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_vampire-lord
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: vampire-lord
+  nameKey: boss.vampire_lord
+  maxHp: 900
+  moveSpeed: 2.6
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  knockbackResist: 0.9
+  preferredDistance: 3
+  aggroRange: 12
+  spawnCost: 10
+  spawnDuration: 1
+  deathDuration: 2
+  attacks:
+  - {fileID: 11400000, guid: 5442652eda29e37488bad1b1828407ca, type: 2}
+  - {fileID: 11400000, guid: 66c74cb9f9c8e7840a7fa64755db011d, type: 2}
+  lootTable:
+    minGold: 40
+    maxGold: 60
+    manaOrbChance: 1
+    manaOrbs: 1
+    healthPotionChance: 1
+    itemChance: 1
+    weapons: 1
+    equipment: 1

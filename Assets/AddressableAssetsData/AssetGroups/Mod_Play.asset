@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Mod_Play
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Mod_Play
+  m_GUID: de9e2cc5d1b8f044486860af58a71442
+  m_SerializeEntries:
+  - m_GUID: 4c6a727034ebc9d4895bf4bacfb36910
+    m_Address: ui/hud/play
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - play
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5bde4c1907e3404898bb7f63e2fa11f
+    m_Address: ui/screen/pause
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - play
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3e3f13add38f84459dd70047025b46f
+    m_Address: scene/play
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - play
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 77c4bb51336de3549a0c414472901e38, type: 2}
+    - {fileID: 11400000, guid: 335b41a14e7cf6642984e9278cc4e261, type: 2}

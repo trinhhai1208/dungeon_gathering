@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>{{{ PRODUCT_NAME }}}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-user-select: none; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: #1b1420;
+      color: #f4ead5;
+      font-family: monospace;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #unity-container {
+      position: relative;
+      width: 100vw;
+      height: 56.25vw; /* 16:9 */
+      max-height: 100vh;
+      max-width: 177.78vh;
+      background: #120d17;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #unity-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #120d17;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      outline: none;
+    }
+    #loading-overlay {
+      position: absolute;
+      inset: 0;
+      background: #1b1420;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 24px;
+      z-index: 10;
+      transition: opacity 0.25s ease;
+    }
+    #loading-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .title {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: #f6c648;
+      text-shadow: 0 3px 0 #3a2314;
+    }
+    .step {
+      font-size: 14px;
+      color: #c8b8a6;
+      letter-spacing: 1px;
+    }
+    .bar-frame {
+      width: min(420px, 80%);
+      height: 22px;
+      background: #2a1f33;
+      border: 3px solid #6b5344;
+      padding: 2px;
+    }
+    .bar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #e07a2b, #f6c648);
+      transition: width 0.1s linear;
+    }
+    .pct {
+      font-size: 13px;
+      color: #f4ead5;
+    }
+  </style>
+</head>
+<body>
+  <div id="unity-container">
+    <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} tabindex="-1"></canvas>
+    <div id="loading-overlay">
+      <div class="title">DUNGEON GATHERING</div>
+      <div class="step" id="loading-step">Loading game engine...</div>
+      <div class="bar-frame">
+        <div class="bar-fill" id="loading-fill"></div>
+      </div>
+      <div class="pct" id="loading-pct">0%</div>
+    </div>
+  </div>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+    const overlay = document.querySelector("#loading-overlay");
+    const fill = document.querySelector("#loading-fill");
+    const pct = document.querySelector("#loading-pct");
+    const step = document.querySelector("#loading-step");
+
+    // Giữ focus cho iframe itch.io
+    window.addEventListener("pointerdown", () => canvas.focus());
+
+    const buildUrl = "Build";
+    const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    const config = {
+      dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+      frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+#if USE_THREADS
+      workerUrl: buildUrl + "/{{{ WORKER_FILENAME }}}",
+#endif
+#if USE_WASM
+      codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+#endif
+#if MEMORY_FILENAME
+      memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+      symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+#endif
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: {{{ JSON.stringify(COMPANY_NAME) }}},
+      productName: {{{ JSON.stringify(PRODUCT_NAME) }}},
+      productVersion: {{{ JSON.stringify(PRODUCT_VERSION) }}},
+      matchWebGLToCanvasSize: true,
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+    };
+
+    const script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        const p = Math.round(progress * 100);
+        fill.style.width = p + "%";
+        pct.textContent = p + "%";
+      }).then((unityInstance) => {
+        overlay.classList.add("hidden");
+        setTimeout(() => overlay.remove(), 300);
+        canvas.focus();
+      }).catch((message) => {
+        step.textContent = "Could not load the game. Check your connection.";
+        console.error(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

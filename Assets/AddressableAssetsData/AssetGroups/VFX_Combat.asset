@@ -1,0 +1,629 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: VFX_Combat
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: VFX_Combat
+  m_GUID: f3235fe0e3ed19e4880c92171db802bd
+  m_SerializeEntries:
+  - m_GUID: 00b2499cdef43f240b679af8c5e3d2f7
+    m_Address: vfx/vfx_shadow_shadowbolt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04ace1147fd0c9b499f103493a43230b
+    m_Address: vfx/vfx_ice_icespike
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05da3da28d7e2d94a916b3421d73a104
+    m_Address: vfx/vfx_holy_barrierblock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06307d231bf856545be71b266d9ecc39
+    m_Address: vfx/vfx_nature_vinesnare
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06b3e044fb17cd54dad78e11d7497f93
+    m_Address: vfx/vfx_status_frozenchill
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06c70b09911bb7d4194d41714e6b679a
+    m_Address: vfx/vfx_nature_earthspike
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a49b62d7ca6b8f4b870c75b71b40cd6
+    m_Address: vfx/vfx_fire_campfire
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ad1055b538ccbd469a7d4a5c8bdc961
+    m_Address: vfx/vfx_projectiles_arrowimpact
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d73f24dec0c8414da5914be1004b693
+    m_Address: vfx/vfx_nature_leafstorm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f5109e8ccd570c448e4ac9cbe7d1c4e
+    m_Address: vfx/vfx_arcane_arcanebeam
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10f8f7402a7a1974db4db4e7a1374861
+    m_Address: vfx/vfx_shadow_souldrain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 164c958e6f641f54ab690fa2b56627c7
+    m_Address: vfx/vfx_ice_frostbreath
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17e62473941c040498017476d17e85fa
+    m_Address: vfx/vfx_wind_whirlwind
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 195dddf08b8582740a63c0ecf47625cc
+    m_Address: vfx/vfx_lightning_chainlightning
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19bd0b6293567ad46ba6dc7742cafd91
+    m_Address: vfx/vfx_smoke_dustpuff
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19dab6e20104714418782fbad1b503e6
+    m_Address: vfx/vfx_nature_sporeburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1bd5acda380e24248922fdf44df6ef30
+    m_Address: vfx/vfx_status_stunstars
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d2a111a498a5654094dad52c6414c59
+    m_Address: vfx/vfx_status_bleeding
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1e94d4a4e2939c046ba1077dbc1b340a
+    m_Address: vfx/vfx_melee_shadowclaw
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20da35a27c088f749a85150b828e0786
+    m_Address: vfx/vfx_ui_heartpickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24a1c53ac02af7c448faa9d02c25ee18
+    m_Address: vfx/vfx_projectiles_magicmissile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2549ded52f6a863469bb458dda51d2aa
+    m_Address: vfx/vfx_ui_levelup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2762d6b0c732ca04f8f5c8223da09b18
+    m_Address: vfx/vfx_lightning_balllightning
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a9398838bbeffc41a464f8c68e2afa3
+    m_Address: vfx/vfx_lightning_thundercloud
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3cb8d1534870aee41b721edd7d0e19bf
+    m_Address: vfx/vfx_fire_fireballimpact
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42b4ef827c07f2749bcce1c25eee654f
+    m_Address: vfx/vfx_smoke_smokebomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 430d7c9f6bb002b4388008a129dda53c
+    m_Address: vfx/vfx_explosions_smallexplosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45c3d14ec9d2dff4c829902d9b5c4009
+    m_Address: vfx/vfx_status_sleep
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f099d8cbaf95114c9bc5435f63c1d37
+    m_Address: vfx/vfx_arcane_magiccircle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 514ba814b66589743a82b8b10f6bf274
+    m_Address: vfx/vfx_explosions_implosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55b73c3073f08a84d946215b0d2f0cbf
+    m_Address: vfx/vfx_melee_hammersmash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b49027ab1ef40546926a3103bf0ee95
+    m_Address: vfx/vfx_ice_frostnova
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5be2ebcd45297e54b97bfb09d494e890
+    m_Address: vfx/vfx_arcane_teleportin
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e2267364c2903047a11f2fd541fc0f5
+    m_Address: vfx/vfx_holy_angelfeathers
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fa7a2535c3b3fa4cb0da3bb7f384987
+    m_Address: vfx/vfx_water_watersplash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60464697e0e15464f98ffcc04ba7ae9e
+    m_Address: vfx/vfx_fire_meteorstrike
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 608da318504328b4cb0b35f0d9aa8edf
+    m_Address: vfx/vfx_explosions_arcaneburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65209ce467c96b6428a24f34b00e7d71
+    m_Address: vfx/vfx_melee_spearthrust
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 66db3a38d4148ca408eb025518af3652
+    m_Address: vfx/vfx_shadow_shadowtendrils
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67003d515549e784faa3bd4455c1a6d5
+    m_Address: vfx/vfx_holy_divinebeam
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f01005396f170a408cc44cda948eb27
+    m_Address: vfx/vfx_water_bubbleburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 746038667cd44654d89f65c6db3d8619
+    m_Address: vfx/vfx_ui_coinpickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7a000ceeb21908c4da08f1fcc632e1b9
+    m_Address: vfx/vfx_status_charmhearts
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b102d23c53a44f4fbfde3c3d650e4a9
+    m_Address: vfx/vfx_impacts_hitspark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b17cd7ccbe225341bd22a42e89597fc
+    m_Address: vfx/vfx_projectiles_poisondart
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7be4374beb4a00240a6f7819d9e4f887
+    m_Address: vfx/vfx_lightning_lightningstrike
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ca39c80dc35e0746b79d77db1234bac
+    m_Address: vfx/vfx_ice_icewall
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7da36b8ba5fa03c409b000ecd4f31617
+    m_Address: vfx/vfx_nature_fissure
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 877f6c05393914a42adb47f3af525dbd
+    m_Address: vfx/vfx_fire_groundflames
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8864344cbcc8b454b845220c3891133c
+    m_Address: vfx/vfx_arcane_blinkout
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b37cd864f76ec44b84ea5dfeccf8737
+    m_Address: vfx/vfx_impacts_rockshatter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 936debbe79c2eb34a900e7e7c278f755
+    m_Address: vfx/vfx_fire_firepillar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9461cc0ae3ff4664eb1d79df8d307c5a
+    m_Address: vfx/vfx_shadow_curse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94e7db06d11b8964b9ac69401367c573
+    m_Address: vfx/vfx_impacts_bloodsplat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 953885a5dd6f9684dbdcb1ee94f7681c
+    m_Address: vfx/vfx_water_whirlpool
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 955cc2ed8b95f964e8bb4a62b4d7a34f
+    m_Address: vfx/vfx_shadow_voidimplosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95af782a50b56454186d21b4760a008b
+    m_Address: vfx/vfx_status_electrified
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96c8814d0218c894bb720e6fe18bbb21
+    m_Address: vfx/vfx_explosions_firenova
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9804888aeb592c04989e9a8e1c204f45
+    m_Address: vfx/vfx_fire_firetornado
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ab2ef7a8404c334dbbaf760053aca5f
+    m_Address: vfx/vfx_arcane_shieldshatter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c593eeec02e78c48af1b7e350e0709f
+    m_Address: vfx/vfx_water_tidalwave
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3fe9bc416262114dbd0a5f9eb0c8a47
+    m_Address: vfx/vfx_status_powerupaura
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a69af710ba2a182498e26da5e6042f0f
+    m_Address: vfx/vfx_wind_windgust
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a76b0e5a3cc774c479af3921bb5499b7
+    m_Address: vfx/vfx_ice_blizzard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa49e0d123548be408b0ba91503f5b03
+    m_Address: vfx/vfx_arcane_blinkdash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa91a5e9258083d4e97908e01a547597
+    m_Address: vfx/vfx_smoke_dashdust
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aef685e45a2d447459d7b472c87496c4
+    m_Address: vfx/vfx_impacts_crithit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0f60270a1c2b0b4e980b5da0d7cfc1a
+    m_Address: vfx/vfx_nature_acidspit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b127fbee3ff35ef458c108272c069dcb
+    m_Address: vfx/vfx_holy_regenaura
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b2f62b5ef266f6d4e8066b9303c542ca
+    m_Address: vfx/vfx_nature_bouldertoss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7cdf7cecef8494449704c598eada859
+    m_Address: vfx/vfx_holy_holysmite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b873e19a70d892648bcc6e02e91c7ad4
+    m_Address: vfx/vfx_impacts_groundslam
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b98e610a6138a2241845301dafcc577d
+    m_Address: vfx/vfx_fire_lavaburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba2baf59fd206a5418384d08a150f410
+    m_Address: vfx/vfx_explosions_bigexplosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: badbe71c1067e33489bcad88a60730ce
+    m_Address: vfx/vfx_holy_shieldbubble
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc55ccbaf97d0eb4b9f3eebfb7765401
+    m_Address: vfx/vfx_projectiles_iceshard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2328a18cd558964fb5eb1be526bb468
+    m_Address: vfx/vfx_arcane_arcaneorbprojectile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c485f43bc4c84ac4e97edcb91ce52873
+    m_Address: vfx/vfx_arcane_portalsummon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6c287b5e53595f4a90fd8fc6060ef31
+    m_Address: vfx/vfx_status_burningaura
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbc048527ebba1048a863bd038fff34d
+    m_Address: vfx/vfx_holy_holyheal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d00d8b411eccf354280786b6c8f45a68
+    m_Address: vfx/vfx_ui_treasureglint
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d427becc86f10d942aabaf070a90e1d4
+    m_Address: vfx/vfx_ui_starburstpickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d71a5d35ad22faf4da98ea8a89fb5fc4
+    m_Address: vfx/vfx_impacts_punchhit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d99109035dcca9840b5c764a47470bdd
+    m_Address: vfx/vfx_nature_poisoncloud
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc55c8b55afaafa4e941068536b4068f
+    m_Address: vfx/vfx_melee_axesmear
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddd785e81d03a5f44b4dc16e1d896ed5
+    m_Address: vfx/vfx_arcane_runetrap
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2da8a774add27744ba11776cd7d2d6a
+    m_Address: vfx/vfx_melee_swordcombo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e49d60e676de2c34eb9a6fc5468d5b36
+    m_Address: vfx/vfx_smoke_steamvent
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e616b8602f6cf414693e7196193be565
+    m_Address: vfx/vfx_wind_windblade
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e72d4a910f8adc74ca17085f9bf1d04c
+    m_Address: vfx/vfx_ice_snowballimpact
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e900e715da8816943909af3750d183fe
+    m_Address: vfx/vfx_holy_resurrect
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea436d6317849554ab10c0a54a8bec21
+    m_Address: vfx/vfx_water_watergeyser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec1893a0de6b49f4180850e0dc811d36
+    m_Address: vfx/vfx_status_poisoned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ede97fda9a1cbba49af704cb56d0b42f
+    m_Address: vfx/vfx_lightning_staticburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1412a0be1d46be48a5efa5e0c317273
+    m_Address: vfx/vfx_explosions_fireworkburst
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f31b1338cedd940419028c00ca3a844a
+    m_Address: vfx/vfx_nature_acidsplash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f38f03668203ea9418b7a6928490a4a7
+    m_Address: vfx/vfx_impacts_shockwavering
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4abd767a7d6bf64daec9a42af0bd4f3
+    m_Address: vfx/vfx_ice_freezeencase
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f97be2a25cb887f4a8aff481afaa79d0
+    m_Address: vfx/vfx_nature_bloomheal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd8bfe3127934c448873f274687c1317
+    m_Address: vfx/vfx_impacts_parry
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ffb4b4e4af6155a4db7024a689c616cf
+    m_Address: vfx/vfx_fire_flamethrower
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - vfx-melee
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6f713803f6ce3ff40b59c74374297df8, type: 2}
+    - {fileID: 11400000, guid: 75a792102ae9228468946a72ef4a03e2, type: 2}

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851a27d9a0d51a1419d2f1297173c272, type: 3}
+  m_Name: Equip_red-boots
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentData
+  id: red-boots
+  rarity: 4
+  icon: {fileID: 7937016989916433210, guid: 5e972451c203e0b45963009650a405bf, type: 3}
+  nameKey: item.red_boots
+  descKey: eq.no_role
+  activeSkill: {fileID: 0}
+  shopPrice: 30
+  slot: 3
+  baseModifiers:
+  - Stat: 5
+    FlatValue: 0
+    PercentValue: 0.05
+  synergyRole: 0
+  synergyPassive: {fileID: 0}

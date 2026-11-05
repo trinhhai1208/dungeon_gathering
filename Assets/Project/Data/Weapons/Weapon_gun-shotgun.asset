@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede2df24fc42525419a8bf8a2267d944, type: 3}
+  m_Name: Weapon_gun-shotgun
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.WeaponData
+  id: gun-shotgun
+  rarity: 1
+  icon: {fileID: 8533287300827556935, guid: 4a945cadb52ff054abe7c4756ab7d7bc, type: 3}
+  nameKey: gun.shotgun
+  descKey: wp.shotgun.passive
+  activeSkill: {fileID: 0}
+  shopPrice: 110
+  weaponType: 1
+  fireMode: 0
+  weaponSprite: {fileID: 8533287300827556935, guid: 4a945cadb52ff054abe7c4756ab7d7bc, type: 3}
+  holdOffset: {x: 0, y: 0}
+  muzzleOffset: {x: 0.5, y: 0}
+  weaponPrefab: {fileID: 0}
+  damage: 8
+  fireRate: 1.6
+  attackRange: 9
+  spread: 24
+  knockback: 2.5
+  critBonus: 0.08
+  manaCost: 4
+  projectileSpeed: 13
+  projectileCount: 5
+  pierce: 0
+  explosionRadius: 0
+  swingArc: 110
+  swingDuration: 0.15
+  destroysProjectiles: 1
+  slashVfxPrefab: {fileID: 0}
+  projectilePrefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
+  muzzleVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  hitImpactVfxPrefab: {fileID: 7894807342021122902, guid: ede97fda9a1cbba49af704cb56d0b42f, type: 3}
+  attackSfx: {fileID: 0}
+  passive: {fileID: 0}

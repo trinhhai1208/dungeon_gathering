@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede2df24fc42525419a8bf8a2267d944, type: 3}
+  m_Name: Weapon_gun-pistol
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.WeaponData
+  id: gun-pistol
+  rarity: 3
+  icon: {fileID: 5661169275155107153, guid: 4a945cadb52ff054abe7c4756ab7d7bc, type: 3}
+  nameKey: gun.pistol
+  descKey: wp.pistol.passive
+  activeSkill: {fileID: 0}
+  shopPrice: 60
+  weaponType: 1
+  fireMode: 0
+  weaponSprite: {fileID: 5661169275155107153, guid: 4a945cadb52ff054abe7c4756ab7d7bc, type: 3}
+  holdOffset: {x: 0, y: 0}
+  muzzleOffset: {x: 0.5, y: 0}
+  weaponPrefab: {fileID: 0}
+  damage: 12
+  fireRate: 3.2
+  attackRange: 9
+  spread: 3
+  knockback: 2.5
+  critBonus: 0.08
+  manaCost: 1
+  projectileSpeed: 14
+  projectileCount: 1
+  pierce: 0
+  explosionRadius: 0
+  swingArc: 110
+  swingDuration: 0.15
+  destroysProjectiles: 1
+  slashVfxPrefab: {fileID: 0}
+  projectilePrefab: {fileID: 8615716003690641152, guid: 9b96be74346d4da42819b1aa46c25b92, type: 3}
+  muzzleVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  hitImpactVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  attackSfx: {fileID: 0}
+  passive: {fileID: 0}

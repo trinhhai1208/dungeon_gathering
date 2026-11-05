@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_elite-vampire
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: elite-vampire
+  nameKey: enemy.elite_vampire
+  maxHp: 260
+  moveSpeed: 2.8
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  knockbackResist: 0.5
+  preferredDistance: 4
+  aggroRange: 12
+  spawnCost: 6
+  spawnDuration: 0.8
+  deathDuration: 1.2
+  attacks:
+  - {fileID: 11400000, guid: 7bdaff9986f743641b02c3d6a4e2376e, type: 2}
+  - {fileID: 11400000, guid: b53b34733a2369742b814da0423e79cf, type: 2}
+  lootTable:
+    minGold: 20
+    maxGold: 30
+    manaOrbChance: 1
+    manaOrbs: 1
+    healthPotionChance: 0.5
+    itemChance: 1
+    weapons: 1
+    equipment: 1
