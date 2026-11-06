@@ -88,13 +88,14 @@ namespace DungeonGathering.Play
             collected = true; // Đặt true đồng bộ NGAY LẬP TỨC trước khi tác động dữ liệu
 
             // 1. Thêm vào túi đồ run hiện tại
-            Services.Session?.runBag.Add(item.id);
+            if (player.Inventory != null) player.Inventory.AddToRunBag(item);
+            else Services.Session?.AddToBag(item.id);
 
-            // 2. Mở khóa trong bách khoa toàn thư lưu trữ
-            Services.Save?.Data.Discover(item.id);
 
-            // 3. Bắn sự kiện qua EventBus (HudScreen sẽ hiện Toast)
-            EventBus<ItemPickedUpEvent>.Raise(new ItemPickedUpEvent { ItemId = item.id });
+
+
+
+
 
             // 4. Phát âm thanh nhặt đồ (nếu có)
             Sfx.PlayOverride(pickupSfx, item.rarity <= Rarity.A ? SfxId.RareItemPickup : SfxId.ItemPickup);

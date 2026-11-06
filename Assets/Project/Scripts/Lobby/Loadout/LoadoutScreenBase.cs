@@ -68,6 +68,7 @@ namespace DungeonGathering.Lobby
 
         protected string characterId;
         protected CharacterData character;
+        protected CharacterInventory inventory;
         protected LoadoutData loadout;
         protected ItemCatalog catalog;
         protected ItemData selected;
@@ -110,7 +111,8 @@ namespace DungeonGathering.Lobby
             if (string.IsNullOrEmpty(characterId)) characterId = Services.Session?.characterId ?? "knight";
             catalog = ItemCatalog.Current;
             character = catalog != null ? catalog.GetCharacter(characterId) : null;
-            loadout = Services.Save?.Data.GetCharacter(characterId).loadout ?? new LoadoutData();
+            inventory = new CharacterInventory(characterId, Services.Save?.Data, catalog);
+            loadout = inventory.Loadout;
             selected = null; selectedSlot = -1; filter = 0;
             if (portrait != null && character != null && character.portrait != null) portrait.sprite = character.portrait;
             if (characterChip != null && character != null)
@@ -231,15 +233,39 @@ namespace DungeonGathering.Lobby
         void OnAction()
         {
             if (selected == null || catalog == null) return;
-            if (selectedSlot >= 0) { Unequip(selectedSlot); Commit(); }
+            if (selectedSlot >= 0)
+            {
+                Unequip(selectedSlot);
+                selected = null;
+                selectedSlot = -1;
+                RefreshAll();
+            }
             else PlaceSelected(SlotOf(selected));
         }
 
         protected void PlaceSelected(int slot)
         {
-            if (selected == null || catalog == null) return;
-            if (!LoadoutRules.TryPlace(loadout, catalog, selected, slot)) return;
-            Commit();
+            if (selected == null || catalog == null || inventory == null) return;
+            bool success = false;
+            if (selected is WeaponData w)
+            {
+                success = inventory.EquipWeapon(slot, w.id);
+            }
+            else if (selected is EquipmentData eq)
+            {
+                success = inventory.EquipItem(eq.id);
+            }
+            else
+            {
+                if (!LoadoutRules.TryPlace(loadout, catalog, selected, slot)) return;
+                Commit();
+                return;
+            }
+            if (success)
+            {
+                selected = null; selectedSlot = -1;
+                RefreshAll();
+            }
         }
 
         void Commit()

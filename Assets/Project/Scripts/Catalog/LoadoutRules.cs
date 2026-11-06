@@ -66,13 +66,16 @@ namespace DungeonGathering.Inventory
             return false;
         }
 
-        /// <summary>Đảm bảo loadout hợp lệ khi bắt đầu run (cắt bớt món kích hoạt vượt giới hạn, ô vũ khí 1 không trống).</summary>
+        /// <summary>Đảm bảo loadout hợp lệ khi bắt đầu run (cắt bớt món kích hoạt vượt giới hạn, khử trùng lặp vũ khí).</summary>
         public static void Sanitize(LoadoutData loadout, ItemCatalog catalog, CharacterData character)
         {
             loadout.Normalize();
-            // Điền vũ khí khởi đầu TRƯỚC khi đếm giới hạn → nếu vượt thì các ô sau bị cắt, không phải vũ khí bắt buộc.
-            if (string.IsNullOrEmpty(loadout.weapons[0]) && character != null && character.startingWeapon != null)
-                loadout.weapons[0] = character.startingWeapon.id;
+            // Nếu ô 0 trống nhưng ô 1 có vũ khí thì đẩy sang ô 0
+            if (string.IsNullOrEmpty(loadout.weapons[0]) && !string.IsNullOrEmpty(loadout.weapons[1]))
+            {
+                loadout.weapons[0] = loadout.weapons[1];
+                loadout.weapons[1] = null;
+            }
             if (loadout.weapons[1] == loadout.weapons[0]) loadout.weapons[1] = null; // không cùng vũ khí ở 2 ô
             int actives = 0;
             for (int i = 0; i < WeaponSlotCount; i++)
@@ -87,9 +90,6 @@ namespace DungeonGathering.Inventory
                 if (e == null) { loadout.equipment[i] = null; continue; }
                 if (e.HasActive && ++actives > MaxActiveItems) loadout.equipment[i] = null;
             }
-            // Ô 1 vẫn trống (vũ khí khởi đầu không có trong catalog) → giữ hành vi cũ: gán id khởi đầu.
-            if (string.IsNullOrEmpty(loadout.weapons[0]) && character != null && character.startingWeapon != null)
-                loadout.weapons[0] = character.startingWeapon.id;
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using DungeonGathering.Core;
 using DungeonGathering.Localization;
 using DungeonGathering.UI;
@@ -31,6 +32,7 @@ namespace DungeonGathering.Play
 
         [Header("Minimap & Pause (Top-Right)")]
         [SerializeField] RectTransform minimapFrame;
+        [SerializeField] MinimapView minimapView;
         [SerializeField] Button pauseButton;
 
         [Header("Boss Bar")]
@@ -65,8 +67,6 @@ namespace DungeonGathering.Play
         int lastCooldownSec = int.MinValue;
         string lastBossKey;
         IInteractable lastInteract;
-        readonly Dictionary<int, Image> minimapRooms = new();
-        RectTransform minimapContainer;
 
         public override Awaitable OnOpen(object args)
         {
@@ -112,6 +112,8 @@ namespace DungeonGathering.Play
             if (pauseButton != null) pauseButton.onClick.RemoveListener(OnPauseClicked);
             if (skillSlot1 != null) skillSlot1.Clicked -= OnSkill1Clicked;
             if (skillSlot2 != null) skillSlot2.Clicked -= OnSkill2Clicked;
+
+            if (coinText != null) coinText.transform.DOKill();
 
             VirtualInput.ResetState();
         }
@@ -190,7 +192,13 @@ namespace DungeonGathering.Play
 
         public void OnCoins(RunCoinsChangedEvent e)
         {
-            if (coinText != null) coinText.text = e.Coins.ToString();
+            if (coinText != null)
+            {
+                coinText.text = e.Coins.ToString();
+                coinText.transform.DOKill();
+                coinText.transform.localScale = Vector3.one;
+                coinText.transform.DOPunchScale(new Vector3(0.35f, 0.35f, 0f), 0.2f, 1, 0.5f);
+            }
         }
 
         public void OnWeaponSwapped(WeaponSwappedEvent e) => RefreshWeapon();
@@ -255,106 +263,24 @@ namespace DungeonGathering.Play
         void OnRoomClearedEvent(RoomClearedEvent e) => RefreshMinimapColors();
         void OnDirectorRoomEntered(RoomController r) => RefreshMinimapColors();
 
+        void EnsureMinimapView()
+        {
+            if (minimapView == null && minimapFrame != null)
+                minimapView = minimapFrame.GetComponent<MinimapView>() ?? minimapFrame.gameObject.AddComponent<MinimapView>();
+        }
+
         void BuildMinimap()
         {
-            minimapRooms.Clear();
-            if (minimapFrame == null) return;
-            if (minimapContainer != null) Destroy(minimapContainer.gameObject);
-
+            EnsureMinimapView();
             var dir = LevelDirector.Current;
-            var layout = dir != null ? dir.Layout : null;
-            if (layout == null || layout.Rooms.Count == 0) return;
-
-            var go = new GameObject("MapContent", typeof(RectTransform));
-            go.layer = minimapFrame.gameObject.layer;
-            minimapContainer = (RectTransform)go.transform;
-            minimapContainer.SetParent(minimapFrame, false);
-            minimapContainer.anchorMin = minimapContainer.anchorMax = minimapContainer.pivot = new Vector2(0.5f, 0.5f);
-            minimapContainer.anchoredPosition = Vector2.zero;
-            minimapContainer.sizeDelta = minimapFrame.sizeDelta - new Vector2(24f, 24f);
-
-            int minX = int.MaxValue, maxX = int.MinValue, minY = int.MaxValue, maxY = int.MinValue;
-            foreach (var r in layout.Rooms)
-            {
-                if (r.Cell.x < minX) minX = r.Cell.x;
-                if (r.Cell.x > maxX) maxX = r.Cell.x;
-                if (r.Cell.y < minY) minY = r.Cell.y;
-                if (r.Cell.y > maxY) maxY = r.Cell.y;
-            }
-            float spanX = Mathf.Max(1, maxX - minX + 1);
-            float spanY = Mathf.Max(1, maxY - minY + 1);
-            Vector2 area = minimapContainer.sizeDelta;
-            float step = Mathf.Min(area.x / spanX, area.y / spanY);
-            step = Mathf.Clamp(step, 12f, 26f);
-            float roomW = step * 0.72f;
-            float roomH = step * 0.62f;
-            Vector2 centerCell = new((minX + maxX) * 0.5f, (minY + maxY) * 0.5f);
-
-            // Vẽ đường nối giữa các phòng
-            foreach (var (a, b, _) in layout.Links())
-            {
-                Vector2 pa = ((Vector2)a.Cell - centerCell) * step;
-                Vector2 pb = ((Vector2)b.Cell - centerCell) * step;
-                var lgo = new GameObject($"Link_{a.Id}_{b.Id}", typeof(RectTransform), typeof(Image));
-                lgo.layer = go.layer;
-                var lrt = (RectTransform)lgo.transform;
-                lrt.SetParent(minimapContainer, false);
-                lrt.anchorMin = lrt.anchorMax = lrt.pivot = new Vector2(0.5f, 0.5f);
-                lrt.anchoredPosition = (pa + pb) * 0.5f;
-                bool horiz = a.Cell.y == b.Cell.y;
-                lrt.sizeDelta = horiz ? new Vector2(step, 3f) : new Vector2(3f, step);
-                var limg = lgo.GetComponent<Image>();
-                limg.color = new Color32(0x6e, 0x66, 0x7c, 0xc8);
-                limg.raycastTarget = false;
-            }
-
-            // Vẽ từng phòng
-            foreach (var r in layout.Rooms)
-            {
-                Vector2 pos = ((Vector2)r.Cell - centerCell) * step;
-                var rgo = new GameObject($"Room_{r.Id}_{r.Type}", typeof(RectTransform), typeof(Image));
-                rgo.layer = go.layer;
-                var rrt = (RectTransform)rgo.transform;
-                rrt.SetParent(minimapContainer, false);
-                rrt.anchorMin = rrt.anchorMax = rrt.pivot = new Vector2(0.5f, 0.5f);
-                rrt.anchoredPosition = pos;
-                rrt.sizeDelta = new Vector2(roomW, roomH);
-                var rimg = rgo.GetComponent<Image>();
-                rimg.raycastTarget = false;
-                minimapRooms[r.Id] = rimg;
-            }
-
-            RefreshMinimapColors();
+            if (minimapView != null && dir != null)
+                minimapView.Build(minimapFrame, dir.Layout);
         }
 
         void RefreshMinimapColors()
         {
-            var dir = LevelDirector.Current;
-            if (dir == null || dir.Builder == null) return;
-            foreach (var rc in dir.Builder.Rooms)
-            {
-                if (rc == null || !minimapRooms.TryGetValue(rc.RoomId, out var img) || img == null) continue;
-                bool isCurrent = dir.CurrentRoom == rc;
-                if (isCurrent)
-                {
-                    img.color = new Color32(0xff, 0xd2, 0x7a, 0xff); // Vàng sáng: phòng hiện tại
-                    img.rectTransform.localScale = new Vector3(1.15f, 1.15f, 1f);
-                }
-                else
-                {
-                    img.rectTransform.localScale = Vector3.one;
-                    img.color = rc.Type switch
-                    {
-                        RoomType.Boss => new Color32(0xd6, 0x45, 0x50, 0xff),     // Đỏ: Boss
-                        RoomType.Treasure => new Color32(0xe6, 0xa8, 0x32, 0xff), // Cam vàng: Kho báu
-                        RoomType.Shop => new Color32(0x4e, 0xb8, 0x82, 0xff),     // Xanh ngọc: Shop
-                        RoomType.Start => new Color32(0x7a, 0x9e, 0xc9, 0xff),    // Xanh dương: Start
-                        _ => rc.IsCleared || rc.Visited
-                            ? new Color32(0x9a, 0x94, 0xa8, 0xff)                 // Xám sáng: Đã dọn
-                            : new Color32(0x4a, 0x42, 0x58, 0xcc)                 // Tím tối: Chưa vào
-                    };
-                }
-            }
+            if (minimapView != null)
+                minimapView.RefreshColors(LevelDirector.Current);
         }
 
         void Update()

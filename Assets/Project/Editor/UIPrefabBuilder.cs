@@ -15,7 +15,7 @@ namespace DungeonGathering.EditorTools
     {
         const string PrefabDir = "Assets/Project/Prefabs/UI";
         const string ButtonsSheet = "Assets/Project/Art/Sprites/UI/HUD/Basic Buttons 3 Fv.png";
-        const string FontPath = "Assets/Project/Art/Fonts/PixelifySans-Regular SDF.asset";
+        const string FontPath = "Assets/Project/Art/Fonts/Pixelta SDF.asset";
         const string CoinPath = "Assets/Project/Art/Sprites/Items/Coins/coin_1.png";
         const string ArrowPath = "Assets/Project/Art/Sprites/UI/Indicators/arrow_4.png";
 

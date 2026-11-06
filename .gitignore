@@ -61,8 +61,8 @@ Thumbs.db
 # File solution do Unity 6 tự sinh (mẫu *.sln ở trên không bắt được .slnx)
 *.slnx
 
-# Ảnh preview UI — Tools ▸ UI Preview tự render lại
-/Design/previews/
+# Thư mục thiết kế, công cụ và tài nguyên thô (không đưa lên Git)
+/Design/
 
 # Kết quả build Addressables / WebGL
 /[Ss]erver[Dd]ata/

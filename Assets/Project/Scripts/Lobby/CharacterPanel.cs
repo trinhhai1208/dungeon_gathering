@@ -1,5 +1,6 @@
 using DungeonGathering.Catalog;
 using DungeonGathering.Core;
+using DungeonGathering.Inventory;
 using DungeonGathering.UI;
 using TMPro;
 using UnityEngine;
@@ -270,24 +271,30 @@ namespace DungeonGathering.Lobby
 
         void RefreshLoadoutTiles()
         {
-            var loadout = Services.Save != null ? Services.Save.Data.GetCharacter(currentCharacterId, false)?.loadout : null;
+            bool isUnlocked = Services.Save == null || Services.Save.Data.IsUnlocked(currentCharacterId);
             var catalog = ItemCatalog.Current;
-            var character = GetCharacterData();
+
+            if (!isUnlocked)
+            {
+                for (int i = 0; i < equipTiles.Length; i++)
+                    Fill(equipTiles[i], null, i < slotSilhouettes.Length ? slotSilhouettes[i] : null, catalog);
+
+                if (weaponTiles != null)
+                {
+                    if (weaponTiles.Length > 0) Fill(weaponTiles[0], null, null, catalog);
+                    if (weaponTiles.Length > 1) Fill(weaponTiles[1], null, null, catalog);
+                }
+                return;
+            }
+
+            var charInv = new CharacterInventory(currentCharacterId);
             for (int i = 0; i < equipTiles.Length; i++)
-                Fill(equipTiles[i], loadout?.GetEquipment((EquipmentSlotType)i), i < slotSilhouettes.Length ? slotSilhouettes[i] : null, catalog);
-
-            string w0 = loadout?.GetWeapon(0);
-            if (string.IsNullOrEmpty(w0) && character != null && character.startingWeapon != null)
-                w0 = character.startingWeapon.id;
-
-            string w1 = loadout?.GetWeapon(1);
-            // Khử trùng lặp: nếu ô 1 có id trùng với ô 0 thì coi như ô 1 trống
-            if (w1 == w0) w1 = null;
+                Fill(equipTiles[i], charInv.Loadout.GetEquipment((EquipmentSlotType)i), i < slotSilhouettes.Length ? slotSilhouettes[i] : null, catalog);
 
             if (weaponTiles != null)
             {
-                if (weaponTiles.Length > 0) Fill(weaponTiles[0], w0, null, catalog);
-                if (weaponTiles.Length > 1) Fill(weaponTiles[1], w1, null, catalog);
+                if (weaponTiles.Length > 0) Fill(weaponTiles[0], charInv.Loadout.GetWeapon(0), null, catalog);
+                if (weaponTiles.Length > 1) Fill(weaponTiles[1], charInv.Loadout.GetWeapon(1), null, catalog);
             }
         }
 
@@ -331,6 +338,12 @@ namespace DungeonGathering.Lobby
         void OnEnterPortal()
         {
             if (Services.Scenes != null && Services.Scenes.IsTransitioning) return;
+            var charInv = new CharacterInventory(currentCharacterId);
+            if (!charInv.HasAnyWeapon)
+            {
+                Sfx.Play(SfxId.UiError);
+                return;
+            }
             if (LobbyEntry.Current != null)
             {
                 LobbyEntry.Current.StartRun();

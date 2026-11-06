@@ -41,7 +41,7 @@ MonoBehaviour:
   destroysProjectiles: 1
   slashVfxPrefab: {fileID: 0}
   projectilePrefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
-  muzzleVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  muzzleVfxPrefab: {fileID: 0}
   hitImpactVfxPrefab: {fileID: 7894807342021122902, guid: ede97fda9a1cbba49af704cb56d0b42f, type: 3}
   attackSfx: {fileID: 0}
   passive: {fileID: 0}

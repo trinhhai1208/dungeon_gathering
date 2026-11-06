@@ -157,6 +157,46 @@ namespace DungeonGathering.Enemies
             else desired = agent.pathPending ? to.normalized : Vector2.zero; // chờ đường đầu tiên: đi thẳng một nhịp
         }
 
+        /// <summary>Lùi xa khỏi threatPos cho tới khi đạt safeDistance (quái kiting).</summary>
+        public void MoveAwayFrom(Vector2 threatPos, float safeDistance)
+        {
+            Vector2 pos = rb.position;
+            Vector2 fromThreat = pos - threatPos;
+            if (fromThreat.sqrMagnitude >= safeDistance * safeDistance)
+            {
+                desired = Vector2.zero;
+                if (AgentReady && agent.hasPath) agent.ResetPath();
+                return;
+            }
+
+            Vector2 awayDir = fromThreat.sqrMagnitude > 0.0001f ? fromThreat.normalized : (Vector2)Random.insideUnitCircle.normalized;
+            if (Flying || !AgentReady)
+            {
+                desired = awayDir;
+                return;
+            }
+
+            agent.nextPosition = EnemyNavigation.ToNav(pos);
+            agent.speed = enemy.Data.moveSpeed * SpeedMultiplier;
+
+            repathTimer -= Time.deltaTime;
+            if (repathTimer <= 0f || (!agent.hasPath && !agent.pathPending))
+            {
+                repathTimer = Random.Range(repathInterval.x, repathInterval.y);
+                Vector2 sampleTarget = pos + awayDir * 2f;
+                Vector3 navTarget = EnemyNavigation.ToNav(sampleTarget);
+                if (NavMesh.SamplePosition(navTarget, out var hit, 2f, NavMesh.AllAreas))
+                    agent.SetDestination(hit.position);
+                else
+                    agent.SetDestination(navTarget);
+            }
+
+            Vector3 dv = agent.desiredVelocity;
+            var dir = new Vector2(dv.x, dv.y);
+            if (dir.sqrMagnitude > 0.0001f) desired = dir.normalized;
+            else desired = awayDir;
+        }
+
         void FixedUpdate()
         {
             if (enemy == null || enemy.Data == null) return;

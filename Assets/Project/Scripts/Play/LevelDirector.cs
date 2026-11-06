@@ -42,11 +42,10 @@ namespace DungeonGathering.Play
 
         public event Action<RoomController> RoomEntered;
 
-        Enemy bossPrefab;
-        Enemy bossInstance;
-        bool bossLoading;
-        bool bossKillPending;
-        string bossError;
+        BossEncounterDirector bossEncounter;
+        public BossEncounterDirector BossEncounter => bossEncounter ??= new BossEncounterDirector(this);
+
+        void Awake() => bossEncounter = new BossEncounterDirector(this);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         static void ResetStatic() => Current = null;
@@ -115,7 +114,7 @@ namespace DungeonGathering.Play
             else Debug.LogWarning("[Play] Chưa có address ui/hud/play — chạy không HUD.");
 
             Player.SetInputEnabled(true);
-            PreloadBoss();
+            bossEncounter.Preload(Config, Scope);
         }
 
         /// <summary>Editor: bấm Play thẳng ở Play.unity — tạo run tạm từ save.</summary>
@@ -188,7 +187,6 @@ namespace DungeonGathering.Play
                 foreach (var id in session.loadout.equipment)
                     if (Catalog.Get<EquipmentData>(id) is { } eq) equips.Add(eq);
             }
-            if (w1 == null && w2 == null && Character != null) w1 = Character.startingWeapon;
             Player.Init(Character, w1, w2, equips, session.runStats);
             if (cameraRig != null) cameraRig.Follow(Player.transform);
         }
@@ -214,93 +212,8 @@ namespace DungeonGathering.Play
 
         // ------------------------------------------------------------------ Boss
 
-        void PreloadBoss() => _ = LoadBoss();
-
-        bool HasBossAddress => Config != null && !string.IsNullOrEmpty(Config.bossAddress) && AddressablesUtil.KeyExists(Config.bossAddress);
-
-        /// <summary>Tải prefab boss (address hoặc tham chiếu trực tiếp). Gọi lại được (thử lại một lần khi lỗi).</summary>
-        async Awaitable LoadBoss()
-        {
-            if (Config == null) return;
-            if (!HasBossAddress)
-            {
-                bossPrefab = Config.bossPrefab;
-                return;
-            }
-            bossLoading = true;
-            bossError = null;
-            try
-            {
-                var go = await Scope.Load<GameObject>(Config.bossAddress);
-                bossPrefab = go != null ? go.GetComponent<Enemy>() : null;
-                if (bossPrefab == null) bossError = "prefab boss thiếu Enemy";
-            }
-            catch (OperationCanceledException) { }
-            catch (Exception e) { bossError = e.Message; }
-            finally { bossLoading = false; }
-        }
-
-        async Awaitable<bool> WaitBossLoaded(float timeout)
-        {
-            var token = destroyCancellationToken;
-            float deadline = Time.time + timeout;
-            try
-            {
-                while (bossLoading && Time.time < deadline) await Awaitable.NextFrameAsync(token);
-            }
-            catch (OperationCanceledException) { return false; }
-            return true;
-        }
-
-        /// <summary>
-        /// Phòng boss kích hoạt: chờ boss tải nền (có timeout) rồi spawn. Lỗi/hết giờ → thử tải lại MỘT lần;
-        /// vẫn lỗi → chốt thắng (mở Portal) thay vì kẹt run.
-        /// </summary>
-        public async void SpawnBoss(RoomController room)
-        {
-            float timeout = Config != null ? Config.bossLoadTimeout : 20f;
-            if (!await WaitBossLoaded(timeout)) return;
-            if (!IsPlaying || room == null) return;
-
-            if (bossPrefab == null && !bossLoading && HasBossAddress)
-            {
-                Debug.LogWarning($"[Play] Tải boss lỗi ({bossError ?? "không rõ"}) — thử lại một lần.");
-                _ = LoadBoss();
-                if (!await WaitBossLoaded(timeout)) return;
-                if (!IsPlaying || room == null) return;
-            }
-
-            if (bossPrefab == null)
-            {
-                Debug.LogError($"[Play] Không spawn được boss: {(bossLoading ? "hết thời gian chờ tải" : bossError ?? "chưa cấu hình")} — chốt thắng để không kẹt run.");
-                room.WavesRemaining = false;
-                Finish(true);
-                return;
-            }
-            var t = room.Template;
-            Vector3 at = t.bossPoint != null ? t.bossPoint.position : t.transform.position;
-            var boss = Instantiate(bossPrefab, at, Quaternion.identity, room.transform);
-            boss.OnSpawn();
-            boss.Init(room.CreateSpawnContext());
-            room.Register(boss);
-            bossInstance = boss;
-            // Dự phòng khi prefab boss không có BossPhaseController (không phát BossDefeatedEvent).
-            // Died gọi trước EnemyDiedEvent nên KillAll ở đây không gây Raise lồng EnemyDiedEvent.
-            boss.Died += OnBossInstanceDied;
-            room.WavesRemaining = false;
-            var phases = boss.GetComponent<BossPhaseController>();
-            if (phases != null) phases.Publish();
-        }
-
-        void OnBossInstanceDied(Enemy e) => HandleBossKilled();
-
-        /// <summary>Boss chết (BossDefeatedEvent / Enemy.Died / EnemyDiedEvent.IsBoss) → dọn quái con + chốt thắng. Idempotent.</summary>
-        void HandleBossKilled()
-        {
-            if (!IsPlaying) return;
-            if (builder.BossRoom != null) builder.BossRoom.KillAll();
-            Finish(true);
-        }
+        /// <summary>Phòng boss kích hoạt: ủy quyền cho BossEncounterDirector điều phối.</summary>
+        public void SpawnBoss(RoomController room) => bossEncounter.SpawnBoss(room);
 
         // ------------------------------------------------------------------ Sự kiện
 
@@ -308,24 +221,16 @@ namespace DungeonGathering.Play
         {
             if (Services.Session != null) Services.Session.kills++;
             if (e.Data != null) Loot?.Drop(e.Data.lootTable, e.Position);
-
-            // Dự phòng: quái IsBoss chết trong phòng Boss. Không KillAll ngay (sẽ Raise lồng EnemyDiedEvent) → xử lý ở frame sau.
-            if (IsPlaying && e.IsBoss && builder.BossRoom != null
-                && (e.Enemy == bossInstance || RoomController.FindAt(e.Position) == builder.BossRoom))
-                bossKillPending = true;
+            bossEncounter.NotifyEnemyDied(e);
         }
 
-        void OnBossDefeated(BossDefeatedEvent e) => HandleBossKilled();
+        void OnBossDefeated(BossDefeatedEvent e) => bossEncounter.NotifyBossDefeated();
 
         void OnPlayerDied(PlayerDiedEvent e) => Finish(false);
 
         void Update()
         {
-            if (bossKillPending)
-            {
-                bossKillPending = false;
-                HandleBossKilled();
-            }
+            bossEncounter.Tick();
             if (IsPlaying && Services.Session != null && (Services.Game == null || !Services.Game.IsPaused))
                 Services.Session.runTime += Time.deltaTime;
         }
@@ -353,6 +258,13 @@ namespace DungeonGathering.Play
 
             EventBus<RunFinishedEvent>.Raise(new RunFinishedEvent { Victory = victory, Floor = Floor });
             Services.Game?.SetState(victory ? GameState.Victory : GameState.GameOver);
+
+            // SYS-04: Thua trận hoặc thắng tầng cuối cùng thì Settle() ngay để không mất thưởng.
+            // Thắng tầng giữa (floor < maxFloor) thì chưa Settle() để cho phép bấm Tiếp tục tầng kế.
+            if (!victory || (session != null && session.floor >= session.maxFloor))
+            {
+                RunFlow.Settle();
+            }
 
             if (victory && prefabs != null && prefabs.portal != null && builder.BossRoom != null)
             {
@@ -390,7 +302,7 @@ namespace DungeonGathering.Play
             Projectile.DespawnAll(Team.Enemy);
             TrapBase.DisableAll();
             foreach (var r in builder.Rooms) if (r != null) r.Abort();
-            if (RunFlow.ReturnToLobby()) return true;
+            if (RunFlow.AbandonToLobby()) return true;
 
             // Không chuyển scene được (hiếm: race với transition) → trả lại quyền điều khiển, không để Player đứng im.
             Debug.LogWarning("[Play] Bỏ run thất bại — tiếp tục run.");

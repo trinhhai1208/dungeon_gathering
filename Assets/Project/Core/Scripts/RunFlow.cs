@@ -15,7 +15,7 @@ namespace DungeonGathering.Core
         public static int FloorBonusPerFloor = 20;
         public static int BossBonus = 100;
         /// <summary>Thua có giữ đồ trong RunBag không (tài liệu: chưa chốt) — mặc định không giữ.</summary>
-        public static bool KeepBagOnDefeat = false;
+        public static bool KeepBagOnDefeat = true;
 
         /// <summary>Phần thưởng quy đổi của run (Results hiển thị, Settle cộng — cùng một công thức).</summary>
         public readonly struct RunReward
@@ -75,6 +75,25 @@ namespace DungeonGathering.Core
         }
 
         /// <summary>Chốt run (nếu còn) rồi về sảnh. Trả false nếu đang chuyển scene (không làm gì).</summary>
+        /// <summary>Bỏ cuộc giữa chừng: KHÔNG giữ túi đồ (runBag), chốt run và lưu (SYS-04-COR).</summary>
+        public static bool Abandon()
+        {
+            var s = Services.Session;
+            if (s == null || s.settled || !s.runActive) return false;
+            s.lastRunVictory = false;
+            s.ClearBag(); // Luật chơi: Thoát giữa chừng mất túi đồ
+            return Settle();
+        }
+
+        /// <summary>Bỏ cuộc giữa run: xóa túi đồ rồi chốt run về sảnh (SYS-01-INV).</summary>
+        public static bool AbandonToLobby()
+        {
+            if (Services.Scenes == null || Services.Scenes.IsTransitioning) return false;
+            Abandon();
+            _ = Services.Scenes.Go(AddressKeys.SceneLobby);
+            return true;
+        }
+
         public static bool ReturnToLobby()
         {
             if (Services.Scenes == null || Services.Scenes.IsTransitioning) return false;

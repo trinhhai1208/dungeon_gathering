@@ -22,7 +22,7 @@ namespace DungeonGathering.EditorTools
     {
         const string ScenePath = "Assets/Project/Scenes/Lobby.unity";
         const string CatalogPath = "Assets/Project/Data/Catalog/ItemCatalog.asset";
-        const string FontPath = "Assets/Project/Art/Fonts/PixelifySans-Regular SDF.asset";
+        const string FontPath = "Assets/Project/Art/Fonts/Pixelta SDF.asset";
         const float PxPerUnit = 48f;
         const float HeroHeightUnits = 1.45f; // chiều cao phần có hình của nhân vật trong sảnh (≈ 70 px thiết kế)
 

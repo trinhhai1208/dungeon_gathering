@@ -229,8 +229,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -367,8 +367,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -434,6 +434,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -686,8 +688,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -753,6 +755,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -849,8 +853,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -916,6 +920,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -1087,8 +1093,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -1154,6 +1160,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -1250,8 +1258,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1317,6 +1325,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -2077,8 +2087,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2144,6 +2154,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -2602,8 +2614,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2954,8 +2966,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3021,6 +3033,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -3732,8 +3746,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3870,8 +3884,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3937,6 +3951,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -4150,8 +4166,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4217,6 +4233,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -4982,8 +5000,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5049,6 +5067,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -5432,8 +5452,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5499,6 +5519,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -6111,8 +6133,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6386,8 +6408,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6453,6 +6475,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -6686,8 +6710,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6753,6 +6777,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -7734,8 +7760,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 13
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7801,6 +7827,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -7897,8 +7925,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7964,6 +7992,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -8135,8 +8165,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8606,8 +8636,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 13
-  m_fontSizeBase: 13
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8673,6 +8703,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []
@@ -9094,6 +9126,8 @@ MonoBehaviour:
     m_WaitForCompletion: 0
     m_LocalVariables: []
   upperCase: 0
+  viFontSize: 0
+  viScale: 0
   references:
     version: 2
     RefIds: []

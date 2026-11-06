@@ -10,7 +10,7 @@ using UnityEngine.TextCore.LowLevel;
 namespace DungeonGathering.EditorTools
 {
     /// <summary>
-    /// Tạo TMP font asset (Dynamic, raster pixel-perfect) cho EN = Pixelify Sans, VI = Tiny5,
+    /// Tạo TMP font asset (Dynamic, raster pixel-perfect) cho EN = Pixelta, VI = dearpix,
     /// điền sẵn mọi ký tự có trong DG_Multilanguage.csv và gán vào LocalizationFontConfig.
     /// </summary>
     public static class LocalizationFontBuilder
@@ -27,9 +27,9 @@ namespace DungeonGathering.EditorTools
             string csv = File.Exists(CsvPath) ? File.ReadAllText(CsvPath, Encoding.UTF8) : string.Empty;
             string chars = new string((Ascii + csv).Where(c => !char.IsControl(c)).Distinct().ToArray());
 
-            var en = Create("PixelifySans-Regular", 32, chars);
-            var vi = Create("Tiny5-Regular", 32, chars);
-            // Pixelify Sans không có dấu tiếng Việt và vài ký hiệu (→): rơi về Tiny5.
+            var vi = Create("dearpix SDF", "dearpix-2-01.otf", 32, chars);
+            var en = Create("Pixelta SDF", "Pixelta.ttf", 32, chars);
+            // Pixelta chỉ có ký tự ASCII: fallback về dearpix khi gặp ký tự có dấu hoặc đặc biệt.
             en.fallbackFontAssetTable = new System.Collections.Generic.List<TMP_FontAsset> { vi };
             EditorUtility.SetDirty(en);
 
@@ -50,28 +50,36 @@ namespace DungeonGathering.EditorTools
             Debug.Log($"[Localization] Font asset: {AssetDatabase.GetAssetPath(en)}, {AssetDatabase.GetAssetPath(vi)}");
         }
 
-        static TMP_FontAsset Create(string fileName, int samplingSize, string chars)
+        static TMP_FontAsset Create(string assetName, string fontFileName, int samplingSize, string chars)
         {
-            var font = AssetDatabase.LoadAssetAtPath<Font>($"{FontsDir}/{fileName}.ttf");
-            string path = $"{FontsDir}/{fileName} SDF.asset";
-            var old = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(path);
-            if (old != null) AssetDatabase.DeleteAsset(path);
+            var font = AssetDatabase.LoadAssetAtPath<Font>($"{FontsDir}/{fontFileName}");
+            if (font == null)
+            {
+                Debug.LogError($"[Localization] Không tìm thấy font source: {FontsDir}/{fontFileName}");
+                return null;
+            }
+            string path = $"{FontsDir}/{assetName}.asset";
+            var asset = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(path);
+            if (asset == null)
+            {
+                // RASTER_HINTED + Point filter: nét pixel sắc, không bị nhòe như SDF.
+                asset = TMP_FontAsset.CreateFontAsset(font, samplingSize, 2, GlyphRenderMode.RASTER_HINTED, 1024, 1024, AtlasPopulationMode.Dynamic, false);
+                asset.name = assetName;
+                AssetDatabase.CreateAsset(asset, path);
 
-            // RASTER_HINTED + Point filter: nét pixel sắc, không bị nhòe như SDF.
-            var asset = TMP_FontAsset.CreateFontAsset(font, samplingSize, 2, GlyphRenderMode.RASTER_HINTED, 1024, 1024, AtlasPopulationMode.Dynamic, false);
-            asset.name = $"{fileName} SDF";
-            AssetDatabase.CreateAsset(asset, path);
-
-            asset.atlasTextures[0].name = asset.name + " Atlas";
-            asset.atlasTextures[0].filterMode = FilterMode.Point;
-            AssetDatabase.AddObjectToAsset(asset.atlasTextures[0], asset);
-            asset.material.name = asset.name + " Material";
-            AssetDatabase.AddObjectToAsset(asset.material, asset);
+                asset.atlasTextures[0].name = asset.name + " Atlas";
+                asset.atlasTextures[0].filterMode = FilterMode.Point;
+                AssetDatabase.AddObjectToAsset(asset.atlasTextures[0], asset);
+                asset.material.name = asset.name + " Material";
+                AssetDatabase.AddObjectToAsset(asset.material, asset);
+            }
 
             asset.TryAddCharacters(chars, out string missing);
-            asset.atlasTextures[0].filterMode = FilterMode.Point;
+            if (asset.atlasTextures != null && asset.atlasTextures.Length > 0 && asset.atlasTextures[0] != null)
+                asset.atlasTextures[0].filterMode = FilterMode.Point;
+
             if (!string.IsNullOrEmpty(missing))
-                Debug.LogWarning($"[Localization] {fileName} thiếu {missing.Length} ký tự: {missing}");
+                Debug.LogWarning($"[Localization] {assetName} thiếu {missing.Length} ký tự: {missing}");
             EditorUtility.SetDirty(asset);
             return asset;
         }

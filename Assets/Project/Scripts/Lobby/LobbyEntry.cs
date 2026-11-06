@@ -96,7 +96,11 @@ namespace DungeonGathering.Lobby
                 Debug.LogWarning($"[Lobby] Nhân vật '{character.characterId}' chưa ra mắt.");
                 return false;
             }
-            if (!Economy.StartRun(character, Catalog)) return false;
+            if (!Economy.StartRun(character, Catalog))
+            {
+                Sfx.Play(SfxId.UiError);
+                return false;
+            }
             _ = Services.Scenes.Go(AddressKeys.ScenePlay);
             return true;
         }

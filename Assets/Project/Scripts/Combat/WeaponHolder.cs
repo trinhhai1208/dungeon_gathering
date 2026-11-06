@@ -114,13 +114,14 @@ namespace DungeonGathering.Combat
             {
                 go = new GameObject("Weapon_" + data.id);
                 go.transform.SetParent(targetSocket, false);
-                go.transform.localScale = Vector3.one * 0.55f;
+                go.transform.localScale = Vector3.one * (data.visualScale > 0f ? data.visualScale : 0.55f);
 
                 // Căn sprite để hướng chuôi→mũi trùng trục +X của socket (hướng ngắm):
                 // sheet kiếm vẽ chéo, mũi lên trên-trái (135°); súng vẽ ngang, nòng sang phải (0°).
                 var visual = new GameObject("Visual");
                 visual.transform.SetParent(go.transform, false);
-                float spriteForward = data.weaponType == WeaponType.Melee ? meleeSpriteForwardAngle : rangedSpriteForwardAngle;
+                visual.transform.localPosition = data.holdOffset;
+                float spriteForward = data.GetForwardAngle(meleeSpriteForwardAngle, rangedSpriteForwardAngle);
                 visual.transform.localRotation = Quaternion.Euler(0f, 0f, -spriteForward);
 
                 var sr = visual.AddComponent<SpriteRenderer>();

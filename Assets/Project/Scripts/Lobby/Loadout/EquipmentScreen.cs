@@ -21,11 +21,12 @@ namespace DungeonGathering.Lobby
         [SerializeField] Sprite[] slotSilhouettes = new Sprite[6];
 
         protected override int SlotCount => LoadoutData.EquipmentSlots;
-        protected override IEnumerable<string> OwnedIds() => Services.Save != null ? Services.Save.Data.ownedEquipment : Enumerable.Empty<string>();
+        protected override IEnumerable<string> OwnedIds() =>
+            inventory != null ? inventory.GetOwnedEquipment() : Enumerable.Empty<string>();
         protected override string SlotItemId(int slot) => loadout.GetEquipment((EquipmentSlotType)slot);
         protected override int SlotOf(ItemData item) => item is EquipmentData eq ? (int)eq.slot : 0;
         protected override bool PassesFilter(ItemData item, int f) => f == 0 || (item is EquipmentData eq && (int)eq.slot == f - 1);
-        protected override void Unequip(int slot) => loadout.SetEquipment((EquipmentSlotType)slot, null);
+        protected override void Unequip(int slot) => inventory?.UnequipItem((EquipmentSlotType)slot);
         protected override Sprite EmptySilhouette(int slot) => slot < slotSilhouettes.Length ? slotSilhouettes[slot] : null;
 
         protected override string MetaLine(ItemData item)

@@ -22,6 +22,7 @@ namespace DungeonGathering.Play
         [SerializeField] WeaponHolder weapons;
         [SerializeField] PlayerSkillController skills;
         [SerializeField] PlayerEquipment equipment;
+        [SerializeField] PlayerInventory inventory;
         [SerializeField] PlayerInteractor interactor;
         [SerializeField] SpriteAnimDriver anim;
 
@@ -57,6 +58,7 @@ namespace DungeonGathering.Play
         public WeaponHolder Weapons => weapons;
         public PlayerSkillController Skills => skills;
         public PlayerEquipment Equipment => equipment;
+        public PlayerInventory Inventory => inventory;
         public PlayerInteractor Interactor => interactor;
         public SpriteAnimDriver Anim => anim;
         public bool InputEnabled => inputEnabled;
@@ -74,7 +76,7 @@ namespace DungeonGathering.Play
         public float CurrentMana => stats.Mana;
 
         // ---- ITargetable ----
-        public bool IsAlive => this != null && !stats.IsDead;
+        public bool IsAlive => this != null && stats != null && !stats.IsDead;
         public IDamageable Damageable => stats;
 
         void Awake()
@@ -86,6 +88,7 @@ namespace DungeonGathering.Play
             if (weapons == null) weapons = GetComponentInChildren<WeaponHolder>(true);
             if (skills == null) skills = gameObject.GetOrAdd<PlayerSkillController>();
             if (equipment == null) equipment = gameObject.GetOrAdd<PlayerEquipment>();
+            if (inventory == null) inventory = gameObject.GetOrAdd<PlayerInventory>();
             if (interactor == null) interactor = gameObject.GetOrAdd<PlayerInteractor>();
             if (anim == null) anim = GetComponentInChildren<SpriteAnimDriver>(true);
             stats.Died += OnDied;
@@ -135,6 +138,7 @@ namespace DungeonGathering.Play
             if (weapon2 != null) items.Add(weapon2);
             if (equips != null) foreach (var e in equips) if (e != null) items.Add(e);
             skills.Bind(this, data != null ? data.activeSkill : null, items);
+            inventory?.Init(this, stats, data, carried);
 
             CombatTargets.RegisterPlayer(this);
         }

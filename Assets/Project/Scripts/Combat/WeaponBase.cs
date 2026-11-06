@@ -32,7 +32,7 @@ namespace DungeonGathering.Combat
             cooldown = 0f;
             if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             if (spriteRenderer != null && weapon.weaponSprite != null) spriteRenderer.sprite = weapon.weaponSprite;
-            transform.localPosition = weapon.holdOffset;
+            transform.localPosition = weapon.weaponPrefab != null ? (Vector3)weapon.holdOffset : Vector3.zero;
             if (muzzlePoint == null)
             {
                 muzzlePoint = new GameObject("Muzzle").transform;

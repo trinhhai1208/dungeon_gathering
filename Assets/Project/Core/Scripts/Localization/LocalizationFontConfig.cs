@@ -6,7 +6,7 @@ namespace DungeonGathering.Localization
 {
     /// <summary>
     /// Font TMP theo từng locale (giống LocalizationFontManager của Stickman).
-    /// EN: Pixelify Sans · VI: Tiny5 (font pixel có đủ dấu tiếng Việt).
+    /// EN: Pixelta · VI: dearpix (font pixel có đủ dấu tiếng Việt).
     /// Có thể gán qua <see cref="SetInstance"/> (Bootstrap/Addressables Core_Local) hoặc fallback Resources.Load.
     /// </summary>
     [CreateAssetMenu(fileName = "LocalizationFontConfig", menuName = "Dungeon Gathering/Localization Font Config")]

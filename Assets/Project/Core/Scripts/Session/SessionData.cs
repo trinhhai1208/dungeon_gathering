@@ -110,5 +110,16 @@ namespace DungeonGathering.Core
             AddRunCoins(-amount);
             return true;
         }
+
+        /// <summary>Nguồn ghi duy nhất cho Túi đồ ván chơi (SYS-01-INV).</summary>
+        public void AddToBag(string itemId)
+        {
+            if (string.IsNullOrEmpty(itemId)) return;
+            runBag.Add(itemId);
+            Services.Save?.Data.Discover(itemId);
+            EventBus<ItemPickedUpEvent>.Raise(new ItemPickedUpEvent { ItemId = itemId });
+        }
+
+        public void ClearBag() => runBag.Clear();
     }
 }

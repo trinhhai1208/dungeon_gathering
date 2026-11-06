@@ -8,7 +8,6 @@ namespace DungeonGathering.Play
     public enum LootKind
     {
         Gold = 0,
-        BlueCoin = 1,
         Mana = 2,
         Health = 3,
         GoldCoin = 0,
@@ -19,7 +18,6 @@ namespace DungeonGathering.Play
     public enum LootType
     {
         GoldCoin = 0,
-        BlueCoin = 1,
         ManaOrb = 2,
         HealthPotion = 3
     }
@@ -168,18 +166,6 @@ namespace DungeonGathering.Play
             {
                 case LootKind.Gold:
                     Services.Session?.AddRunCoins(amount);
-                    break;
-
-                case LootKind.BlueCoin:
-                    // Coin xanh = tiền tệ VĨNH VIỄN (có chủ đích): cộng thẳng vào ví SaveData ngay khi nhặt,
-                    // KHÔNG đi qua RunFlow.Settle và giữ lại cả khi thua/bỏ run. Coin vàng (Gold) mới là coin run.
-                    // Không có Save → bỏ qua (không quy đổi sang coin run).
-                    if (Services.Save != null)
-                    {
-                        Services.Save.Data.coins += amount;
-                        Services.Save.RequestSave();
-                        EventBus<WalletChangedEvent>.Raise(new WalletChangedEvent { Coins = Services.Save.Data.coins });
-                    }
                     break;
 
                 case LootKind.Mana:

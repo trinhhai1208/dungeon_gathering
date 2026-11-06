@@ -21,6 +21,8 @@ namespace DungeonGathering.Enemies
         [Range(0, 1)] public float knockbackResist;
         [Tooltip("Khoảng cách giữ với Player khi đuổi (quái bắn xa nên > 0)")]
         public float preferredDistance = 0.6f;
+        [Tooltip("Nếu > 0 và khoảng cách tới mục tiêu nhỏ hơn mức này, quái sẽ lùi lại (dành cho quái bắn xa)")]
+        public float retreatDistance = 0f;
         public float aggroRange = 12f;
 
         [Header("Sinh quái")]

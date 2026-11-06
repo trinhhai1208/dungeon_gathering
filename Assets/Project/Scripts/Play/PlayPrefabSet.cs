@@ -22,7 +22,6 @@ namespace DungeonGathering.Play
 
         [Header("Loot")]
         public LootDrop goldCoin;
-        public LootDrop blueCoin;
         public LootDrop manaOrb;
         public LootDrop healthPotion;
         public ItemPickup itemPickup;

@@ -16,6 +16,15 @@ namespace DungeonGathering.Localization
         [SerializeField] LocalizedString localizedString = new() { TableReference = LocalizationFontConfig.TableName };
         [SerializeField] bool upperCase;
 
+        [Header("Per-Locale Size Override")]
+        [Tooltip("Cỡ font cụ thể khi đổi sang tiếng Việt (nếu <= 0 sẽ dùng viScale hoặc cỡ mặc định).")]
+        [SerializeField] float viFontSize = 0f;
+        [Tooltip("Tỉ lệ scale kích thước riêng khi đổi sang tiếng Việt (ví dụ 1.2; nếu <= 0 sẽ dùng cỡ mặc định).")]
+        [SerializeField] float viScale = 0f;
+
+        public float ViFontSize { get => viFontSize; set { viFontSize = value; ApplyFont(); } }
+        public float ViScale { get => viScale; set { viScale = value; ApplyFont(); } }
+
         TMP_Text text;
         TMP_FontAsset originalFont;
         Material originalMaterial;
@@ -122,7 +131,17 @@ namespace DungeonGathering.Localization
                 return;
             }
             if (text.font != font) text.font = font;
-            text.fontSize = originalSize * config.GetSizeScale(code);
+
+            if (GameLanguage.Normalize(code) == GameLanguage.Vietnamese)
+            {
+                if (viFontSize > 0f) text.fontSize = viFontSize;
+                else if (viScale > 0f) text.fontSize = originalSize * viScale;
+                else text.fontSize = originalSize * (config != null ? config.GetSizeScale(code) : 1f);
+            }
+            else
+            {
+                text.fontSize = originalSize * (config != null ? config.GetSizeScale(code) : 1f);
+            }
         }
     }
 }

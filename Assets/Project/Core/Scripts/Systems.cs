@@ -158,6 +158,24 @@ namespace DungeonGathering.Core
             if (paused) Services.Save?.FlushNow();
         }
 
+        void OnApplicationQuit()
+        {
+            HandleAppExit();
+        }
+
+        public static void HandleAppExit()
+        {
+            var s = Services.Session;
+            if (s != null && s.runActive && !s.settled)
+            {
+                // Nếu đã hạ Boss của tầng hiện tại (lastRunVictory == true) thì giữ túi đồ;
+                // ngược lại nếu thoát khi đang đánh dở thì xóa túi đồ theo luật Abandon.
+                if (s.lastRunVictory) RunFlow.Settle();
+                else RunFlow.Abandon();
+            }
+            Services.Save?.FlushNow();
+        }
+
         void OnDestroy()
         {
             if (instance != this) return;

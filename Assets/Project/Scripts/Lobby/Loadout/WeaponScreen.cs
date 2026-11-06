@@ -26,24 +26,15 @@ namespace DungeonGathering.Lobby
         }
 
         protected override int SlotCount => LoadoutData.WeaponSlots;
-        protected override IEnumerable<string> OwnedIds()
-        {
-            var set = new HashSet<string>(Services.Save != null ? Services.Save.Data.ownedWeapons : Enumerable.Empty<string>());
-            if (character != null && character.startingWeapon != null)
-            {
-                set.Add(character.startingWeapon.id);
-                if (Services.Save != null && !Services.Save.Data.ownedWeapons.Contains(character.startingWeapon.id))
-                    Services.Save.Data.ownedWeapons.Add(character.startingWeapon.id);
-            }
-            return set;
-        }
+        protected override IEnumerable<string> OwnedIds() =>
+            inventory != null ? inventory.GetOwnedWeapons() : Enumerable.Empty<string>();
         protected override string SlotItemId(int slot) => loadout.GetWeapon(slot);
         protected override int SlotOf(ItemData item) => 0;
         protected override bool PassesFilter(ItemData item, int f) => f == 0 || (int)item.rarity == f - 1; // Rarity: S,A,B,C,F
         protected override void Unequip(int slot)
         {
             if (slot >= 0 && slot < SlotCount)
-                loadout.SetWeapon(slot, null);
+                inventory?.UnequipWeapon(slot);
         }
 
         protected override string MetaLine(ItemData item) =>

@@ -88,8 +88,15 @@ namespace DungeonGathering.Core
             {
                 c.loadout ??= new LoadoutData();
                 c.loadout.Normalize();
-                if (c.loadout.weapons != null && c.loadout.weapons.Length >= 2 && c.loadout.weapons[1] == c.loadout.weapons[0])
+                if (!unlockedCharacters.Contains(c.characterId))
+                {
+                    c.loadout.weapons[0] = null;
                     c.loadout.weapons[1] = null;
+                }
+                else if (c.loadout.weapons != null && c.loadout.weapons.Length >= 2 && c.loadout.weapons[1] == c.loadout.weapons[0])
+                {
+                    c.loadout.weapons[1] = null;
+                }
             }
             version = CurrentVersion;
         }

@@ -19,8 +19,16 @@ namespace DungeonGathering.Catalog
         public Sprite weaponSprite;
         public Vector2 holdOffset = Vector2.zero;
         public Vector2 muzzleOffset = new(0.5f, 0f);
+        [Tooltip("Bật nếu sprite của vũ khí này có góc vẽ gốc khác với mặc định (Melee 135°, Ranged 0°)")]
+        public bool overrideForwardAngle;
+        public float customForwardAngle;
+        [Tooltip("Tỉ lệ thu phóng khi tự dựng từ weaponSprite")]
+        public float visualScale = 0.55f;
         [Tooltip("Prefab vũ khí riêng (tùy chọn). Trống → WeaponHolder tự dựng từ weaponSprite.")]
         public GameObject weaponPrefab;
+
+        public float GetForwardAngle(float defaultMelee, float defaultRanged) =>
+            overrideForwardAngle ? customForwardAngle : (weaponType == WeaponType.Melee ? defaultMelee : defaultRanged);
 
         [Header("Chỉ số")]
         public float damage = 10f;

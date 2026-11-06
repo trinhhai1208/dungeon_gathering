@@ -34,8 +34,7 @@ namespace DungeonGathering.Catalog
             var s = Services.Session;
             if (item == null || s == null) return PurchaseResult.Invalid;
             if (!s.TrySpendRunCoins(price)) return PurchaseResult.NotEnoughCoins;
-            s.runBag.Add(item.id);
-            EventBus<ItemPickedUpEvent>.Raise(new ItemPickedUpEvent { ItemId = item.id });
+            s.AddToBag(item.id);
             return PurchaseResult.Ok;
         }
 
@@ -49,8 +48,12 @@ namespace DungeonGathering.Catalog
             if (data.coins < character.unlockPrice) return PurchaseResult.NotEnoughCoins;
             data.coins -= character.unlockPrice;
             data.unlockedCharacters.Add(character.characterId);
-            if (character.startingWeapon != null && !data.ownedWeapons.Contains(character.startingWeapon.id))
-                data.ownedWeapons.Add(character.startingWeapon.id);
+            if (character.startingWeapon != null)
+            {
+                if (!data.ownedWeapons.Contains(character.startingWeapon.id))
+                    data.ownedWeapons.Add(character.startingWeapon.id);
+                data.Discover(character.startingWeapon.id);
+            }
             save.RequestSave();
             EventBus<WalletChangedEvent>.Raise(new WalletChangedEvent { Coins = data.coins });
             return PurchaseResult.Ok;
@@ -67,6 +70,14 @@ namespace DungeonGathering.Catalog
             var progress = save.Data.GetCharacter(character.characterId);
             var loadout = progress.loadout.Clone();
             if (catalog != null) DungeonGathering.Inventory.LoadoutRules.Sanitize(loadout, catalog, character);
+
+            // Guard: Phải có ít nhất 1 vũ khí được trang bị trong loadout
+            if (string.IsNullOrEmpty(loadout.GetWeapon(0)) && string.IsNullOrEmpty(loadout.GetWeapon(1)))
+            {
+                Debug.LogWarning("[Economy] Chưa trang bị vũ khí, không thể bắt đầu run.");
+                return false;
+            }
+
             session.StartNewRun(character.characterId, loadout, Random.Range(int.MinValue, int.MaxValue));
             save.Data.selectedCharacterId = character.characterId;
             save.RequestSave();

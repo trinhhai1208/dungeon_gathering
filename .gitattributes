@@ -8,15 +8,18 @@
 # Code & văn bản
 *.cs       text diff=csharp
 *.asmdef   text
-*.shader   text
-*.hlsl     text
-*.jslib    text
+*.shader   text linguist-detectable=false
+*.hlsl     text linguist-detectable=false
+*.cginc    text linguist-detectable=false
+*.jslib    text linguist-detectable=false
 *.json     text
 *.xml      text
 *.md       text
 *.csv      text
-*.py       text
-*.html     text
+
+# Bỏ qua thống kê ngôn ngữ cho assets bên thứ 3 và template
+"Assets/TextMesh Pro/**" linguist-vendored
+Assets/WebGLTemplates/** linguist-vendored
 
 # File YAML của Unity: merge bằng UnityYAMLMerge (Smart Merge), không đoán diff
 *.unity       text merge=unityyamlmerge eol=lf linguist-generated

@@ -26,7 +26,16 @@ namespace DungeonGathering.Enemies
         public Enemy Enemy { get; private set; }
         public IEnemyState Current => current;
         public bool IsSpawning => current == Spawn;
-        public ITargetable Target => CombatTargets.Player;
+        public ITargetable OverrideTarget { get; set; }
+        public ITargetable Target
+        {
+            get
+            {
+                if (OverrideTarget != null && (!(OverrideTarget is Component c) || c != null) && OverrideTarget.IsAlive)
+                    return OverrideTarget;
+                return CombatTargets.Player;
+            }
+        }
         /// <summary>Phòng đã kích hoạt → luôn đuổi Player, bỏ qua aggroRange.</summary>
         public bool AlwaysAggro { get; set; } = true;
 
@@ -104,7 +113,11 @@ namespace DungeonGathering.Enemies
                     b.ChangeState(b.Attack);
                     return;
                 }
-                b.Enemy.Motor.MoveTowards(t.Transform.position, b.Enemy.Data.preferredDistance);
+                float dist = b.DistanceToTarget();
+                if (b.Enemy.Data.retreatDistance > 0f && dist < b.Enemy.Data.retreatDistance)
+                    b.Enemy.Motor.MoveAwayFrom(t.Transform.position, b.Enemy.Data.preferredDistance);
+                else
+                    b.Enemy.Motor.MoveTowards(t.Transform.position, b.Enemy.Data.preferredDistance);
             }
             public void Exit(EnemyBrain b) { }
         }

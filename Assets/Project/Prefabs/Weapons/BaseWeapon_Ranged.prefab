@@ -174,4 +174,4 @@ MonoBehaviour:
   recoilDuration: 0.08
   fireAnimator: {fileID: 0}
   defaultProjectilePrefab: {fileID: 8615716003690641152, guid: 9b96be74346d4da42819b1aa46c25b92, type: 3}
-  defaultMuzzleVfx: {fileID: 6164033997265489522, guid: 608da318504328b4cb0b35f0d9aa8edf, type: 3}
+  defaultMuzzleVfx: {fileID: 0}

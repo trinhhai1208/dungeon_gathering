@@ -10,8 +10,10 @@ Game roguelite pixel 2D (Unity 6.3, URP 2D), phát hành **WebGL trên itch.io**
 | `ENTITIES_PREFABS.md` | Vật phẩm, người chơi, quái vật/boss: dữ liệu SO, cây prefab, layer va chạm, luồng sinh → chết → pool | Trước khi dựng prefab gameplay |
 | `CODE_STRUCTURE.md` | asmdef + thư mục script thực tế, layer/ma trận va chạm, component bắt buộc theo từng prefab, cách chạy thử trước khi có Addressables | Trước khi gắn script vào prefab/scene |
 | `DATA.md` | Dữ liệu ScriptableObject sinh bằng `DataSeeder` (Seed/Validate), roster 12 nhân vật + cơ chế "Chưa ra mắt", quy ước số liệu, việc còn thiếu | Trước khi thêm/sửa nhân vật, vũ khí, trang bị, quái, tầng |
-| `WEAPONS_AND_VFX_SYSTEM.md` | Vũ khí cận chiến/tầm xa, animation, ma trận vũ khí–VFX, hợp đồng C# vũ khí | Khi làm vũ khí/VFX |
-| `DATA_SYSTEM.md` | Hệ thống dữ liệu ScriptableObject, phân tầng Base vs Data, đặc tả mẫu cho Character, Weapon, Equipment, Enemy, Boss, DungeonConfig | Khi tạo hoặc mở rộng dữ liệu gameplay |
+| `SYSTEM_01.md` | **Hệ thống Inventory & Sảnh**: `CharacterInventory`, `PlayerInventory`, luật để trống ô vũ khí 0 (bắt buộc có vũ khí mới vào trận), đồng bộ 1 nguồn `runBag`, giữ đồ khi thua / xóa đồ khi thoát | Khi chỉnh sửa hoặc refactor túi đồ, trang bị, kho sảnh |
+| `SYSTEM_02.md` | **Hệ thống Vũ khí & Tấn công**: Cấu hình góc xoay & `holdOffset` theo từng `WeaponData` (bảo toàn 17 asset), hỗ trợ song song Prefab View & Auto-Sprite View | Khi chỉnh sửa hoặc refactor vũ khí, đạn, hitbox, tấn công |
+| `SYSTEM_03.md` | **Hệ thống Kẻ địch & AI Boss**: Tách `BossEncounterDirector` khỏi `LevelDirector`, bổ sung AI Kiting (`retreatDistance` + `MoveAwayFrom`) trong `EnemyBrain` | Khi chỉnh sửa hoặc refactor quái vật, AI hành vi, Boss multi-phase |
+| `SYSTEM_04.md` | **Cốt lõi, Lưu trữ, Tiền tệ & Tái cấu trúc File**: 1 Coin Vàng, `OnApplicationQuit`, luồng `Settle` nhiều tầng vs `Abandon`, tách `MinimapView` & File lớn | Khi chỉnh sửa hoặc refactor hệ thống save, tiền tệ, lifecycle, tách file lớn |
 
 **Nguồn thiết kế** (ngoài `Assets`, Unity không import): `Design/canvas/project/UI-*.dc.html` (mỗi file = 1 màn 1280×720, cũng là canvas trên claude.ai), `Design/localization/strings_src.py` (chuỗi key/en/vi), `Design/tools/` (script cắt sprite, dựng nền, i18n), `Design/cuts/blob-map.json`.
 

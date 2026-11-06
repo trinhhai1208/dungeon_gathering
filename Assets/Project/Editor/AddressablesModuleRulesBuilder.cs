@@ -91,10 +91,10 @@ namespace DungeonGathering.EditorTools
             // 1. Core_Local
             Reg(gCore, RegistryPath, AddressKeys.CoreModuleRegistry, AddressKeys.LabelCore);
             Reg(gCore, CoreFontConfigPath, AddressKeys.CoreFontConfig, AddressKeys.LabelCore);
-            Reg(gCore, "Assets/Project/Art/Fonts/PixelifySans-Regular SDF.asset", "font/pixelify-sans", AddressKeys.LabelCore);
+            Reg(gCore, "Assets/Project/Art/Fonts/Pixelta SDF.asset", "font/pixelta", AddressKeys.LabelCore);
 
             // 2. Shared_Fonts (VI)
-            Reg(gFonts, "Assets/Project/Art/Fonts/Tiny5-Regular SDF.asset", "font/tiny5", AddressKeys.LabelLocaleVi);
+            Reg(gFonts, "Assets/Project/Art/Fonts/dearpix SDF.asset", "font/dearpix", AddressKeys.LabelLocaleVi);
 
             // 3. Shared_UI
             Reg(gSharedUi, "Assets/Project/Prefabs/UI/ItemTile.prefab", AddressKeys.UiSharedItemTile, AddressKeys.LabelSharedUi);
