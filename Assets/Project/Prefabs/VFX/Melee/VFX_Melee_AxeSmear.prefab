@@ -127,4 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a117a2e70b88764e850c43601f1a855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonGathering.VFX.AutoDestroyEffect
-  duration: 0.71999997
+  duration: 0.3

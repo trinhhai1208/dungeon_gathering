@@ -12,27 +12,38 @@ namespace DungeonGathering.UI
     {
         [SerializeField] RectTransform background;   // joy_base
         [SerializeField] RectTransform knob;         // joy_knob
-        [SerializeField] float radius = 64f;
+        [SerializeField] float radius = 54f;
         [SerializeField] bool floating = true;
+        [SerializeField] bool hideWhenIdle = true;
         [SerializeField, Range(0, 1)] float deadZone = 0.12f;
 
         RectTransform area;
-        Vector2 restPosition;
+        Vector3 restPosition;
         int pointerId = -100;
 
         void Awake()
         {
             area = (RectTransform)transform;
-            if (background != null) restPosition = background.anchoredPosition;
+            if (background != null)
+            {
+                restPosition = background.localPosition;
+                if (hideWhenIdle) background.gameObject.SetActive(false);
+            }
         }
 
         public void OnPointerDown(PointerEventData e)
         {
             if (pointerId != -100) return;
             pointerId = e.pointerId;
-            if (floating && background != null &&
-                RectTransformUtility.ScreenPointToLocalPointInRectangle((RectTransform)background.parent, e.position, e.pressEventCamera, out var local))
-                background.anchoredPosition = local;
+            if (background != null)
+            {
+                if (hideWhenIdle) background.gameObject.SetActive(true);
+                if (floating && RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    (RectTransform)background.parent, e.position, e.pressEventCamera, out var local))
+                {
+                    background.localPosition = new Vector3(local.x, local.y, 0f);
+                }
+            }
             OnDrag(e);
         }
 
@@ -57,7 +68,11 @@ namespace DungeonGathering.UI
             pointerId = -100;
             VirtualInput.Move = Vector2.zero;
             if (knob != null) knob.anchoredPosition = Vector2.zero;
-            if (floating && background != null) background.anchoredPosition = restPosition;
+            if (background != null)
+            {
+                if (hideWhenIdle) background.gameObject.SetActive(false);
+                else if (floating) background.localPosition = restPosition;
+            }
         }
 
         void OnDisable() => Release();

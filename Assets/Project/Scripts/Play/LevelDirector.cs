@@ -266,14 +266,7 @@ namespace DungeonGathering.Play
                 RunFlow.Settle();
             }
 
-            if (victory && prefabs != null && prefabs.portal != null && builder.BossRoom != null)
-            {
-                var t = builder.BossRoom.Template;
-                Vector3 at = t.portalPoint != null ? t.portalPoint.position : t.transform.position;
-                var portal = Instantiate(prefabs.portal, at, Quaternion.identity, builder.BossRoom.transform);
-                portal.Setup(() => ShowResults(true, 0f));
-            }
-            else ShowResults(victory, resultDelay);
+            ShowResults(victory, resultDelay);
         }
 
         /// <summary>Chỉ số mang sang tầng kế (HP/giáp/mana/vũ khí đang cầm) — chụp ở thời điểm rời tầng.</summary>

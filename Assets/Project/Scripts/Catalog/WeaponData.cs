@@ -5,6 +5,14 @@ using UnityEngine;
 
 namespace DungeonGathering.Catalog
 {
+    public enum WeaponHoldStyle
+    {
+        OneHandedSide = 0,      // Kiếm 1 tay / Dao găm: cầm ở hông, hơi chếch lên
+        HeavyShoulder = 1,      // Đại kiếm / Rìu: vác vai (shoulder carry)
+        Ranged = 2,             // Súng: cầm ngang ngực/hông, hướng thẳng phía trước
+        Spear = 3               // Thương/Giáo: cầm ngang đâm thẳng
+    }
+
     /// <summary>Vũ khí cầm tay (WEAPONS §6.1). Không có Role Synergy.</summary>
     [CreateAssetMenu(fileName = "Weapon_", menuName = "Dungeon Gathering/Weapon Data")]
     public class WeaponData : ItemData
@@ -14,6 +22,15 @@ namespace DungeonGathering.Catalog
         [Header("Loại")]
         public WeaponType weaponType = WeaponType.Melee;
         public RangedFireMode fireMode = RangedFireMode.Projectile;
+
+        [Header("Tư thế cầm")]
+        public WeaponHoldStyle holdStyle = WeaponHoldStyle.OneHandedSide;
+        [Tooltip("Góc nâng lưỡi kiếm khi đứng yên (độ). 0 = dùng mặc định theo holdStyle.")]
+        public float customRestAngle;
+
+        public WeaponHoldStyle EffectiveHoldStyle => holdStyle != WeaponHoldStyle.OneHandedSide
+            ? holdStyle
+            : (weaponType == WeaponType.Ranged ? WeaponHoldStyle.Ranged : WeaponHoldStyle.OneHandedSide);
 
         [Header("Hiển thị")]
         public Sprite weaponSprite;

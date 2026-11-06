@@ -18,8 +18,8 @@ MonoBehaviour:
   role: 4
   unlockPrice: 800
   released: 0
-  portrait: {fileID: 7812070969208665739, guid: 3aca81b0ecb075f4ea381b3db2bb4e29, type: 3}
-  animator: {fileID: 0}
+  portrait: {fileID: -843418949036754346, guid: 005df7b674ba94b42b88724c9fd9c0b9, type: 3}
+  animator: {fileID: 9100000, guid: a900dd929a69d09488a4382f581ed11e, type: 2}
   baseStats:
     maxHp: 5
     maxArmor: 3

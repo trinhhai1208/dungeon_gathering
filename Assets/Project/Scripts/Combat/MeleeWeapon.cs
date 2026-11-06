@@ -105,20 +105,25 @@ namespace DungeonGathering.Combat
             float handDist = GetHandDistance();
             Vector2 pivotPos = GetPivotPosition();
             Vector2 hand = pivotPos + direction * handDist;
-            float reach = Mathf.Max(data != null ? data.attackRange : 1.2f, handDist + blade);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Tính scale của vệt chém và tầm vươn xa nhất của mũi vệt chém (vfxTipReach)
+            float vfxScale = Mathf.Clamp(((blade + handDist) * 2.2f) / SlashVfxArcWidth, 0.35f, 1.2f);
+            float vfxTipReach = handDist + (blade * 0.55f) + (vfxScale * 2.56f);
+
+            // Hitbox Soul Knight: ôm trọn toàn bộ tầm vươn của vệt chém + biên an toàn 0.1 đơn vị
+            float reach = Mathf.Max(data != null ? data.attackRange : 1.2f, vfxTipReach + 0.1f);
 
             var slashVfx = data != null && data.slashVfxPrefab != null ? data.slashVfxPrefab : defaultSlashVfx;
             if (slashVfx != null)
             {
-                // Vệt chém là cung do mũi kiếm vẽ ra quanh tay: tâm ở giữa lưỡi, đường kính ≈ 2 × lưỡi.
-                Vector2 vfxCenter = hand + direction * (blade * 0.5f);
+                // Vệt chém là cung do mũi kiếm vẽ ra quanh tay: tâm ở giữa lưỡi, vươn ra ngoài mũi kiếm
+                Vector2 vfxCenter = hand + direction * (blade * 0.55f);
                 var fx = CombatFx.Play(slashVfx, vfxCenter, Quaternion.Euler(0f, 0f, angle));
                 if (fx != null)
                 {
-                    float s = Mathf.Clamp(blade * 2f / SlashVfxArcWidth, 0.3f, 1.2f);
                     // Lật vệt chém theo chiều vung (đòn sau vung ngược đòn trước)
-                    fx.transform.localScale = new Vector3(s, half >= 0f ? s : -s, 1f);
+                    fx.transform.localScale = new Vector3(vfxScale, half >= 0f ? vfxScale : -vfxScale, 1f);
                 }
             }
             Sfx.PlayOverride(data != null ? data.attackSfx : null, SfxId.SwordSwing);
@@ -127,12 +132,12 @@ namespace DungeonGathering.Combat
             return true;
         }
 
-        /// <summary>Bề rộng (world units, scale 1) của vệt chém trong sprite VFX sword-combo (~68px / 16 PPU).</summary>
-        const float SlashVfxArcWidth = 4.2f;
+        /// <summary>Bề rộng (world units, scale 1) của vệt chém trong sprite VFX (~72px / 16 PPU).</summary>
+        const float SlashVfxArcWidth = 4.5f;
 
         /// <summary>
         /// Hitbox hình quạt khớp với cung vung: tâm tại WeaponPivot, bán kính = tay + lưỡi,
-        /// góc = arc + biên 20°. Mục tiêu sát người (≤ tay + 0.25) luôn trúng.
+        /// góc quét mở rộng bao phủ trọn hai cánh của vệt chém. Mục tiêu sát người (≤ tay + 0.35) luôn trúng.
         /// </summary>
         void DoHit(Vector2 pivotPos, Vector2 hand, Vector2 direction, float reach, float arc)
         {
@@ -142,8 +147,8 @@ namespace DungeonGathering.Combat
 
             int mask = CombatLayers.EnemyTargets | (data != null && data.destroysProjectiles ? CombatLayers.EnemyBullets : 0);
             var filter = new ContactFilter2D { useLayerMask = true, layerMask = mask, useTriggers = true };
-            float halfArc = arc * 0.5f + 20f;
-            float closeRange = Vector2.Distance(pivotPos, hand) + 0.25f;
+            float halfArc = Mathf.Max(arc * 0.5f + 25f, 75f);
+            float closeRange = Vector2.Distance(pivotPos, hand) + 0.35f;
             int n = Physics2D.OverlapCircle(pivotPos, reach, filter, buffer);
             struck.Clear();
             for (int i = 0; i < n; i++)

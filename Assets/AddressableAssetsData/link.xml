@@ -1,0 +1,241 @@
+<linker>
+  <assembly fullname="Project.Catalog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Catalog.CharacterData" preserve="all" />
+    <type fullname="DungeonGathering.Catalog.EquipmentData" preserve="all" />
+    <type fullname="DungeonGathering.Catalog.ItemCatalog" preserve="all" />
+    <type fullname="DungeonGathering.Catalog.WeaponData" preserve="all" />
+    <type fullname="DungeonGathering.Catalog.LootTable" preserve="nothing" serialized="true" />
+    <type fullname="DungeonGathering.Catalog.BaseStats" preserve="nothing" serialized="true" />
+    <type fullname="DungeonGathering.Catalog.RarityWeights" preserve="nothing" serialized="true" />
+    <type fullname="DungeonGathering.Catalog.StatModifier" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Combat, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Combat.AreaBurstSkill" preserve="all" />
+    <type fullname="DungeonGathering.Combat.ArmorBreakNovaPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.BuffSkill" preserve="all" />
+    <type fullname="DungeonGathering.Combat.ChainLightningPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.CritRewardPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.DamagePopup" preserve="all" />
+    <type fullname="DungeonGathering.Combat.DashSkill" preserve="all" />
+    <type fullname="DungeonGathering.Combat.EquipStatBonusPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.EveryNthHitPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.LifestealPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.ManaOnKillPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.OnHitStatusPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.Projectile" preserve="all" />
+    <type fullname="DungeonGathering.Combat.ShieldHealSkill" preserve="all" />
+    <type fullname="DungeonGathering.Combat.SpriteAnimDriver" preserve="all" />
+    <type fullname="DungeonGathering.Combat.StatusEffectController" preserve="all" />
+    <type fullname="DungeonGathering.Combat.StillnessEmpowerPassive" preserve="all" />
+    <type fullname="DungeonGathering.Combat.WeaponHolder" preserve="all" />
+    <type fullname="DungeonGathering.Combat.WeaponStatBonusPassive" preserve="all" />
+    <type fullname="DungeonGathering.VFX.AutoDestroyEffect" preserve="all" />
+    <type fullname="DungeonGathering.Combat.StatusPayload" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Core.ModuleDefinition" preserve="all" />
+    <type fullname="DungeonGathering.Core.ModuleRegistry" preserve="all" />
+    <type fullname="DungeonGathering.Core.PooledObject" preserve="all" />
+    <type fullname="DungeonGathering.Localization.LanguageButton" preserve="all" />
+    <type fullname="DungeonGathering.Localization.LocalizationFontConfig" preserve="all" />
+    <type fullname="DungeonGathering.Localization.LocalizedTMPText" preserve="all" />
+    <type fullname="DungeonGathering.Localization.LocalizationFontConfig/LocaleFontEntry" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Enemy, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Enemies.BossPhaseController" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.ChargeAttackSO" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.Enemy" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.EnemyAttackRunner" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.EnemyBrain" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.EnemyData" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.EnemyHealth" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.EnemyMotor" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.MeleeAttackSO" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.ShootAttackSO" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.SpawnWarningMarker" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.SummonAttackSO" preserve="all" />
+    <type fullname="DungeonGathering.Enemies.BossPhaseController/Phase" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Lobby, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Lobby.CharacterPanel" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.CharacterSpot" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.EquipmentScreen" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.IndicatorPulse" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.LobbyEntry" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.LobbyHud" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.LobbyPortal" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.MerchantNpc" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.WeaponScreen" preserve="all" />
+    <type fullname="DungeonGathering.Lobby.LoadoutScreenBase/StatRow" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Menu, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Menu.MenuEntry" preserve="all" />
+    <type fullname="DungeonGathering.Menu.MenuScreen" preserve="all" />
+  </assembly>
+  <assembly fullname="Project.Play, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Play.CameraRig" preserve="all" />
+    <type fullname="DungeonGathering.Play.Chest" preserve="all" />
+    <type fullname="DungeonGathering.Play.DungeonBuilder" preserve="all" />
+    <type fullname="DungeonGathering.Play.DungeonConfig" preserve="all" />
+    <type fullname="DungeonGathering.Play.HazardZone" preserve="all" />
+    <type fullname="DungeonGathering.Play.ItemPickup" preserve="all" />
+    <type fullname="DungeonGathering.Play.LevelDirector" preserve="all" />
+    <type fullname="DungeonGathering.Play.LootDrop" preserve="all" />
+    <type fullname="DungeonGathering.Play.PauseScreen" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerController" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerEquipment" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerInputReader" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerInteractor" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerInventory" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerMovement" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerSkillController" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayerStats" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayHud" preserve="all" />
+    <type fullname="DungeonGathering.Play.PlayPrefabSet" preserve="all" />
+    <type fullname="DungeonGathering.Play.Portal" preserve="all" />
+    <type fullname="DungeonGathering.Play.RoomDoor" preserve="all" />
+    <type fullname="DungeonGathering.Play.RoomTemplate" preserve="all" />
+    <type fullname="DungeonGathering.Play.ShopScreen" preserve="all" />
+    <type fullname="DungeonGathering.Play.ShopStand" preserve="all" />
+    <type fullname="DungeonGathering.Play.TimedTrap" preserve="all" />
+    <type fullname="DungeonGathering.Play.TriggerTrap" preserve="all" />
+    <type fullname="DungeonGathering.Play.EnemySpawnEntry" preserve="nothing" serialized="true" />
+    <type fullname="DungeonGathering.Play.ShopScreen/Card" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Project.Results, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.Results.RunResultScreen" preserve="all" />
+  </assembly>
+  <assembly fullname="Project.Shared, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="DungeonGathering.UI.ItemTile" preserve="all" />
+    <type fullname="DungeonGathering.UI.SettingsPanel" preserve="all" />
+    <type fullname="DungeonGathering.UI.SettingsPopup" preserve="all" />
+    <type fullname="DungeonGathering.UI.VirtualButton" preserve="all" />
+    <type fullname="DungeonGathering.UI.VirtualJoystick" preserve="all" />
+    <type fullname="DungeonGathering.UI.SettingsPanel/ToggleRow" preserve="nothing" serialized="true" />
+    <type fullname="DungeonGathering.UI.SettingsPanel/VolumeRow" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Unity.Cinemachine.CinemachineBrain" preserve="all" />
+    <type fullname="Unity.Cinemachine.CinemachineCamera" preserve="all" />
+    <type fullname="Unity.Cinemachine.CinemachineConfiner2D" preserve="all" />
+    <type fullname="Unity.Cinemachine.CinemachinePositionComposer" preserve="all" />
+    <type fullname="Unity.Cinemachine.CameraTarget" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.CinemachineBlendDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.CinemachineBrain/LensModeOverrideSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.CinemachineConfiner2D/OversizeWindowSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.LensSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.LensSettings/PhysicalSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.LookaheadSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.PrioritySettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.ScreenComposerSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.ScreenComposerSettings/DeadZoneSettings" preserve="nothing" serialized="true" />
+    <type fullname="Unity.Cinemachine.ScreenComposerSettings/HardLimitSettings" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Localization, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Localization.Locale" preserve="all" />
+    <type fullname="UnityEngine.Localization.Tables.SharedTableData" preserve="all" />
+    <type fullname="UnityEngine.Localization.Tables.StringTable" preserve="all" />
+    <type fullname="UnityEngine.Localization.LocalizedString" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Tables.TableEntryReference" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Tables.TableReference" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.LocaleIdentifier" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Metadata.MetadataCollection" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Tables.TableEntryData" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Tables.DistributedUIDGenerator" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Localization.Tables.SharedTableData/SharedTableEntry" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshPro" preserve="all" />
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AnimationClip" preserve="all" />
+    <type fullname="UnityEngine.Animator" preserve="all" />
+    <type fullname="UnityEngine.RuntimeAnimatorController" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Camera" preserve="all" />
+    <type fullname="UnityEngine.Cubemap" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.LightmapSettings" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.RenderSettings" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Grid" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CapsuleCollider2D" preserve="all" />
+    <type fullname="UnityEngine.CircleCollider2D" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody2D" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Tilemaps.Tile" preserve="all" />
+    <type fullname="UnityEngine.Tilemaps.Tilemap" preserve="all" />
+    <type fullname="UnityEngine.Tilemaps.TilemapCollider2D" preserve="all" />
+    <type fullname="UnityEngine.Tilemaps.TilemapRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.EventSystems.Physics2DRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.Button" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.RectMask2D" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
+    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextCoreFontEngineModule">
+    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphValueRecord" preserve="nothing" serialized="true" />
+  </assembly>
+</linker>

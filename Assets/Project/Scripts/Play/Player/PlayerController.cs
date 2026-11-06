@@ -16,8 +16,9 @@ namespace DungeonGathering.Play
     public sealed class PlayerController : MonoBehaviour, IPlayerContext, ITargetable
     {
         const float TargetHeroHeightUnits = 1.15f;
-        const float HandHeightFromCenter = 0.26f;
-        const float HandReachFromCenter = 0.33f;
+        const float HandHeightFromCenter = 0.38f;
+        const float HandSideOffsetUnits = 0.25f;
+        const float HandReachFromCenter = 0f;
 
         [SerializeField] WeaponHolder weapons;
         [SerializeField] PlayerSkillController skills;
@@ -125,9 +126,9 @@ namespace DungeonGathering.Play
             {
                 if (anim != null)
                 {
-                    // Bàn tay nằm ~26% chiều cao dưới tâm thân, cách tâm ~33% chiều cao theo phương ngang
+                    // Trục xoay vũ khí đặt ở bụng (cách tâm thân ~20% chiều cao), không vươn tay (reach = 0)
                     float pivotY = anim.transform.localPosition.y - TargetHeroHeightUnits * HandHeightFromCenter;
-                    weapons.SetHandAnchor(pivotY, TargetHeroHeightUnits * HandReachFromCenter);
+                    weapons.SetHandAnchor(pivotY, TargetHeroHeightUnits * HandReachFromCenter, HandSideOffsetUnits);
                 }
                 weapons.AutoAim = Services.Save == null || Services.Save.Data.settings.autoAim;
                 weapons.Init(this, weapon1, weapon2, carried != null ? carried.activeWeaponSlot : 0);

@@ -17,6 +17,8 @@ namespace DungeonGathering.Play
         [SerializeField] Button resumeButton;
         [SerializeField] Button abandonButton;
         [SerializeField] Button settingsButton;   // tùy chọn: mở ui/popup/settings nếu không nhúng
+        [SerializeField] Image characterPortrait;
+        [SerializeField] TMPro.TMP_Text characterClassText;
         [SerializeField] TMPro.TMP_Text runTimeText;
         [SerializeField] TMPro.TMP_Text killsText;
         [SerializeField] TMPro.TMP_Text coinsText;
@@ -42,6 +44,22 @@ namespace DungeonGathering.Play
                 if (killsText != null) killsText.text = s.kills.ToString();
                 if (coinsText != null) coinsText.text = s.runCoins.ToString();
                 BuildLoot(s);
+            }
+            var character = LevelDirector.Current != null && LevelDirector.Current.Character != null
+                ? LevelDirector.Current.Character
+                : (ItemCatalog.Current != null && s != null ? ItemCatalog.Current.GetCharacter(s.characterId) : null);
+            if (character != null)
+            {
+                if (characterPortrait != null && character.portrait != null)
+                    characterPortrait.sprite = character.portrait;
+                if (characterClassText != null)
+                {
+                    string fallback = char.ToUpperInvariant(character.characterId[0]) + character.characterId.Substring(1);
+                    string charName = !string.IsNullOrEmpty(character.nameKey)
+                        ? DungeonGathering.Localization.LocalizationLookup.Get(character.nameKey, fallback)
+                        : fallback;
+                    characterClassText.text = $"{charName} · {character.role}";
+                }
             }
             if (abandonButton != null) abandonButton.interactable = true;
             return null;

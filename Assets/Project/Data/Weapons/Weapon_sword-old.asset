@@ -39,7 +39,7 @@ MonoBehaviour:
   swingArc: 110
   swingDuration: 0.15
   destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 1822799776828151798, guid: b07d8fef20eeefb46a4ebec97d87f178, type: 3}
+  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
   projectilePrefab: {fileID: 0}
   muzzleVfxPrefab: {fileID: 0}
   hitImpactVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}

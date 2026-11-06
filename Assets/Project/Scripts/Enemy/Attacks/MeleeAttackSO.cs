@@ -21,7 +21,13 @@ namespace DungeonGathering.Enemies
             await Wait(windupTime, ctx.Token);
             if (ctx.Self.IsDead) return;
             Vector2 center = ctx.Origin + dir * (hitRadius * 0.8f);
-            CombatFx.Play(slashVfx, center, Quaternion.Euler(0f, 0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
+            var fx = CombatFx.Play(slashVfx, center, Quaternion.Euler(0f, 0f, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg));
+            if (fx != null)
+            {
+                // Thu nhỏ vệt chém khớp với bán kính đòn đánh (hitRadius), tránh VFX to khổng lồ
+                float s = Mathf.Clamp(hitRadius * 2f / 4.5f, 0.25f, 0.45f);
+                fx.transform.localScale = new Vector3(s, s, 1f);
+            }
             CombatUtil.DamageArea(center, hitRadius, CombatLayers.PlayerTargets,
                 new DamageInfo(damage, knockback, dir, 0f, false, ctx.Self.gameObject, Team.Enemy));
         }
