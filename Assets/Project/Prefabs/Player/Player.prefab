@@ -86,7 +86,7 @@ MonoBehaviour:
   meleeSpriteForwardAngle: 135
   rangedSpriteForwardAngle: 0
   restRaiseAngle: 35
-  behindBodyHalfAngle: 60
+  sideOffset: 0.22
 --- !u!1 &1534832404603061809
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +197,6 @@ GameObject:
   - component: {fileID: 7163572327701980960}
   - component: {fileID: 3027183292000473450}
   - component: {fileID: 7390000495510123037}
-  - component: {fileID: 1691299012518806593}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -401,21 +400,9 @@ MonoBehaviour:
   weapons: {fileID: 2980980571183290736}
   skills: {fileID: 1836088578675669489}
   equipment: {fileID: 7163572327701980960}
-  inventory: {fileID: 1691299012518806593}
+  inventory: {fileID: 0}
   interactor: {fileID: 3027183292000473450}
   anim: {fileID: 4727190840497841021}
---- !u!114 &1691299012518806593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2249639807825728243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b97a8320d0482534f891dbdf8ac0817e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Project.Play::DungeonGathering.Play.PlayerInventory
 --- !u!1 &2982146920713416617
 GameObject:
   m_ObjectHideFlags: 0

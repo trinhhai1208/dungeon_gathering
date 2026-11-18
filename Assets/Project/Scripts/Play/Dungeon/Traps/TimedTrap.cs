@@ -12,6 +12,15 @@ namespace DungeonGathering.Play
 
         float timer;
 
+        protected override void ApplyData()
+        {
+            base.ApplyData();
+            if (data == null) return;
+            inactiveTime = data.inactiveTime;
+            warningTime = data.warningTime;
+            activeTime = data.activeTime;
+        }
+
         protected override void OnEnable()
         {
             base.OnEnable();

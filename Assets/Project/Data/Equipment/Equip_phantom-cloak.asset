@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851a27d9a0d51a1419d2f1297173c272, type: 3}
+  m_Name: Equip_phantom-cloak
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentData
+  id: phantom-cloak
+  rarity: 0
+  icon: {fileID: 3084964034046833009, guid: 5e972451c203e0b45963009650a405bf, type: 3}
+  nameKey: item.phantom_cloak
+  descKey: eq.phantom_cloak.passive
+  activeSkill: {fileID: 11400000, guid: 9e6b885527465f24fbf1dd0cce3dbace, type: 2}
+  shopPrice: 160
+  slot: 1
+  baseModifiers:
+  - Stat: 5
+    FlatValue: 0
+    PercentValue: 0.12
+  - Stat: 6
+    FlatValue: 0.08
+    PercentValue: 0
+  synergyRole: 4
+  synergyPassive: {fileID: 11400000, guid: 2023ca2b4c4c4a24abd8524a2a6e03a8, type: 2}
+  equipmentSet: {fileID: 11400000, guid: 2c5744275e6a44546a33138f06bd6163, type: 2}
+  onHitStatus: []

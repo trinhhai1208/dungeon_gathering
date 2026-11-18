@@ -23,6 +23,7 @@ namespace DungeonGathering.Core
         {
             if (State != GameState.Playing) return;
             beforePause = State;
+            VirtualInput.ResetState();   // joystick/nút giữ không bị "kẹt" sau khi tiếp tục
             SetState(GameState.Paused);
         }
 

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee88269dd3a55843aa381cf44cf64f5, type: 3}
+  m_Name: Set_shadow-assassin
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentSetSO
+  setId: shadow-assassin
+  nameKey: set.shadow_assassin.name
+  pieces:
+  - {fileID: 11400000, guid: 1187764b96f2ed942853484d01aaff85, type: 2}
+  - {fileID: 11400000, guid: f23e4c5882b3fef42a8b46a16023a67e, type: 2}
+  - {fileID: 11400000, guid: 890b032de911b594f9dab0880a0f29d7, type: 2}
+  - {fileID: 11400000, guid: 759c91bb1bfc12741a122464795a58ae, type: 2}
+  bonus2Pieces:
+  - Stat: 6
+    FlatValue: 0.08
+    PercentValue: 0
+  - Stat: 7
+    FlatValue: 0.25
+    PercentValue: 0
+  bonus4Passive: {fileID: 11400000, guid: 20b5394f641fb46499ad575209189319, type: 2}

@@ -12,13 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84f5bbcf1b2176e45a27797727c775ed, type: 3}
   m_Name: Atk_lord-summon
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.SummonAttackSO
-  range: 12
+  skillId: atk-lord-summon
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 9
+  range: 12
   windupTime: 0.8
   weight: 1
   requireLineOfSight: 0
   stopWhileAttacking: 1
-  minionPrefab: {fileID: 8830509281171993290, guid: c01340b25f8ccd748955ab29fe91665b, type: 3}
+  status:
+    effects: []
+  minion: {fileID: 11400000, guid: 4f8a5c92c7a3ede4e9accabe0ecfbe06, type: 2}
   count: 2
   radius: 1.5
   maxAlive: 4

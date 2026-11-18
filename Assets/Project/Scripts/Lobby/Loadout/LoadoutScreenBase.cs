@@ -61,14 +61,14 @@ namespace DungeonGathering.Lobby
         [SerializeField] protected Sprite frameOn;     // f-light
         [SerializeField] protected Sprite frameOff;    // f-dark
         [SerializeField] protected Sprite frameBlocked;
-        [SerializeField] protected Color inkColor = new Color32(0x1b, 0x14, 0x20, 0xff);
+        [SerializeField] protected Color inkColor = new Color32(0x17, 0x11, 0x1e, 0xff);
         [SerializeField] protected Color paperColor = new Color32(0xef, 0xe6, 0xdc, 0xff);
-        [SerializeField] protected Color plusColor = new Color32(0x14, 0x53, 0x2d, 0xff);
-        [SerializeField] protected Color minusColor = new Color32(0x7f, 0x1d, 0x1d, 0xff);
+        [SerializeField] protected Color plusColor = new Color32(0x6d, 0xe0, 0x8c, 0xff);
+        [SerializeField] protected Color minusColor = new Color32(0xff, 0x7a, 0x7a, 0xff);
 
         protected string characterId;
-        protected CharacterData character;
-        protected CharacterInventory inventory;
+        protected HeroDefinitionSO character;
+        protected InventoryModel inventory;
         protected LoadoutData loadout;
         protected ItemCatalog catalog;
         protected ItemData selected;
@@ -91,7 +91,8 @@ namespace DungeonGathering.Lobby
 
         protected virtual void Awake()
         {
-            backButton?.onClick.AddListener(() => Services.UI?.Back());
+            // Đóng đúng màn này (Back() có thể hủy một Open khác đang chờ hoặc đóng màn khác ở trên).
+            backButton?.onClick.AddListener(CloseSelf);
             actionButton?.onClick.AddListener(OnAction);
             for (int i = 0; i < (filterTabs?.Length ?? 0); i++)
             {
@@ -111,12 +112,12 @@ namespace DungeonGathering.Lobby
             if (string.IsNullOrEmpty(characterId)) characterId = Services.Session?.characterId ?? "knight";
             catalog = ItemCatalog.Current;
             character = catalog != null ? catalog.GetCharacter(characterId) : null;
-            inventory = new CharacterInventory(characterId, Services.Save?.Data, catalog);
+            inventory = new InventoryModel(characterId, Services.Save?.Data, catalog);
             loadout = inventory.Loadout;
             selected = null; selectedSlot = -1; filter = 0;
             if (portrait != null && character != null && character.portrait != null) portrait.sprite = character.portrait;
             if (characterChip != null && character != null)
-                characterChip.text = $"{LocalizationLookup.Get(character.nameKey, character.characterId)} · {character.role.ToString().ToUpperInvariant()}";
+                characterChip.text = $"{LocalizationLookup.Get(character.nameKey, character.characterId)} · {LocalizationLookup.Role(character.role).ToUpper()}";
             RefreshAll();
             return base.OnOpen(args);
         }
@@ -137,7 +138,7 @@ namespace DungeonGathering.Lobby
             {
                 var item = Get(SlotItemId(i));
                 var tile = slotTiles[i]; if (tile == null) continue;
-                if (item != null) tile.SetItem(item.icon, item.rarity); else tile.SetEmpty(EmptySilhouette(i));
+                if (item != null) tile.SetItem(item.Icon, item.Rank); else tile.SetEmpty(EmptySilhouette(i));
                 tile.SetSelected(selectedSlot == i);
             }
         }
@@ -167,12 +168,18 @@ namespace DungeonGathering.Lobby
                 bool on = i < bagItems.Count;
                 bagTiles[i].gameObject.SetActive(on);
                 if (!on) continue;
-                bagTiles[i].SetItem(bagItems[i].icon, bagItems[i].rarity);
+                bagTiles[i].SetItem(bagItems[i].Icon, bagItems[i].Rank);
                 bagTiles[i].SetSelected(selectedSlot < 0 && bagItems[i] == selected);
             }
             if (bagCountText != null) bagCountText.text = bagItems.Count.ToString();
             for (int i = 0; i < (filterFrames?.Length ?? 0); i++)
-                if (filterFrames[i] != null) filterFrames[i].sprite = i == filter ? frameOn : frameOff;
+            {
+                if (filterFrames[i] == null) continue;
+                bool active = i == filter;
+                filterFrames[i].sprite = active ? frameOn : frameOff;
+                var tabLabel = filterFrames[i].GetComponentInChildren<TMP_Text>();
+                if (tabLabel != null) tabLabel.color = active ? inkColor : paperColor;
+            }
         }
 
         void SelectBag(int index)
@@ -197,15 +204,25 @@ namespace DungeonGathering.Lobby
             if (emptyHint != null) emptyHint.SetActive(!has);
             if (!has) return;
 
-            if (detailTile != null) detailTile.SetItem(selected.icon, selected.rarity);
-            if (detailName != null) detailName.text = LocalizationLookup.Get(selected.nameKey, selected.id);
+            if (detailTile != null) detailTile.SetItem(selected.Icon, selected.Rank);
+            if (detailName != null) detailName.text = LocalizationLookup.Get(selected.NameKey, selected.id);
             if (detailMeta != null) detailMeta.text = MetaLine(selected);
             if (detailStats != null) detailStats.text = StatsLine(selected);
             if (detailPassive != null) detailPassive.text = PassiveLine(selected);
             if (detailActive != null)
-                detailActive.text = selected.activeSkill != null
-                    ? $"{LocalizationLookup.Get(selected.activeSkill.nameKey, selected.activeSkill.skillId)} · {selected.activeSkill.cooldown:0}s"
-                    : LocalizationLookup.Get("common.none", "None.");
+            {
+                var sk = selected.ActiveSkill;
+                if (sk != null)
+                {
+                    string skName = LocalizationLookup.Get(sk.nameKey, sk.skillId);
+                    float cd = SkillRegistry.Cooldown(sk);
+                    float mana = SkillRegistry.ManaCost(sk);
+                    string hdr = mana > 0f ? $"{skName} · {cd:0.#}s · {mana:0} Mana" : $"{skName} · {cd:0.#}s";
+                    string desc = !string.IsNullOrEmpty(sk.descKey) ? LocalizationLookup.Get(sk.descKey) : string.Empty;
+                    detailActive.text = !string.IsNullOrEmpty(desc) ? $"{hdr}\n{desc}" : hdr;
+                }
+                else detailActive.text = LocalizationLookup.Get("common.none", "None.");
+            }
 
             bool equipped = selectedSlot >= 0;
             int target = equipped ? selectedSlot : SlotOf(selected);
@@ -214,11 +231,16 @@ namespace DungeonGathering.Lobby
             {
                 var replaced = Get(SlotItemId(target));
                 detailState.text = equipped ? LocalizationLookup.Get("equip.worn", "EQUIPPED")
-                    : replaced != null ? LocalizationLookup.Get("equip.replaces", "Replaces ") + LocalizationLookup.Get(replaced.nameKey, replaced.id)
+                    : replaced != null ? LocalizationLookup.Get("equip.replaces", "Replaces ") + LocalizationLookup.Get(replaced.NameKey, replaced.id)
                     : string.Empty;
             }
             if (detailWarn != null) detailWarn.text = blocked ? LocalizationLookup.Get("equip.limit_warn") : string.Empty;
-            if (actionLabel != null) actionLabel.SetKey(equipped ? "common.unequip" : blocked ? "common.max_active" : "common.equip");
+            if (actionLabel != null)
+            {
+                actionLabel.SetKey(equipped ? "common.unequip" : blocked ? "common.max_active" : "common.equip");
+                var actionTmp = actionLabel.GetComponent<TMP_Text>();
+                if (actionTmp != null) actionTmp.color = (equipped || blocked) ? paperColor : inkColor;
+            }
             if (actionFrame != null) actionFrame.sprite = equipped ? frameOff : blocked ? (frameBlocked != null ? frameBlocked : frameOff) : frameOn;
             if (actionButton != null) actionButton.interactable = equipped || !blocked;
             OnDetailRefreshed(equipped);
@@ -251,7 +273,7 @@ namespace DungeonGathering.Lobby
             {
                 success = inventory.EquipWeapon(slot, w.id);
             }
-            else if (selected is EquipmentData eq)
+            else if (selected is EquipmentSO eq)
             {
                 success = inventory.EquipItem(eq.id);
             }
@@ -278,7 +300,7 @@ namespace DungeonGathering.Lobby
 
         protected ItemData Get(string id) => !string.IsNullOrEmpty(id) && catalog != null ? catalog.GetItem(id) : null;
 
-        protected void SetStat(int row, float now, float? preview, string format, string suffix = "")
+        protected void SetStat(int row, float now, float? preview, string format, string suffix = "", bool higherIsBetter = true)
         {
             if (statRows == null || row >= statRows.Length || statRows[row] == null) return;
             var r = statRows[row];
@@ -288,7 +310,7 @@ namespace DungeonGathering.Lobby
             float d = preview.HasValue ? preview.Value - now : 0f;
             if (Mathf.Abs(d) < 0.005f) { r.delta.text = string.Empty; return; }
             r.delta.text = (d > 0 ? "+" : "") + d.ToString(format) + suffix;
-            r.delta.color = d > 0 ? plusColor : minusColor;
+            r.delta.color = (d > 0f) == higherIsBetter ? plusColor : minusColor;
         }
     }
 }

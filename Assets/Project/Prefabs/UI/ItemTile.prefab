@@ -221,7 +221,7 @@ MonoBehaviour:
   - {fileID: 5070660820536166219, guid: 5d4ce9357198f69428690a30e8dfe24e, type: 3}
   - {fileID: -8759342780920906376, guid: 5d4ce9357198f69428690a30e8dfe24e, type: 3}
   - {fileID: 5787696139471436466, guid: 5d4ce9357198f69428690a30e8dfe24e, type: 3}
-  - {fileID: -157999621267629780, guid: 5d4ce9357198f69428690a30e8dfe24e, type: 3}
+  - {fileID: 21300000, guid: a32bd6a8c6c881d42af2698d2c7aa3c8, type: 3}
   emptySquareTint: {r: 0.55, g: 0.55, b: 0.6, a: 1}
   emptyIconTint: {r: 0.09, g: 0.1, b: 0.17, a: 0.6}
   showRarityLetter: 1

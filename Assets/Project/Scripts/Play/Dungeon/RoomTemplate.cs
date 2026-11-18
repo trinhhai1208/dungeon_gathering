@@ -91,7 +91,24 @@ namespace DungeonGathering.Play
             DoorMask.North => 0, DoorMask.East => 1, DoorMask.South => 2, DoorMask.West => 3, _ => -1,
         };
 
-        public Bounds WorldBounds => new(transform.position, new Vector3(size.x, size.y, 1f));
+        /// <summary>
+        /// Vùng phòng trong thế giới — lấy từ tilemap tường thật (tile vẽ lệch nửa ô và rộng hơn size 1 ô, nên dùng size
+        /// sẽ hụt mép phải / trên → loot rơi sát tường bị coi là ngoài phòng). Không có tilemap thì dùng size.
+        /// </summary>
+        public Bounds WorldBounds
+        {
+            get
+            {
+                if (wall != null && wall.cellBounds.size.x > 0 && wall.cellBounds.size.y > 0)
+                {
+                    var cb = wall.cellBounds;
+                    Vector3 min = wall.CellToWorld(cb.min), max = wall.CellToWorld(cb.max);
+                    var b = new Bounds((min + max) * 0.5f, new Vector3(Mathf.Abs(max.x - min.x), Mathf.Abs(max.y - min.y), 1f));
+                    return b;
+                }
+                return new Bounds(transform.position, new Vector3(size.x, size.y, 1f));
+            }
+        }
 
         /// <summary>Kiểm tra quy chuẩn (Room Builder / Validate). Trả danh sách lỗi.</summary>
         public List<string> Validate()

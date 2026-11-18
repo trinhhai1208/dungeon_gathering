@@ -12,12 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1701172567a9be14b850c374705cefcb, type: 3}
   m_Name: Atk_bite
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.MeleeAttackSO
-  range: 0.9
+  skillId: atk-bite
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 1.8
+  range: 0.9
   windupTime: 0.5
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
+  status:
+    effects:
+    - effect: {fileID: 11400000, guid: ee8c3eda31caefb489a52298918c1c4c, type: 2}
+      duration:
+        enabled: 1
+        value: 2.5
+      magnitude:
+        enabled: 1
+        value: 2
+      chance: 1
+      loopVfxOverride: {fileID: 0}
   damage: 1
   hitRadius: 0.7
   knockback: 3

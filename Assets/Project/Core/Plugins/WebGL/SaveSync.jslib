@@ -100,5 +100,10 @@ mergeInto(LibraryManager.library, {
     } catch (e) {
       return 1;
     }
+  },
+
+  // Boot lỗi không phục hồi được trong phiên (Addressables init) → THỬ LẠI = tải lại trang.
+  DG_ReloadPage: function () {
+    try { window.location.reload(); } catch (e) { console.warn('[Boot] reload', e); }
   }
 });

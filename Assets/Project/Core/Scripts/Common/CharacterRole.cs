@@ -2,7 +2,7 @@ namespace DungeonGathering.Core
 {
     /// <summary>
     /// Phân loại Role của nhân vật trong Dungeon Gathering.
-    /// Quyết định hiệu ứng Role Synergy khi mặc trang bị EquipmentData.
+    /// Quyết định hiệu ứng Role Synergy khi mặc trang bị EquipmentSO.
     /// Default = Any (0) để đảm bảo an toàn cho các trường chưa gán giá trị.
     /// </summary>
     public enum CharacterRole

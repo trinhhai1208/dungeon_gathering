@@ -152,11 +152,12 @@ namespace DungeonGathering.Play
                         float delay = i * 0.05f;
                         int pillarIndex = i;
                         p.DOLocalMoveY(rest.y, dropDuration)
+                            .SetLink(p.gameObject)
                             .SetDelay(delay)
                             .SetEase(Ease.InQuad)
                             .OnComplete(() =>
                             {
-                                p.DOPunchPosition(new Vector3(0f, 0.15f, 0f), 0.18f, 8, 1f);
+                                p.DOPunchPosition(new Vector3(0f, 0.15f, 0f), 0.18f, 8, 1f).SetLink(p.gameObject);
                                 if (pillarIndex == 0) Sfx.Play(SfxId.DoorClose);
                             });
                     }
@@ -180,11 +181,15 @@ namespace DungeonGathering.Play
                         if (sr != null)
                         {
                             sr.DOKill();
+                            // SetTarget để DOTween.Kill(sr) / sr.DOKill() thật sự hủy được tween này; SetLink: tự hủy khi bị Destroy
                             DOTween.To(() => sr.color, c => sr.color = c, new Color(1f, 1f, 1f, 0f), sinkDuration)
+                                .SetTarget(sr)
+                                .SetLink(sr.gameObject)
                                 .SetDelay(delay)
                                 .SetEase(Ease.InQuad);
                         }
                         p.DOLocalMoveY(rest.y - sinkDepth, sinkDuration)
+                            .SetLink(p.gameObject)
                             .SetDelay(delay)
                             .SetEase(Ease.InQuad)
                             .OnComplete(() =>

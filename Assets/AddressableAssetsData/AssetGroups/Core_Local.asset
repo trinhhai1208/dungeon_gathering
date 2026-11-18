@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Core_Local
   m_GUID: 3cdef7af62c5b144e8bfb11a57c36942
   m_SerializeEntries:
+  - m_GUID: 5e9eeaa6cfeda5a48b05c4792c642cb8
+    m_Address: core/sfx-library
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - core
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9bcddda135fb4ab489e36079f52564da
     m_Address: core/module-registry
     m_ReadOnly: 0
@@ -22,7 +28,7 @@ MonoBehaviour:
     - core
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c70505f01bb477441bcab5b3cc494549
-    m_Address: font/pixelify-sans
+    m_Address: font/pixelta
     m_ReadOnly: 0
     m_SerializedLabels:
     - core
@@ -32,6 +38,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - core
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2317b9f0ac66584bab35704eb89669a
+    m_Address: font/dearpix
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - core
+    - locale-vi
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}

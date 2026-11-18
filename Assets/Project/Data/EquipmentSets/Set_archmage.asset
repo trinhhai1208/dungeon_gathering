@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee88269dd3a55843aa381cf44cf64f5, type: 3}
+  m_Name: Set_archmage
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentSetSO
+  setId: archmage
+  nameKey: set.archmage.name
+  pieces:
+  - {fileID: 11400000, guid: 31fd8a79c1ed7ea48acc6d9abe30e6b6, type: 2}
+  - {fileID: 11400000, guid: 083b3b551d6fd574bbac3a47c14cd701, type: 2}
+  - {fileID: 11400000, guid: dc282d69335a7914da0cf219b8c41b5d, type: 2}
+  - {fileID: 11400000, guid: 25f34ae5d82a9104eb3b2f8af5b93fd5, type: 2}
+  bonus2Pieces:
+  - Stat: 2
+    FlatValue: 30
+    PercentValue: 0
+  - Stat: 8
+    FlatValue: 0.08
+    PercentValue: 0
+  bonus4Passive: {fileID: 11400000, guid: 84e5a703091ca61449ed6f581745bef1, type: 2}

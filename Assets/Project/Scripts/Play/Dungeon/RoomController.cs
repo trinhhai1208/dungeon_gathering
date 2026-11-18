@@ -77,7 +77,7 @@ namespace DungeonGathering.Play
             if (!Visited) Visited = true;
             director.OnRoomEntered(this);
             if (State != RoomState.Idle) return; // chỉ kích hoạt khi Idle
-            if (Type is RoomType.Combat or RoomType.Boss) Activate();
+            if (Type is RoomType.Combat or RoomType.Elite or RoomType.Boss) Activate();
         }
 
         void Activate()
@@ -106,14 +106,16 @@ namespace DungeonGathering.Play
             Summon = SummonMinion,
         };
 
-        Enemy SummonMinion(Enemy prefab, Vector2 position)
+        Enemy SummonMinion(MonsterDefinitionSO def, Vector2 position)
         {
-            if (State != RoomState.Active || director == null || !director.IsPlaying) return null;
+            if (def == null || State != RoomState.Active || director == null || !director.IsPlaying) return null;
+            var basePrefab = director.Prefabs != null ? director.Prefabs.monsterBase : null;
+            if (basePrefab == null) return null;
             if (!EnemyNavigation.TrySnap(position, 2f, out position)) position = Template.transform.position;
-            var go = Services.Pool.Get(prefab.gameObject, director.Scope, position, Quaternion.identity);
+            var go = Services.Pool.Get(basePrefab.gameObject, director.Scope, position, Quaternion.identity);
             if (go == null) return null;
             var e = go.GetComponent<Enemy>();
-            e.Init(CreateSpawnContext());
+            e.Init(CreateSpawnContext(), def);
             Register(e);
             return e;
         }
@@ -153,6 +155,15 @@ namespace DungeonGathering.Play
             if (State != RoomState.Active || director == null || !director.IsPlaying) return;
             if (alive.Count > 0 || pendingSpawns > 0 || WavesRemaining) return;
             Clear();
+        }
+
+        /// <summary>Đánh dấu phòng Boss đã sạch ngay khi Boss gục (trước hoặc sau Boss.Died).</summary>
+        internal void ClearOnBossDefeated()
+        {
+            WavesRemaining = false;
+            pendingSpawns = 0;
+            alive.RemoveWhere(e => e == null || e.IsDead);
+            if (State != RoomState.Cleared && director != null && director.IsPlaying) Clear();
         }
 
         void Clear()

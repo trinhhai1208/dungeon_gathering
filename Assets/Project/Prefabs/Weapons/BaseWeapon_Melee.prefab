@@ -81,7 +81,7 @@ MonoBehaviour:
   muzzlePoint: {fileID: 8661448832860677754}
   swingArc: 110
   swingDuration: 0.15
-  defaultSlashVfx: {fileID: 5165885872528331089, guid: e2da8a774add27744ba11776cd7d2d6a, type: 3}
+  defaultSlashVfx: {fileID: 1822799776828151798, guid: b07d8fef20eeefb46a4ebec97d87f178, type: 3}
 --- !u!1 &8017649498149023482
 GameObject:
   m_ObjectHideFlags: 0

@@ -43,6 +43,8 @@ namespace DungeonGathering.Play
             dashUntil = Time.time + duration;
         }
 
+        public void CancelDash() => dashUntil = 0f;
+
         public void Stop()
         {
             desired = knock = Vector2.zero;

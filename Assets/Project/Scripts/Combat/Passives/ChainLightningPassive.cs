@@ -10,8 +10,10 @@ namespace DungeonGathering.Combat
     {
         [Range(0, 1)] public float chance = 0.2f;
         [Min(1)] public int jumps = 2;
+        [Tooltip("Bán kính (world unit) tìm quái gần nhất cho mỗi bước sét lan; không còn quái trong vòng = dừng lan.")]
         public float radius = 3f;
         [Range(0, 2)] public float damageFraction = 0.5f;
+        [Tooltip("Prefab VFX phát tại mỗi quái bị sét lan trúng; null = không hiệu ứng.")]
         public GameObject vfx;
 
         // Buffer collider chỉ dùng trong lúc quét (xong trước khi gây sát thương) → an toàn khi lồng nhau.
@@ -20,7 +22,7 @@ namespace DungeonGathering.Combat
         protected override void OnHit(IPlayerContext player, PassiveState state, in HitReport hit)
         {
             // state.Busy: tránh đệ quy — đòn lan không tự lan tiếp (theo từng Player, không nằm trên SO).
-            if (state.Busy || hit.Target == null || UnityEngine.Random.value > chance) return;
+            if (state.Busy || hit.Target == null || chance <= 0f || UnityEngine.Random.value > chance) return;
             state.Busy = true;
             var visited = CombatUtil.RentList();
             try

@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: 1a320ddf2811af44eb8f3f040b94a4d3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2386152707242126981
+    second: slash_holy_0
+  - first:
+      213: -6825799338613967880
+    second: slash_holy_1
+  - first:
+      213: 6144847022137197345
+    second: slash_holy_2
+  - first:
+      213: 6897558902900337205
+    second: slash_holy_3
+  - first:
+      213: 788121098604041554
+    second: slash_holy_4
+  - first:
+      213: 109119220054760456
+    second: slash_holy_5
+  - first:
+      213: -7457515690709099916
+    second: slash_holy_6
+  - first:
+      213: 3198110910475317069
+    second: slash_holy_7
+  - first:
+      213: -2168923189675889597
+    second: slash_holy_8
+  - first:
+      213: -6060138023042164402
+    second: slash_holy_9
+  - first:
+      213: 3817040766522798148
+    second: slash_holy_10
+  - first:
+      213: -4612475326733224624
+    second: slash_holy_11
+  - first:
+      213: 7024020783068803989
+    second: slash_holy_12
+  - first:
+      213: 1852307640558128401
+    second: slash_holy_13
+  - first:
+      213: 8437536777565828757
+    second: slash_holy_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: slash_holy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20bcee2d9348974bb8b74ed072214f1
+      internalID: 2386152707242126981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_holy_1
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426eb5a9ba5cbe045a87ce3bcad83ee2
+      internalID: -6825799338613967880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_holy_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a2c86cbfb5492a47bf1be756ead3343
+      internalID: 6144847022137197345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_holy_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd5d6fdfde63c841abb64b7a1dc0fd4
+      internalID: 6897558902900337205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_holy_4
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954a229889e90c04baaa906922199a9c
+      internalID: 788121098604041554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slash_holy_5
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 84
+        height: 68
+      alignment: 9
+      pivot: {x: 0.38, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7918c190193eb7f40ba27c055e193ad1
+      internalID: 109119220054760456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 09b372c4d43c7e241882fda0a16ccf7e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      slash_holy_0: 2386152707242126981
+      slash_holy_1: -6825799338613967880
+      slash_holy_10: 3817040766522798148
+      slash_holy_11: -4612475326733224624
+      slash_holy_12: 7024020783068803989
+      slash_holy_13: 1852307640558128401
+      slash_holy_14: 8437536777565828757
+      slash_holy_2: 6144847022137197345
+      slash_holy_3: 6897558902900337205
+      slash_holy_4: 788121098604041554
+      slash_holy_5: 109119220054760456
+      slash_holy_6: -7457515690709099916
+      slash_holy_7: 3198110910475317069
+      slash_holy_8: -2168923189675889597
+      slash_holy_9: -6060138023042164402
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,7 +17,7 @@ namespace DungeonGathering.Play
         public IReadOnlyList<ItemData> RunBag => runBagItems;
         public event Action<ItemData> ItemAddedToBag;
 
-        public void Init(IPlayerContext ctx, PlayerStats stats, CharacterData character, RunStats carried)
+        public void Init(IPlayerContext ctx, PlayerStats stats, HeroDefinitionSO character, RunStats carried)
         {
             runBagItems.Clear();
             var session = Services.Session;

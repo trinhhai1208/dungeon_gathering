@@ -18,7 +18,7 @@ namespace DungeonGathering.EditorTools
     public static class SfxLibraryBuilder
     {
         public const string SfxFolder = "Assets/Project/Audio/SFX";
-        public const string LibraryPath = "Assets/Project/Audio/Resources/Audio/SfxLibrary.asset";
+        public const string LibraryPath = "Assets/Project/Core/Data/SfxLibrary.asset";
 
         [MenuItem("Dungeon Gathering/Audio/Rebuild SFX Library")]
         public static void RebuildMenu() => Rebuild(true);

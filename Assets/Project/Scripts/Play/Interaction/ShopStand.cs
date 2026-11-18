@@ -47,8 +47,8 @@ namespace DungeonGathering.Play
             var cat = director.Catalog;
             for (int i = 0; i < 2 && cat != null; i++)
             {
-                var item = cat.RollItem(director.Floor, director.Rng);
-                if (item != null) offers.Add(new ShopOffer { Item = item, Price = Mathf.Max(1, Mathf.RoundToInt(item.shopPrice * priceMultiplier)) });
+                var item = director.Loot?.RollShopItem();
+                if (item != null) offers.Add(new ShopOffer { Item = item, Price = Mathf.Max(1, Mathf.RoundToInt(item.Price * priceMultiplier)) });
             }
             offers.Add(new ShopOffer { Item = null, Price = potionPrice });
             RefreshIcons();
@@ -61,7 +61,7 @@ namespace DungeonGathering.Play
                 if (slotIcons[i] == null) continue;
                 bool has = i < offers.Count && !offers[i].Sold;
                 slotIcons[i].enabled = has;
-                if (has) slotIcons[i].sprite = offers[i].IsPotion ? potionIcon : offers[i].Item.icon;
+                if (has) slotIcons[i].sprite = offers[i].IsPotion ? potionIcon : offers[i].Item.Icon;
             }
         }
 
@@ -96,7 +96,9 @@ namespace DungeonGathering.Play
         }
 
         public string GetInteractPrompt() => promptKey;
-        public bool CanInteract(GameObject interactor) => !opening && director != null && director.IsPlaying;
+        public bool CanInteract(GameObject interactor) => !opening
+            && director != null && director.IsPlaying
+            && (Services.UI == null || !Services.UI.IsOpen(AddressKeys.UiScreenShop));
 
         public async void Interact(GameObject interactor)
         {
@@ -104,9 +106,7 @@ namespace DungeonGathering.Play
             opening = true;
             try
             {
-                if (AddressablesUtil.KeyExists(AddressKeys.UiScreenShop))
-                    await Services.UI.Open<UIScreen>(AddressKeys.UiScreenShop, new RunShopArgs { Stand = this });
-                else Debug.LogWarning("[Shop] Chưa có ui/screen/shop.");
+                await Services.UI.Open<UIScreen>(AddressKeys.UiScreenShop, new RunShopArgs { Stand = this });
             }
             finally { if (this != null) opening = false; }
         }

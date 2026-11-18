@@ -43,32 +43,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 246257ce9a3fd374da3b3ea6af20a72a, type: 2}
   - {fileID: 11400000, guid: 61735e35791fc3a4e96507fb9f6fc61e, type: 2}
   - {fileID: 11400000, guid: 4af43c20e79634d468db2a8f591a836b, type: 2}
+  - {fileID: 11400000, guid: a18851cdd9631854ca735fd560d8927d, type: 2}
+  - {fileID: 11400000, guid: 39b884cbbea83764db4b189ee24ff22a, type: 2}
+  - {fileID: 11400000, guid: 645a2439aa92d474481ef614ac6ba6d5, type: 2}
+  - {fileID: 11400000, guid: c5dfe00e37f3aaf459c255167fb4c9f5, type: 2}
+  - {fileID: 11400000, guid: 759c91bb1bfc12741a122464795a58ae, type: 2}
+  - {fileID: 11400000, guid: 25f34ae5d82a9104eb3b2f8af5b93fd5, type: 2}
+  - {fileID: 11400000, guid: b76032b1d2a3ab64d99ddc58a3260100, type: 2}
+  - {fileID: 11400000, guid: 5c39f0f65dc818f4dab504af9737558d, type: 2}
+  - {fileID: 11400000, guid: 083b3b551d6fd574bbac3a47c14cd701, type: 2}
+  - {fileID: 11400000, guid: f23e4c5882b3fef42a8b46a16023a67e, type: 2}
   characters:
   - {fileID: 11400000, guid: d22862b00f9b4b8409a906f584b96f64, type: 2}
   - {fileID: 11400000, guid: f264e78875f40d64b9314671c4b07a23, type: 2}
   - {fileID: 11400000, guid: da0586a83cd8f694b843ab27d2883128, type: 2}
   - {fileID: 11400000, guid: e796037448ecc4449a9448aa3e0b5fc3, type: 2}
-  - {fileID: 11400000, guid: 5c8197404d95fff4a90f3816e119be21, type: 2}
   - {fileID: 11400000, guid: 83f0aebb5c1405d4e92610ca9feb8aa8, type: 2}
-  - {fileID: 11400000, guid: d1c40bbbdce9c3543ace142d6dde2b39, type: 2}
-  - {fileID: 11400000, guid: e6022c574c6bf614c8e4745b8aa8cb33, type: 2}
   - {fileID: 11400000, guid: 8f6a7fd425986ff4a9c2384bc1e4bf7f, type: 2}
-  - {fileID: 11400000, guid: 0e5a951e500fa844ea633b57717ac72f, type: 2}
   - {fileID: 11400000, guid: c522d07394c570d469287171a5484dcc, type: 2}
   - {fileID: 11400000, guid: b529e2d6d2880d049aa9d6a4e91fd9b1, type: 2}
-  dropRatesByFloor:
-  - S: 0
-    A: 0
-    B: 5
-    C: 35
-    F: 60
-  - S: 0
-    A: 15
-    B: 35
-    C: 50
-    F: 0
-  - S: 15
-    A: 45
-    B: 40
-    C: 0
-    F: 0
+  - {fileID: 11400000, guid: a6ab491f3b59e5049b6a3c8c3325fd50, type: 2}
+  - {fileID: 11400000, guid: 9f026a42aadc31840a74ea474ad80bb7, type: 2}
+  swordLibrary: {fileID: 11400000, guid: 40312c2bb332d814da673136c8a41935, type: 2}
+  rangedLibrary: {fileID: 11400000, guid: 43f47a30826856f468defb0413d4aa83, type: 2}
+  projectileLibrary: {fileID: 11400000, guid: 73c659b9131b5934cae1fa50692ed975, type: 2}
+  campaign: {fileID: 11400000, guid: 79fa21017318b7e45bbafdb8e10f16b4, type: 2}
+  skillLibrary: {fileID: 11400000, guid: 5da13e6500cfe2a46b2a44395b74c81b, type: 2}

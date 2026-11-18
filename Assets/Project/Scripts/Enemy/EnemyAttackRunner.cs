@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using DungeonGathering.Combat;
+using DungeonGathering.Core;
 using UnityEngine;
 
 namespace DungeonGathering.Enemies
@@ -34,7 +35,7 @@ namespace DungeonGathering.Enemies
             attacks.Clear();
             if (list != null) foreach (var a in list) if (a != null) attacks.Add(a);
             readyAt.Clear();
-            foreach (var a in attacks) readyAt[a] = Time.time + a.cooldown * 0.5f * UnityEngine.Random.value;
+            foreach (var a in attacks) readyAt[a] = Time.time + Catalog.SkillRegistry.Cooldown(a) * 0.5f * UnityEngine.Random.value;
             // Hủy đòn đang dở THẬT SỰ (không chỉ hạ cờ IsAttacking) → không có hai đòn chạy song song.
             Cancel();
         }
@@ -46,6 +47,13 @@ namespace DungeonGathering.Enemies
             if (attackCts != null && !attackCts.IsCancellationRequested) attackCts.Cancel();
             IsAttacking = false;
             Current = null;
+        }
+
+        /// <summary>Có nhìn thấy mục tiêu không (không có tường/cột chắn giữa điểm ra đòn và mục tiêu).</summary>
+        public bool HasLineOfSight(ITargetable target)
+        {
+            if (target == null || !target.IsAlive) return false;
+            return Physics2D.Linecast(enemy.AttackOrigin.position, target.Transform.position, wallMask).collider == null;
         }
 
         public EnemyAttackSO Pick(ITargetable target)
@@ -74,13 +82,25 @@ namespace DungeonGathering.Enemies
             return candidates[^1];
         }
 
+        /// <summary>VFX / âm thanh kích hoạt khai báo ở entry SkillLibrary.</summary>
+        void PlayCastFx(EnemyAttackSO attack)
+        {
+            var e = Catalog.SkillRegistry.Entry(attack);
+            if (e == null) return;
+            if (e.castVfx != null) CombatFx.Play(e.castVfx, transform.position, Quaternion.identity);
+            if (e.castSfx != null) Sfx.PlayOverride(e.castSfx, SfxId.None);
+        }
+
         public async void Run(EnemyAttackSO attack, ITargetable target)
         {
             if (attack == null || IsAttacking) return;
             int id = ++runId;
             IsAttacking = true;
             Current = attack;
-            readyAt[attack] = Time.time + attack.cooldown;
+            readyAt[attack] = Time.time + Catalog.SkillRegistry.Cooldown(attack);
+            PlayCastFx(attack);
+            if (enemy.Data != null && enemy.Data.attackVfx != null)
+                CombatFx.Play(enemy.Data.attackVfx, enemy.AttackOrigin.position, Quaternion.identity);
             if (attack.stopWhileAttacking) enemy.Motor.Stop();
             var cts = CancellationTokenSource.CreateLinkedTokenSource(enemy.LifeToken);
             attackCts = cts;

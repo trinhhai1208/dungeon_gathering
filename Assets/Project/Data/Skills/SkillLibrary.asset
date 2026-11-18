@@ -1,0 +1,467 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4da00d17bcf6f459802298996acea2, type: 3}
+  m_Name: SkillLibrary
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.SkillLibrarySO
+  skills:
+  - key: arcane-storm
+    value: 1
+    skill: {fileID: 11400000, guid: 73c30b6fcfda1364abfc1fe45a60c6c0, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: arcane-storm-book
+    value: 2
+    skill: {fileID: 11400000, guid: a34612dc44b332f4480e94fc9295e1b4, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: arrow-rain
+    value: 3
+    skill: {fileID: 11400000, guid: 38b17b503fa5b4c4781a24f4d20dba22, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 5624163661067170369, guid: a69af710ba2a182498e26da5e6042f0f, type: 3}
+    castSfx: {fileID: 0}
+  - key: blood-frenzy
+    value: 4
+    skill: {fileID: 11400000, guid: d3805a830e0875743bba4273e6529a37, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: dodge-roll
+    value: 5
+    skill: {fileID: 11400000, guid: eaddf221b8151a14d8273ba90fb51c05, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: dragon-flame
+    value: 6
+    skill: {fileID: 11400000, guid: 4b08ecaa80cb9484786a93fec5a69239, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: dual-wield
+    value: 7
+    skill: {fileID: 11400000, guid: bb55fd1b7cf36314d94ac4021395a3e3, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: frost-field
+    value: 8
+    skill: {fileID: 11400000, guid: d6d1defab0c0afc43beced839cfa0883, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: holy-light
+    value: 9
+    skill: {fileID: 11400000, guid: e1bc34d33de3a094db3d21c9948269a6, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: holy-light-sword
+    value: 10
+    skill: {fileID: 11400000, guid: e234bc087d97f174da382af5fad7923c, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: raise-shield
+    value: 11
+    skill: {fileID: 11400000, guid: 72d9043ecaafc2e46bb685ec848baf36, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: rift-cut
+    value: 12
+    skill: {fileID: 11400000, guid: 8d149eb8284324b479a3e3a16bf98122, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: shadow-step
+    value: 13
+    skill: {fileID: 11400000, guid: 6498c551c00caab4093d811df5714bdb, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: spear-charge
+    value: 14
+    skill: {fileID: 11400000, guid: e21aa8d796fdaa0499636be8d0fa5fbb, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: summon-skeletons
+    value: 15
+    skill: {fileID: 11400000, guid: 99fadb06e688a8244aeb95d2a250622c, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: thunder-judgement
+    value: 16
+    skill: {fileID: 11400000, guid: 9f841a0c87166184da7ff3fc3a745fdd, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: ice-spike
+    value: 36
+    skill: {fileID: 11400000, guid: e4477dbc7b2d4804088d3bb4529c8731, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: wind-whirlwind
+    value: 37
+    skill: {fileID: 11400000, guid: 5b80540556ebf8844bc3f91d2d762943, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: shadow-curse
+    value: 38
+    skill: {fileID: 11400000, guid: 9e6b885527465f24fbf1dd0cce3dbace, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: rejuvenate
+    value: 39
+    skill: {fileID: 11400000, guid: 625e6c81688c544429c589f2b6b71a20, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: mega-blast
+    value: 40
+    skill: {fileID: 11400000, guid: fbb45c51198d04f4da927a65a509d3a7, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: leaf-storm
+    value: 41
+    skill: {fileID: 11400000, guid: 043c12661e1a43242ae4ba4b34deb774, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-assassin-dash
+    value: 17
+    skill: {fileID: 11400000, guid: 28517724283c5ef47a6f918fa1b5ce48, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-bite
+    value: 18
+    skill: {fileID: 11400000, guid: bf1741f530214d847bdd45257dc01ba4, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-blood-bolt
+    value: 19
+    skill: {fileID: 11400000, guid: b53b34733a2369742b814da0423e79cf, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-bolt-fan
+    value: 20
+    skill: {fileID: 11400000, guid: 7bdaff9986f743641b02c3d6a4e2376e, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-frost-fan
+    value: 21
+    skill: {fileID: 11400000, guid: ad970b0735427f749831a8c0a737969a, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-frost-orb
+    value: 22
+    skill: {fileID: 11400000, guid: 3ecd482f4e1113b43bdc2d60a3b72bc7, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-bloodpool
+    value: 23
+    skill: {fileID: 11400000, guid: 88816999b8400c74d9c0f0baf59b7950, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-charge
+    value: 24
+    skill: {fileID: 11400000, guid: 66c74cb9f9c8e7840a7fa64755db011d, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-claw
+    value: 25
+    skill: {fileID: 11400000, guid: 8c3f802d62502f14397dad7e279d6598, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-fan
+    value: 26
+    skill: {fileID: 11400000, guid: 5442652eda29e37488bad1b1828407ca, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-spiral
+    value: 27
+    skill: {fileID: 11400000, guid: e76f8267de46905479ea57b1a8519c2e, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-summon
+    value: 28
+    skill: {fileID: 11400000, guid: 913afc73ad31a7f42ae40b936de68c66, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-lord-teleport
+    value: 29
+    skill: {fileID: 11400000, guid: 7a1b4d676b60a754fadbd347b4f6c7f0, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-skull-radial
+    value: 30
+    skill: {fileID: 11400000, guid: 38e98ecda786a704d8b0a6912e6c474b, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-spear-thrust
+    value: 31
+    skill: {fileID: 11400000, guid: 1ebe432868cfe3e43ad03dc5fa4fbc1d, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-sword-slash
+    value: 32
+    skill: {fileID: 11400000, guid: c0d71de6bcd41c047a1bc890fa9767b8, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-venom-slash
+    value: 33
+    skill: {fileID: 11400000, guid: 80e1151e1e2817749b07086f795bf9b7, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-void-fan
+    value: 34
+    skill: {fileID: 11400000, guid: 1820c94ecf8ab604a9527d0320fd494e, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  - key: atk-warrior-charge
+    value: 35
+    skill: {fileID: 11400000, guid: e44b6d6dd97dd4c4b923536fada99fd1, type: 2}
+    cooldown:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    castVfx: {fileID: 0}
+    castSfx: {fileID: 0}
+  highestIssuedValue: 41

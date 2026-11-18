@@ -29,6 +29,9 @@ namespace DungeonGathering.Menu
             if (musicButton != null) musicButton.onClick.AddListener(ToggleMusic);
         }
 
+        /// <summary>Màn gốc của module Menu: Esc/Back không được đóng (không có đường mở lại → kẹt màn trống).</summary>
+        public override bool OnBack() => true;
+
         public override Awaitable OnOpen(object args)
         {
             SetInteractable(true);
@@ -54,7 +57,6 @@ namespace DungeonGathering.Menu
 
         async void OpenSettings()
         {
-            if (!AddressablesUtil.KeyExists(AddressKeys.UiPopupSettings)) return;
             if (Services.UI != null) await Services.UI.Open<UIScreen>(AddressKeys.UiPopupSettings);
         }
 

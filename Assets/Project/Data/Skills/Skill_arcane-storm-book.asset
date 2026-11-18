@@ -13,27 +13,21 @@ MonoBehaviour:
   m_Name: Skill_arcane-storm-book
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
   skillId: arcane-storm-book
-  nameKey: skill.arcane_storm
+  nameKey: skill.rune_vortex
   descKey: eq.book.active
-  icon: {fileID: 21300000, guid: d244db5884bff9e40850534348d3e877, type: 3}
+  icon: {fileID: 21300000, guid: de96174886c6ea84bbe522086c1eaed5, type: 3}
   cooldown: 20
-  duration: 3
+  duration: 2.8
   manaCost: 0
   activateSfx: 0
   damage: 12
   radius: 3
   knockback: 2
-  centerOnNearestEnemy: 0
-  targetRange: 8
-  pulses: 6
-  pulseInterval: 0.5
+  centerOnNearestEnemy: 1
+  followPlayer: 0
+  targetRange: 10
+  pulses: 4
+  pulseInterval: 0.7
   status:
-    slowPercent: 0
-    slowDuration: 0
-    dotDps: 0
-    dotDuration: 0
-    dotId: 
-    dotLoopVfx: {fileID: 0}
-    stunDuration: 0
-    freeze: 0
-  vfx: {fileID: 6164033997265489522, guid: 608da318504328b4cb0b35f0d9aa8edf, type: 3}
+    effects: []
+  vfx: {fileID: 1166818518189440934, guid: 514ba814b66589743a82b8b10f6bf274, type: 3}

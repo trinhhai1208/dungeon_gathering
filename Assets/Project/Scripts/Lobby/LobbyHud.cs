@@ -24,25 +24,32 @@ namespace DungeonGathering.Lobby
         public override Awaitable OnOpen(object args)
         {
             OnWallet(new WalletChangedEvent { Coins = Services.Save != null ? Services.Save.Data.coins : 0 });
+            if (hintPickHero != null)
+                hintPickHero.gameObject.SetActive(Services.UI == null || !Services.UI.IsOpen(AddressKeys.UiPanelCharacter));
             return null;
         }
 
-        void OnEnable() => EventBus<WalletChangedEvent>.Subscribe(OnWallet);
-        void OnDisable() => EventBus<WalletChangedEvent>.Unsubscribe(OnWallet);
+        void OnEnable()
+        {
+            EventBus<WalletChangedEvent>.Subscribe(OnWallet);
+            EventBus<CharacterPanelChangedEvent>.Subscribe(OnCharacterPanelChanged);
+        }
+
+        void OnDisable()
+        {
+            EventBus<WalletChangedEvent>.Unsubscribe(OnWallet);
+            EventBus<CharacterPanelChangedEvent>.Unsubscribe(OnCharacterPanelChanged);
+        }
 
         void OnWallet(WalletChangedEvent e)
         {
             if (coinText != null) coinText.text = e.Coins.ToString("N0");
         }
 
-        void Update()
+        void OnCharacterPanelChanged(CharacterPanelChangedEvent e)
         {
             if (hintPickHero != null)
-            {
-                bool panelOpen = Services.UI != null && Services.UI.IsOpen(AddressKeys.UiPanelCharacter);
-                if (hintPickHero.activeSelf == panelOpen)
-                    hintPickHero.SetActive(!panelOpen);
-            }
+                hintPickHero.gameObject.SetActive(!e.Open);
         }
 
         void OnBackClicked()

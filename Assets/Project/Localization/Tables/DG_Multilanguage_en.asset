@@ -324,8 +324,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1334358088
-    m_Localized: "Arcane Storm \xB7 20s cooldown: a large arcane vortex around you
-      for 3s."
+    m_Localized: Summons a gravitational implosion on the nearest foe (4 pulses,
+      12 dmg each).
     m_Metadata:
       m_Items: []
   - m_Id: 1334358089
@@ -333,7 +333,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1334358090
-    m_Localized: "Raise Shield \xB7 18s cooldown: immune to all damage for 2s."
+    m_Localized: Grants full invulnerability for 2s.
     m_Metadata:
       m_Items: []
   - m_Id: 1334358091
@@ -393,7 +393,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1334358105
-    m_Localized: 
+    m_Localized: 'Slot '
     m_Metadata:
       m_Items: []
   - m_Id: 1334358106
@@ -469,7 +469,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552328
-    m_Localized: "Dragon Flame Slash \xB7 20s cooldown: a huge wave of fire ahead."
+    m_Localized: Calls a fiery meteor blast on the nearest foe (60 dmg, Burn).
     m_Metadata:
       m_Items: []
   - m_Id: 1338552329
@@ -477,8 +477,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552330
-    m_Localized: "Thunder Judgement \xB7 18s cooldown: 5 bolts strike the nearest
-      enemies."
+    m_Localized: 5 lightning bolts strike nearest enemies (25 dmg each).
     m_Metadata:
       m_Items: []
   - m_Id: 1338552331
@@ -486,7 +485,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552332
-    m_Localized: "Rift Cut \xB7 15s cooldown: dash through enemies and slash twice."
+    m_Localized: Dash through enemies and slash twice.
     m_Metadata:
       m_Items: []
   - m_Id: 1338552333
@@ -502,7 +501,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552336
-    m_Localized: "Frost Field \xB7 16s cooldown: freeze nearby enemies for 2s."
+    m_Localized: Calls an ice spike on the nearest foe (28 AoE dmg, Freeze 2s).
     m_Metadata:
       m_Items: []
   - m_Id: 1338552337
@@ -514,7 +513,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552339
-    m_Localized: "Holy Light \xB7 25s cooldown: restore 2 HP."
+    m_Localized: Restores 2 HP and 10 Mana.
     m_Metadata:
       m_Items: []
   - m_Id: 1338552340
@@ -634,7 +633,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552369
-    m_Localized: FLOOR {0}/{1}
+    m_Localized: FLOOR {0}
     m_Metadata:
       m_Items: []
   - m_Id: 1338552370
@@ -731,7 +730,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552393
-    m_Localized: "NEW RECORD \xB7 Floor 1-5"
+    m_Localized: NEW RECORD
     m_Metadata:
       m_Items: []
   - m_Id: 1338552394
@@ -747,7 +746,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552397
-    m_Localized: "Floor bonus (1 floor \xD7 20)"
+    m_Localized: Floor bonus
     m_Metadata:
       m_Items: []
   - m_Id: 1338552398
@@ -803,7 +802,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1338552411
-    m_Localized: "Floor bonus (3 floors \xD7 20)"
+    m_Localized: Floor bonus
     m_Metadata:
       m_Items: []
   - m_Id: 1338552412
@@ -811,7 +810,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1342746624
-    m_Localized: First Boss kill on floor 3
+    m_Localized: First Boss kill
     m_Metadata:
       m_Items: []
   - m_Id: 1342746625
@@ -1181,11 +1180,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 284786757775391
-    m_Localized: Elite Skeleton Warrior
+    m_Localized: Death Sovereign
     m_Metadata:
       m_Items: []
   - m_Id: 284786757775392
-    m_Localized: Elder Vampire
+    m_Localized: Blood Noble
     m_Metadata:
       m_Items: []
   - m_Id: 284786757775393
@@ -1226,6 +1225,432 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 359145291689984
     m_Localized: Click to open chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065771352064
+    m_Localized: Hunter's Bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065918152704
+    m_Localized: Fires piercing arrows with high critical strike chance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065918152705
+    m_Localized: Apprentice Staff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347008
+    m_Localized: Channels arcane bolts from afar using Mana.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347009
+    m_Localized: Iron Spear
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347010
+    m_Localized: Long-reach thrusting spear with strong knockback.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347011
+    m_Localized: Twin Daggers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347012
+    m_Localized: Ultra-fast slashes with lethal critical precision.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347013
+    m_Localized: Blood Necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347014
+    m_Localized: 'Assassin: +15% Attack Speed and +30% Crit Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347015
+    m_Localized: Arcane Pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347016
+    m_Localized: 'Mage: +15% Cooldown Reduction and +2 Mana Regen.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347017
+    m_Localized: Iron Amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347018
+    m_Localized: 'Warrior: +2 Max Armor and +1 Max HP.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347019
+    m_Localized: Dragon Crown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347020
+    m_Localized: 'Warrior: +15% Attack Damage and +40% Crit Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347021
+    m_Localized: Archmage Robe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347022
+    m_Localized: 'Mage: +15% Cooldown Reduction and +3 Mana Regen.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347023
+    m_Localized: Phantom Cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347024
+    m_Localized: 'Assassin: +15% Move Speed and +10% Crit chance.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347025
+    m_Localized: Deals +35% Attack Damage and +25% Attack Speed when below 50% HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347026
+    m_Localized: 'Vanguard Resolve: +1 Max Armor and +10% Attack Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347027
+    m_Localized: 'Eagle Eye: +8% Crit chance and +25% Crit Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347028
+    m_Localized: 'Arcane Flow: +20 Max Mana and +8% Cooldown Reduction.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347029
+    m_Localized: 'Shadow Reflex: +10% Move Speed and +30% Crit Damage.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347030
+    m_Localized: Arrow Rain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347031
+    m_Localized: Fires a 5-arrow piercing fan.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347032
+    m_Localized: Summon Skeletons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347033
+    m_Localized: Raises 2 skeletons to fight and taunt foes for 12s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347034
+    m_Localized: Spear Charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347035
+    m_Localized: Dash forward with a heavy thrust and empower next hit.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347036
+    m_Localized: Blood Frenzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347037
+    m_Localized: Grants +70% Attack Speed and +25% Damage for 5s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347038
+    m_Localized: Shadow Step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347039
+    m_Localized: Blink dash and empower next strike by +50%.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347040
+    m_Localized: Crimson Vanguard Set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347041
+    m_Localized: Archmage Covenant Set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347042
+    m_Localized: Shadow Phantom Set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347043
+    m_Localized: Windstalker Set
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347044
+    m_Localized: Vampiric Fangs
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347045
+    m_Localized: Drains life on hit and grants +10% Attack Damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347046
+    m_Localized: Arcane Surge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347047
+    m_Localized: Grants +12% Cooldown Reduction and +2 Mana Regen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347048
+    m_Localized: Wind Stride
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347049
+    m_Localized: Grants +15% Move Speed and +10% Attack Speed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347050
+    m_Localized: Iron Bastion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347051
+    m_Localized: Grants +2 Max Armor and +1 Max HP.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763051417600
+    m_Localized: Dark Archer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080896
+    m_Localized: Frost Wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080897
+    m_Localized: Dark Hunter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080898
+    m_Localized: Shadow Ghoul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4348535273730048
+    m_Localized: Frost Knight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4348535328256000
+    m_Localized: Frost knight who freezes every foe nearby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413760323584
+    m_Localized: Bone Captain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460928
+    m_Localized: Crimson Warlord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460929
+    m_Localized: Iron Harvester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460930
+    m_Localized: Void Wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460931
+    m_Localized: Inferno King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460932
+    m_Localized: Shadow Stalker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460933
+    m_Localized: Plague Assassin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460934
+    m_Localized: Dread Executioner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460935
+    m_Localized: Frost Acolyte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460936
+    m_Localized: Frost Cryomancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460937
+    m_Localized: Frost Lich King
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529034145792
+    m_Localized: Enter portal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283136
+    m_Localized: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283137
+    m_Localized: Open chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283138
+    m_Localized: HP is full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283139
+    m_Localized: DPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283140
+    m_Localized: Role Synergy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283141
+    m_Localized: Rarity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283142
+    m_Localized: Melee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283143
+    m_Localized: Ranged
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283144
+    m_Localized: Any Role
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283145
+    m_Localized: Warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283146
+    m_Localized: Ranger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283147
+    m_Localized: Mage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283148
+    m_Localized: Assassin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063580086272
+    m_Localized: Stunned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612224
+    m_Localized: Frozen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612225
+    m_Localized: Slowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612226
+    m_Localized: Burning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612227
+    m_Localized: Poisoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4441895476965376
+    m_Localized: "BAG \xB7 {0} items \xB7 kept on win or death, lost if you quit"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4441895544074240
+    m_Localized: No weapons or gear found yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4617325039366144
+    m_Localized: 'Game is open in another tab: progress here will NOT be saved.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4617325102280704
+    m_Localized: 'Save is from a newer game version: progress will NOT be saved.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246086877184
+    m_Localized: Passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374656
+    m_Localized: Wields two weapons at once for 5s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374657
+    m_Localized: Quick invulnerable roll that knocks nearby foes back.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374658
+    m_Localized: Calls a 6-pulse arcane storm onto the nearest enemy (12 dmg each).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374659
+    m_Localized: Freezes nearby enemies around you and deals 10 AoE damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374660
+    m_Localized: Restores 2 HP, 2 Armor, and grants 1s invulnerability.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374661
+    m_Localized: Sacred Blessing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374662
+    m_Localized: Rune Vortex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374663
+    m_Localized: Ice Spike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374664
+    m_Localized: Whirlwind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374665
+    m_Localized: Summons a gale around you for 1.2s (3 pulses, 20 dmg + knockback).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374666
+    m_Localized: Shadow Curse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374667
+    m_Localized: Curses enemies around the nearest foe (26 dmg and Slows for 3s).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518737121280
+    m_Localized: Rejuvenate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424448
+    m_Localized: Restores 2 HP, 15 Mana, and +20% Move Speed for 3s.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424449
+    m_Localized: Mega Blast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424450
+    m_Localized: Detonates a massive blast on the nearest foe (75 AoE dmg + heavy
+      knockback).
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424451
+    m_Localized: Leaf Storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424452
+    m_Localized: Summons a 2-pulse leaf storm on the nearest foe (16 dmg each, Slows
+      2s).
     m_Metadata:
       m_Items: []
   references:

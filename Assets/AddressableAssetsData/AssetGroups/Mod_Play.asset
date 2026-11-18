@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Mod_Play
   m_GUID: de9e2cc5d1b8f044486860af58a71442
   m_SerializeEntries:
+  - m_GUID: 1472707d7e186e744aa69367c94d7ddd
+    m_Address: char/player-shell
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - play
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4c6a727034ebc9d4895bf4bacfb36910
     m_Address: ui/hud/play
     m_ReadOnly: 0
@@ -29,6 +35,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d3e3f13add38f84459dd70047025b46f
     m_Address: scene/play
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - play
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d96514f9a83b8354db942b36f9f6ebac
+    m_Address: play/prefab-set
     m_ReadOnly: 0
     m_SerializedLabels:
     - play

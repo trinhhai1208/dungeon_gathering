@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7de0bdaea43b6f468a7579efeb9ad23, type: 3}
   m_Name: Atk_lord-fan
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ShootAttackSO
-  range: 8
+  skillId: atk-lord-fan
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 3
+  range: 8
   windupTime: 0.5
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
-  projectilePrefab: {fileID: 770210976197447705, guid: 39205b1dc76a5fe4ebbd3a5233370278, type: 3}
-  impactVfx: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  status:
+    effects: []
+  projectilePrefab: {fileID: 5508859051236217146, guid: ff701a9b7d162fe429fc79a8d011ad69, type: 3}
+  impactVfx: {fileID: 6248653414362245213, guid: 3af8ad5b6602b2a4d955e3bc77fd7648, type: 3}
   damage: 1
   speed: 6.5
   knockback: 2

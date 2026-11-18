@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: d672344dcb1e8fd4a82fbec165fbae52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7694536696381786429
+    second: blood-noble_attack_0
+  - first:
+      213: -4869446676467310943
+    second: blood-noble_attack_1
+  - first:
+      213: 5845037073197712987
+    second: blood-noble_attack_2
+  - first:
+      213: -6560787993217936923
+    second: blood-noble_attack_3
+  - first:
+      213: -8546412335532314075
+    second: blood-noble_attack_4
+  - first:
+      213: 2347146886098194695
+    second: blood-noble_attack_5
+  - first:
+      213: 2784685598780820971
+    second: blood-noble_attack_6
+  - first:
+      213: 3575127134961561838
+    second: blood-noble_attack_7
+  - first:
+      213: 3984751820059943630
+    second: blood-noble_attack_8
+  - first:
+      213: -7928390526167026456
+    second: blood-noble_attack_9
+  - first:
+      213: -8918953843271368221
+    second: blood-noble_attack_10
+  - first:
+      213: -4881432836115121532
+    second: blood-noble_attack_11
+  - first:
+      213: 805384822304296892
+    second: blood-noble_attack_12
+  - first:
+      213: -9026990388195547186
+    second: blood-noble_attack_13
+  - first:
+      213: 7288644826622739740
+    second: blood-noble_attack_14
+  - first:
+      213: 6746302076961599516
+    second: blood-noble_attack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood-noble_attack_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c6b4fc54a3873590800000000000000
+      internalID: -7694536696381786429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae95741c004c6cb0800000000000000
+      internalID: -4869446676467310943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5640feef3ebd1150800000000000000
+      internalID: 5845037073197712987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1d899a41663f4a0800000000000000
+      internalID: -6560787993217936923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 5
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522749cf24b056980800000000000000
+      internalID: -8546412335532314075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 5
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7011c8d38adb29020800000000000000
+      internalID: 2347146886098194695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 5
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bed0a765cc035a620800000000000000
+      internalID: 2784685598780820971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 5
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee07e3aff276d9130800000000000000
+      internalID: 3575127134961561838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 5
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2a3c01baeac4730800000000000000
+      internalID: 3984751820059943630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 4
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e4fd37a2d2b8f190800000000000000
+      internalID: -7928390526167026456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 3
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e184b3fbb2893480800000000000000
+      internalID: -8918953843271368221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_11
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 5
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48a3e60d2baa14cb0800000000000000
+      internalID: -4881432836115121532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_12
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 3
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf40f09a3d4d2b00800000000000000
+      internalID: 805384822304296892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_13
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 2
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec72db8a110b9b280800000000000000
+      internalID: -9026990388195547186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_14
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 2
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1546d85ad7762560800000000000000
+      internalID: 7288644826622739740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_attack_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 2
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10b6ccdefdaf9d50800000000000000
+      internalID: 6746302076961599516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      blood-noble_attack_0: -7694536696381786429
+      blood-noble_attack_1: -4869446676467310943
+      blood-noble_attack_10: -8918953843271368221
+      blood-noble_attack_11: -4881432836115121532
+      blood-noble_attack_12: 805384822304296892
+      blood-noble_attack_13: -9026990388195547186
+      blood-noble_attack_14: 7288644826622739740
+      blood-noble_attack_15: 6746302076961599516
+      blood-noble_attack_2: 5845037073197712987
+      blood-noble_attack_3: -6560787993217936923
+      blood-noble_attack_4: -8546412335532314075
+      blood-noble_attack_5: 2347146886098194695
+      blood-noble_attack_6: 2784685598780820971
+      blood-noble_attack_7: 3575127134961561838
+      blood-noble_attack_8: 3984751820059943630
+      blood-noble_attack_9: -7928390526167026456
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

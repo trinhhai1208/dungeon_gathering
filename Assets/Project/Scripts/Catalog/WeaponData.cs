@@ -13,64 +13,29 @@ namespace DungeonGathering.Catalog
         Spear = 3               // Thương/Giáo: cầm ngang đâm thẳng
     }
 
-    /// <summary>Vũ khí cầm tay (WEAPONS §6.1). Không có Role Synergy.</summary>
-    [CreateAssetMenu(fileName = "Weapon_", menuName = "Dungeon Gathering/Weapon Data")]
+    public enum MeleeAttackStyle { Swing = 0, Thrust = 1, Spin360 = 2 }
+
+    /// <summary>
+    /// Vật phẩm vũ khí: chỉ là định danh trong kho / save / shop (id). Mọi thứ khác — chỉ số, hình, hitbox, đạn, VFX, tên,
+    /// icon, bậc, giá, skill, passive — nằm ở entry cùng id trong Sword / Ranged Library (ItemCatalog đăng ký).
+    /// Các field kế thừa từ ItemData (nameKey, icon, rarity, shopPrice…) chỉ là dự phòng khi thiếu entry.
+    /// </summary>
+    [CreateAssetMenu(fileName = "Weapon_", menuName = "Dungeon Gathering/Weapon Item")]
     public class WeaponData : ItemData
     {
         public override bool IsWeapon => true;
 
-        [Header("Loại")]
-        public WeaponType weaponType = WeaponType.Melee;
-        public RangedFireMode fireMode = RangedFireMode.Projectile;
+        /// <summary>Thông số đã resolve (SO gốc ← đạn ← entry). Thiếu entry → spec tối thiểu + cảnh báo.</summary>
+        public WeaponSpec Spec => WeaponLibrary.Resolve(this);
 
-        [Header("Tư thế cầm")]
-        public WeaponHoldStyle holdStyle = WeaponHoldStyle.OneHandedSide;
-        [Tooltip("Góc nâng lưỡi kiếm khi đứng yên (độ). 0 = dùng mặc định theo holdStyle.")]
-        public float customRestAngle;
-
-        public WeaponHoldStyle EffectiveHoldStyle => holdStyle != WeaponHoldStyle.OneHandedSide
-            ? holdStyle
-            : (weaponType == WeaponType.Ranged ? WeaponHoldStyle.Ranged : WeaponHoldStyle.OneHandedSide);
-
-        [Header("Hiển thị")]
-        public Sprite weaponSprite;
-        public Vector2 holdOffset = Vector2.zero;
-        public Vector2 muzzleOffset = new(0.5f, 0f);
-        [Tooltip("Bật nếu sprite của vũ khí này có góc vẽ gốc khác với mặc định (Melee 135°, Ranged 0°)")]
-        public bool overrideForwardAngle;
-        public float customForwardAngle;
-        [Tooltip("Tỉ lệ thu phóng khi tự dựng từ weaponSprite")]
-        public float visualScale = 0.55f;
-        [Tooltip("Prefab vũ khí riêng (tùy chọn). Trống → WeaponHolder tự dựng từ weaponSprite.")]
-        public GameObject weaponPrefab;
-
-        public float GetForwardAngle(float defaultMelee, float defaultRanged) =>
-            overrideForwardAngle ? customForwardAngle : (weaponType == WeaponType.Melee ? defaultMelee : defaultRanged);
-
-        [Header("Chỉ số")]
-        public float damage = 10f;
-        [Tooltip("Số đòn / giây")] public float fireRate = 2f;
-        [Tooltip("Bán kính chém hoặc tầm bắn")] public float attackRange = 1.2f;
-        [Tooltip("Độ lệch đạn (độ)")] public float spread;
-        public float knockback = 5f;
-        [Range(0, 1)] public float critBonus = 0.05f;
-        public int manaCost;
-        public float projectileSpeed = 14f;
-        [Min(1)] public int projectileCount = 1;
-        [Tooltip("Số mục tiêu đạn xuyên qua thêm")] public int pierce;
-        [Tooltip("> 0: đạn nổ diện rộng")] public float explosionRadius;
-        [Tooltip("Góc vung kiếm (độ)")] public float swingArc = 110f;
-        public float swingDuration = 0.15f;
-        [Tooltip("Kiếm chém tan đạn thường của quái")] public bool destroysProjectiles = true;
-
-        [Header("VFX & đạn")]
-        public GameObject slashVfxPrefab;
-        public GameObject projectilePrefab;
-        public GameObject muzzleVfxPrefab;
-        public GameObject hitImpactVfxPrefab;
-        public AudioClip attackSfx;
-
-        [Header("Kỹ năng")]
-        public WeaponPassiveSO passive;
+        WeaponEntryBase Entry => WeaponLibrary.TryGetEntry(id, out var e) ? e : null;
+        public override string NameKey => Entry is { } e && !string.IsNullOrEmpty(e.nameKey) ? e.nameKey : nameKey;
+        public override string DescKey => Entry is { } e && !string.IsNullOrEmpty(e.descKey) ? e.descKey : descKey;
+        public override Rarity Rank => Entry is { } e ? e.rank : rarity;
+        public override Sprite Icon => Entry is { } e && e.icon != null ? e.icon : icon;
+        public override int Price => Entry is { } e && e.shopPrice > 0 ? e.shopPrice : shopPrice;
+        public override ActiveSkillSO ActiveSkill => Entry is { } e && e.activeSkill != null ? e.activeSkill : activeSkill;
+        /// <summary>Passive vũ khí (từ entry thư viện).</summary>
+        public WeaponPassiveSO Passive => Entry?.passive;
     }
 }

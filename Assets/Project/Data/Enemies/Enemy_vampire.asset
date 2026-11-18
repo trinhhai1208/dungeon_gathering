@@ -14,19 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: vampire
   nameKey: enemy.vampire
-  maxHp: 45
-  moveSpeed: 2.8
+  animator: {fileID: 9100000, guid: ece854b7166dba747b49c2645bf5507f, type: 2}
+  sprite: {fileID: -1504920921590492608, guid: 45eca065187fdae49a9090e78ac2e2cc, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 9064071070495278911, guid: 4f099d8cbaf95114c9bc5435f63c1d37, type: 3}
+  hitVfx: {fileID: 8034088177677510928, guid: 10f8f7402a7a1974db4db4e7a1374861, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 0
-  knockbackResist: 0
   preferredDistance: 4
+  retreatDistance: 2.5
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 45
+    - stat: 5
+      value: 2.8
+  tier: 0
   spawnCost: 2
   spawnDuration: 0.4
   deathDuration: 0.8
-  attacks:
-  - {fileID: 11400000, guid: b53b34733a2369742b814da0423e79cf, type: 2}
+  skills: 13000000
+  phases: []
+  customLoot: 0
   lootTable:
     minGold: 2
     maxGold: 4

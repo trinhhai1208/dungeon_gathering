@@ -23,7 +23,7 @@ namespace DungeonGathering.EditorTools
         const string ModulesDir = CoreDataDir + "/Modules";
         const string RegistryPath = CoreDataDir + "/ModuleRegistry.asset";
         const string CoreFontConfigPath = CoreDataDir + "/LocalizationFontConfig.asset";
-        const string LegacyFontConfigPath = "Assets/Project/Localization/Resources/LocalizationFontConfig.asset";
+        const string CoreSfxLibraryPath = CoreDataDir + "/SfxLibrary.asset";
         const string SystemsPrefabPath = "Assets/Project/Core/Prefabs/Systems.prefab";
 
         [MenuItem("Tools/Dungeon Gathering/Addressables/Apply Module Rules")]
@@ -32,7 +32,6 @@ namespace DungeonGathering.EditorTools
             EnsureFolder(CoreDataDir);
             EnsureFolder(ModulesDir);
 
-            SyncFontConfigToCoreData();
             var registry = BuildModuleRegistry();
             LinkSystemsPrefab(registry);
 
@@ -46,7 +45,7 @@ namespace DungeonGathering.EditorTools
             // Đảm bảo danh sách nhãn chuẩn
             string[] allLabels =
             {
-                AddressKeys.LabelCore, AddressKeys.LabelSharedUi, AddressKeys.LabelLocaleVi,
+                AddressKeys.LabelCore, AddressKeys.LabelSharedUi,
                 "menu", "lobby", "loadout", "shop", "catalog", "character",
                 "play", "results", "theme-dungeon", "enemies-dungeon", "boss-vampire-lord",
                 "vfx-melee", "vfx-elemental",
@@ -57,7 +56,6 @@ namespace DungeonGathering.EditorTools
             // Tạo/cập nhật các group
             var gCore      = EnsureGroup(settings, "Core_Local",       BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gSharedUi  = EnsureGroup(settings, "Shared_UI",        BundledAssetGroupSchema.BundlePackingMode.PackTogether);
-            var gFonts     = EnsureGroup(settings, "Shared_Fonts",     BundledAssetGroupSchema.BundlePackingMode.PackSeparately);
             var gMenu      = EnsureGroup(settings, "Mod_Menu",         BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gLobby     = EnsureGroup(settings, "Mod_Lobby",        BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gLoadout   = EnsureGroup(settings, "Mod_Loadout",      BundledAssetGroupSchema.BundlePackingMode.PackTogether);
@@ -65,7 +63,6 @@ namespace DungeonGathering.EditorTools
             var gPlay      = EnsureGroup(settings, "Mod_Play",         BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gResults   = EnsureGroup(settings, "Mod_Results",      BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gCatalog   = EnsureGroup(settings, "Catalog_Items",    BundledAssetGroupSchema.BundlePackingMode.PackTogether);
-            var gChars     = EnsureGroup(settings, "Characters",       BundledAssetGroupSchema.BundlePackingMode.PackSeparately);
             var gTheme     = EnsureGroup(settings, "Theme_Dungeon",    BundledAssetGroupSchema.BundlePackingMode.PackTogetherByLabel);
             var gEnemies   = EnsureGroup(settings, "Enemies_Dungeon",  BundledAssetGroupSchema.BundlePackingMode.PackTogether);
             var gBoss      = EnsureGroup(settings, "Boss_VampireLord", BundledAssetGroupSchema.BundlePackingMode.PackSeparately);
@@ -91,10 +88,9 @@ namespace DungeonGathering.EditorTools
             // 1. Core_Local
             Reg(gCore, RegistryPath, AddressKeys.CoreModuleRegistry, AddressKeys.LabelCore);
             Reg(gCore, CoreFontConfigPath, AddressKeys.CoreFontConfig, AddressKeys.LabelCore);
+            Reg(gCore, CoreSfxLibraryPath, AddressKeys.CoreSfxLibrary, AddressKeys.LabelCore);
             Reg(gCore, "Assets/Project/Art/Fonts/Pixelta SDF.asset", "font/pixelta", AddressKeys.LabelCore);
-
-            // 2. Shared_Fonts (VI)
-            Reg(gFonts, "Assets/Project/Art/Fonts/dearpix SDF.asset", "font/dearpix", AddressKeys.LabelLocaleVi);
+            Reg(gCore, "Assets/Project/Art/Fonts/dearpix SDF.asset", "font/dearpix", AddressKeys.LabelCore);
 
             // 3. Shared_UI
             Reg(gSharedUi, "Assets/Project/Prefabs/UI/ItemTile.prefab", AddressKeys.UiSharedItemTile, AddressKeys.LabelSharedUi);
@@ -137,18 +133,20 @@ namespace DungeonGathering.EditorTools
                 var item = AssetDatabase.LoadAssetAtPath<ItemData>(p);
                 if (item != null) Reg(gCatalog, p, $"data/item/{item.id}", "catalog");
             }
-            foreach (var guid in AssetDatabase.FindAssets("t:CharacterData", new[] { "Assets/Project/Data" }))
+            foreach (var guid in AssetDatabase.FindAssets("t:HeroDefinitionSO", new[] { "Assets/Project/Data" }))
             {
                 string p = AssetDatabase.GUIDToAssetPath(guid);
-                var ch = AssetDatabase.LoadAssetAtPath<CharacterData>(p);
+                var ch = AssetDatabase.LoadAssetAtPath<HeroDefinitionSO>(p);
                 if (ch != null) Reg(gCatalog, p, $"data/char/{ch.characterId}", "catalog");
             }
 
             // 11. Theme_Dungeon
-            for (int f = 1; f <= 3; f++)
+            // Mọi LevelConfig (không cố định 3 tầng) — key theo theme + số level, khớp CampaignSO.levelAddresses
+            foreach (var guid in AssetDatabase.FindAssets("t:LevelConfigSO", new[] { "Assets/Project/Data" }))
             {
-                Reg(gTheme, $"Assets/Project/Data/DungeonConfigs/DungeonConfig_dungeon_F{f}.asset",
-                    AddressKeys.DungeonConfig("dungeon", f), "theme-dungeon");
+                string p = AssetDatabase.GUIDToAssetPath(guid);
+                var lv = AssetDatabase.LoadAssetAtPath<DungeonGathering.Play.LevelConfigSO>(p);
+                if (lv != null) Reg(gTheme, p, AddressKeys.DungeonConfig(lv.themeId, lv.floor), "theme-dungeon");
             }
             foreach (var guid in AssetDatabase.FindAssets("t:Prefab", new[] { "Assets/Project/Prefabs/Rooms", "Assets/Project/Prefabs/Traps" }))
             {
@@ -157,16 +155,17 @@ namespace DungeonGathering.EditorTools
                 Reg(gTheme, p, $"theme/dungeon/{name}", "theme-dungeon");
             }
 
-            // 12. Enemies_Dungeon & Boss_VampireLord
+            // 12. Enemies_Dungeon & Boss_VampireLord — chỉ prefab boss (có BossPhaseController).
+            //     Quái thường không còn prefab riêng: Enemy_Base (PlayPrefabSet, group Mod_Play) + MonsterDefinitionSO
+            //     (tham chiếu từ LevelConfig, đi theo bundle Theme_Dungeon).
             (string file, string addr)[] dungeonEnemies =
             {
-                ("Enemy_Skeleton_Spear",   "enemy/skeleton-spear"),
-                ("Enemy_Skeleton_Warrior", "enemy/skeleton-warrior"),
-                ("Enemy_Zombie",           "enemy/zombie"),
-                ("Enemy_Vampire",          "enemy/vampire"),
-                ("Enemy_Skull",            "enemy/skull"),
                 ("Boss_EliteWarrior",      AddressKeys.Boss("elite-warrior")),
                 ("Boss_EliteVampire",      AddressKeys.Boss("elite-vampire")),
+                ("Boss_Crimson_Warlord",   AddressKeys.Boss("crimson-warlord")),
+                ("Boss_Dread_Executioner", AddressKeys.Boss("dread-executioner")),
+                ("Boss_Inferno_King",      AddressKeys.Boss("inferno-king")),
+                ("Boss_Frost_Lich_King",   AddressKeys.Boss("frost-lich-king")),
             };
             foreach (var (file, addr) in dungeonEnemies)
                 Reg(gEnemies, $"Assets/Project/Prefabs/Enemies/{file}.prefab", addr, "enemies-dungeon");
@@ -189,10 +188,12 @@ namespace DungeonGathering.EditorTools
                 Reg(gBgm, p, AddressKeys.Bgm(id), "bgm-" + id);
             }
 
+            RemoveGroupIfEmpty(settings, "Shared_Fonts");
+            RemoveGroupIfEmpty(settings, "Characters");
             settings.SetDirty(AddressableAssetSettings.ModificationEvent.BatchModification, null, true, true);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
-            Debug.Log($"[Addressables] Đã áp dụng quy tắc M2: {registered} entry trên 16 group + ModuleRegistry.");
+            Debug.Log($"[Addressables] Đã áp dụng quy tắc M2: {registered} entry trên 14 group + ModuleRegistry.");
         }
 
         /// <summary>
@@ -254,21 +255,11 @@ namespace DungeonGathering.EditorTools
         static string[] WithBgm(string[] labels, string id) =>
             FindBgmFile(id) != null ? labels.Concat(new[] { "bgm-" + id }).ToArray() : labels;
 
-        static void SyncFontConfigToCoreData()
+        static void RemoveGroupIfEmpty(AddressableAssetSettings settings, string groupName)
         {
-            var src = AssetDatabase.LoadAssetAtPath<LocalizationFontConfig>(LegacyFontConfigPath);
-            var dst = AssetDatabase.LoadAssetAtPath<LocalizationFontConfig>(CoreFontConfigPath);
-            if (src == null && dst == null) return;
-            if (dst == null && src != null)
-            {
-                AssetDatabase.CopyAsset(LegacyFontConfigPath, CoreFontConfigPath);
-                return;
-            }
-            if (src != null && dst != null)
-            {
-                EditorUtility.CopySerialized(src, dst);
-                EditorUtility.SetDirty(dst);
-            }
+            var grp = settings.FindGroup(groupName);
+            if (grp != null && grp.entries.Count == 0)
+                settings.RemoveGroup(grp);
         }
 
         static ModuleRegistry BuildModuleRegistry()

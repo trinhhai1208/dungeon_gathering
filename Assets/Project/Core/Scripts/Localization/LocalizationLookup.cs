@@ -33,5 +33,12 @@ namespace DungeonGathering.Localization
                 return fallback ?? key;
             }
         }
+
+        /// <summary>Tên Role đã dịch (key <c>role.&lt;tên enum viết thường&gt;</c>); thiếu key thì dùng tên enum.</summary>
+        public static string Role(DungeonGathering.Core.CharacterRole role)
+        {
+            string name = role.ToString();
+            return Get("role." + name.ToLowerInvariant(), name);
+        }
     }
 }

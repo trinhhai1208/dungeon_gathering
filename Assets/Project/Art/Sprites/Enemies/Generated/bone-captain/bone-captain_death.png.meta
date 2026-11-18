@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 4b7d1612d5ef0364a93f6ad0b5e28ff4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2804950405146062423
+    second: bone-captain_death_0
+  - first:
+      213: -3051687007406054576
+    second: bone-captain_death_1
+  - first:
+      213: 5547248917027352592
+    second: bone-captain_death_2
+  - first:
+      213: -3480052840809110569
+    second: bone-captain_death_3
+  - first:
+      213: 6176879494273645155
+    second: bone-captain_death_4
+  - first:
+      213: 1455805868099630088
+    second: bone-captain_death_5
+  - first:
+      213: -734989420779918381
+    second: bone-captain_death_6
+  - first:
+      213: 1565862011618114579
+    second: bone-captain_death_7
+  - first:
+      213: -465589274500891242
+    second: bone-captain_death_8
+  - first:
+      213: -8054494338204780502
+    second: bone-captain_death_9
+  - first:
+      213: -8470978940471603610
+    second: bone-captain_death_10
+  - first:
+      213: -1940366083697455781
+    second: bone-captain_death_11
+  - first:
+      213: 2882925014639637218
+    second: bone-captain_death_12
+  - first:
+      213: 2301777489261160968
+    second: bone-captain_death_13
+  - first:
+      213: 6818232148873214920
+    second: bone-captain_death_14
+  - first:
+      213: -443514482484768836
+    second: bone-captain_death_15
+  - first:
+      213: -2297168826236188306
+    second: bone-captain_death_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bone-captain_death_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ea15f388f2de620800000000000000
+      internalID: 2804950405146062423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05323e5d5da36a5d0800000000000000
+      internalID: -3051687007406054576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010f51cdf79cbfc40800000000000000
+      internalID: 5547248917027352592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 2
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3ebff116e54bfc0800000000000000
+      internalID: -3480052840809110569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a339c6c2fa8b550800000000000000
+      internalID: 6176879494273645155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 804f10e49bf043410800000000000000
+      internalID: 1455805868099630088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db2eb4140bccc5f0800000000000000
+      internalID: -734989420779918381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cb6c9043f0bb510800000000000000
+      internalID: 1565862011618114579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69d742a8505e989f0800000000000000
+      internalID: -465589274500891242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28b8ede210b83090800000000000000
+      internalID: -8054494338204780502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e0069e889017a80800000000000000
+      internalID: -8470978940471603610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5d4ffec35f6215e0800000000000000
+      internalID: -1940366083697455781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2fea3c605320820800000000000000
+      internalID: 2882925014639637218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_13
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 2
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ae66f5e6e81ff10800000000000000
+      internalID: 2301777489261160968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cb7cbdc30a3f9e50800000000000000
+      internalID: 6818232148873214920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf01c29de158d9f0800000000000000
+      internalID: -443514482484768836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bone-captain_death_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 2
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69471b9f11de10e0800000000000000
+      internalID: -2297168826236188306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bone-captain_death_0: 2804950405146062423
+      bone-captain_death_1: -3051687007406054576
+      bone-captain_death_10: -8470978940471603610
+      bone-captain_death_11: -1940366083697455781
+      bone-captain_death_12: 2882925014639637218
+      bone-captain_death_13: 2301777489261160968
+      bone-captain_death_14: 6818232148873214920
+      bone-captain_death_15: -443514482484768836
+      bone-captain_death_16: -2297168826236188306
+      bone-captain_death_2: 5547248917027352592
+      bone-captain_death_3: -3480052840809110569
+      bone-captain_death_4: 6176879494273645155
+      bone-captain_death_5: 1455805868099630088
+      bone-captain_death_6: -734989420779918381
+      bone-captain_death_7: 1565862011618114579
+      bone-captain_death_8: -465589274500891242
+      bone-captain_death_9: -8054494338204780502
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

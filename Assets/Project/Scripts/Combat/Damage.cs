@@ -4,6 +4,16 @@ using UnityEngine;
 
 namespace DungeonGathering.Combat
 {
+    [System.Flags]
+    public enum DamageFlags
+    {
+        None = 0,
+        /// <summary>Sát thương từ hiệu ứng theo thời gian: bỏ qua i-frame, không đặt lại i-frame, không giật/đẩy.</summary>
+        DoT = 1 << 0,
+        /// <summary>Bỏ qua giáp (Kill, sát thương chuẩn).</summary>
+        IgnoreArmor = 1 << 1,
+    }
+
     public readonly struct DamageInfo
     {
         public readonly float Amount, Knockback, CritBonus;
@@ -11,15 +21,26 @@ namespace DungeonGathering.Combat
         public readonly bool IsCrit;
         public readonly GameObject Source;
         public readonly Team Team;
+        public readonly DamageFlags Flags;
 
         public DamageInfo(float amount, float knockback, Vector2 direction, float critBonus = 0f,
-                          bool isCrit = false, GameObject source = null, Team team = Team.Neutral)
+                          bool isCrit = false, GameObject source = null, Team team = Team.Neutral,
+                          DamageFlags flags = DamageFlags.None)
         {
             Amount = amount; Knockback = knockback; Direction = direction; CritBonus = critBonus;
-            IsCrit = isCrit; Source = source; Team = team;
+            IsCrit = isCrit; Source = source; Team = team; Flags = flags;
         }
 
-        public DamageInfo WithAmount(float amount) => new(amount, Knockback, Direction, CritBonus, IsCrit, Source, Team);
+        public bool IsDoT => (Flags & DamageFlags.DoT) != 0;
+        public bool IgnoresArmor => (Flags & DamageFlags.IgnoreArmor) != 0;
+
+        public DamageInfo WithAmount(float amount) => new(amount, Knockback, Direction, CritBonus, IsCrit, Source, Team, Flags);
+    }
+
+    /// <summary>Nguồn sát thương có VFX trúng riêng (quái theo định nghĩa) — bên nhận phát VFX này tại chỗ trúng.</summary>
+    public interface IHitVfxSource
+    {
+        GameObject HitVfx { get; }
     }
 
     /// <summary>
@@ -40,6 +61,12 @@ namespace DungeonGathering.Combat
         Transform Transform { get; }
         bool IsAlive { get; }
         IDamageable Damageable { get; }
+    }
+
+    /// <summary>AI mục tiêu có thể bị khiêu khích (Companion/Decoy gán mục tiêu ưu tiên).</summary>
+    public interface ITauntableTargetAI
+    {
+        ITargetable OverrideTarget { get; set; }
     }
 
     /// <summary>Registry tối giản để Enemy tìm Player mà không tham chiếu module Play.</summary>
@@ -147,8 +174,10 @@ namespace DungeonGathering.Combat
         /// Gây sát thương vùng: gom mục tiêu DUY NHẤT trước (mỗi mục tiêu tối đa một lần mỗi đòn — R12).
         /// Trả số mục tiêu trúng; results (tùy chọn) nhận danh sách.
         /// An toàn khi lồng nhau: buffer collider dùng xong trước khi gọi TakeDamage, danh sách mục tiêu là list thuê riêng.
+        /// <paramref name="blockMask"/> ≠ 0: bỏ qua mục tiêu bị lớp đó (vd tường) che giữa tâm và mục tiêu.
         /// </summary>
-        public static int DamageArea(Vector2 center, float radius, int mask, in DamageInfo info, List<IDamageable> results = null, IDamageable ignore = null)
+        public static int DamageArea(Vector2 center, float radius, int mask, in DamageInfo info, List<IDamageable> results = null,
+                                     IDamageable ignore = null, int blockMask = 0)
         {
             var filter = new ContactFilter2D { useLayerMask = true, layerMask = mask, useTriggers = true };
             int n = Physics2D.OverlapCircle(center, radius, filter, buffer);
@@ -167,9 +196,10 @@ namespace DungeonGathering.Combat
                 {
                     var d = unique[i];
                     if (d.IsDead) continue; // có thể đã chết do hiệu ứng lồng từ mục tiêu trước
+                    if (blockMask != 0 && Physics2D.Linecast(center, d.transform.position, blockMask).collider != null) continue;
                     Vector2 dir = ((Vector2)d.transform.position - center);
                     dir = dir.sqrMagnitude > 0.0001f ? dir.normalized : info.Direction;
-                    var hit = new DamageInfo(info.Amount, info.Knockback, dir, info.CritBonus, info.IsCrit, info.Source, info.Team);
+                    var hit = new DamageInfo(info.Amount, info.Knockback, dir, info.CritBonus, info.IsCrit, info.Source, info.Team, info.Flags);
                     if (d.TakeDamage(hit)) { hits++; results?.Add(d); }
                 }
                 return hits;
@@ -187,6 +217,7 @@ namespace DungeonGathering.Combat
             for (int i = 0; i < n; i++)
             {
                 var d = Resolve(buffer[i]);
+                buffer[i] = null;
                 if (d == null || d.IsDead) continue;
                 Vector2 p = d.transform.position;
                 float sqr = (p - origin).sqrMagnitude;

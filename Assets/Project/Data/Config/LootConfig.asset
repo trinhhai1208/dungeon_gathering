@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d4aec8511ba8f4baf993faed5b42ac, type: 3}
+  m_Name: LootConfig
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.LootConfigSO
+  rankWeightsByLevel:
+  - D: 60
+    C: 35
+    B: 5
+    A: 0
+    S: 0
+  - D: 0
+    C: 50
+    B: 35
+    A: 15
+    S: 0
+  - D: 0
+    C: 0
+    B: 40
+    A: 45
+    S: 15
+  rankShiftPerExtraLevel: 0.5
+  goldPerLevel: 0.25
+  tiers:
+  - tier: 0
+    gold: {x: 4, y: 6}
+    itemChance: 0.082727276
+    guaranteedItems: 0
+    manaOrbChance: 0.4227273
+    manaOrbs: 1
+    potionChance: 0.06
+    rankShift: 0
+  - tier: 1
+    gold: {x: 12, y: 18}
+    itemChance: 0.3309091
+    guaranteedItems: 0
+    manaOrbChance: 0.8454546
+    manaOrbs: 2
+    potionChance: 0.22999999
+    rankShift: 1
+  - tier: 2
+    gold: {x: 37, y: 56}
+    itemChance: 1
+    guaranteedItems: 1
+    manaOrbChance: 1
+    manaOrbs: 1
+    potionChance: 0.9285714
+    rankShift: 1
+  chestRankShift: 0.5

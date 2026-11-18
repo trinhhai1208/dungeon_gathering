@@ -18,18 +18,28 @@ MonoBehaviour:
   role: 1
   unlockPrice: 0
   released: 1
+  rank: 3
   portrait: {fileID: -9130546134006538124, guid: 17808b85e774f83459a6720ffc3cd881, type: 3}
   animator: {fileID: 9100000, guid: 95b3aa290aa7a584593b4bf3e1917c4b, type: 2}
-  baseStats:
-    maxHp: 7
-    maxArmor: 6
-    maxMana: 120
-    attackDamage: 1.0769231
-    attackSpeed: 1
-    moveSpeed: 5
-    critChance: 0.05
-  armorRegenDelay: 4
-  armorRegenRate: 1
-  manaRegen: 2
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  stats:
+    profile: {fileID: 11400000, guid: 282aefe399871e747a7ce94efb25e509, type: 2}
+    overrides:
+    - stat: 0
+      value: 7
+    - stat: 1
+      value: 6
+    - stat: 2
+      value: 120
+    - stat: 3
+      value: 1.0769231
+    - stat: 4
+      value: 1
+    - stat: 6
+      value: 0.05
+    - stat: 7
+      value: 2
   startingWeapon: {fileID: 11400000, guid: 71849f9c75f1e97408ac202ee4da9dab, type: 2}
-  activeSkill: {fileID: 11400000, guid: bb55fd1b7cf36314d94ac4021395a3e3, type: 2}
+  skill: 7
+  innatePassive: {fileID: 11400000, guid: aac325f6d5a6b3743ae7cea18f615e69, type: 2}

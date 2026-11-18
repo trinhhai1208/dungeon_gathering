@@ -24,21 +24,21 @@ namespace DungeonGathering.Lobby
         protected override IEnumerable<string> OwnedIds() =>
             inventory != null ? inventory.GetOwnedEquipment() : Enumerable.Empty<string>();
         protected override string SlotItemId(int slot) => loadout.GetEquipment((EquipmentSlotType)slot);
-        protected override int SlotOf(ItemData item) => item is EquipmentData eq ? (int)eq.slot : 0;
-        protected override bool PassesFilter(ItemData item, int f) => f == 0 || (item is EquipmentData eq && (int)eq.slot == f - 1);
+        protected override int SlotOf(ItemData item) => item is EquipmentSO eq ? (int)eq.slot : 0;
+        protected override bool PassesFilter(ItemData item, int f) => f == 0 || (item is EquipmentSO eq && (int)eq.slot == f - 1);
         protected override void Unequip(int slot) => inventory?.UnequipItem((EquipmentSlotType)slot);
         protected override Sprite EmptySilhouette(int slot) => slot < slotSilhouettes.Length ? slotSilhouettes[slot] : null;
 
         protected override string MetaLine(ItemData item)
         {
-            var eq = item as EquipmentData;
+            var eq = item as EquipmentSO;
             string slot = eq != null ? LocalizationLookup.Get(SlotKeys[(int)eq.slot]) : "";
-            return $"{slot} · Rarity {item.rarity}";
+            return $"{slot} · Rarity {item.Rank}";
         }
 
         protected override string StatsLine(ItemData item)
         {
-            if (item is not EquipmentData eq || eq.baseModifiers == null) return string.Empty;
+            if (item is not EquipmentSO eq || eq.baseModifiers == null) return string.Empty;
             return string.Join("\n", eq.baseModifiers.Select(m =>
             {
                 string name = LocalizationLookup.Get(StatKey(m.Stat));
@@ -48,7 +48,7 @@ namespace DungeonGathering.Lobby
 
         protected override string PassiveLine(ItemData item)
         {
-            if (item is not EquipmentData eq || eq.synergyPassive == null) return LocalizationLookup.Get("eq.no_role", "No Role effect.");
+            if (item is not EquipmentSO eq || eq.synergyPassive == null) return LocalizationLookup.Get("eq.no_role", "No Role effect.");
             string text = !string.IsNullOrEmpty(eq.synergyPassive.descKey) ? LocalizationLookup.Get(eq.synergyPassive.descKey) : eq.synergyPassive.description;
             bool on = character != null && eq.SynergyActive(character.role);
             string badge = on ? LocalizationLookup.Get("equip.badge_on", "ACTIVE") : LocalizationLookup.Get("equip.badge_need", "NEEDS ") + eq.synergyRole.ToString().ToUpperInvariant();
@@ -58,7 +58,7 @@ namespace DungeonGathering.Lobby
         protected override void FillStats(ItemData preview)
         {
             var now = Totals(null);
-            var after = preview is EquipmentData eq ? Totals(eq) : null;
+            var after = preview is EquipmentSO eq ? Totals(eq) : null;
             for (int i = 0; i < Rows.Length; i++)
             {
                 bool pct = Rows[i] is StatType.AttackDamage or StatType.CritChance;
@@ -68,25 +68,40 @@ namespace DungeonGathering.Lobby
             if (synergyCountText != null && character != null)
             {
                 int n = 0;
-                for (int s = 0; s < SlotCount; s++) if (Get(SlotItemId(s)) is EquipmentData e && e.SynergyActive(character.role)) n++;
+                for (int s = 0; s < SlotCount; s++) if (Get(SlotItemId(s)) is EquipmentSO e && e.SynergyActive(character.role)) n++;
                 synergyCountText.text = $"{n} / {SlotCount}";
             }
         }
 
-        float[] Totals(EquipmentData swapIn)
+        float[] Totals(EquipmentSO swapIn)
         {
-            var b = character != null ? character.baseStats : BaseStats.Default;
+            var b = character != null ? character.ResolveStats() : BaseStats.Default;
             var flat = new float[Rows.Length]; var pct = new float[Rows.Length];
-            for (int s = 0; s < SlotCount; s++)
+            var setCounts = new Dictionary<EquipmentSetSO, int>();
+            void Accumulate(IReadOnlyList<StatModifier> mods)
             {
-                var item = Get(SlotItemId(s)) as EquipmentData;
-                if (swapIn != null && s == (int)swapIn.slot) item = swapIn;
-                if (item?.baseModifiers == null) continue;
-                foreach (var m in item.baseModifiers)
+                if (mods == null) return;
+                foreach (var m in mods)
                 {
                     int r = System.Array.IndexOf(Rows, m.Stat); if (r < 0) continue;
                     flat[r] += m.FlatValue; pct[r] += m.PercentValue;
                 }
+            }
+            for (int s = 0; s < SlotCount; s++)
+            {
+                var item = Get(SlotItemId(s)) as EquipmentSO;
+                if (swapIn != null && s == (int)swapIn.slot) item = swapIn;
+                if (item == null) continue;
+                Accumulate(item.baseModifiers);
+                // Giống PlayerEquipment.Apply: passive synergy (đúng Role) và passive set 4 món cũng cộng chỉ số
+                if (character != null && item.SynergyActive(character.role)) Accumulate(item.synergyPassive.StatModifiers);
+                if (item.equipmentSet != null)
+                    setCounts[item.equipmentSet] = setCounts.TryGetValue(item.equipmentSet, out var count) ? count + 1 : 1;
+            }
+            foreach (var kv in setCounts)
+            {
+                if (kv.Value >= 2) Accumulate(kv.Key.bonus2Pieces);
+                if (kv.Value >= 4 && kv.Key.bonus4Passive != null) Accumulate(kv.Key.bonus4Passive.StatModifiers);
             }
             var result = new float[Rows.Length];
             for (int i = 0; i < Rows.Length; i++) result[i] = (b.Get(Rows[i]) + flat[i]) * (1f + pct[i]);

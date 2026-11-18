@@ -9,8 +9,8 @@ namespace DungeonGathering.Combat
     [CreateAssetMenu(menuName = "Dungeon Gathering/Skills/Buff", fileName = "Skill_Buff")]
     public class BuffSkill : ActiveSkillSO
     {
-        public List<StatModifier> modifiers = new();
-        public GameObject vfx;
+        [Tooltip("Các chỉ số cộng thêm tạm thời cho Player, kéo dài theo duration của skill; rỗng = không buff.")] public List<StatModifier> modifiers = new();
+        [Tooltip("VFX gắn dưới chân Player suốt thời gian buff; null = không có.")] public GameObject vfx;
 
         protected override SfxId DefaultActivateSfx => SfxId.Buff;
 
@@ -18,10 +18,7 @@ namespace DungeonGathering.Combat
         {
             foreach (var m in modifiers) ctx.AddTimedModifier(m, duration);
             if (vfx != null)
-            {
-                Vector3 feetPos = ctx.Transform.position + new Vector3(0f, -0.35f, 0f);
-                CombatFx.Play(vfx, feetPos, Quaternion.identity, ctx.Transform, Mathf.Max(0.5f, duration));
-            }
+                CombatFx.AttachScaled(vfx, ctx.Transform, overhead: false, fallbackDuration: Mathf.Max(0.5f, duration));
         }
     }
 }

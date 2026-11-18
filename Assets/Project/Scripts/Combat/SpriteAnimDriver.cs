@@ -27,9 +27,14 @@ namespace DungeonGathering.Combat
         AnimKey current = AnimKey.Idle;
         float oneShotUntil;
         bool locked; // Death
+        Color restColor = Color.white;
+        Color? statusTint;
+        Color tierTint = Color.clear;   // alpha = độ đậm pha vào màu nghỉ (quái Elite)
+        bool refsReady;
+        Color ActiveRestColor => statusTint ?? (tierTint.a > 0f ? Color.Lerp(restColor, new Color(tierTint.r, tierTint.g, tierTint.b, restColor.a), tierTint.a) : restColor);
 
-        public Animator Animator => animator;
-        public SpriteRenderer Renderer => spriteRenderer;
+        public Animator Animator { get { EnsureRefs(); return animator; } }
+        public SpriteRenderer Renderer { get { EnsureRefs(); return spriteRenderer; } }
 
         static readonly (AnimKey key, string[] words)[] Keywords =
         {
@@ -40,11 +45,16 @@ namespace DungeonGathering.Combat
             (AnimKey.Idle, new[] { "idle" }),
         };
 
-        void Awake()
+        void EnsureRefs()
         {
+            if (refsReady) return;
+            refsReady = true;
             if (animator == null) animator = GetComponentInChildren<Animator>();
             if (spriteRenderer == null) spriteRenderer = animator != null ? animator.GetComponent<SpriteRenderer>() : GetComponentInChildren<SpriteRenderer>();
+            if (spriteRenderer != null) restColor = spriteRenderer.color;
         }
+
+        void Awake() => EnsureRefs();
 
         public void SetController(RuntimeAnimatorController controller)
         {
@@ -124,6 +134,11 @@ namespace DungeonGathering.Combat
 
         public void ResetState()
         {
+            EnsureRefs();
+            CancelInvoke(nameof(EndFlash));
+            statusTint = null;
+            tierTint = Color.clear;
+            if (spriteRenderer != null) spriteRenderer.color = restColor;
             locked = false;
             oneShotUntil = 0f;
             current = (AnimKey)(-1);
@@ -135,14 +150,34 @@ namespace DungeonGathering.Combat
             Play(AnimKey.Idle, true);
         }
 
+        /// <summary>Màu nhận diện theo bậc quái (alpha = độ đậm; Color.clear = bỏ). Hiệu ứng trạng thái vẫn đè lên.</summary>
+        public void SetTierTint(Color tint)
+        {
+            EnsureRefs();
+            tierTint = tint;
+            if (spriteRenderer != null && !IsInvoking(nameof(EndFlash)))
+                spriteRenderer.color = ActiveRestColor;
+        }
+
+        public void SetStatusTint(Color? tint)
+        {
+            EnsureRefs();
+            statusTint = tint;
+            if (spriteRenderer != null && !IsInvoking(nameof(EndFlash)))
+                spriteRenderer.color = ActiveRestColor;
+        }
+
         public void Flash(Color color, float duration = 0.08f)
         {
+            EnsureRefs();
             if (spriteRenderer == null) return;
             CancelInvoke(nameof(EndFlash));
             spriteRenderer.color = color;
             Invoke(nameof(EndFlash), duration);
         }
 
-        void EndFlash() { if (spriteRenderer != null) spriteRenderer.color = Color.white; }
+        void EndFlash() { if (spriteRenderer != null) spriteRenderer.color = ActiveRestColor; }
+
+        void OnDisable() => CancelInvoke(nameof(EndFlash));
     }
 }

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6076d0f85509c40aad59d011042cb1, type: 3}
+  m_Name: Atk_lord-teleport
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.TeleportAttackSO
+  skillId: atk-lord-teleport
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
+  cooldown: 5.5
+  range: 11
+  windupTime: 0.3
+  weight: 1.1
+  requireLineOfSight: 0
+  stopWhileAttacking: 1
+  status:
+    effects: []
+  minAppearDistance: 1.3
+  maxAppearDistance: 1.7
+  vanishDuration: 0.25
+  teleportVfx: {fileID: 6461106633225347408, guid: 5be2ebcd45297e54b97bfb09d494e890, type: 3}
+  followUpAttack: {fileID: 11400000, guid: 8c3f802d62502f14397dad7e279d6598, type: 2}

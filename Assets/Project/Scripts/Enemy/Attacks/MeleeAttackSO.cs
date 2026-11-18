@@ -8,10 +8,10 @@ namespace DungeonGathering.Enemies
     [CreateAssetMenu(menuName = "Dungeon Gathering/Enemy Attacks/Melee", fileName = "Atk_Melee")]
     public class MeleeAttackSO : EnemyAttackSO
     {
-        public float damage = 1f;
-        public float hitRadius = 0.8f;
-        public float knockback = 4f;
-        public GameObject slashVfx;
+        [Tooltip("Sát thương mỗi đòn (HP) × AttackDamage của quái (đã gồm hệ số bậc).")] public float damage = 1f;
+        [Tooltip("Bán kính vùng chém (world-unit), tâm đặt trước mặt quái 0.8 × hitRadius.")] public float hitRadius = 0.8f;
+        [Tooltip("Lực đẩy Player khi trúng đòn (0 = không đẩy).")] public float knockback = 4f;
+        [Tooltip("VFX vệt chém xoay theo hướng đánh, tự thu nhỏ theo hitRadius; null = không có.")] public GameObject slashVfx;
 
         public override async Awaitable Execute(EnemyAttackContext ctx)
         {
@@ -28,8 +28,18 @@ namespace DungeonGathering.Enemies
                 float s = Mathf.Clamp(hitRadius * 2f / 4.5f, 0.25f, 0.45f);
                 fx.transform.localScale = new Vector3(s, s, 1f);
             }
-            CombatUtil.DamageArea(center, hitRadius, CombatLayers.PlayerTargets,
-                new DamageInfo(damage, knockback, dir, 0f, false, ctx.Self.gameObject, Team.Enemy));
+            var hits = CombatUtil.RentList();
+            try
+            {
+                CombatUtil.DamageArea(center, hitRadius, CombatLayers.PlayerTargets,
+                    new DamageInfo(ctx.Self.ScaleDamage(damage), knockback, dir, 0f, false, ctx.Self.gameObject, Team.Enemy), hits);
+                if (!status.IsEmpty)
+                {
+                    for (int i = 0; i < hits.Count; i++)
+                        status.ApplyTo(hits[i], ctx.Self.gameObject);
+                }
+            }
+            finally { CombatUtil.ReturnList(hits); }
         }
     }
 }

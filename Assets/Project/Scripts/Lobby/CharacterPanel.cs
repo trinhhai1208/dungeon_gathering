@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using DungeonGathering.Catalog;
 using DungeonGathering.Core;
 using DungeonGathering.Inventory;
+using DungeonGathering.Localization;
 using DungeonGathering.UI;
 using TMPro;
 using UnityEngine;
@@ -35,15 +37,25 @@ namespace DungeonGathering.Lobby
         [Header("Description")]
         [SerializeField] TMP_Text descriptionText;
 
+        [Header("Skill & Passive Box")]
+        [SerializeField] Image skillIconImage;
+        [SerializeField] TMP_Text skillTitleText;
+        [SerializeField] TMP_Text skillDescText;
+        [SerializeField] TMP_Text innatePassiveText;
+
         [Header("Stats Bars")]
         [SerializeField] TMP_Text hpText;
         [SerializeField] Image hpFill;
+        [SerializeField] SegmentedBar hpSegments;
         [SerializeField] TMP_Text armorText;
         [SerializeField] Image armorFill;
+        [SerializeField] SegmentedBar armorSegments;
         [SerializeField] TMP_Text manaText;
         [SerializeField] Image manaFill;
+        [SerializeField] SegmentedBar manaSegments;
         [SerializeField] TMP_Text damageText;
         [SerializeField] Image damageFill;
+        [SerializeField] SegmentedBar damageSegments;
 
         [Header("Active Skills Summary")]
         [SerializeField] TMP_Text activeSkillsSummaryText;
@@ -64,7 +76,7 @@ namespace DungeonGathering.Lobby
         [SerializeField] Button unlockButton;
         [SerializeField] TMP_Text unlockPriceText;
 
-        [Header("Coming Soon Group (CharacterData.released = false)")]
+        [Header("Coming Soon Group (HeroDefinitionSO.released = false)")]
         [SerializeField] GameObject comingSoonGroup;
 
         [Header("Role Icons")]
@@ -117,7 +129,13 @@ namespace DungeonGathering.Lobby
 
             ComputeAdaptivePlacement();
             RefreshDisplay();
+            EventBus<CharacterPanelChangedEvent>.Raise(new CharacterPanelChangedEvent { Open = true });
             return null;
+        }
+
+        public override void OnClose()
+        {
+            EventBus<CharacterPanelChangedEvent>.Raise(new CharacterPanelChangedEvent { Open = false });
         }
 
         public override void OnReopen(object args)
@@ -195,7 +213,7 @@ namespace DungeonGathering.Lobby
             }
         }
 
-        public CharacterData GetCharacterData()
+        public HeroDefinitionSO GetCharacterData()
         {
             if (LobbyEntry.Current != null)
             {
@@ -228,7 +246,7 @@ namespace DungeonGathering.Lobby
                 }
 
                 if (roleText != null)
-                    roleText.text = character.role.ToString().ToUpperInvariant();
+                    roleText.text = DungeonGathering.Localization.LocalizationLookup.Role(character.role).ToUpper();
 
                 if (roleIcon != null)
                 {
@@ -237,44 +255,137 @@ namespace DungeonGathering.Lobby
                     roleIcon.enabled = icon != null;
                 }
 
+                var skill = character.ResolveSkill();
+                string skillDisplayName = skill != null
+                    ? (!string.IsNullOrEmpty(skill.nameKey) ? LocalizationLookup.Get(skill.nameKey) : skill.skillId)
+                    : string.Empty;
+                float skillCd = skill != null ? SkillRegistry.Cooldown(skill) : 0f;
+                float skillMana = skill != null ? SkillRegistry.ManaCost(skill) : 0f;
+
                 if (skillNameText != null)
-                    skillNameText.text = character.activeSkill != null ? (!string.IsNullOrEmpty(character.activeSkill.nameKey) ? DungeonGathering.Localization.LocalizationLookup.Get(character.activeSkill.nameKey) : character.activeSkill.skillId) : string.Empty;
+                {
+                    if (skill == null) skillNameText.text = string.Empty;
+                    else if (skillCd > 0f) skillNameText.text = $"{skillDisplayName} · {skillCd:0.#}s";
+                    else skillNameText.text = skillDisplayName;
+                }
 
                 if (descriptionText != null)
-                    descriptionText.text = !string.IsNullOrEmpty(character.descKey) ? DungeonGathering.Localization.LocalizationLookup.Get(character.descKey) : string.Empty;
+                    descriptionText.text = !string.IsNullOrEmpty(character.descKey) ? LocalizationLookup.Get(character.descKey) : string.Empty;
+
+                RefreshSkillAndPassiveBox(character, skill, skillDisplayName, skillCd, skillMana);
 
                 // Chỉ số — thang của code (Player ~4–8 máu kiểu Soul Knight). Sát thương = vũ khí khởi đầu × hệ số nhân vật.
-                var stats = character.baseStats;
-                float dmg = character.startingWeapon != null ? character.startingWeapon.damage * stats.attackDamage : stats.attackDamage * 13f;
+                var stats = character.ResolveStats();
+                float dmg = character.startingWeapon != null ? character.startingWeapon.Spec.damage * stats.attackDamage : stats.attackDamage * 13f;
                 UpdateBar(hpText, hpFill, stats.maxHp, 10f);
                 UpdateBar(armorText, armorFill, stats.maxArmor, 10f);
                 UpdateBar(manaText, manaFill, stats.maxMana, 250f);
                 UpdateBar(damageText, damageFill, dmg, 40f);
+                if (hpSegments != null) hpSegments.SetValue(Mathf.RoundToInt(stats.maxHp), Mathf.Max(8, Mathf.CeilToInt(stats.maxHp)), 1);
+                if (armorSegments != null) armorSegments.SetValue(Mathf.RoundToInt(stats.maxArmor), Mathf.Max(8, Mathf.CeilToInt(stats.maxArmor)), 1);
+                if (manaSegments != null) manaSegments.SetValue(Mathf.RoundToInt(stats.maxMana), 240, 20);
+                if (damageSegments != null) damageSegments.SetNormalized(Mathf.Clamp01(dmg / 40f), 8);
 
-                if (activeSkillsSummaryText != null)
-                {
-                    int activeCount = character.activeSkill != null ? 1 : 0;
-                    string skillName = character.activeSkill != null ? (!string.IsNullOrEmpty(character.activeSkill.nameKey) ? DungeonGathering.Localization.LocalizationLookup.Get(character.activeSkill.nameKey) : character.activeSkill.skillId) : DungeonGathering.Localization.LocalizationLookup.Get("lobby.no_active", "-");
-                    activeSkillsSummaryText.text = $"{DungeonGathering.Localization.LocalizationLookup.Get("common.active", "Active")} <color=#9FD0FF>{activeCount}/2</color> · {skillName}";
-                }
+                var charInv = isUnlocked ? new InventoryModel(currentCharacterId) : null;
+                RefreshActiveSkillsSummary(charInv);
 
                 if (unlockPriceText != null)
                     unlockPriceText.text = character.unlockPrice.ToString("N0");
-            }
 
-            RefreshLoadoutTiles();
+                RefreshLoadoutTiles(charInv);
+            }
+            else
+            {
+                RefreshLoadoutTiles(isUnlocked ? new InventoryModel(currentCharacterId) : null);
+            }
             // Chưa ra mắt: chỉ xem giới thiệu — ẩn cả nút chơi lẫn nút mở khóa.
             if (playableGroup != null) playableGroup.SetActive(released && isUnlocked);
             if (lockedGroup != null) lockedGroup.SetActive(released && !isUnlocked);
             if (comingSoonGroup != null) comingSoonGroup.SetActive(!released);
         }
 
-        void RefreshLoadoutTiles()
+        void RefreshSkillAndPassiveBox(HeroDefinitionSO character, SkillBaseSO skill, string skillDisplayName, float skillCd, float skillMana)
         {
-            bool isUnlocked = Services.Save == null || Services.Save.Data.IsUnlocked(currentCharacterId);
+            if (skillIconImage != null)
+            {
+                skillIconImage.sprite = skill != null ? skill.icon : null;
+                skillIconImage.enabled = skillIconImage.sprite != null;
+            }
+
+            if (skillTitleText != null)
+            {
+                if (skill == null)
+                {
+                    skillTitleText.text = LocalizationLookup.Get("char.tbd", "");
+                }
+                else
+                {
+                    var title = skillDisplayName;
+                    if (skillCd > 0f) title += $" · {skillCd:0.#}s";
+                    if (skillMana > 0f) title += $" · {skillMana:0.#} MP";
+                    skillTitleText.text = title;
+                }
+            }
+
+            if (skillDescText != null)
+            {
+                string desc = skill != null && !string.IsNullOrEmpty(skill.descKey)
+                    ? LocalizationLookup.Get(skill.descKey)
+                    : string.Empty;
+                skillDescText.text = !string.IsNullOrEmpty(desc) ? desc : LocalizationLookup.Get("char.tbd", "");
+            }
+
+            if (innatePassiveText != null)
+            {
+                var passive = character != null ? character.innatePassive : null;
+                string passiveDesc = passive == null ? string.Empty
+                    : !string.IsNullOrEmpty(passive.descKey) ? LocalizationLookup.Get(passive.descKey)
+                    : passive.description;
+                if (string.IsNullOrEmpty(passiveDesc))
+                {
+                    innatePassiveText.text = string.Empty;
+                }
+                else
+                {
+                    string prefix = LocalizationLookup.Get("char.innate_prefix", "Passive");
+                    innatePassiveText.text = $"{prefix}: {passiveDesc}";
+                }
+            }
+        }
+
+        void RefreshActiveSkillsSummary(InventoryModel charInv)
+        {
+            if (activeSkillsSummaryText == null) return;
+
+            var names = new List<string>(LoadoutRules.MaxActiveItems);
+            if (charInv != null)
+            {
+                TryCollectActiveName(charInv.Weapon1, names);
+                TryCollectActiveName(charInv.Weapon2, names);
+                for (int i = 0; i < LoadoutData.EquipmentSlots; i++)
+                    TryCollectActiveName(charInv.GetEquipment((EquipmentSlotType)i), names);
+            }
+
+            int activeCount = names.Count;
+            string joined = activeCount > 0
+                ? string.Join(" · ", names)
+                : LocalizationLookup.Get("lobby.no_active", "-");
+            activeSkillsSummaryText.text = $"{LocalizationLookup.Get("common.active", "Active")} <color=#9FD0FF>{activeCount}/{LoadoutRules.MaxActiveItems}</color> · {joined}";
+        }
+
+        static void TryCollectActiveName(ItemData item, List<string> target)
+        {
+            if (item == null || !item.HasActive) return;
+            var active = item.ActiveSkill;
+            string name = !string.IsNullOrEmpty(active.nameKey) ? LocalizationLookup.Get(active.nameKey) : active.skillId;
+            if (!string.IsNullOrEmpty(name)) target.Add(name);
+        }
+
+        void RefreshLoadoutTiles(InventoryModel charInv)
+        {
             var catalog = ItemCatalog.Current;
 
-            if (!isUnlocked)
+            if (charInv == null)
             {
                 for (int i = 0; i < equipTiles.Length; i++)
                     Fill(equipTiles[i], null, i < slotSilhouettes.Length ? slotSilhouettes[i] : null, catalog);
@@ -286,8 +397,6 @@ namespace DungeonGathering.Lobby
                 }
                 return;
             }
-
-            var charInv = new CharacterInventory(currentCharacterId);
             for (int i = 0; i < equipTiles.Length; i++)
                 Fill(equipTiles[i], charInv.Loadout.GetEquipment((EquipmentSlotType)i), i < slotSilhouettes.Length ? slotSilhouettes[i] : null, catalog);
 
@@ -302,7 +411,7 @@ namespace DungeonGathering.Lobby
         {
             if (tile == null) return;
             var item = !string.IsNullOrEmpty(id) && catalog != null ? catalog.GetItem(id) : null;
-            if (item != null) tile.SetItem(item.icon, item.rarity);
+            if (item != null) tile.SetItem(item.Icon, item.Rank);
             else tile.SetEmpty(silhouette);
         }
 
@@ -325,20 +434,20 @@ namespace DungeonGathering.Lobby
 
         void OnOpenEquip()
         {
-            if (Services.UI != null && AddressablesUtil.KeyExists(AddressKeys.UiScreenEquipment))
+            if (Services.UI != null)
                 _ = Services.UI.Open<UIScreen>(AddressKeys.UiScreenEquipment, currentCharacterId);
         }
 
         void OnOpenWeapons()
         {
-            if (Services.UI != null && AddressablesUtil.KeyExists(AddressKeys.UiScreenWeapon))
+            if (Services.UI != null)
                 _ = Services.UI.Open<UIScreen>(AddressKeys.UiScreenWeapon, currentCharacterId);
         }
 
         void OnEnterPortal()
         {
             if (Services.Scenes != null && Services.Scenes.IsTransitioning) return;
-            var charInv = new CharacterInventory(currentCharacterId);
+            var charInv = new InventoryModel(currentCharacterId);
             if (!charInv.HasAnyWeapon)
             {
                 Sfx.Play(SfxId.UiError);

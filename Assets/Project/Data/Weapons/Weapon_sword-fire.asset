@@ -17,31 +17,5 @@ MonoBehaviour:
   icon: {fileID: -8976271568068494015, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
   nameKey: sword.fire
   descKey: wp.fire.passive
-  activeSkill: {fileID: 11400000, guid: 4b08ecaa80cb9484786a93fec5a69239, type: 2}
+  activeSkill: {fileID: 0}
   shopPrice: 160
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: -8976271568068494015, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 28
-  fireRate: 2
-  attackRange: 1.6
-  spread: 0
-  knockback: 5
-  critBonus: 0.1
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 2534004437307525629, guid: 3cb8d1534870aee41b721edd7d0e19bf, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 11400000, guid: 66d499692b8c65e4291747288a92e388, type: 2}

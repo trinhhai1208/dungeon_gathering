@@ -1,71 +1,79 @@
+using DungeonGathering.Combat;
+
 namespace DungeonGathering.Play
 {
     /// <summary>
-    /// State của Player (ENTITIES §3.5.1). Cùng khuôn Enter/Tick/Exit với IEnemyState để quản lý thống nhất.
-    /// Hành vi mỗi frame gom vào <see cref="PlayerController.DriveFrame"/>; state chỉ quyết định (đọc input, cho đánh).
-    /// Chuyển state do PlayerController.ResolveState suy ra từ cờ + điều kiện mỗi frame (không desync với PlayerStats/Movement).
+    /// FSM của Player trên khung dùng chung <see cref="StateMachine{TOwner}"/>.
+    /// Luật toàn cục (ưu tiên giảm dần): chết → Dead · tắt input → Spawn · run đã chốt → Sealed · bị khống chế → Stunned ·
+    /// đang lướt → Dash. Mỗi trạng thái tự về Active khi điều kiện của nó hết. Hành vi mỗi frame nằm ở
+    /// <see cref="PlayerController.DriveFrame"/>; trạng thái chỉ quyết định có đọc input / cho đánh hay không.
     /// </summary>
-    public enum PlayerStateId { Spawn, Active, Dash, Stunned, Sealed, Dead }
-
-    public interface IPlayerState
+    public static class PlayerStates
     {
-        PlayerStateId Id { get; }
-        void Enter(PlayerController p);
-        void Tick(PlayerController p);
-        void Exit(PlayerController p);
-    }
+        public static StateMachine<PlayerController> Build(PlayerController p)
+        {
+            StateMachine<PlayerController> fsm = null;
+            fsm = new StateMachine<PlayerController>(p)
+                .Add(new SpawnState())
+                .Add(new ActiveState())
+                .Add(new DashState())
+                .Add(new SealedState())
+                .Add(new StunnedState<PlayerController>(() => fsm, x => x.DriveFrame(readInput: false, allowAttack: false)))
+                .Add(new DeadState<PlayerController>())
+                .AddGlobalRule(x => x.IsDead, ActorStateId.Dead)
+                .AddGlobalRule(x => !x.InputEnabled, ActorStateId.Spawn)
+                .AddGlobalRule(x => !x.CombatEnabled, ActorStateId.Sealed, from: s => s != ActorStateId.Spawn)
+                .AddGlobalRule(x => x.IsCrowdControlled, ActorStateId.Stunned, from: s => s == ActorStateId.Active || s == ActorStateId.Dash)
+                .AddGlobalRule(x => x.Movement.IsDashing, ActorStateId.Dash, from: s => s == ActorStateId.Active);
+            return fsm;
+        }
 
-    /// <summary>Trước khi bật input (hoặc input bị tắt): đứng yên, không đánh.</summary>
-    public sealed class PlayerSpawnState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Spawn;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) => p.DriveFrame(readInput: false, allowAttack: false);
-        public void Exit(PlayerController p) { }
-    }
+        /// <summary>Trước khi bật input (hoặc input bị tắt): đứng yên, không đánh.</summary>
+        sealed class SpawnState : IState<PlayerController>
+        {
+            public ActorStateId Id => ActorStateId.Spawn;
+            public void Enter(PlayerController p) { }
+            public void Tick(PlayerController p)
+            {
+                p.DriveFrame(readInput: false, allowAttack: false);
+                if (p.InputEnabled) p.States.ChangeState(ActorStateId.Active);
+            }
+            public void Exit(PlayerController p) { }
+        }
 
-    /// <summary>Chơi bình thường: di chuyển, ngắm, đánh (kỹ năng/đổi vũ khí/tương tác qua sự kiện input).</summary>
-    public sealed class PlayerActiveState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Active;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) => p.DriveFrame(readInput: true, allowAttack: true);
-        public void Exit(PlayerController p) { }
-    }
+        /// <summary>Chơi bình thường: di chuyển, ngắm, đánh (skill / đổi vũ khí / tương tác qua sự kiện input).</summary>
+        sealed class ActiveState : IState<PlayerController>
+        {
+            public ActorStateId Id => ActorStateId.Active;
+            public void Enter(PlayerController p) { }
+            public void Tick(PlayerController p) => p.DriveFrame(readInput: true, allowAttack: true);
+            public void Exit(PlayerController p) { }
+        }
 
-    /// <summary>Đang lướt: khóa hướng + bất tử do PlayerMovement/PlayerStats lo; vẫn ngắm/đánh như Active.</summary>
-    public sealed class PlayerDashState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Dash;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) => p.DriveFrame(readInput: true, allowAttack: true);
-        public void Exit(PlayerController p) { }
-    }
+        /// <summary>Đang lướt: khóa hướng + bất tử do PlayerMovement / PlayerStats lo; vẫn ngắm / đánh.</summary>
+        sealed class DashState : IState<PlayerController>
+        {
+            public ActorStateId Id => ActorStateId.Dash;
+            public void Enter(PlayerController p) { }
+            public void Tick(PlayerController p)
+            {
+                p.DriveFrame(readInput: true, allowAttack: true);
+                if (!p.Movement.IsDashing) p.States.ChangeState(ActorStateId.Active);
+            }
+            public void Exit(PlayerController p) { }
+        }
 
-    /// <summary>Bị choáng: DriveFrame tự chặn di chuyển + đánh khi StatusEffectController.IsStunned.</summary>
-    public sealed class PlayerStunnedState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Stunned;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) => p.DriveFrame(readInput: true, allowAttack: true);
-        public void Exit(PlayerController p) { }
-    }
-
-    /// <summary>Run đã chốt thắng (combat tắt): đi lại tới Portal, không đánh/kỹ năng.</summary>
-    public sealed class PlayerSealedState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Sealed;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) => p.DriveFrame(readInput: true, allowAttack: false);
-        public void Exit(PlayerController p) { }
-    }
-
-    /// <summary>Chết: không làm gì (teardown do PlayerController.OnDied). Trạng thái cuối tới khi hủy scene.</summary>
-    public sealed class PlayerDeadState : IPlayerState
-    {
-        public PlayerStateId Id => PlayerStateId.Dead;
-        public void Enter(PlayerController p) { }
-        public void Tick(PlayerController p) { }
-        public void Exit(PlayerController p) { }
+        /// <summary>Run đã chốt thắng (combat tắt): đi lại tới Portal, không đánh / skill.</summary>
+        sealed class SealedState : IState<PlayerController>
+        {
+            public ActorStateId Id => ActorStateId.Sealed;
+            public void Enter(PlayerController p) => p.Weapons?.CancelAttack();
+            public void Tick(PlayerController p)
+            {
+                p.DriveFrame(readInput: true, allowAttack: false);
+                if (p.CombatEnabled) p.States.ChangeState(ActorStateId.Active);
+            }
+            public void Exit(PlayerController p) { }
+        }
     }
 }

@@ -16,12 +16,14 @@ MonoBehaviour:
   descKey: wp.ice.passive
   chance: 1
   status:
-    slowPercent: 0.3
-    slowDuration: 1
-    dotDps: 0
-    dotDuration: 0
-    dotId: 
-    dotLoopVfx: {fileID: 0}
-    stunDuration: 0
-    freeze: 0
-  hitVfx: {fileID: 2864097479380128621, guid: e72d4a910f8adc74ca17085f9bf1d04c, type: 3}
+    effects:
+    - effect: {fileID: 11400000, guid: fc8f5cd3289b38d4fbebdbbfef560fc1, type: 2}
+      duration:
+        enabled: 1
+        value: 1
+      magnitude:
+        enabled: 0
+        value: 0.3
+      chance: 1
+      loopVfxOverride: {fileID: 350269998346668782, guid: 06b3e044fb17cd54dad78e11d7497f93, type: 3}
+  hitVfx: {fileID: 0}

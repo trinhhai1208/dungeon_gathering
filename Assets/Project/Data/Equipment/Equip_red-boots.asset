@@ -26,3 +26,5 @@ MonoBehaviour:
     PercentValue: 0.05
   synergyRole: 0
   synergyPassive: {fileID: 0}
+  equipmentSet: {fileID: 0}
+  onHitStatus: []

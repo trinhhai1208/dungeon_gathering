@@ -10,13 +10,13 @@ using UnityEngine.TextCore.LowLevel;
 namespace DungeonGathering.EditorTools
 {
     /// <summary>
-    /// Tạo TMP font asset (Dynamic, raster pixel-perfect) cho EN = Pixelta, VI = dearpix,
+    /// Tạo TMP font asset (Dynamic, raster pixel-perfect) dùng chung dearpix-2-01 cho cả EN và VI,
     /// điền sẵn mọi ký tự có trong DG_Multilanguage.csv và gán vào LocalizationFontConfig.
     /// </summary>
     public static class LocalizationFontBuilder
     {
         const string FontsDir = "Assets/Project/Art/Fonts";
-        const string ConfigPath = "Assets/Project/Localization/Resources/LocalizationFontConfig.asset";
+        const string ConfigPath = "Assets/Project/Core/Data/LocalizationFontConfig.asset";
         static string CsvPath => Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Design", "localization", "DG_Multilanguage.csv"));
 
         const string Ascii = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~·×→–";
@@ -27,11 +27,7 @@ namespace DungeonGathering.EditorTools
             string csv = File.Exists(CsvPath) ? File.ReadAllText(CsvPath, Encoding.UTF8) : string.Empty;
             string chars = new string((Ascii + csv).Where(c => !char.IsControl(c)).Distinct().ToArray());
 
-            var vi = Create("dearpix SDF", "dearpix-2-01.otf", 32, chars);
-            var en = Create("Pixelta SDF", "Pixelta.ttf", 32, chars);
-            // Pixelta chỉ có ký tự ASCII: fallback về dearpix khi gặp ký tự có dấu hoặc đặc biệt.
-            en.fallbackFontAssetTable = new System.Collections.Generic.List<TMP_FontAsset> { vi };
-            EditorUtility.SetDirty(en);
+            var dearpix = Create("dearpix SDF", "dearpix-2-01.otf", 32, chars);
 
             var config = AssetDatabase.LoadAssetAtPath<LocalizationFontConfig>(ConfigPath);
             if (config == null) { Debug.LogError("[Localization] Chạy Import CSV trước để có LocalizationFontConfig."); return; }
@@ -40,14 +36,15 @@ namespace DungeonGathering.EditorTools
             for (int i = 0; i < entries.arraySize; i++)
             {
                 var e = entries.GetArrayElementAtIndex(i);
-                string code = e.FindPropertyRelative("localeCode").stringValue;
-                e.FindPropertyRelative("fontAsset").objectReferenceValue = code == GameLanguage.Vietnamese ? vi : en;
+                e.FindPropertyRelative("fontAsset").objectReferenceValue = dearpix;
+                var scaleProp = e.FindPropertyRelative("sizeScale");
+                if (scaleProp != null) scaleProp.floatValue = 1f;
             }
-            so.FindProperty("fallbackFont").objectReferenceValue = en;
+            so.FindProperty("fallbackFont").objectReferenceValue = dearpix;
             so.ApplyModifiedPropertiesWithoutUndo();
             EditorUtility.SetDirty(config);
             AssetDatabase.SaveAssets();
-            Debug.Log($"[Localization] Font asset: {AssetDatabase.GetAssetPath(en)}, {AssetDatabase.GetAssetPath(vi)}");
+            Debug.Log($"[Localization] Font asset (EN & VI): {AssetDatabase.GetAssetPath(dearpix)}");
         }
 
         static TMP_FontAsset Create(string assetName, string fontFileName, int samplingSize, string chars)

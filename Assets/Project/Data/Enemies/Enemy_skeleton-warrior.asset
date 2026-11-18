@@ -14,20 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: skeleton-warrior
   nameKey: enemy.skeleton_warrior
-  maxHp: 60
-  moveSpeed: 2.2
+  animator: {fileID: 9100000, guid: 69344715ec1cd5c4eb8042ac40595755, type: 2}
+  sprite: {fileID: 7659173831624497606, guid: 0b2a26ba7d4b6184bbfc6517a0317982, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 763339264080500313, guid: 19bd0b6293567ad46ba6dc7742cafd91, type: 3}
+  hitVfx: {fileID: 144331511795078685, guid: d71a5d35ad22faf4da98ea8a89fb5fc4, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 0
-  knockbackResist: 0.2
   preferredDistance: 0.6
+  retreatDistance: 0
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 60
+    - stat: 5
+      value: 2.2
+    - stat: 10
+      value: 0.2
+  tier: 0
   spawnCost: 2
   spawnDuration: 0.4
   deathDuration: 0.8
-  attacks:
-  - {fileID: 11400000, guid: c0d71de6bcd41c047a1bc890fa9767b8, type: 2}
-  - {fileID: 11400000, guid: e44b6d6dd97dd4c4b923536fada99fd1, type: 2}
+  skills: 2000000023000000
+  phases: []
+  customLoot: 0
   lootTable:
     minGold: 2
     maxGold: 4

@@ -15,8 +15,8 @@ MonoBehaviour:
   m_GroupName: Enemies_Dungeon
   m_GUID: 72410e5c825dc204292225093679b3af
   m_SerializeEntries:
-  - m_GUID: 44fd4bbc36af0f5418d347b2befc3d00
-    m_Address: enemy/zombie
+  - m_GUID: 2a1b1dabe82b0144886774bfe2207497
+    m_Address: boss/inferno-king
     m_ReadOnly: 0
     m_SerializedLabels:
     - enemies-dungeon
@@ -27,14 +27,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - enemies-dungeon
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 579a651852a011a4e94a8a600cbeaead
-    m_Address: enemy/skull
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - enemies-dungeon
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7c3ae17edae397c4b83a31ad46960363
-    m_Address: enemy/skeleton-warrior
+  - m_GUID: 7254612b59aaadb4584d1084716de489
+    m_Address: boss/crimson-warlord
     m_ReadOnly: 0
     m_SerializedLabels:
     - enemies-dungeon
@@ -45,14 +39,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - enemies-dungeon
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c01340b25f8ccd748955ab29fe91665b
-    m_Address: enemy/skeleton-spear
+  - m_GUID: c99c859a2d2bb364595cc1cc061a8a1c
+    m_Address: boss/frost-lich-king
     m_ReadOnly: 0
     m_SerializedLabels:
     - enemies-dungeon
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c62bc986e02c2f949bd74a471501c84e
-    m_Address: enemy/vampire
+  - m_GUID: d6d293e9aa12e6448b8fc4bd22de2529
+    m_Address: boss/dread-executioner
     m_ReadOnly: 0
     m_SerializedLabels:
     - enemies-dungeon

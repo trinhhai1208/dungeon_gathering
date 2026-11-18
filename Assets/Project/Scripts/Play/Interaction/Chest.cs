@@ -40,7 +40,7 @@ namespace DungeonGathering.Play
             Sfx.PlayOverride(openSfx, SfxId.ChestOpen);
             var loot = director.Loot;
             Vector2 at = (Vector2)transform.position + Vector2.down * 0.6f;
-            if (kind == ChestKind.Item) loot?.DropItem(at);
+            if (kind == ChestKind.Item) loot?.DropChestItem(at);
             loot?.DropGold(goldAmount, at);
         }
     }

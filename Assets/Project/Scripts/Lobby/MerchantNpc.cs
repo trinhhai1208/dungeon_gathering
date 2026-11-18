@@ -10,7 +10,6 @@ namespace DungeonGathering.Lobby
     {
         public async void OnPointerClick(PointerEventData eventData)
         {
-            if (!AddressablesUtil.KeyExists(AddressKeys.UiScreenShop)) return;
             await Services.UI.Open<UIScreen>(AddressKeys.UiScreenShop, Catalog.ShopContext.Lobby);
         }
     }

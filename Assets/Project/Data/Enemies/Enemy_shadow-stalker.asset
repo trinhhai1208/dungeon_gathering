@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_shadow-stalker
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: shadow-stalker
+  nameKey: enemy.shadow_stalker
+  animator: {fileID: 9100000, guid: 10e0c4abf51d56a439333e039137e066, type: 2}
+  sprite: {fileID: -2674845639120381091, guid: 15c2051f1ba3f1f4f8cbcff6932ded9d, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 2592133337683863167, guid: 66db3a38d4148ca408eb025518af3652, type: 3}
+  hitVfx: {fileID: 8575075149887637758, guid: 1e94d4a4e2939c046ba1077dbc1b340a, type: 3}
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  preferredDistance: 0.6
+  retreatDistance: 0
+  aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 55
+    - stat: 5
+      value: 2.8
+    - stat: 10
+      value: 0.1
+  tier: 0
+  spawnCost: 2
+  spawnDuration: 0.4
+  deathDuration: 0.8
+  skills: 21000000
+  phases: []
+  customLoot: 0
+  lootTable:
+    minGold: 2
+    maxGold: 4
+    manaOrbChance: 0.35
+    manaOrbs: 1
+    healthPotionChance: 0.03
+    itemChance: 0.03
+    weapons: 1
+    equipment: 1

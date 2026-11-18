@@ -14,26 +14,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: elite-warrior
   nameKey: enemy.elite_warrior
-  maxHp: 280
-  moveSpeed: 2.4
+  animator: {fileID: 9100000, guid: 4fa7ae093b844f443bc9b8f64028eeab, type: 2}
+  sprite: {fileID: 7796232010018777578, guid: 93d8ac7e7da582944a353f4802305b95, type: 3}
+  visualScale: 2
+  attackVfx: {fileID: 662376992448582572, guid: b873e19a70d892648bcc6e02e91c7ad4, type: 3}
+  hitVfx: {fileID: 3769289523645314945, guid: aef685e45a2d447459d7b472c87496c4, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 0
-  knockbackResist: 0.6
-  preferredDistance: 0.6
+  preferredDistance: 0.8
+  retreatDistance: 0
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 500
+    - stat: 5
+      value: 2.4
+    - stat: 10
+      value: 0.9
+  tier: 2
   spawnCost: 6
-  spawnDuration: 0.8
-  deathDuration: 1.2
-  attacks:
-  - {fileID: 11400000, guid: c0d71de6bcd41c047a1bc890fa9767b8, type: 2}
-  - {fileID: 11400000, guid: e44b6d6dd97dd4c4b923536fada99fd1, type: 2}
+  spawnDuration: 1
+  deathDuration: 2
+  skills: 2000000023000000
+  phases:
+  - hpThreshold: 0.65
+    speedMultiplier: 1.15
+    skills: 1a000000180000001c000000
+    transitionVfx: {fileID: 7642053781102449280, guid: 96c8814d0218c894bb720e6fe18bbb21, type: 3}
+    transitionInvulnerable: 0.8
+  - hpThreshold: 0.3
+    speedMultiplier: 1.35
+    skills: 1b000000180000001c000000
+    transitionVfx: {fileID: 223004030011534324, guid: 955cc2ed8b95f964e8bb4a62b4d7a34f, type: 3}
+    transitionInvulnerable: 1
+  customLoot: 0
   lootTable:
-    minGold: 15
-    maxGold: 25
+    minGold: 40
+    maxGold: 60
     manaOrbChance: 1
     manaOrbs: 1
-    healthPotionChance: 0.5
+    healthPotionChance: 1
     itemChance: 1
     weapons: 1
     equipment: 1

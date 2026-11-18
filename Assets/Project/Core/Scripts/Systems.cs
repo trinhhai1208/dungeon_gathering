@@ -77,7 +77,17 @@ namespace DungeonGathering.Core
 
                 var init = Addressables.InitializeAsync(false);
                 await AddressablesUtil.Wait(init, token);
+                bool initOk = init.IsValid() && init.Status == UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationStatus.Succeeded;
+                if (!initOk) Debug.LogError($"[Boot] Addressables.InitializeAsync lỗi: {(init.IsValid() ? init.OperationException?.Message : "handle không hợp lệ")}");
                 if (init.IsValid()) Addressables.Release(init);
+                if (!initOk)
+                {
+                    // Addressables không hỗ trợ khởi tạo lại trong cùng phiên → THỬ LẠI = tải lại trang (WebGL).
+                    if (loadingOverlay == null) return;
+                    await loadingOverlay.WaitRetry("loading.error");
+                    ReloadPage();
+                    return;
+                }
                 loadingOverlay?.SetProgress(0.15f);
 
                 if (Services.Modules == null && AddressablesUtil.KeyExists(AddressKeys.CoreModuleRegistry))
@@ -87,6 +97,12 @@ namespace DungeonGathering.Core
                 {
                     var fontCfg = await Services.Assets.Global.Load<LocalizationFontConfig>(AddressKeys.CoreFontConfig);
                     LocalizationFontConfig.SetInstance(fontCfg);
+                }
+
+                if (AddressablesUtil.KeyExists<SfxLibrary>(AddressKeys.CoreSfxLibrary))
+                {
+                    var sfxLib = await Services.Assets.Global.Load<SfxLibrary>(AddressKeys.CoreSfxLibrary);
+                    if (sfxLib != null) audioManager?.SetLibrary(sfxLib);
                 }
 
                 await Services.Save.LoadAsync();
@@ -105,9 +121,30 @@ namespace DungeonGathering.Core
 
                 Services.MarkReady();
 
+                // Save chỉ đọc (tab khác giữ khóa / save bản mới hơn): báo cho người chơi biết tiến trình sẽ không được lưu.
+                if (!Services.Save.CanWrite) SaveReadOnlyBanner.Show(uiRoot, Services.Save.Data.FromNewerVersion);
+                EventBus<SaveLockLostEvent>.Subscribe(OnSaveLockLost);
+
                 loadingOverlay?.SetStep("loading.step_ui");
-                await Services.Downloads.Ensure(new[] { AddressKeys.LabelCore, AddressKeys.LabelSharedUi },
-                    new ProgressCallback(p => loadingOverlay?.SetProgress(0.45f + p * 0.4f)));
+                // Mạng chập lúc tải lần đầu → hiện lỗi + THỬ LẠI thay vì treo màn loading.
+                while (true)
+                {
+                    try
+                    {
+                        await Services.Downloads.Ensure(new[] { AddressKeys.LabelCore, AddressKeys.LabelSharedUi },
+                            new ProgressCallback(p => loadingOverlay?.SetProgress(0.45f + p * 0.4f)));
+                        break;
+                    }
+                    catch (OperationCanceledException) { throw; }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"[Boot] Tải core/shared-ui lỗi: {e.Message}");
+                        if (loadingOverlay == null) throw;
+                        await loadingOverlay.WaitRetry("loading.error");
+                        loadingOverlay.Show("loading.step_ui");
+                    }
+                }
+                Services.Downloads.Adopt(new[] { AddressKeys.LabelCore, AddressKeys.LabelSharedUi }, Services.Assets.Global);
                 token.ThrowIfCancellationRequested();
 
                 var started = FindStartedModuleScene();
@@ -131,6 +168,13 @@ namespace DungeonGathering.Core
 
         void ApplySettings() => audioManager?.ApplySettings(Services.Save.Data.settings);
 
+#if UNITY_WEBGL && !UNITY_EDITOR
+        [System.Runtime.InteropServices.DllImport("__Internal")] static extern void DG_ReloadPage();
+        static void ReloadPage() => DG_ReloadPage();
+#else
+        static void ReloadPage() => Debug.LogError("[Boot] Không khởi tạo được Addressables — hãy khởi động lại game.");
+#endif
+
         /// <summary>UI Settings gọi sau khi đổi giá trị (lưu có gộp).</summary>
         public static void SettingsChanged()
         {
@@ -150,7 +194,11 @@ namespace DungeonGathering.Core
 
         void OnApplicationFocus(bool focus)
         {
-            if (!focus && Services.Game != null && Services.Game.State == GameState.Playing) VirtualInput.PressPause();
+            // Mất focus thì không nhận được pointer-up → xóa trạng thái giữ (Move/AttackHeld) để khỏi kẹt.
+            if (!focus) VirtualInput.ResetState();
+#if !UNITY_EDITOR
+            if (!focus && Services.Ready && Services.Game != null && Services.Game.State == GameState.Playing) VirtualInput.PressPause();
+#endif
         }
 
         void OnApplicationPause(bool paused)
@@ -176,10 +224,24 @@ namespace DungeonGathering.Core
             Services.Save?.FlushNow();
         }
 
+        /// <summary>
+        /// Rời trang trên WebGL (pagehide): chỉ chốt run đã thắng tầng hiện tại. Không Abandon run đang đánh dở,
+        /// vì trang có thể được khôi phục (bfcache) và run vẫn tiếp tục.
+        /// </summary>
+        public static void SettleWonRunOnPageHide()
+        {
+            var s = Services.Session;
+            if (s != null && s.runActive && !s.settled && s.lastRunVictory) RunFlow.Settle();
+        }
+
+        void OnSaveLockLost(SaveLockLostEvent e) => SaveReadOnlyBanner.Show(uiRoot, e.NewerSaveVersion);
+
         void OnDestroy()
         {
             if (instance != this) return;
+            EventBus<SaveLockLostEvent>.Unsubscribe(OnSaveLockLost);
             Services.CancelApp();
+            (Services.Downloads as DownloadService)?.ReleaseAll();
             instance = null;
         }
 

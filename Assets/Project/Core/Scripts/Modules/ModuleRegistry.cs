@@ -7,6 +7,7 @@ namespace DungeonGathering.Core
     [CreateAssetMenu(menuName = "Dungeon Gathering/Module Registry", fileName = "ModuleRegistry")]
     public class ModuleRegistry : ScriptableObject
     {
+        [Tooltip("Danh sách module; SceneService tra theo sceneAddress, không thấy thì tạo định nghĩa mặc định (fallback).")]
         [SerializeField] List<ModuleDefinition> modules = new();
 
         public IReadOnlyList<ModuleDefinition> All => modules;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
   skillId: frost-field
   nameKey: skill.frost_field
-  descKey: wp.ice.active
+  descKey: skill.frost_field.desc
   icon: {fileID: 21300000, guid: b1ee5191518656f4fa92e2e144a47eb1, type: 3}
   cooldown: 16
   duration: 0
@@ -24,16 +24,19 @@ MonoBehaviour:
   radius: 3.5
   knockback: 0
   centerOnNearestEnemy: 0
+  followPlayer: 1
   targetRange: 8
   pulses: 1
   pulseInterval: 0.5
   status:
-    slowPercent: 0
-    slowDuration: 0
-    dotDps: 0
-    dotDuration: 0
-    dotId: 
-    dotLoopVfx: {fileID: 0}
-    stunDuration: 2
-    freeze: 1
+    effects:
+    - effect: {fileID: 11400000, guid: b1c65204451b0c4498ecac4200515691, type: 2}
+      duration:
+        enabled: 1
+        value: 2
+      magnitude:
+        enabled: 0
+        value: 1
+      chance: 1
+      loopVfxOverride: {fileID: 0}
   vfx: {fileID: 2563881869665724037, guid: 5b49027ab1ef40546926a3103bf0ee95, type: 3}

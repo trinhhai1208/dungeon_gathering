@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d6d8a46836f7449a9f2e909b742861, type: 3}
+  m_Name: Stats_Hero_Mage
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.StatProfileSO
+  stats:
+    maxHp: 5
+    maxArmor: 4
+    maxMana: 220
+    attackDamage: 1.1
+    attackSpeed: 1
+    moveSpeed: 5.1
+    critChance: 0.05
+    critDamage: 2
+    cooldownReduction: 0.1
+    manaRegen: 3
+    knockbackResist: 0
+  armorRegenDelay: 4
+  armorRegenRate: 1

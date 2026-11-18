@@ -44,7 +44,23 @@ namespace DungeonGathering.Core
             if (inputBlocker == null) return;
             inputBlocker.enabled = blocked;
             inputBlocker.raycastTarget = blocked;
-            if (blocked) inputBlocker.transform.SetAsLastSibling();
+            if (blocked) PlaceBlockerBelowOverlay();
+        }
+
+        /// <summary>
+        /// Blocker phải nằm DƯỚI layer Overlay: LoadingOverlay (nút THỬ LẠI) ở đó và tự chặn raycast khi hiện.
+        /// Đặt trên cùng sẽ nuốt click nút THỬ LẠI → SceneService.WaitRetry chờ mãi.
+        /// </summary>
+        void PlaceBlockerBelowOverlay()
+        {
+            var t = inputBlocker.transform;
+            if (layerOverlay != null && layerOverlay.parent == t.parent)
+            {
+                int overlayIndex = layerOverlay.GetSiblingIndex();
+                int target = t.GetSiblingIndex() < overlayIndex ? overlayIndex - 1 : overlayIndex;
+                t.SetSiblingIndex(target);
+            }
+            else t.SetAsLastSibling();
         }
 
         void Awake()

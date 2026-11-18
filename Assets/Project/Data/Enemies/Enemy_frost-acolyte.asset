@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_frost-acolyte
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: frost-acolyte
+  nameKey: enemy.frost_acolyte
+  animator: {fileID: 9100000, guid: 6052c112f997a9b4ea9c147559bda093, type: 2}
+  sprite: {fileID: -5536022839998156582, guid: 81c3cf599577b9d4884e1dc010dce45e, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 9064071070495278911, guid: 4f099d8cbaf95114c9bc5435f63c1d37, type: 3}
+  hitVfx: {fileID: 2864097479380128621, guid: e72d4a910f8adc74ca17085f9bf1d04c, type: 3}
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  preferredDistance: 4.2
+  retreatDistance: 0
+  aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 50
+    - stat: 10
+      value: 0.1
+  tier: 0
+  spawnCost: 2
+  spawnDuration: 0.4
+  deathDuration: 0.8
+  skills: 16000000
+  phases: []
+  customLoot: 0
+  lootTable:
+    minGold: 2
+    maxGold: 4
+    manaOrbChance: 0.4
+    manaOrbs: 1
+    healthPotionChance: 0.03
+    itemChance: 0.03
+    weapons: 1
+    equipment: 1

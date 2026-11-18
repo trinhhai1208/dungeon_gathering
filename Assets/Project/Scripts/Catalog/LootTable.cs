@@ -14,7 +14,9 @@ namespace DungeonGathering.Catalog
         [Range(0, 1)] public float healthPotionChance = 0.02f;
         [Tooltip("Xác suất rơi vũ khí/trang bị (rarity theo tầng)")]
         [Range(0, 1)] public float itemChance;
+        [Tooltip("Cho phép vật phẩm rơi là vũ khí.")]
         public bool weapons = true;
+        [Tooltip("Cho phép vật phẩm rơi là trang bị.")]
         public bool equipment = true;
 
         public int RollGold(System.Random rng) => maxGold <= minGold ? minGold : rng.Next(minGold, maxGold + 1);

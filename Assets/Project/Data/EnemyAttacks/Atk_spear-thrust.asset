@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1701172567a9be14b850c374705cefcb, type: 3}
   m_Name: Atk_spear-thrust
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.MeleeAttackSO
-  range: 1.4
+  skillId: atk-spear-thrust
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 1.6
+  range: 1.4
   windupTime: 0.45
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
+  status:
+    effects: []
   damage: 1
   hitRadius: 0.7
   knockback: 4

@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: Skill_holy-light-sword
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.ShieldHealSkill
   skillId: holy-light-sword
-  nameKey: skill.holy_light
+  nameKey: skill.sacred_blessing
   descKey: wp.holy.active
-  icon: {fileID: 21300000, guid: 03d22b0a5eb118a489c913e472ff8b74, type: 3}
+  icon: {fileID: 21300000, guid: 95dcc5aad60c75f4982d93f8fdc3d24a, type: 3}
   cooldown: 25
   duration: 0
   manaCost: 0
   activateSfx: 0
   heal: 2
   armor: 0
-  mana: 0
+  mana: 10
   invulnerableDuration: 0
-  vfx: {fileID: 2890952299872522546, guid: cbc048527ebba1048a863bd038fff34d, type: 3}
+  moveSpeedBonus: 0
+  moveSpeedDuration: 3
+  vfx: {fileID: 1489069775869184172, guid: 5e2267364c2903047a11f2fd541fc0f5, type: 3}

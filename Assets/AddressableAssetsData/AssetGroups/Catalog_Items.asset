@@ -15,13 +15,11 @@ MonoBehaviour:
   m_GroupName: Catalog_Items
   m_GUID: 83dd4a869fdf0534686898a21bbe20a4
   m_SerializeEntries:
-  - m_GUID: 0e5a951e500fa844ea633b57717ac72f
-    m_Address: data/char/frost-wraith
+  - m_GUID: 083b3b551d6fd574bbac3a47c14cd701
+    m_Address: data/item/archmage-robe
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
-    - character
-    - lobby
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1187764b96f2ed942853484d01aaff85
     m_Address: data/item/ice-mask
@@ -35,8 +33,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - catalog
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 25f34ae5d82a9104eb3b2f8af5b93fd5
+    m_Address: data/item/arcane-pendant
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 31fd8a79c1ed7ea48acc6d9abe30e6b6
     m_Address: data/item/mage-hat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39b884cbbea83764db4b189ee24ff22a
+    m_Address: data/item/dagger-twin
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
@@ -53,13 +63,11 @@ MonoBehaviour:
     m_SerializedLabels:
     - catalog
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 5c8197404d95fff4a90f3816e119be21
-    m_Address: data/char/rogue
+  - m_GUID: 5c39f0f65dc818f4dab504af9737558d
+    m_Address: data/item/dragon-crown
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
-    - character
-    - lobby
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5f900e34e0de9ae43a971e3c69d17060
     m_Address: data/item/sword-void
@@ -69,6 +77,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 61735e35791fc3a4e96507fb9f6fc61e
     m_Address: data/item/gun-shotgun
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 645a2439aa92d474481ef614ac6ba6d5
+    m_Address: data/item/bow-wood
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
@@ -87,6 +101,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 73a2eec4cc6b0f147ac380678c18ec3c
     m_Address: data/item/sword-purple
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 759c91bb1bfc12741a122464795a58ae
+    m_Address: data/item/blood-necklace
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
@@ -143,8 +163,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - catalog
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f026a42aadc31840a74ea474ad80bb7
+    m_Address: data/char/lancer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a18851cdd9631854ca735fd560d8927d
+    m_Address: data/item/spear-iron
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a64facd920cd5b34ca8a2fe5aeb8cffe
     m_Address: data/item/red-boots
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a6ab491f3b59e5049b6a3c8c3325fd50
+    m_Address: data/char/frost-knight
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog
@@ -157,6 +195,12 @@ MonoBehaviour:
     - character
     - lobby
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b76032b1d2a3ab64d99ddc58a3260100
+    m_Address: data/item/iron-amulet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c522d07394c570d469287171a5484dcc
     m_Address: data/char/berserker
     m_ReadOnly: 0
@@ -164,6 +208,12 @@ MonoBehaviour:
     - catalog
     - character
     - lobby
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5dfe00e37f3aaf459c255167fb4c9f5
+    m_Address: data/item/staff-apprentice
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c92c1cc9ce7c0ee43a916c29d8b55ed0
     m_Address: data/item/sword-thunder
@@ -195,14 +245,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - catalog
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d1c40bbbdce9c3543ace142d6dde2b39
-    m_Address: data/char/lancer
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - catalog
-    - character
-    - lobby
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d22862b00f9b4b8409a906f584b96f64
     m_Address: data/char/knight
     m_ReadOnly: 0
@@ -231,14 +273,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - catalog
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e6022c574c6bf614c8e4745b8aa8cb33
-    m_Address: data/char/hunter
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - catalog
-    - character
-    - lobby
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e796037448ecc4449a9448aa3e0b5fc3
     m_Address: data/char/wizard
     m_ReadOnly: 0
@@ -255,6 +289,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f02c7f4e6d9aa0047b97f56cca514ba3
     m_Address: data/item/wind-necklace
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - catalog
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f23e4c5882b3fef42a8b46a16023a67e
+    m_Address: data/item/phantom-cloak
     m_ReadOnly: 0
     m_SerializedLabels:
     - catalog

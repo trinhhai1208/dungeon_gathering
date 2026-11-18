@@ -64,11 +64,14 @@ namespace DungeonGathering.Core
         public RunStats runStats = new();
         public int runCoins;
         public readonly List<string> runBag = new();
+        public readonly List<string> activeBuffIds = new();
         public int kills;
         public float runTime;
         public bool runActive;
         /// <summary>Kết quả run đã chốt (LevelDirector) — Results đọc.</summary>
         public bool lastRunVictory;
+        /// <summary>Key tên boss của tầng hiện tại (BossEncounterDirector ghi khi sinh boss) — màn Victory hiển thị.</summary>
+        public string currentBossNameKey;
         /// <summary>Đã quy đổi phần thưởng (R11). Reset khi bắt đầu run mới.</summary>
         public bool settled;
 
@@ -77,10 +80,12 @@ namespace DungeonGathering.Core
             characterId = character;
             loadout = fromLoadout != null ? fromLoadout.Clone() : new LoadoutData();
             floor = 1;
+            currentBossNameKey = null;
             seed = newSeed;
             runStats = new RunStats();
             runCoins = 0;
             runBag.Clear();
+            activeBuffIds.Clear();
             kills = 0;
             runTime = 0f;
             runActive = true;
@@ -92,8 +97,10 @@ namespace DungeonGathering.Core
         public void AdvanceFloor()
         {
             floor++;
+            currentBossNameKey = null;
             seed = unchecked(seed * 486187739 + 1013904223);
             runActive = true;
+            lastRunVictory = false;   // kết quả tầng trước không được rò sang tầng mới
         }
 
         public void AddRunCoins(int amount)

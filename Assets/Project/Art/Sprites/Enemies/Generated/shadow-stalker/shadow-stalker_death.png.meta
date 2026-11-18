@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: bd63a3ae9beb543469d83605d9ca60a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5791979434465147342
+    second: shadow-stalker_death_0
+  - first:
+      213: -4949807284917561154
+    second: shadow-stalker_death_1
+  - first:
+      213: 1097965945525607212
+    second: shadow-stalker_death_2
+  - first:
+      213: -8060089578058615510
+    second: shadow-stalker_death_3
+  - first:
+      213: -3834999261258036719
+    second: shadow-stalker_death_4
+  - first:
+      213: 7110494318324274315
+    second: shadow-stalker_death_5
+  - first:
+      213: -227931793802018047
+    second: shadow-stalker_death_6
+  - first:
+      213: -3964434066198411022
+    second: shadow-stalker_death_7
+  - first:
+      213: -6520192628691969661
+    second: shadow-stalker_death_8
+  - first:
+      213: 4293769594707595799
+    second: shadow-stalker_death_9
+  - first:
+      213: 1243683942058719312
+    second: shadow-stalker_death_10
+  - first:
+      213: 4521870567468057422
+    second: shadow-stalker_death_11
+  - first:
+      213: 896011252877438915
+    second: shadow-stalker_death_12
+  - first:
+      213: 3675552904153276640
+    second: shadow-stalker_death_13
+  - first:
+      213: -7757520606332076501
+    second: shadow-stalker_death_14
+  - first:
+      213: -7308175568816681907
+    second: shadow-stalker_death_15
+  - first:
+      213: -4725619230974541080
+    second: shadow-stalker_death_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shadow-stalker_death_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236465e3461ce9fa0800000000000000
+      internalID: -5791979434465147342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb819d3ef70ce4bb0800000000000000
+      internalID: -4949807284917561154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b978ec532cc3f00800000000000000
+      internalID: 1097965945525607212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a25fcf1ab3fc42090800000000000000
+      internalID: -8060089578058615510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a44d69d7857cac0800000000000000
+      internalID: -3834999261258036719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84d625d8ec8da260800000000000000
+      internalID: 7110494318324274315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103c96dbd3936dcf0800000000000000
+      internalID: -227931793802018047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f849c4a8308bf8c0800000000000000
+      internalID: -3964434066198411022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 389d1b3895f9385a0800000000000000
+      internalID: -6520192628691969661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7125bef62b8869b30800000000000000
+      internalID: 4293769594707595799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 058744bb4f3724110800000000000000
+      internalID: 1243683942058719312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e434a3eb259e0ce30800000000000000
+      internalID: 4521870567468057422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cf238abc754f6c00800000000000000
+      internalID: 896011252877438915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_13
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 2
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e0263574ef220330800000000000000
+      internalID: 3675552904153276640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ebdc11c10c75490800000000000000
+      internalID: -7757520606332076501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c4e706a05249a90800000000000000
+      internalID: -7308175568816681907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow-stalker_death_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 2
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2020ac85a3b6eb0800000000000000
+      internalID: -4725619230974541080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      shadow-stalker_death_0: -5791979434465147342
+      shadow-stalker_death_1: -4949807284917561154
+      shadow-stalker_death_10: 1243683942058719312
+      shadow-stalker_death_11: 4521870567468057422
+      shadow-stalker_death_12: 896011252877438915
+      shadow-stalker_death_13: 3675552904153276640
+      shadow-stalker_death_14: -7757520606332076501
+      shadow-stalker_death_15: -7308175568816681907
+      shadow-stalker_death_16: -4725619230974541080
+      shadow-stalker_death_2: 1097965945525607212
+      shadow-stalker_death_3: -8060089578058615510
+      shadow-stalker_death_4: -3834999261258036719
+      shadow-stalker_death_5: 7110494318324274315
+      shadow-stalker_death_6: -227931793802018047
+      shadow-stalker_death_7: -3964434066198411022
+      shadow-stalker_death_8: -6520192628691969661
+      shadow-stalker_death_9: 4293769594707595799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

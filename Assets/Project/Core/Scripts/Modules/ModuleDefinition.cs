@@ -14,6 +14,7 @@ namespace DungeonGathering.Core
         public string[] screenAddresses = { };  // tài liệu hóa
         public bool showBackdrop;               // menu = true, lobby/play = false (UI_SYSTEM §5.1)
         public string bgmAddress;               // nhạc nền module (tùy chọn)
+        [Tooltip("Trạng thái game (GameState) được đặt khi SceneService chuyển vào module này.")]
         public GameState gameState = GameState.Menu;
     }
 

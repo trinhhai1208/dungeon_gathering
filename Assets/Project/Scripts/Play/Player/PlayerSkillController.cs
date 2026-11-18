@@ -29,9 +29,9 @@ namespace DungeonGathering.Play
             if (loadoutItems != null)
                 foreach (var it in loadoutItems)
                 {
-                    if (it == null || it.activeSkill == null) continue;
+                    if (it == null || it.ActiveSkill == null) continue;
                     if (slot >= SlotCount) break; // loadout đã được Sanitize, đây chỉ là chốt an toàn
-                    skills[slot] = it.activeSkill;
+                    skills[slot] = it.ActiveSkill;
                     sources[slot] = it;
                     slot++;
                 }
@@ -40,7 +40,14 @@ namespace DungeonGathering.Play
         public ActiveSkillSO GetSkill(int slot) => slot is >= 0 and < SlotCount ? skills[slot] : null;
         public ItemData GetSource(int slot) => slot is >= 0 and < SlotCount ? sources[slot] : null;
         public float GetRemaining(int slot) => slot is >= 0 and < SlotCount ? Mathf.Max(0f, readyAt[slot] - Time.time) : 0f;
-        public float GetCooldown(int slot) => GetSkill(slot) != null ? GetSkill(slot).cooldown : 0f;
+        public float GetCooldown(int slot) => EffectiveCooldown(GetSkill(slot));
+
+        float EffectiveCooldown(ActiveSkillSO s)
+        {
+            if (s == null) return 0f;
+            float cdr = ctx != null ? Mathf.Clamp(ctx.GetStat(StatType.CooldownReduction), 0f, 0.5f) : 0f;
+            return SkillRegistry.Cooldown(s) * (1f - cdr);
+        }
 
         public bool TryUse(int slot)
         {
@@ -48,11 +55,18 @@ namespace DungeonGathering.Play
             if (s == null || ctx == null || ctx.IsDead) return false;
             if (Time.time < readyAt[slot]) return false;
             if (!s.CanActivate(ctx)) return false;
-            if (!ctx.TrySpendMana(s.manaCost)) return false;
-            readyAt[slot] = Time.time + s.cooldown;
+            if (!ctx.TrySpendMana(SkillRegistry.ManaCost(s))) return false;
+            float cd = EffectiveCooldown(s);
+            readyAt[slot] = Time.time + cd;
             s.Activate(ctx);
             Sfx.Play(s.ActivateSfx);
-            EventBus<ActiveSkillUsedEvent>.Raise(new ActiveSkillUsedEvent { SlotIndex = slot, Cooldown = s.cooldown });
+            var entry = SkillRegistry.Entry(s);   // VFX / âm thanh kích hoạt khai báo ở SkillLibrary
+            if (entry != null)
+            {
+                if (entry.castVfx != null) DungeonGathering.Combat.CombatFx.Play(entry.castVfx, ctx.Transform.position, Quaternion.identity);
+                if (entry.castSfx != null) Sfx.PlayOverride(entry.castSfx, SfxId.None);
+            }
+            EventBus<ActiveSkillUsedEvent>.Raise(new ActiveSkillUsedEvent { SlotIndex = slot, Cooldown = cd });
             return true;
         }
     }

@@ -19,29 +19,3 @@ MonoBehaviour:
   descKey: wp.shotgun.passive
   activeSkill: {fileID: 0}
   shopPrice: 110
-  weaponType: 1
-  fireMode: 0
-  weaponSprite: {fileID: 8533287300827556935, guid: 4a945cadb52ff054abe7c4756ab7d7bc, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 8
-  fireRate: 1.6
-  attackRange: 9
-  spread: 24
-  knockback: 2.5
-  critBonus: 0.08
-  manaCost: 4
-  projectileSpeed: 13
-  projectileCount: 5
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 0}
-  projectilePrefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 7894807342021122902, guid: ede97fda9a1cbba49af704cb56d0b42f, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 0}

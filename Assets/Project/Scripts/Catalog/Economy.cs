@@ -19,8 +19,8 @@ namespace DungeonGathering.Catalog
             if (item == null || save == null) return PurchaseResult.Invalid;
             var data = save.Data;
             if (data.Owns(item.id)) return PurchaseResult.AlreadyOwned;
-            if (data.coins < item.shopPrice) return PurchaseResult.NotEnoughCoins;
-            data.coins -= item.shopPrice;
+            if (data.coins < item.Price) return PurchaseResult.NotEnoughCoins;
+            data.coins -= item.Price;
             if (item.IsWeapon) data.ownedWeapons.Add(item.id); else data.ownedEquipment.Add(item.id);
             data.Discover(item.id);
             save.RequestSave(); // giao dịch quan trọng: ghi ngay
@@ -39,7 +39,7 @@ namespace DungeonGathering.Catalog
         }
 
         /// <summary>Mở khóa nhân vật bằng coin vĩnh viễn.</summary>
-        public static PurchaseResult UnlockCharacter(CharacterData character)
+        public static PurchaseResult UnlockCharacter(HeroDefinitionSO character)
         {
             var save = Services.Save;
             if (character == null || save == null || !character.released) return PurchaseResult.Invalid; // chưa ra mắt
@@ -53,6 +53,9 @@ namespace DungeonGathering.Catalog
                 if (!data.ownedWeapons.Contains(character.startingWeapon.id))
                     data.ownedWeapons.Add(character.startingWeapon.id);
                 data.Discover(character.startingWeapon.id);
+                var progress = data.GetCharacter(character.characterId);
+                if (string.IsNullOrEmpty(progress.loadout.GetWeapon(0)) && string.IsNullOrEmpty(progress.loadout.GetWeapon(1)))
+                    progress.loadout.SetWeapon(0, character.startingWeapon.id);
             }
             save.RequestSave();
             EventBus<WalletChangedEvent>.Raise(new WalletChangedEvent { Coins = data.coins });
@@ -60,14 +63,27 @@ namespace DungeonGathering.Catalog
         }
 
         /// <summary>Bắt đầu run với nhân vật đã chọn: chép loadout đã lưu vào SessionData.</summary>
-        public static bool StartRun(CharacterData character, ItemCatalog catalog)
+        public static bool StartRun(HeroDefinitionSO character, ItemCatalog catalog)
         {
             var save = Services.Save;
             var session = Services.Session;
             if (character == null || save == null || session == null) return false;
             if (!character.released) return false; // chưa ra mắt
             if (!save.Data.IsUnlocked(character.characterId)) return false;
-            var progress = save.Data.GetCharacter(character.characterId);
+            var progress = save.Data.GetCharacter(character.characterId, create: false);
+            if (progress == null)
+            {
+                // Hero chưa có tiến trình (save mới / save v1 bị reset): tạo tiến trình với vũ khí khởi đầu,
+                // khớp loadout tạm mà InventoryModel đang hiển thị.
+                progress = save.Data.GetCharacter(character.characterId, create: true);
+                if (character.startingWeapon != null)
+                {
+                    var wid = character.startingWeapon.id;
+                    if (!save.Data.ownedWeapons.Contains(wid)) save.Data.ownedWeapons.Add(wid);
+                    save.Data.Discover(wid);
+                    progress.loadout.SetWeapon(0, wid);
+                }
+            }
             var loadout = progress.loadout.Clone();
             if (catalog != null) DungeonGathering.Inventory.LoadoutRules.Sanitize(loadout, catalog, character);
 

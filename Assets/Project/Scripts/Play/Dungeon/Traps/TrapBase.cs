@@ -16,6 +16,7 @@ namespace DungeonGathering.Play
     {
         static readonly List<TrapBase> all = new();
 
+        [SerializeField] protected TrapDataSO data;
         [SerializeField] protected float damage = 1f;
         [SerializeField] protected float knockback = 2f;
         [Tooltip("Để trống (0) → chỉ Player")]
@@ -30,6 +31,13 @@ namespace DungeonGathering.Play
         static readonly Collider2D[] buffer = new Collider2D[16];
         bool disabled;
 
+        public TrapDataSO Data => data;
+        public void SetData(TrapDataSO d)
+        {
+            data = d;
+            ApplyData();
+        }
+
         public TrapPhase Phase { get; private set; } = TrapPhase.Inactive;
         protected int Mask => targetMask.value != 0 ? targetMask.value : CombatLayers.PlayerTargets;
         protected bool Disabled => disabled;
@@ -39,6 +47,14 @@ namespace DungeonGathering.Play
             area = GetComponent<Collider2D>();
             area.isTrigger = true;
             if (visual == null) visual = GetComponentInChildren<SpriteRenderer>();
+            ApplyData();
+        }
+
+        protected virtual void ApplyData()
+        {
+            if (data == null) return;
+            damage = data.damage;
+            knockback = data.knockback;
         }
 
         protected virtual void OnEnable() => all.Add(this);
@@ -79,7 +95,8 @@ namespace DungeonGathering.Play
                 var d = CombatUtil.Resolve(buffer[i]);
                 if (d == null || d.IsDead || !hitThisCycle.Add(d)) continue;
                 Vector2 dir = ((Vector2)d.transform.position - (Vector2)transform.position).normalized;
-                d.TakeDamage(new DamageInfo(damage, knockback, dir, 0f, false, gameObject, Team.Neutral));
+                if (d.TakeDamage(new DamageInfo(damage, knockback, dir, 0f, false, gameObject, Team.Neutral)) && data != null)
+                    data.onHitStatus.ApplyTo(d, gameObject);
             }
         }
 

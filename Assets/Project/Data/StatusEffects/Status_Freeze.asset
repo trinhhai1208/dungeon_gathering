@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c847b68531d38e0438b053775c2c8cb7, type: 3}
+  m_Name: Status_Freeze
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.StunEffectSO
+  id: freeze
+  nameKey: status.freeze
+  icon: {fileID: 0}
+  defaultDuration: 1.5
+  defaultMagnitude: 1
+  stacking: 3
+  maxStacks: 1
+  tags: 9
+  tint: {r: 0.5, g: 0.75, b: 1, a: 1}
+  tintPriority: 10
+  loopVfx: {fileID: 350269998346668782, guid: 06b3e044fb17cd54dad78e11d7497f93, type: 3}
+  freeze: 1

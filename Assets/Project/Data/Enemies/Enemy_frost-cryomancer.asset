@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_frost-cryomancer
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: frost-cryomancer
+  nameKey: enemy.frost_cryomancer
+  animator: {fileID: 9100000, guid: 50accb13d769b9347a8ec33ebc61335f, type: 2}
+  sprite: {fileID: 1877119583721899324, guid: 2c3fd6273c9a2b84ba31cae4ef9b04ed, type: 3}
+  visualScale: 1.4
+  attackVfx: {fileID: 9064071070495278911, guid: 4f099d8cbaf95114c9bc5435f63c1d37, type: 3}
+  hitVfx: {fileID: 2864097479380128621, guid: e72d4a910f8adc74ca17085f9bf1d04c, type: 3}
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  preferredDistance: 4.2
+  retreatDistance: 0
+  aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 155
+    - stat: 5
+      value: 2.6
+    - stat: 10
+      value: 0.4
+  tier: 0
+  spawnCost: 4
+  spawnDuration: 0.6
+  deathDuration: 1
+  skills: 1500000016000000
+  phases: []
+  customLoot: 0
+  lootTable:
+    minGold: 6
+    maxGold: 10
+    manaOrbChance: 0.5
+    manaOrbs: 1
+    healthPotionChance: 0.1
+    itemChance: 0.15
+    weapons: 1
+    equipment: 1

@@ -1,4 +1,5 @@
 using DungeonGathering.Combat;
+using DungeonGathering.Core;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -34,6 +35,23 @@ namespace DungeonGathering.Enemies
         /// <summary>Hệ số tốc độ ngoài (phase Boss).</summary>
         public float SpeedMultiplier { get; set; } = 1f;
         public bool HitWallLastStep => wallContacts > 0;
+
+        static readonly System.Collections.Generic.List<RaycastHit2D> castHits = new(4);
+
+        /// <summary>
+        /// Có tường chắn NGAY phía trước theo hướng <paramref name="dir"/> (trong <paramref name="distance"/>) không.
+        /// Khác <see cref="HitWallLastStep"/>: tường đang chạm bên sườn (song song hướng đi) không tính là chắn.
+        /// </summary>
+        public bool IsBlockedToward(Vector2 dir, float distance)
+        {
+            if (rb == null || dir.sqrMagnitude < 1e-6f) return false;
+            dir.Normalize();
+            var filter = new ContactFilter2D { useLayerMask = true, layerMask = wallMask, useTriggers = false };
+            int n = rb.Cast(dir, filter, castHits, Mathf.Max(0.01f, distance));
+            for (int i = 0; i < n; i++)
+                if (Vector2.Dot(castHits[i].normal, dir) < -0.5f) return true;
+            return false;
+        }
         public Vector2 Velocity => rb.linearVelocity;
 
         bool AgentReady => agent != null && agent.enabled && agent.isOnNavMesh;
@@ -120,6 +138,25 @@ namespace DungeonGathering.Enemies
         /// <summary>Ghi đè vận tốc cho bước vật lý kế tiếp (charge).</summary>
         public void SetVelocity(Vector2 v) => overrideVelocity = v;
 
+        /// <summary>Dịch chuyển tức thời tới vị trí mới và đồng bộ Rigidbody2D + NavMeshAgent.</summary>
+        public void TeleportTo(Vector2 pos)
+        {
+            desired = Vector2.zero;
+            knock = Vector2.zero;
+            overrideVelocity = null;
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.position = pos;
+            }
+            transform.position = new Vector3(pos.x, pos.y, transform.position.z);
+            if (AgentReady)
+            {
+                agent.Warp(EnemyNavigation.ToNav(pos));
+                agent.ResetPath();
+            }
+        }
+
         public void Knockback(Vector2 impulse) => knock += impulse;
 
         /// <summary>Đi về phía target, dừng khi cách stopDistance.</summary>
@@ -142,7 +179,7 @@ namespace DungeonGathering.Enemies
 
             // Đồng bộ vị trí mô phỏng của agent với Rigidbody2D (đã bị knockback/charge/va chạm dịch đi).
             agent.nextPosition = EnemyNavigation.ToNav(pos);
-            agent.speed = enemy.Data.moveSpeed * SpeedMultiplier;
+            agent.speed = enemy.Stats.Get(StatType.MoveSpeed) * SpeedMultiplier;
 
             repathTimer -= Time.deltaTime;
             if (repathTimer <= 0f || (!agent.hasPath && !agent.pathPending))
@@ -177,7 +214,7 @@ namespace DungeonGathering.Enemies
             }
 
             agent.nextPosition = EnemyNavigation.ToNav(pos);
-            agent.speed = enemy.Data.moveSpeed * SpeedMultiplier;
+            agent.speed = enemy.Stats.Get(StatType.MoveSpeed) * SpeedMultiplier;
 
             repathTimer -= Time.deltaTime;
             if (repathTimer <= 0f || (!agent.hasPath && !agent.pathPending))
@@ -206,7 +243,7 @@ namespace DungeonGathering.Enemies
                 return;
             }
             float slow = status != null ? status.SpeedMultiplier : 1f;
-            Vector2 v = overrideVelocity ?? desired * enemy.Data.moveSpeed * SpeedMultiplier * slow;
+            Vector2 v = overrideVelocity ?? desired * enemy.Stats.Get(StatType.MoveSpeed) * SpeedMultiplier * slow;
             overrideVelocity = null;
             rb.linearVelocity = v + knock;
             knock = Vector2.MoveTowards(knock, Vector2.zero, knockbackDecay * Time.fixedDeltaTime);

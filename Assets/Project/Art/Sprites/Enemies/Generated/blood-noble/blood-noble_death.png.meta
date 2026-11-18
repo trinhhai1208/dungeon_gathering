@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: 41f6a6c46472cc542ad8f37702ad4132
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8059560497731537946
+    second: blood-noble_death_0
+  - first:
+      213: 7331406390164739416
+    second: blood-noble_death_1
+  - first:
+      213: 2518506530915279867
+    second: blood-noble_death_2
+  - first:
+      213: -1320747691616438010
+    second: blood-noble_death_3
+  - first:
+      213: -4730692056369911223
+    second: blood-noble_death_4
+  - first:
+      213: -2695775525048479180
+    second: blood-noble_death_5
+  - first:
+      213: -6223837780163426951
+    second: blood-noble_death_6
+  - first:
+      213: 4786601898858331067
+    second: blood-noble_death_7
+  - first:
+      213: 7322462608353032633
+    second: blood-noble_death_8
+  - first:
+      213: -1235204378304394847
+    second: blood-noble_death_9
+  - first:
+      213: 5178531700286756032
+    second: blood-noble_death_10
+  - first:
+      213: 8076556515218241876
+    second: blood-noble_death_11
+  - first:
+      213: 412424682443429130
+    second: blood-noble_death_12
+  - first:
+      213: -8294349838952993806
+    second: blood-noble_death_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: blood-noble_death_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c0f01429f49df60800000000000000
+      internalID: 8059560497731537946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8555cc5b4436eb560800000000000000
+      internalID: 7331406390164739416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3e4b3a85883f220800000000000000
+      internalID: 2518506530915279867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 2
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 609f84bd8f2cbade0800000000000000
+      internalID: -1320747691616438010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 2
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a2f4693a4395eb0800000000000000
+      internalID: -4730692056369911223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 2
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4321b4b517ea69ad0800000000000000
+      internalID: -2695775525048479180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97504b5a38c70a9a0800000000000000
+      internalID: -6223837780163426951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb39a6011d6d6240800000000000000
+      internalID: 4786601898858331067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b976fb32fc9e9560800000000000000
+      internalID: 7322462608353032633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9c82e892cabdee0800000000000000
+      internalID: -1235204378304394847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 2
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c411b5f427ddd740800000000000000
+      internalID: 5178531700286756032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45933f1fb51b51070800000000000000
+      internalID: 8076556515218241876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_12
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a05d4a5401a39b500800000000000000
+      internalID: 412424682443429130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blood-noble_death_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 2
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb636e44cc84ec80800000000000000
+      internalID: -8294349838952993806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      blood-noble_death_0: 8059560497731537946
+      blood-noble_death_1: 7331406390164739416
+      blood-noble_death_10: 5178531700286756032
+      blood-noble_death_11: 8076556515218241876
+      blood-noble_death_12: 412424682443429130
+      blood-noble_death_13: -8294349838952993806
+      blood-noble_death_2: 2518506530915279867
+      blood-noble_death_3: -1320747691616438010
+      blood-noble_death_4: -4730692056369911223
+      blood-noble_death_5: -2695775525048479180
+      blood-noble_death_6: -6223837780163426951
+      blood-noble_death_7: 4786601898858331067
+      blood-noble_death_8: 7322462608353032633
+      blood-noble_death_9: -1235204378304394847
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,17 +8,17 @@ namespace DungeonGathering.Enemies
     [CreateAssetMenu(menuName = "Dungeon Gathering/Enemy Attacks/Shoot", fileName = "Atk_Shoot")]
     public class ShootAttackSO : EnemyAttackSO
     {
-        public GameObject projectilePrefab;
-        public GameObject impactVfx;
-        public float damage = 1f;
-        public float speed = 6f;
-        public float knockback = 2f;
-        public float lifetime = 4f;
+        [Tooltip("Prefab đạn (cần component Projectile); null = đòn không bắn gì.")] public GameObject projectilePrefab;
+        [Tooltip("VFX khi đạn trúng; null = không có.")] public GameObject impactVfx;
+        [Tooltip("Sát thương mỗi viên (HP) × AttackDamage của quái (đã gồm hệ số bậc).")] public float damage = 1f;
+        [Tooltip("Tốc độ bay của đạn (world-unit/giây).")] public float speed = 6f;
+        [Tooltip("Lực đẩy Player khi trúng đạn (0 = không đẩy).")] public float knockback = 2f;
+        [Tooltip("Thời gian sống của đạn (giây); ≤ 0 = dùng lifetime của prefab.")] public float lifetime = 4f;
         [Min(1)] public int count = 1;
         [Tooltip("Tổng góc tỏa của chùm (độ)")] public float spreadAngle = 30f;
-        public bool radial;
+        [Tooltip("Bật: count viên tỏa đều 360 độ (bỏ qua spreadAngle); tắt: chùm quạt hướng về Player.")] public bool radial;
         [Min(1)] public int bursts = 1;
-        public float burstInterval = 0.15f;
+        [Tooltip("Khoảng nghỉ giữa các loạt bắn (giây), chỉ dùng khi bursts > 1.")] public float burstInterval = 0.15f;
         [Tooltip("Xoay thêm mỗi loạt khi radial (tạo xoắn ốc)")] public float radialSpin = 10f;
 
         public override async Awaitable Execute(EnemyAttackContext ctx)
@@ -51,8 +51,8 @@ namespace DungeonGathering.Enemies
                 if (!go.TryGetComponent<Projectile>(out var p)) { Services.Pool.Return(go); continue; }
                 p.Launch(new ProjectileSpec
                 {
-                    Damage = damage, Speed = speed, Knockback = knockback, Lifetime = lifetime,
-                    Team = Team.Enemy, ImpactVfx = impactVfx, Source = ctx.Self.gameObject,
+                    Damage = ctx.Self.ScaleDamage(damage), Speed = speed, Knockback = knockback, Lifetime = lifetime,
+                    Team = Team.Enemy, ImpactVfx = impactVfx, Source = ctx.Self.gameObject, Status = status,
                 }, dir);
             }
         }

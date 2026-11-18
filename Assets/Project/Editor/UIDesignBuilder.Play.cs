@@ -15,23 +15,27 @@ namespace DungeonGathering.EditorTools
             var root = Root<Play.PlayHud>("PlayHud", UILayer.Hud);
             SetBool(root.GetComponent<UIScreen>(), "closeOnBack", false);
 
-            var stats = Frame(root, "Stats", FrDark, 12, A.TL, 10, 10, 260, 104);
-            var aslot = Frame(stats, "AvatarSlot", SqF, 12, A.TL, 12, 22, 60, 60);
-            var avatar = Img(aslot, "Avatar", At("Assets/Project/Art/Sprites/Characters/Knight/Blue Knight idle Sprite-sheet 16x16.png", 8, 8), A.C, 0, -2, 32, 32);
+            var stats = Frame(root, "Stats", FrDark, 12, A.TL, 10, 10, 324, 114);
+            var aslot = Frame(stats, "AvatarSlot", SqF, 12, A.TL, 12, 24, 64, 66);
+            var avatar = Img(aslot, "Avatar", At(KnightIdle, 24, 24), A.C, 0, -2, 48, 48);
             avatar.preserveAspect = true;
-            var rows = new (string icon, string strip, string val)[] { ("icon_hp", "bar_strip_red", "72/90"), ("icon_armor", "bar_strip_grey", "3/9"), ("icon_mana", "bar_strip_blue", "118/150") };
-            var fills = new Image[3]; var texts = new TMP_Text[3];
+            var rows = new (string icon, string cell, int cur, int mx, int step, string val)[] {
+                ("icon_hp", "bar_cell_hp", 6, 7, 1, "6/7"),
+                ("icon_armor", "bar_cell_armor", 3, 6, 1, "3/6"),
+                ("icon_mana", "bar_cell_mana", 100, 120, 20, "100/120") };
+            var segs = new SegmentedBar[3]; var texts = new TMP_Text[3];
             for (int i = 0; i < 3; i++)
             {
-                float y = 14 + i * 26;
-                Icon(stats, "Icon_" + i, G(rows[i].icon), 1, A.TL, 80, y + 4);
-                (fills[i], texts[i]) = Bar(stats, "Bar_" + i, rows[i].strip, A.TL, 100, y, 148, 24, 8, 12, rows[i].val);
+                float y = 14 + i * 30;
+                Icon(stats, "Icon_" + i, G(rows[i].icon), 1.4f, A.TL, 84, y + 3);
+                segs[i] = SegmentedBarTrack(stats, "Bar_" + i, rows[i].cell, A.TL, 108, y, 152, 22, 4, rows[i].cur, rows[i].mx, rows[i].step, 14, 2f);
+                texts[i] = Txt(stats, "Val_" + i, null, rows[i].val, 12, Paper, TextAlignmentOptions.Left, A.TL, 266, y + 3, 54, 16);
             }
-            var coin = Frame(root, "Coin", FrDark, 8, A.TL, 10, 118, 84, 36);
+            var coin = Frame(root, "Coin", FrDark, 8, A.TL, 10, 130, 88, 38);
             Icon(coin, "Icon", Coin, 2, A.L, 8, 0);
-            var coinText = Txt(coin, "Value", null, "86", 16, Paper, TextAlignmentOptions.Left, A.L, 34, 0, 46, 24);
-            var floor = Frame(root, "Floor", FrDark, 8, A.TL, 100, 118, 118, 36);
-            var floorText = Txt(floor, "Label", "hud.floor", null, 16, Paper, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0);
+            var coinText = Txt(coin, "Value", null, "86", 16, Paper, TextAlignmentOptions.Left, A.L, 34, 0, 50, 24);
+            var floor = Frame(root, "Floor", FrDark, 8, A.TL, 106, 130, 122, 38);
+            var floorText = Txt(floor, "Label", "hud.floor", null, 14, Gold, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0);
 
             var minimap = Frame(root, "Minimap", FrDark, 24, A.TR, 82, 10, 176, 130);
             var pause = IconButton(root, "Pause", IcPause, 2, A.TR, 10, 10, 64, 64);
@@ -88,8 +92,8 @@ namespace DungeonGathering.EditorTools
             interact.gameObject.SetActive(false);
 
             var boss = Frame(root, "BossBar", FrDark, 12, A.T, 0, 16, 480, 44);
-            var bossFill = Img(boss, "Fill", G("bar_strip_red"), A.Stretch, 0, 0, 0, 0);
-            MakeFilled(bossFill);
+            var bossSeg = SegmentedBarTrack(boss, "Segments", "bar_cell_hp", A.Stretch, 8, 8, 8, 8, 4, 8, 10, 1, 10, 3f);
+            bossSeg.SetNormalized(0.8f, 10);
             var bossName = Txt(boss, "Name", null, "Vampire Lord", 14, Paper, TextAlignmentOptions.Center, A.Stretch, 0, -4, 0, -4);
             boss.gameObject.SetActive(false);
 
@@ -98,10 +102,10 @@ namespace DungeonGathering.EditorTools
             toastBg.gameObject.SetActive(false);
 
             Wire(root.GetComponent<Play.PlayHud>(),
-                ("avatarImage", avatar), ("hpFill", fills[0]), ("armorFill", fills[1]), ("manaFill", fills[2]),
+                ("avatarImage", avatar), ("hpSegments", segs[0]), ("armorSegments", segs[1]), ("manaSegments", segs[2]),
                 ("hpText", texts[0]), ("armorText", texts[1]), ("manaText", texts[2]), ("coinText", coinText),
                 ("floorLabel", floorText.GetComponent<LocalizedTMPText>()), ("minimapFrame", minimap), ("pauseButton", pause),
-                ("bossBar", boss.gameObject), ("bossFill", bossFill), ("bossName", AddLoc(bossName, null)),
+                ("bossBar", boss.gameObject), ("bossSegments", bossSeg), ("bossName", AddLoc(bossName, null)),
                 ("attackButton", attack), ("swapWeaponButton", swapBtn), ("currentWeaponIcon", wicon),
                 ("skillSlot1", s1), ("skillSlot2", s2),
                 ("characterSkillIcon", cs.icon), ("characterSkillCooldown", cs.cooldown), ("characterSkillCooldownText", cs.cdText),
@@ -198,24 +202,42 @@ namespace DungeonGathering.EditorTools
             var li = Rt(left, "Inner", A.Stretch, 28, 24, 28, 24); // 414 ├ù 552
             Txt(li, "Title", "pause.title", null, 44, Paper, TextAlignmentOptions.Left, A.TL, 0, 0, 414, 48);
             var info = Frame(li, "Info", FrMid, 12, A.TL, 0, 64, 414, 128);
-            Icon(info, "Hero", At("Assets/Project/Art/Sprites/Characters/Knight/Blue Knight idle Sprite-sheet 16x16.png", 8, 8), 4, A.L, 12, 0);
+            var hero = Icon(info, "Hero", At(KnightIdle, 24, 24), 1.8f, A.L, 12, 0);
             var labels = new[] { "pause.class", "stat.time", "stat.kills", "common.coin" };
             var values = new TMP_Text[4];
             for (int i = 0; i < 4; i++)
             {
-                Txt(info, "L" + i, labels[i], null, 14, Ink, TextAlignmentOptions.Left, A.TL, 92, 4 + i * 24, 120, 20);
-                values[i] = Txt(info, "V" + i, null, new[] { "Knight ┬╖ Warrior", "06:42", "23", "86" }[i], 14, Ink, TextAlignmentOptions.Left, A.TL, 214, 4 + i * 24, 170, 20);
+                Txt(info, "L" + i, labels[i], null, 14, Soft, TextAlignmentOptions.Left, A.TL, 98, 6 + i * 24, 114, 20);
+                values[i] = Txt(info, "V" + i, null, new[] { "Knight · Warrior", "06:42", "23", "86" }[i], 14, Paper, TextAlignmentOptions.Left, A.TL, 214, 6 + i * 24, 170, 20);
             }
-            var note = Txt(li, "GearNote", "pause.gear_note", null, 13, Soft, TextAlignmentOptions.TopLeft, A.TL, 0, 208, 414, 40);
+            var note = Txt(li, "GearNote", "pause.gear_note", null, 13, Soft, TextAlignmentOptions.TopLeft, A.TL, 0, 204, 414, 38);
             note.textWrappingMode = TextWrappingModes.Normal;
+
+            var lootBox = Frame(li, "LootBox", FrMid, 12, A.TL, 0, 248, 414, 144);
+            var lootView = Rt(lootBox, "Viewport", A.Stretch, 14, 12, 14, 12);
+            lootView.gameObject.AddComponent<RectMask2D>();
+            var lvImg = lootView.gameObject.AddComponent<Image>(); lvImg.color = Color.clear; lvImg.raycastTarget = true;
+            var loot = Rt(lootView, "Loot", A.TL, 0, 0, 386, 120);
+            var lg = loot.gameObject.AddComponent<GridLayoutGroup>();
+            lg.cellSize = new Vector2(52, 54); lg.spacing = new Vector2(12, 6);
+            lg.padding = new RectOffset(7, 7, 2, 2);
+            lg.constraint = GridLayoutGroup.Constraint.FixedColumnCount; lg.constraintCount = 6;
+            var lfit = loot.gameObject.AddComponent<ContentSizeFitter>(); lfit.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            var lscroll = lootView.gameObject.AddComponent<ScrollRect>();
+            lscroll.content = loot; lscroll.horizontal = false; lscroll.viewport = lootView; lscroll.movementType = ScrollRect.MovementType.Clamped;
+
             var resume = TextButton(li, "Resume", FrLight, 24, "common.continue", 26, Ink, A.TL, 0, 406, 414, 72, null, 0);
-            var quit = TextButton(li, "Quit", FrBtn, 24, "pause.quit", 20, Ink, A.TL, 0, 488, 414, 64, null, 0);
+            var quit = TextButton(li, "Quit", FrBtn, 24, "pause.quit", 20, Paper, A.TL, 0, 488, 414, 64, null, 0);
 
             // --- C├ÇI ─Éß║╢T (SettingsPanel d├╣ng chung)
             BuildSettings(block, A.TL, 510, 0);
 
-            Wire(root.GetComponent<Play.PauseScreen>(), ("resumeButton", resume), ("abandonButton", quit),
-                ("runTimeText", values[1]), ("killsText", values[2]), ("coinsText", values[3]));
+            Wire(root.GetComponent<Play.PauseScreen>(),
+                ("resumeButton", resume), ("abandonButton", quit),
+                ("characterPortrait", hero), ("characterClassText", values[0]),
+                ("runTimeText", values[1]), ("killsText", values[2]), ("coinsText", values[3]),
+                ("lootGrid", loot),
+                ("lootTilePrefab", AssetDatabase.LoadAssetAtPath<GameObject>(UiDir + "ItemTileSmall.prefab").GetComponent<ItemTile>()));
             Save(root, UiDir + "PauseScreen.prefab", AddressKeys.UiScreenPause);
         }
 
@@ -276,13 +298,16 @@ namespace DungeonGathering.EditorTools
                 var img = b.GetComponent<Image>(); img.raycastTarget = true;
                 var button = b.gameObject.AddComponent<Button>(); button.targetGraphic = img;
                 Icon(b, "Flag", Single($"Assets/Project/Art/Sprites/UI/Flags/{flag}.png"), 2, A.L, 12, 0);
-                Txt(b, "Code", null, label, 16, code == "en" ? Ink : Paper, TextAlignmentOptions.Left, A.L, 60, 0, 34, 24);
+                var codeTxt = Txt(b, "Code", null, label, 16, code == "en" ? Ink : Paper, TextAlignmentOptions.Left, A.L, 60, 0, 34, 24);
                 var lb = b.gameObject.AddComponent<LanguageButton>();
                 var lso = new SerializedObject(lb);
                 lso.FindProperty("languageCode").stringValue = code;
                 lso.FindProperty("frame").objectReferenceValue = img;
                 lso.FindProperty("selectedFrame").objectReferenceValue = FrLight;
                 lso.FindProperty("normalFrame").objectReferenceValue = FrDark;
+                lso.FindProperty("label").objectReferenceValue = codeTxt;
+                lso.FindProperty("selectedTextColor").colorValue = Ink;
+                lso.FindProperty("normalTextColor").colorValue = Paper;
                 lso.ApplyModifiedPropertiesWithoutUndo();
             }
             return panel;
@@ -372,10 +397,10 @@ namespace DungeonGathering.EditorTools
             for (int i = 0; i < 4; i++)
             {
                 var c = Frame(lin, "Stat_" + i, FrMid, 12, A.TL, i * 134, 0, 126, 72);
-                Txt(c, "Label", keys[i], null, 12, Ink, TextAlignmentOptions.Left, A.TL, 12, 10, 104, 16);
-                values[i] = Txt(c, "Value", null, new[] { "3-5", "14:32", "86", "15" }[i], 26, Ink, TextAlignmentOptions.Left, A.TL, 12, 28, 104, 30);
+                Txt(c, "Label", keys[i], null, 12, Soft, TextAlignmentOptions.Left, A.TL, 12, 10, 104, 16);
+                values[i] = Txt(c, "Value", null, new[] { "3-5", "14:32", "86", "15" }[i], 26, Paper, TextAlignmentOptions.Left, A.TL, 12, 28, 104, 30);
             }
-            var badge = Frame(lin, "Badge", FrLight, 12, A.TL, 0, 86, 200, 32);
+            var badge = Frame(lin, "Badge", FrLight, 8, A.TL, 0, 84, 210, 34);
             Txt(badge, "Text", victory ? "win.first" : "end.record", null, 14, Ink, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0);
             Txt(lin, "LootLabel", victory ? "win.chest" : "end.found", null, 13, Soft, TextAlignmentOptions.Left, A.TL, 0, 132, 528, 18);
             var loot = Rt(lin, "Loot", A.TL, 0, 160, 528, 56);
@@ -393,11 +418,12 @@ namespace DungeonGathering.EditorTools
                 rowValues[i] = Txt(rin, "RowVal_" + i, null, "+0", 16, victory ? Gold : Paper, TextAlignmentOptions.Right, A.TR, 0, 30 + i * 36, 90, 24);
             }
             var total = Frame(rin, "Total", victory ? FrLight : FrMid, 12, A.BL, 0, 0, 428, 64);
-            Txt(total, "Label", "common.total", null, 16, Ink, TextAlignmentOptions.Left, A.L, 10, 0, 160, 24);
+            var totalColor = victory ? Ink : Paper;
+            Txt(total, "Label", "common.total", null, 16, totalColor, TextAlignmentOptions.Left, A.L, 10, 0, 160, 24);
             Icon(total, "Coin", Coin, 3, A.R, 120, 0);
-            var coins = Txt(total, "Value", null, victory ? "+346" : "+57", 34, Ink, TextAlignmentOptions.Right, A.R, 10, 0, 100, 40);
+            var coins = Txt(total, "Value", null, victory ? "+346" : "+57", 34, victory ? Ink : Gold, TextAlignmentOptions.Right, A.R, 10, 0, 100, 40);
 
-            var lobby = TextButton(root, "Lobby", FrBtn, 24, victory ? "win.to_lobby" : "common.to_lobby", 22, Ink, A.B, -170, 30, 320, 76, null, 0);
+            var lobby = TextButton(root, "Lobby", FrBtn, 24, victory ? "win.to_lobby" : "common.to_lobby", 22, Paper, A.B, -170, 30, 320, 76, null, 0);
             var next = TextButton(root, "Continue", FrLight, 24, victory ? "win.next" : "common.retry", 22, Ink, A.B, 170, 30, 320, 76, null, 0);
 
             var scr = root.GetComponent<Results.RunResultScreen>();
@@ -430,7 +456,7 @@ namespace DungeonGathering.EditorTools
             Shadow(g, new Color32(0x4d, 0x3a, 0x52, 0xff), 5);
 
             var pg = Rt(o, "ProgressGroup", A.C, 0, -110, 720, 190);
-            var runner = Img(pg, "Runner", At(KnightIdle, 8, 8), A.TL, 0, 0, 64, 64);
+            var runner = Img(pg, "Runner", At(KnightIdle, 24, 24), A.TL, 0, 0, 64, 64);
             var bar = Frame(pg, "Bar", FrDark, 12, A.TL, 0, 72, 720, 44);
             var fill = Img(bar, "Fill", G("bar_strip_green"), A.Stretch, 6, 6, 6, 6); MakeFilled(fill); fill.fillAmount = 0.6f;
             var step = Txt(pg, "Step", "loading.step_core", null, 20, Paper, TextAlignmentOptions.Left, A.TL, 0, 128, 520, 26);
@@ -439,7 +465,7 @@ namespace DungeonGathering.EditorTools
 
             var tip = Rt(o, "Tip", A.B, 0, 44, 840, 52);
             var tipFrame = Frame(tip, "Frame", FrDark, 12, A.Stretch, 0, 0, 0, 0);
-            var tag = Frame(tip, "Tag", FrLight, 12, A.L, 8, 0, 64, 34);
+            var tag = Frame(tip, "Tag", FrLight, 8, A.L, 8, 0, 68, 36);
             Txt(tag, "Text", "loading.tip_label", null, 14, Ink, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0);
             var tipText = Txt(tip, "Text", "loading.tip1", null, 16, Paper, TextAlignmentOptions.Left, A.Stretch, 84, 0, 16, 0);
 

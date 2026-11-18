@@ -15,13 +15,13 @@ namespace DungeonGathering.Play
     public sealed class EnemySpawner
     {
         readonly RoomController room;
-        readonly DungeonConfig config;
+        readonly LevelConfigSO config;
         readonly System.Random rng;
         readonly PlayPrefabSet prefabs;
         readonly ModuleScope scope;
         readonly CancellationTokenSource cts = new();
 
-        public EnemySpawner(RoomController room, DungeonConfig config, System.Random rng, PlayPrefabSet prefabs, ModuleScope scope)
+        public EnemySpawner(RoomController room, LevelConfigSO config, System.Random rng, PlayPrefabSet prefabs, ModuleScope scope)
         {
             this.room = room;
             this.config = config;
@@ -61,7 +61,7 @@ namespace DungeonGathering.Play
             }
         }
 
-        async void SpawnOne(Enemy prefab, Vector2 position, CancellationToken token)
+        async void SpawnOne(SpawnUnit unit, Vector2 position, CancellationToken token)
         {
             room.BeginPendingSpawn();
             GameObject marker = prefabs != null && prefabs.spawnMarker != null
@@ -83,41 +83,54 @@ namespace DungeonGathering.Play
                 room?.CancelPendingSpawn();
                 return;
             }
-            var go = Services.Pool.Get(prefab.gameObject, scope, position, Quaternion.identity);
+            var go = Services.Pool.Get(unit.Prefab.gameObject, scope, position, Quaternion.identity);
             var enemy = go != null ? go.GetComponent<Enemy>() : null;
-            if (enemy != null) enemy.Init(room.CreateSpawnContext());
+            if (enemy != null)
+            {
+                var ctx = room.CreateSpawnContext();
+                if (unit.Elite) ctx.TierOverride = MonsterTier.Elite;
+                enemy.Init(ctx, unit.Definition);
+            }
             room.CompletePendingSpawn(enemy);
         }
 
-        List<List<(Enemy, Vector2)>> BuildWaves()
+        List<List<(SpawnUnit, Vector2)>> BuildWaves()
         {
-            var waves = new List<List<(Enemy, Vector2)>>();
+            var waves = new List<List<(SpawnUnit, Vector2)>>();
             var t = room.Template;
             if (!t.useSpawnBudget && t.fixedWaves.Count > 0)
             {
                 foreach (var wd in t.fixedWaves)
                 {
-                    var wave = new List<(Enemy, Vector2)>();
+                    var wave = new List<(SpawnUnit, Vector2)>();
                     foreach (var s in wd.spawns)
-                        if (s.prefab != null) wave.Add((s.prefab, PointAt(s.spawnPointIndex)));
+                        if (s.prefab != null) wave.Add((new SpawnUnit(s.prefab, null), PointAt(s.spawnPointIndex)));
                     if (wave.Count > 0) waves.Add(wave);
                 }
                 return waves;
             }
 
             if (config == null || config.enemyTable.Count == 0) return waves;
-            int count = rng.Next(config.wavesPerRoom.x, Mathf.Max(config.wavesPerRoom.x, config.wavesPerRoom.y) + 1);
+            // Cấu hình theo loại phòng (RoomTypeConfigSO) ghi đè số đợt / ngân sách / tỉ lệ Elite của level
+            var typeCfg = config.TypeConfig(room.Type);
+            Vector2Int wavesRange = typeCfg != null && typeCfg.waves.y > 0 ? typeCfg.waves : config.wavesPerRoom;
+            int baseBudget = typeCfg != null && typeCfg.spawnBudget > 0 ? typeCfg.spawnBudget : config.spawnBudget;
+            int growth = typeCfg != null && typeCfg.budgetGrowth >= 0 ? typeCfg.budgetGrowth : config.budgetGrowth;
+            float eliteChance = room.Type == RoomType.Elite && typeCfg == null ? 1f
+                : Mathf.Clamp01(config.eliteChance + (typeCfg != null ? typeCfg.eliteChanceBonus : 0f));
+            int count = rng.Next(wavesRange.x, Mathf.Max(wavesRange.x, wavesRange.y) + 1);
             for (int w = 0; w < count; w++)
             {
-                int budget = config.spawnBudget + config.budgetGrowth * w;
-                var wave = new List<(Enemy, Vector2)>();
+                int budget = baseBudget + growth * w;
+                var wave = new List<(SpawnUnit, Vector2)>();
                 int guard = 64;
                 while (budget > 0 && guard-- > 0)
                 {
                     var pick = PickEntry(budget);
                     if (pick == null) break;
                     budget -= pick.Cost;
-                    wave.Add((pick.prefab, PointAt(-1)));
+                    var unit = pick.Resolve(prefabs != null ? prefabs.monsterBase : null);
+                    if (unit.IsValid) wave.Add((unit.AsElite(eliteChance > 0f && rng.NextDouble() < eliteChance), PointAt(-1)));
                 }
                 if (wave.Count > 0) waves.Add(wave);
             }
@@ -127,12 +140,12 @@ namespace DungeonGathering.Play
         EnemySpawnEntry PickEntry(int budget)
         {
             int total = 0;
-            foreach (var e in config.enemyTable) if (e.prefab != null && e.Cost <= budget) total += e.weight;
+            foreach (var e in config.enemyTable) if (e.IsValid && e.Cost <= budget) total += e.weight;
             if (total <= 0) return null;
             int r = rng.Next(total);
             foreach (var e in config.enemyTable)
             {
-                if (e.prefab == null || e.Cost > budget) continue;
+                if (!e.IsValid || e.Cost > budget) continue;
                 if ((r -= e.weight) < 0) return e;
             }
             return null;

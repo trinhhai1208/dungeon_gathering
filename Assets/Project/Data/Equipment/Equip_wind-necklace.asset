@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: 749532082, guid: 5e972451c203e0b45963009650a405bf, type: 3}
   nameKey: item.wind_necklace
   descKey: eq.neck.passive
-  activeSkill: {fileID: 0}
+  activeSkill: {fileID: 11400000, guid: 5b80540556ebf8844bc3f91d2d762943, type: 2}
   shopPrice: 80
   slot: 4
   baseModifiers:
@@ -29,3 +29,5 @@ MonoBehaviour:
     PercentValue: 0
   synergyRole: 2
   synergyPassive: {fileID: 11400000, guid: 83106507bac3bd14fbc6508d074da1e4, type: 2}
+  equipmentSet: {fileID: 11400000, guid: b56412314757b0e4b91f36aec1833433, type: 2}
+  onHitStatus: []

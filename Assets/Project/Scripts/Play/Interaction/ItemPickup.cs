@@ -47,7 +47,7 @@ namespace DungeonGathering.Play
             item = data;
             if (icon != null)
             {
-                icon.sprite = data != null ? data.icon : null;
+                icon.sprite = data != null ? data.Icon : null;
                 // Co icon theo phần có hình (sheet kiếm 32px = 2 ô → quá to), canh tâm phần có hình vào tâm pickup
                 float k = 1f;
                 Vector2 contentOffset = Vector2.zero;
@@ -62,12 +62,13 @@ namespace DungeonGathering.Play
                 icon.transform.localScale = new Vector3(k, k, 1f);
                 float baseY = 0.2f - contentOffset.y;
                 icon.transform.localPosition = new Vector3(-contentOffset.x, baseY, 0f);
-                icon.transform.DOLocalMoveY(baseY + 0.15f, 0.6f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+                // SetLink: pickup bị hủy cùng scene (không qua OnDespawn) → tween vô hạn tự Kill
+                icon.transform.DOLocalMoveY(baseY + 0.15f, 0.6f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine).SetLink(icon.gameObject);
             }
 
-            if (rarityGlow != null && data != null && rarityColors != null && (int)data.rarity < rarityColors.Length)
+            if (rarityGlow != null && data != null && rarityColors != null && (int)data.Rank < rarityColors.Length)
             {
-                rarityGlow.color = rarityColors[(int)data.rarity];
+                rarityGlow.color = rarityColors[(int)data.Rank];
             }
 
             readyAt = Time.time + pickupDelay;
@@ -98,7 +99,7 @@ namespace DungeonGathering.Play
 
 
             // 4. Phát âm thanh nhặt đồ (nếu có)
-            Sfx.PlayOverride(pickupSfx, item.rarity <= Rarity.A ? SfxId.RareItemPickup : SfxId.ItemPickup);
+            Sfx.PlayOverride(pickupSfx, item.Rank <= Rarity.A ? SfxId.RareItemPickup : SfxId.ItemPickup);
 
             // 5. Thu hồi về Pool tập trung
             if (Services.Pool != null)

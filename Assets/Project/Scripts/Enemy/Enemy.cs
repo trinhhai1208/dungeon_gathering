@@ -14,22 +14,22 @@ namespace DungeonGathering.Enemies
     [RequireComponent(typeof(EnemyHealth), typeof(EnemyMotor), typeof(EnemyBrain))]
     [RequireComponent(typeof(EnemyAttackRunner))]
     [DisallowMultipleComponent]
-    public sealed class Enemy : MonoBehaviour, IPoolable
+    public sealed class Enemy : MonoBehaviour, IPoolable, IHitVfxSource
     {
-        [SerializeField] EnemyData data;
+        [SerializeField] MonsterDefinitionSO data;
         [SerializeField] Transform attackOrigin;
         [SerializeField] SpriteAnimDriver anim;
         [SerializeField] Collider2D[] disableOnDeath;
         [SerializeField] bool isBoss;
 
         CancellationTokenSource lifeCts;
-        EnemyData defaultData;   // data gán trên prefab — Init không override thì quay về data này (pool dùng lại)
+        MonsterDefinitionSO defaultData;   // data gán trên prefab — Init không override thì quay về data này (pool dùng lại)
         int lifeId;              // tăng mỗi lần spawn: callback từ đời trước (quái con) không ảnh hưởng đời mới
         bool initialized;
         float contactTimer;
         int summonCount;
 
-        public EnemyData Data => data;
+        public MonsterDefinitionSO Data => data;
         public EnemyHealth Health { get; private set; }
         public EnemyMotor Motor { get; private set; }
         public EnemyBrain Brain { get; private set; }
@@ -40,6 +40,43 @@ namespace DungeonGathering.Enemies
         public EnemySpawnContext Context { get; private set; } = EnemySpawnContext.Empty;
         public bool IsDead => Health.IsDead;
         public bool IsBoss => isBoss;
+        public MonsterTier Tier { get; private set; } = MonsterTier.Normal;
+        /// <summary>Chỉ số runtime (gốc + bậc + level + buff/debuff). Dùng chung kiểu với Player.</summary>
+        public Catalog.StatSheet Stats => Health.Stats;
+        /// <summary>Sát thương một đòn sau hệ số AttackDamage (bậc Elite, buff…).</summary>
+        public float ScaleDamage(float baseDamage) => baseDamage * Mathf.Max(0f, Stats.Get(StatType.AttackDamage));
+
+        /// <summary>VFX phát trên mục tiêu khi đòn của quái trúng (theo định nghĩa).</summary>
+        public GameObject HitVfx => data != null ? data.hitVfx : null;
+
+        /// <summary>Hình theo định nghĩa: animator, sprite (trống = giữ của prefab). Gọi trước ApplyTierVisual.</summary>
+        void ApplyDefinitionVisual()
+        {
+            if (data == null || anim == null) return;
+            bool changed = false;
+            if (data.animator != null && anim.Animator != null && anim.Animator.runtimeAnimatorController != data.animator)
+            {
+                anim.SetController(data.animator);
+                changed = true;
+            }
+            if (data.sprite != null && anim.Renderer != null && anim.Renderer.sprite != data.sprite)
+            {
+                anim.Renderer.sprite = data.sprite;
+                changed = true;
+            }
+            if (changed) anim.ResetState();
+        }
+
+        /// <summary>Kích thước + tint theo bậc (Elite to hơn, có màu nhận diện).</summary>
+        void ApplyTierVisual()
+        {
+            var cfg = Catalog.MonsterTierConfigSO.Current;
+            var t = cfg != null ? cfg.Get(Tier) : null;
+            // Kích thước tuyệt đối theo định nghĩa (prefab nền dùng chung có scale 1) × hệ số bậc Elite
+            float s = (data != null ? Mathf.Max(0.1f, data.visualScale) : 1f) * (t != null && !isBoss ? Mathf.Max(0.1f, t.scale) : 1f);
+            transform.localScale = new Vector3(s, s, 1f);
+            anim?.SetTierTint(t != null && !isBoss ? t.tint : Color.clear);
+        }
         public int SummonCount => summonCount;
         public CancellationToken LifeToken => lifeCts?.Token ?? CancellationToken.None;
 
@@ -80,22 +117,27 @@ namespace DungeonGathering.Enemies
             Died = null;
             foreach (var c in disableOnDeath) if (c != null) c.enabled = true;
             if (anim != null) anim.ResetState();
+            if (Brain != null) Brain.OverrideTarget = null;
         }
 
-        /// <summary>Gọi ngay sau Pool.Get. dataOverride cho phép một prefab dùng nhiều EnemyData.</summary>
-        public void Init(EnemySpawnContext ctx, EnemyData dataOverride = null)
+        /// <summary>Gọi ngay sau Pool.Get. dataOverride cho phép một prefab dùng nhiều MonsterDefinitionSO.</summary>
+        public void Init(EnemySpawnContext ctx, MonsterDefinitionSO dataOverride = null)
         {
             // Override chỉ áp cho lần spawn này; không override → về data gốc của prefab (tránh dính override cũ khi pool dùng lại).
             data = dataOverride != null ? dataOverride : defaultData;
             if (data == null)
             {
-                Debug.LogError($"[Enemy] {name} thiếu EnemyData.", this);
+                Debug.LogError($"[Enemy] {name} thiếu MonsterDefinitionSO.", this);
                 return;
             }
             Context = ctx ?? EnemySpawnContext.Empty;
-            Health.ResetHealth(data.maxHp * Mathf.Max(0.1f, Context.HealthMultiplier));
+            // Bậc: boss trên prefab luôn là Boss; spawner có thể nâng quái thường lên Elite qua context.
+            Tier = isBoss ? MonsterTier.Boss : (Context.TierOverride ?? data.tier);
+            Health.ResetStats(data.ResolveStats(), Tier, Context.HealthMultiplier);
+            ApplyDefinitionVisual();
+            ApplyTierVisual();
             Motor.ResetMotor();
-            Attacks.SetAttacks(data.attacks);
+            Attacks.SetAttacks(data.ResolveAttacks());
             Brain.Begin();
             initialized = true;
         }
@@ -113,7 +155,7 @@ namespace DungeonGathering.Enemies
             var died = Died;
             Died = null;
             try { died?.Invoke(this); } catch (Exception e) { Debug.LogException(e); }
-            EventBus<EnemyDiedEvent>.Raise(new EnemyDiedEvent { Enemy = this, Data = data, Position = transform.position, IsBoss = isBoss });
+            EventBus<EnemyDiedEvent>.Raise(new EnemyDiedEvent { Enemy = this, Data = data, Position = transform.position, IsBoss = isBoss, Tier = Tier });
 
             float delay = Mathf.Max(0.1f, data != null ? data.deathDuration : 0.8f);
             if (GetComponent<PooledObject>() != null) Services.Pool.ReturnAfter(gameObject, delay);
@@ -129,10 +171,10 @@ namespace DungeonGathering.Enemies
             else Destroy(gameObject);
         }
 
-        public void SpawnMinion(Enemy prefab, Vector2 position)
+        public void SpawnMinion(MonsterDefinitionSO minionDef, Vector2 position)
         {
-            if (prefab == null || Context.Summon == null || IsDead) return;
-            var minion = Context.Summon(prefab, position);
+            if (minionDef == null || Context.Summon == null || IsDead) return;
+            var minion = Context.Summon(minionDef, position);
             if (minion == null) return;
             summonCount++;
             int life = lifeId;
@@ -153,7 +195,7 @@ namespace DungeonGathering.Enemies
             var d = CombatUtil.Resolve(col);
             if (d == null || d.Team != Team.Player || d.IsDead) return;
             Vector2 dir = ((Vector2)col.transform.position - (Vector2)transform.position).normalized;
-            if (d.TakeDamage(new DamageInfo(data.contactDamage, 3f, dir, 0f, false, gameObject, Team.Enemy)))
+            if (d.TakeDamage(new DamageInfo(ScaleDamage(data.contactDamage), 3f, dir, 0f, false, gameObject, Team.Enemy)))
                 contactTimer = Time.time + data.contactCooldown;
         }
 

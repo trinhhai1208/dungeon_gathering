@@ -10,16 +10,19 @@ namespace DungeonGathering.Combat
     public class EveryNthHitPassive : EquipmentPassiveSO
     {
         [Min(1)] public int everyN = 3;
+        [Tooltip("Hệ số sát thương vòng xoáy, nhân với AttackDamage của người chơi; trúng mọi quái trong radius.")]
         public float damage = 15f;
+        [Tooltip("Bán kính vòng xoáy (world unit) quanh mục tiêu của đòn trúng thứ N.")]
         public float radius = 1.5f;
+        [Tooltip("Prefab VFX phát tại mục tiêu khi vòng xoáy kích hoạt; null = không hiệu ứng.")]
         public GameObject vfx;
 
         public override void OnEquip(IPlayerContext player)
         {
-            OnUnequip(player);
             var rt = PassiveRuntime.For(player);
             if (rt == null) return;
             var state = rt.GetOrCreate(this);
+            if (++state.RefCount > 1) return;
             state.Counter = 0;
             state.Busy = false;
             Action<HitReport> h = r =>
@@ -46,6 +49,7 @@ namespace DungeonGathering.Combat
         {
             var rt = PassiveRuntime.For(player, false);
             if (rt == null || !rt.TryGet(this, out var state)) return;
+            if (--state.RefCount > 0) return;
             if (state.Handler is Action<HitReport> h) player.Hooks.HitDealt -= h;
             rt.Remove(this);
         }

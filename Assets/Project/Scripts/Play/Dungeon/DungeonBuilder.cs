@@ -35,7 +35,7 @@ namespace DungeonGathering.Play
             if (navMesh != null) navMesh.Clear();
         }
 
-        public void Build(DungeonLayout layout, DungeonConfig config, LevelDirector director, PlayPrefabSet prefabs)
+        public void Build(DungeonLayout layout, LevelConfigSO config, LevelDirector director, PlayPrefabSet prefabs)
         {
             Clear();
             EnsureCorridorMaps();
@@ -47,7 +47,7 @@ namespace DungeonGathering.Play
                 var pool = config.RoomsFor(node.Type);
                 if (pool == null || pool.Count == 0)
                 {
-                    Debug.LogError($"[Dungeon] DungeonConfig '{config.name}' không có RoomTemplate cho {node.Type}.");
+                    Debug.LogError($"[Dungeon] LevelConfigSO '{config.name}' không có RoomTemplate cho {node.Type}.");
                     continue;
                 }
                 var prefab = pool[rng.Next(pool.Count)];
@@ -159,7 +159,7 @@ namespace DungeonGathering.Play
             return go.GetComponent<Tilemap>();
         }
 
-        void DrawCorridor(Vector3 from, Vector3 to, DoorMask dir, DungeonConfig config)
+        void DrawCorridor(Vector3 from, Vector3 to, DoorMask dir, LevelConfigSO config)
         {
             if (config.corridorFloorTile == null) return;
             var a = corridorFloor.WorldToCell(from);
@@ -194,7 +194,7 @@ namespace DungeonGathering.Play
             }
         }
 
-        static void OpenDoorway(RoomTemplate t, DoorMask d, DungeonConfig config)
+        static void OpenDoorway(RoomTemplate t, DoorMask d, LevelConfigSO config)
         {
             if (t.wall == null) return;
             var center = t.wall.WorldToCell(t.SocketPosition(d));
@@ -208,7 +208,7 @@ namespace DungeonGathering.Play
         }
 
         /// <summary>Bịt Door Socket không có hàng xóm bằng tile tường (vào Tilemap Wall của phòng).</summary>
-        static void Seal(RoomTemplate t, DoorMask d, DungeonConfig config)
+        static void Seal(RoomTemplate t, DoorMask d, LevelConfigSO config)
         {
             if (t.wall == null || config == null || config.sealWallTile == null) return;
             var center = t.wall.WorldToCell(t.SocketPosition(d));

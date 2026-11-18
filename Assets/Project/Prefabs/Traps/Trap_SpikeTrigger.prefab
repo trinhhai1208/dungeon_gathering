@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44c1cde635607b4aa8e511e1ca55f1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Project.Play::DungeonGathering.Play.TriggerTrap
+  data: {fileID: 11400000, guid: d233a96387c5c724a8c64b5936653c22, type: 2}
   damage: 1
   knockback: 2
   targetMask:

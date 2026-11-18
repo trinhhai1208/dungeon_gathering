@@ -21,7 +21,7 @@ namespace DungeonGathering.EditorTools
         const string Root = "Assets/Project/Localization";
         const string LocalesDir = Root + "/Locales";
         const string TablesDir = Root + "/Tables";
-        const string ResourcesDir = Root + "/Resources";
+        const string FontConfigPath = "Assets/Project/Core/Data/LocalizationFontConfig.asset";
         static string CsvPath => Path.GetFullPath(Path.Combine(Application.dataPath, "..", "Design", "localization", "DG_Multilanguage.csv"));
 
         [MenuItem("Tools/Dungeon Gathering/Localization/Import CSV")]
@@ -30,7 +30,7 @@ namespace DungeonGathering.EditorTools
             if (!File.Exists(CsvPath)) { Debug.LogError($"[Localization] Không thấy {CsvPath}"); return; }
             Directory.CreateDirectory(LocalesDir);
             Directory.CreateDirectory(TablesDir);
-            Directory.CreateDirectory(ResourcesDir);
+            Directory.CreateDirectory("Assets/Project/Core/Data");
 
             EnsureSettings();
             var locales = new Dictionary<string, Locale>
@@ -90,7 +90,7 @@ namespace DungeonGathering.EditorTools
 
         static void EnsureFontConfig()
         {
-            string path = ResourcesDir + "/LocalizationFontConfig.asset";
+            string path = FontConfigPath;
             if (AssetDatabase.LoadAssetAtPath<LocalizationFontConfig>(path) != null) return;
             var config = ScriptableObject.CreateInstance<LocalizationFontConfig>();
             var so = new SerializedObject(config);

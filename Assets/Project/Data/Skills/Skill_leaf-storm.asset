@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa38af9cc2560a4fb952b8e1f20b93b, type: 3}
+  m_Name: Skill_leaf-storm
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
+  skillId: leaf-storm
+  nameKey: skill.leaf_storm
+  descKey: skill.leaf_storm.desc
+  icon: {fileID: 21300000, guid: 68f822411a73f83438980c27d48bc7d4, type: 3}
+  cooldown: 15
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  damage: 16
+  radius: 2.8
+  knockback: 2
+  centerOnNearestEnemy: 1
+  followPlayer: 0
+  targetRange: 9
+  pulses: 2
+  pulseInterval: 0.5
+  status:
+    effects:
+    - effect: {fileID: 11400000, guid: fc8f5cd3289b38d4fbebdbbfef560fc1, type: 2}
+      duration:
+        enabled: 1
+        value: 2
+      magnitude:
+        enabled: 1
+        value: 0.3
+      chance: 1
+      loopVfxOverride: {fileID: 0}
+  vfx: {fileID: 3893255249440163150, guid: 0d73f24dec0c8414da5914be1004b693, type: 3}

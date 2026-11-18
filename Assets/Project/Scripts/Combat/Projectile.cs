@@ -21,6 +21,7 @@ namespace DungeonGathering.Combat
         public GameObject Source;
         public IPlayerContext Owner;    // để báo HitReport cho passive (null với đạn quái)
         public WeaponData Weapon;
+        public StatusPayload Status;
     }
 
     /// <summary>
@@ -108,7 +109,11 @@ namespace DungeonGathering.Combat
             }
 
             bool accepted = target.TakeDamage(new DamageInfo(spec.Damage, spec.Knockback, velocity.normalized, 0f, spec.Crit, spec.Source, spec.Team));
-            if (accepted) Report(target, transform.position);
+            if (accepted)
+            {
+                spec.Status.ApplyTo(target, spec.Source);
+                Report(target, transform.position);
+            }
             CombatFx.Hit(spec.ImpactVfx, transform.position);
             if (pierceLeft-- <= 0) Despawn();
         }
@@ -129,7 +134,11 @@ namespace DungeonGathering.Combat
             {
                 CombatUtil.DamageArea(point, spec.ExplosionRadius, targets,
                     new DamageInfo(spec.Damage, spec.Knockback, velocity.normalized, 0f, spec.Crit, spec.Source, spec.Team), hits);
-                for (int i = 0; i < hits.Count; i++) Report(hits[i], point);
+                for (int i = 0; i < hits.Count; i++)
+                {
+                    spec.Status.ApplyTo(hits[i], spec.Source);
+                    Report(hits[i], point);
+                }
             }
             finally { CombatUtil.ReturnList(hits); }
         }

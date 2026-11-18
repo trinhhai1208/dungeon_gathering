@@ -7,8 +7,8 @@ namespace DungeonGathering.Lobby
 {
     /// <summary>
     /// Điểm đứng của một nhân vật trong sảnh (bấm qua Physics2DRaycaster trên camera Lobby).
-    /// Hình: address char/&lt;id&gt; (prefab CharLobby_&lt;id&gt;) → con có sẵn trong visualRoot → tự dựng từ CharacterData.portrait.
-    /// Nhân vật chưa ra mắt (CharacterData.released = false): dáng tối + nhãn "CHƯA RA MẮT", ẩn ổ khóa; bấm vẫn mở panel giới thiệu.
+    /// Hình: address char/&lt;id&gt; (prefab CharLobby_&lt;id&gt;) → con có sẵn trong visualRoot → tự dựng từ HeroDefinitionSO.portrait.
+    /// Nhân vật chưa ra mắt (HeroDefinitionSO.released = false): dáng tối + nhãn "CHƯA RA MẮT", ẩn ổ khóa; bấm vẫn mở panel giới thiệu.
     /// </summary>
     [RequireComponent(typeof(Collider2D))]
     public sealed class CharacterSpot : MonoBehaviour, IPointerClickHandler

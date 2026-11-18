@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad715a3c83a889e4b997c722670d3e5b, type: 3}
+  m_Name: Skill_shadow-step
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.DashSkill
+  skillId: shadow-step
+  nameKey: skill.shadow_step
+  descKey: skill.shadow_step.desc
+  icon: {fileID: 21300000, guid: 48268cd3a49770b49a107a97ec19470d, type: 3}
+  cooldown: 5
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  distance: 4
+  dashDuration: 0.14
+  invulnerable: 1
+  vfx: {fileID: 2233400310015478065, guid: 8864344cbcc8b454b845220c3891133c, type: 3}
+  slashDamage: 18
+  slashRadius: 1
+  knockback: 3
+  status:
+    effects: []
+  empowerNextMultiplier: 1.5
+  slashVfx: {fileID: 2592133337683863167, guid: 66db3a38d4148ca408eb025518af3652, type: 3}

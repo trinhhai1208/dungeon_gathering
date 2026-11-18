@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e94bfc5c67ddc4e83600a35b232707, type: 3}
+  m_Name: RoomType_Shop
+  m_EditorClassIdentifier: Project.Play::DungeonGathering.Play.RoomTypeConfigSO
+  roomType: 3
+  templates:
+  - {fileID: 8936213224568587988, guid: 5e541955259ccda4f8c25b0d54439e6d, type: 3}
+  waves: {x: 0, y: 0}
+  spawnBudget: 0
+  budgetGrowth: -1
+  eliteChanceBonus: 0
+  chestChance: -1

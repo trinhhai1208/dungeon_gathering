@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78ba3b9b456ca34c9e0330cbf94ada7, type: 3}
+  m_Name: ProjectileLibrary
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.ProjectileLibrarySO
+  projectiles:
+  - id: plasma-blue
+    prefab: {fileID: 8615716003690641152, guid: 9b96be74346d4da42819b1aa46c25b92, type: 3}
+    speed: 15
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 1401794495734450431, guid: 62133c0a260a35f4f9b5a74951b0b814, type: 3}
+    statusEffects: []
+  - id: plasma-red
+    prefab: {fileID: 770210976197447705, guid: 39205b1dc76a5fe4ebbd3a5233370278, type: 3}
+    speed: 16
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 1858994973757951162, guid: 955f84d9017bef24e90b798ed9830854, type: 3}
+    statusEffects: []
+  - id: rocket
+    prefab: {fileID: 7630285792926327168, guid: 5e3b1cd6650bae34f842377841d803d6, type: 3}
+    speed: 11
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 3982993021116646554, guid: 430d7c9f6bb002b4388008a129dda53c, type: 3}
+    statusEffects: []
+  - id: sparks-blast
+    prefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
+    speed: 13
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 2989851904720284366, guid: 8aff6fd84d181eb42bee1e17b97cbb21, type: 3}
+    statusEffects: []
+  - id: hunter-arrow
+    prefab: {fileID: 148695736900847178, guid: 68957b4f62c8e4a4ca346523a6718d91, type: 3}
+    speed: 16
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 3593071516705914305, guid: 0d349db50b4f3bc4ead5de7c67fbfb4c, type: 3}
+    statusEffects: []
+  - id: rune-orb
+    prefab: {fileID: 466075571160813135, guid: d9e08fa14240ac047b97adbd86a64405, type: 3}
+    speed: 12
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 7225100968211546576, guid: 07acfb1497b26b6468b71781537b1269, type: 3}
+    statusEffects: []
+  - id: wave-holy
+    prefab: {fileID: 5794183894127398587, guid: 1af5975e293a75a41a1ba681b6bcca95, type: 3}
+    speed: 14
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 9060471335895231716, guid: b96965de87f2bbf4196d42b047a19848, type: 3}
+    statusEffects: []
+  - id: wave-void
+    prefab: {fileID: 5260874813404939641, guid: 748fcc7d8c49ede47ad7b78c87ddc269, type: 3}
+    speed: 14
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 6276184342109079051, guid: de68a90ca569c744e937d15571e9baf9, type: 3}
+    statusEffects: []
+  - id: wave-fire
+    prefab: {fileID: 5794183894127398587, guid: 2f5efc5added92649812ea72963dd548, type: 3}
+    speed: 14
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 2534004437307525629, guid: 3cb8d1534870aee41b721edd7d0e19bf, type: 3}
+    statusEffects: []
+  - id: wave-thunder
+    prefab: {fileID: 5794183894127398587, guid: 35ab88f44524b1a47af657faf6c3d8eb, type: 3}
+    speed: 16
+    pierce: 0
+    explosionRadius: 0
+    hitVfx: {fileID: 3769289523645314945, guid: aef685e45a2d447459d7b472c87496c4, type: 3}
+    statusEffects: []

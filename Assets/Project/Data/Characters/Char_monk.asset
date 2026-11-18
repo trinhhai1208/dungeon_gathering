@@ -17,19 +17,23 @@ MonoBehaviour:
   descKey: char.monk.desc
   role: 3
   unlockPrice: 1500
-  released: 0
+  released: 1
+  rank: 1
   portrait: {fileID: 631181245667799637, guid: a5bdfc040ea02d64fa7a7de1800d5e7e, type: 3}
-  animator: {fileID: 9100000, guid: 9190a75cd517f2f459762ebb1c3c87a1, type: 2}
-  baseStats:
-    maxHp: 5
-    maxArmor: 3
-    maxMana: 180
-    attackDamage: 0.9
-    attackSpeed: 1
-    moveSpeed: 5
-    critChance: 0.05
-  armorRegenDelay: 4
-  armorRegenRate: 1
-  manaRegen: 2
-  startingWeapon: {fileID: 11400000, guid: 71849f9c75f1e97408ac202ee4da9dab, type: 2}
-  activeSkill: {fileID: 0}
+  animator: {fileID: 9100000, guid: be4242786fa213d44b66f7ae4d341366, type: 2}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  stats:
+    profile: {fileID: 11400000, guid: a674fcb4f2b607d4ea58ea5bc35f922a, type: 2}
+    overrides:
+    - stat: 1
+      value: 3
+    - stat: 2
+      value: 180
+    - stat: 3
+      value: 0.9
+    - stat: 5
+      value: 5
+  startingWeapon: {fileID: 11400000, guid: c5dfe00e37f3aaf459c255167fb4c9f5, type: 2}
+  skill: 39
+  innatePassive: {fileID: 11400000, guid: 5132b5189e43272449fd10c418ae0f9b, type: 2}

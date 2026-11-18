@@ -17,7 +17,6 @@ MonoBehaviour:
   defaultHitVfx: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
   spawnMarker: {fileID: 4734486131625088279, guid: 24d27adf221f9654c8379c423cd6444a, type: 3}
   goldCoin: {fileID: 6813728424102568691, guid: 1edb43b5fdfbe154a82eca3660992e27, type: 3}
-  blueCoin: {fileID: 7695636676125450035, guid: a75cb094fbfac6f45bacf4d5f2eb067f, type: 3}
   manaOrb: {fileID: 8100192209550462488, guid: 841f66d05bbfd684c961cac2adbf9f50, type: 3}
   healthPotion: {fileID: 2973108674891821092, guid: 29d6525f04e30024e997db0bb19864bd, type: 3}
   itemPickup: {fileID: 6270531531191353311, guid: 2102707ed8fd3184b8494cf93dd9011e, type: 3}
@@ -25,11 +24,8 @@ MonoBehaviour:
   chest: {fileID: 7902887895170869139, guid: 5848d5c5f9012b740a313bc4130db9be, type: 3}
   shopStand: {fileID: 3818094023718164447, guid: bcfd2ac754887524aafff51e2c683115, type: 3}
   portal: {fileID: 8630524486932473977, guid: d95e36f54d2f73742bac54c52df47fdf, type: 3}
-  fallbackCatalog: {fileID: 11400000, guid: cd4e76a0c42d1704fb09beab4b2b46bb, type: 2}
-  fallbackCharacter: {fileID: 11400000, guid: d22862b00f9b4b8409a906f584b96f64, type: 2}
-  fallbackConfigs:
-  - {fileID: 11400000, guid: bdf4de8d1affcf449a5be7ee82b68ec0, type: 2}
-  - {fileID: 11400000, guid: e012db2efdb43754a9f0166b1c6a2722, type: 2}
-  - {fileID: 11400000, guid: 4911267d0d395dc40b4af766181525e8, type: 2}
+  monsterBase: {fileID: 7155027239578898987, guid: 2aab5415fcffdb64497518aa3a6daee9, type: 3}
+  monsterTiers: {fileID: 11400000, guid: 04792a7b7f8b8804b97177d76d33c72b, type: 2}
+  lootConfig: {fileID: 11400000, guid: 4893d8a198f8c1746abd613527c8096b, type: 2}
   prewarmCoins: 20
   prewarmPopups: 12

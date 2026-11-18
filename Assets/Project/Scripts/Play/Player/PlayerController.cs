@@ -13,7 +13,7 @@ namespace DungeonGathering.Play
     /// </summary>
     [RequireComponent(typeof(PlayerStats), typeof(PlayerMovement), typeof(PlayerInputReader))]
     [DisallowMultipleComponent]
-    public sealed class PlayerController : MonoBehaviour, IPlayerContext, ITargetable
+    public sealed class PlayerController : MonoBehaviour, IPlayerContext, ITargetable, IStateActor
     {
         const float TargetHeroHeightUnits = 1.15f;
         const float HandHeightFromCenter = 0.38f;
@@ -31,7 +31,7 @@ namespace DungeonGathering.Play
         PlayerMovement movement;
         PlayerInputReader input;
         StatusEffectController status;
-        CharacterData character;
+        HeroDefinitionSO character;
         readonly PlayerCombatHooks hooks = new();
         bool inputEnabled;
 
@@ -43,19 +43,25 @@ namespace DungeonGathering.Play
         struct TimedMod { public object Key; public float Until; }
         readonly List<TimedMod> timed = new();
 
-        // FSM (ENTITIES §3.5.1): Spawn → Active → Dash/Stunned/Sealed → Dead
-        readonly IPlayerState sSpawn = new PlayerSpawnState();
-        readonly IPlayerState sActive = new PlayerActiveState();
-        readonly IPlayerState sDash = new PlayerDashState();
-        readonly IPlayerState sStunned = new PlayerStunnedState();
-        readonly IPlayerState sSealed = new PlayerSealedState();
-        readonly IPlayerState sDead = new PlayerDeadState();
-        IPlayerState state;
+        // FSM dùng chung (Combat/States/StateMachine.cs) — luật chuyển ở PlayerStates.Build
+        StateMachine<PlayerController> fsm;
+        internal StateMachine<PlayerController> States => fsm ??= PlayerStates.Build(this);
 
-        /// <summary>State hiện tại (quan sát / HUD / anim). Spawn trước khi Tick lần đầu.</summary>
-        public PlayerStateId StateId => state?.Id ?? PlayerStateId.Spawn;
+        /// <summary>State hiện tại (quan sát / HUD / anim).</summary>
+        public ActorStateId StateId => States.CurrentId ?? ActorStateId.Spawn;
+
+        // ---- IStateActor ----
+        public bool IsCrowdControlled => status != null && status.IsStunned;
+        public ActorStateId StateAfterStun => ActorStateId.Active;
+        public void InterruptActions()
+        {
+            movement.SetMove(Vector2.zero);
+            movement.CancelDash();
+            weapons?.CancelAttack();
+        }
 
         public PlayerStats Stats => stats;
+        internal PlayerMovement Movement => movement;
         public WeaponHolder Weapons => weapons;
         public PlayerSkillController Skills => skills;
         public PlayerEquipment Equipment => equipment;
@@ -67,7 +73,7 @@ namespace DungeonGathering.Play
         // ---- IPlayerContext ----
         public GameObject GameObject => gameObject;
         public Transform Transform => transform;
-        public CharacterData Character => character;
+        public HeroDefinitionSO Character => character;
         public PlayerCombatHooks Hooks => hooks;
         public Vector2 AimDirection => weapons != null ? weapons.AimDirection : Vector2.right;
         public Vector2 MoveInput => inputEnabled ? input.Move : Vector2.zero;
@@ -84,6 +90,8 @@ namespace DungeonGathering.Play
         {
             stats = GetComponent<PlayerStats>();
             movement = GetComponent<PlayerMovement>();
+            hooks.Attacked += OnHeroAttacked;
+            hooks.HitDealt += OnHeroHit;
             input = GetComponent<PlayerInputReader>();
             status = GetComponent<StatusEffectController>();
             if (weapons == null) weapons = GetComponentInChildren<WeaponHolder>(true);
@@ -96,8 +104,11 @@ namespace DungeonGathering.Play
         }
 
         /// <summary>Khởi tạo từ dữ liệu run. carried = chỉ số mang từ tầng trước (null/hasValues=false → đầy).</summary>
-        public void Init(CharacterData data, WeaponData weapon1, WeaponData weapon2, IReadOnlyList<EquipmentData> equips, RunStats carried)
+        public void Init(HeroDefinitionSO data, WeaponData weapon1, WeaponData weapon2, IReadOnlyList<EquipmentSO> equips, RunStats carried)
         {
+            if (character != null && character.innatePassive != null)
+                character.innatePassive.OnUnequip(this);
+
             character = data;
             if (anim != null && data != null)
             {
@@ -118,9 +129,9 @@ namespace DungeonGathering.Play
             anim?.ResetState();
 
             bool newRun = carried == null || !carried.hasValues;
-            stats.Init(data, carried);
+            stats.Init(data, carried, deferClamp: true);
             equipment.Apply(this, stats, equips);
-            stats.FillIfNew(newRun);
+            if (data != null && data.innatePassive != null) data.innatePassive.OnEquip(this);
 
             if (weapons != null)
             {
@@ -138,8 +149,11 @@ namespace DungeonGathering.Play
             if (weapon1 != null) items.Add(weapon1);
             if (weapon2 != null) items.Add(weapon2);
             if (equips != null) foreach (var e in equips) if (e != null) items.Add(e);
-            skills.Bind(this, data != null ? data.activeSkill : null, items);
+            skills.Bind(this, data != null ? data.ResolveSkill() : null, items);
             inventory?.Init(this, stats, data, carried);
+
+            // Kẹp/làm đầy SAU khi mọi nguồn modifier (trang bị, set, innate, passive vũ khí) đã cộng xong.
+            stats.FillIfNew(newRun);
 
             CombatTargets.RegisterPlayer(this);
         }
@@ -177,43 +191,41 @@ namespace DungeonGathering.Play
         }
 
         void OnSwap() { if (combatEnabled) weapons?.SwapWeapon(); }
-        void OnSkill(int slot) { if (combatEnabled) skills.TryUse(slot); }
+        /// <summary>Skill chỉ dùng được khi điều khiển bình thường (không choáng, không pause, không Sealed/Spawn/Dead).</summary>
+        void OnSkill(int slot)
+        {
+            if (!combatEnabled || IsCrowdControlled || (Services.Game != null && Services.Game.IsPaused)) return;
+            if (!States.Is(ActorStateId.Active) && !States.Is(ActorStateId.Dash)) return;
+            skills.TryUse(slot);
+        }
         void OnInteract() => interactor?.TryInteract();
+
+        /// <summary>VFX đòn đánh của hero (theo định nghĩa) — thêm vào VFX riêng của vũ khí.</summary>
+        void OnHeroAttacked(WeaponData w)
+        {
+            if (character == null || character.attackVfx == null || weapons == null) return;
+            var view = weapons.GetView(weapons.ActiveSlot);
+            Vector3 at = view != null ? view.transform.position : transform.position;
+            Vector2 aim = weapons.AimDirection;
+            CombatFx.Play(character.attackVfx, at, Quaternion.Euler(0f, 0f, Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg));
+        }
+
+        void OnHeroHit(HitReport r)
+        {
+            if (character != null && character.hitVfx != null) CombatFx.Play(character.hitVfx, r.Point, Quaternion.identity);
+        }
 
         void Update()
         {
             UpdateTimedModifiers();
-            TickState();
-        }
-
-        // ------------------------------------------------------------------ State machine (ENTITIES §3.5.1)
-
-        void TickState()
-        {
-            var next = ResolveState();
-            if (next != state)
-            {
-                state?.Exit(this);
-                state = next;
-                state.Enter(this);
-            }
-            state.Tick(this);
-        }
-
-        /// <summary>Suy ra state từ cờ + điều kiện (ưu tiên: Dead > Spawn/!input > Sealed/!combat > Stunned > Dash > Active).</summary>
-        IPlayerState ResolveState()
-        {
-            if (stats.IsDead) return sDead;
-            if (!inputEnabled) return sSpawn;
-            if (!combatEnabled) return sSealed;
-            if (status != null && status.IsStunned) return sStunned;
-            if (movement.IsDashing) return sDash;
-            return sActive;
+            if (States.Current == null) States.Reset(ActorStateId.Spawn);
+            States.Tick();
         }
 
         /// <summary>
         /// Khung xử lý mỗi frame, tham số hóa theo state — giữ nguyên hành vi Update() cũ.
-        /// Choáng tự chặn di chuyển + đánh ngay trong đây nên Active/Dash/Stunned dùng chung (true, true).
+        /// Vẫn giữ kiểm tra <c>status.IsStunned</c> bên trong để phòng hộ trường hợp state Sealed
+        /// (ưu tiên cao hơn Stunned sau khi thắng) đang chạy lúc player bị choáng.
         /// </summary>
         internal void DriveFrame(bool readInput, bool allowAttack)
         {
@@ -224,7 +236,9 @@ namespace DungeonGathering.Play
             if (weapons != null)
             {
                 weapons.UpdateAim(move);
-                if (allowAttack && !stunned && input.AttackHeld) weapons.TryAttack();
+                // Pause: timeScale=0 nhưng Update vẫn chạy → không được tung đòn (trừ mana, đạn treo rồi bay ra khi Resume).
+                bool paused = Services.Game != null && Services.Game.IsPaused;
+                if (allowAttack && !stunned && !paused && input.AttackHeld) weapons.TryAttack();
             }
 
             if (anim != null)
@@ -288,6 +302,8 @@ namespace DungeonGathering.Play
 
         void OnDestroy()
         {
+            if (character != null && character.innatePassive != null)
+                character.innatePassive.OnUnequip(this);
             if (stats != null) stats.Died -= OnDied;
             CombatTargets.UnregisterPlayer(this);
             hooks.ClearAll();

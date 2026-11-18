@@ -14,19 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: skull
   nameKey: enemy.skull
-  maxHp: 30
-  moveSpeed: 2.6
+  animator: {fileID: 9100000, guid: 11e012d868e4c4c4991f357a4aae0c52, type: 2}
+  sprite: {fileID: -6389507293179701057, guid: 7b54f606cd7902449b9628e5f12ed651, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 3235080464446142448, guid: f1412a0be1d46be48a5efa5e0c317273, type: 3}
+  hitVfx: {fileID: 3982993021116646554, guid: 430d7c9f6bb002b4388008a129dda53c, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 1
-  knockbackResist: 0
   preferredDistance: 3.5
+  retreatDistance: 0
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 30
+    - stat: 5
+      value: 2.6
+  tier: 0
   spawnCost: 2
   spawnDuration: 0.4
   deathDuration: 0.8
-  attacks:
-  - {fileID: 11400000, guid: 38e98ecda786a704d8b0a6912e6c474b, type: 2}
+  skills: 1e000000
+  phases: []
+  customLoot: 0
   lootTable:
     minGold: 1
     maxGold: 3

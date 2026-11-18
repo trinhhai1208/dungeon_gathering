@@ -24,3 +24,10 @@ MonoBehaviour:
   dashDuration: 0.15
   invulnerable: 1
   vfx: {fileID: 5506595285827235681, guid: aa49e0d123548be408b0ba91503f5b03, type: 3}
+  slashDamage: 25
+  slashRadius: 1.2
+  knockback: 5
+  status:
+    effects: []
+  empowerNextMultiplier: 1.4
+  slashVfx: {fileID: 8575075149887637758, guid: 1e94d4a4e2939c046ba1077dbc1b340a, type: 3}

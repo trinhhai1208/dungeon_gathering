@@ -7,9 +7,10 @@ namespace DungeonGathering.Core
 {
     public interface IUIService
     {
-        Awaitable<T> Open<T>(string address, object args = null) where T : UIScreen;
+        /// <param name="cancellableByBack">false → Back/Esc không hủy được lần Open đang chờ này (màn bắt buộc như Victory/Defeat).</param>
+        Awaitable<T> Open<T>(string address, object args = null, bool cancellableByBack = true) where T : UIScreen;
         void Close(UIScreen screen);
-        /// <summary>Nút Back / Esc: hủy Open đang chờ hoặc đóng màn trên cùng (Popup → Panel → Screen).</summary>
+        /// <summary>Nút Back / Esc: hủy Open đang chờ hoặc đóng màn trên cùng (Popup → Panel → Screen), cuối cùng hỏi Hud.OnBack.</summary>
         bool Back();
         /// <summary>Đóng mọi màn + hủy mọi Open đang chờ thuộc scope này (SceneService gọi).</summary>
         void CloseModule(ModuleScope owner);
@@ -31,6 +32,7 @@ namespace DungeonGathering.Core
             public string Address;
             public ModuleScope Owner;
             public bool Cancelled;
+            public bool CancellableByBack = true;
             public readonly List<AwaitableCompletionSource<UIScreen>> Waiters = new();
         }
 
@@ -46,6 +48,7 @@ namespace DungeonGathering.Core
         readonly List<Pending> pendingOrder = new();
         readonly Dictionary<string, Cached> cache = new();
         readonly HashSet<object> blockers = new();
+        readonly HashSet<string> warnedMissing = new();
 
         public UIService(UIRoot root) => this.root = root;
 
@@ -62,11 +65,18 @@ namespace DungeonGathering.Core
 
         public bool IsOpen(string address) => Find(address) != null;
 
-        public async Awaitable<T> Open<T>(string address, object args = null) where T : UIScreen
+        public async Awaitable<T> Open<T>(string address, object args = null, bool cancellableByBack = true) where T : UIScreen
         {
+            if (string.IsNullOrEmpty(address) || !AddressablesUtil.KeyExists<GameObject>(address))
+            {
+                if (warnedMissing.Add(address ?? "<null>"))
+                    Debug.LogWarning($"[UI] Chưa đăng ký Addressables cho '{address}' — bỏ qua Open<{typeof(T).Name}>.");
+                return null;
+            }
+
             // Đang tải HOẶC đang chờ OnOpen (màn đã nằm trong `open` nhưng chưa mở xong) → chờ lần đang chạy
             // (Awaitable mới cho mỗi người chờ), rồi mới Reopen — không gọi OnReopen chen vào giữa OnOpen.
-            if (pending.TryGetValue(address, out var running))
+            if (pending.TryGetValue(address, out var running) && !running.Cancelled)
             {
                 var waiter = new AwaitableCompletionSource<UIScreen>();
                 running.Waiters.Add(waiter);
@@ -83,15 +93,16 @@ namespace DungeonGathering.Core
                 return existing as T;
             }
 
-            var p = new Pending { Address = address, Owner = CurrentOwner };
+            var p = new Pending { Address = address, Owner = CurrentOwner, CancellableByBack = cancellableByBack };
             pending[address] = p;
             pendingOrder.Add(p);
             SetInputBlocked(p, true);
             UIScreen screen = null;
             try
             {
-                if (!cache.TryGetValue(address, out var cached) || cached.Scope.IsDisposed)
+                if (!cache.TryGetValue(address, out var cached) || cached.Scope.IsDisposed || cached.Owner.IsDisposed)
                 {
+                    if (cached != null && !cached.Scope.IsDisposed) cached.Scope.Dispose();
                     cached = new Cached { Scope = Services.Assets.CreateScope("ui:" + address), Owner = p.Owner };
                     cache[address] = cached;
                 }
@@ -156,6 +167,12 @@ namespace DungeonGathering.Core
             if (pending.TryGetValue(p.Address, out var cur) && cur == p) pending.Remove(p.Address);
             pendingOrder.Remove(p);
             SetInputBlocked(p, false);
+            if (result == null && !pending.ContainsKey(p.Address) && Find(p.Address) == null
+                && cache.TryGetValue(p.Address, out var cached) && (cached.Owner == p.Owner || cached.Owner.IsDisposed))
+            {
+                cache.Remove(p.Address);
+                cached.Scope.Dispose();
+            }
             foreach (var w in p.Waiters) w.TrySetResult(result);
             return result;
         }
@@ -183,9 +200,13 @@ namespace DungeonGathering.Core
             // Hủy Open đang chờ ở Screen/Popup/Panel trước (không đóng màn bên dưới — R5).
             if (pendingOrder.Count > 0)
             {
-                var last = pendingOrder[pendingOrder.Count - 1];
-                last.Cancelled = true;
-                return true;
+                for (int i = pendingOrder.Count - 1; i >= 0; i--)
+                {
+                    if (!pendingOrder[i].CancellableByBack) continue;
+                    pendingOrder[i].Cancelled = true;
+                    return true;
+                }
+                return true; // chỉ còn màn bắt buộc đang tải (Victory/Defeat) → nuốt Back, không đóng màn bên dưới
             }
             foreach (var layer in new[] { UILayer.Popup, UILayer.Panel, UILayer.Screen })
             {
@@ -198,6 +219,13 @@ namespace DungeonGathering.Core
                     Close(s);
                     return true;
                 }
+            }
+            // Cuối cùng mới tới lớp Hud (vd LobbyHud.OnBack → về Menu). Hud thường trực: chỉ gọi OnBack, không tự đóng.
+            for (int i = open.Count - 1; i >= 0; i--)
+            {
+                var s = open[i];
+                if (s == null || s.Layer != UILayer.Hud) continue;
+                if (s.OnBack()) return true;
             }
             return false;
         }

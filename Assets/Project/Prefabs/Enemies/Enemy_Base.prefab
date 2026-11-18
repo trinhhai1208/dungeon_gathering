@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyMotor
   repathInterval: {x: 0.25, y: 0.4}
-  waypointTolerance: 0.2
   knockbackDecay: 12
+  navSnapDistance: 1.5
 --- !u!114 &8069825682712984610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48adf77a2af3d414fa18650e3a8f68ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyBrain
+  losRecheckInterval: 0.2
 --- !u!114 &5553331535062803493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,8 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.StatusEffectController
   tintTarget: {fileID: 0}
-  slowTint: {r: 0.6, g: 0.8, b: 1, a: 1}
-  freezeTint: {r: 0.5, g: 0.75, b: 1, a: 1}
   vfxSocket: {fileID: 0}
 --- !u!114 &7981325833125534207
 MonoBehaviour:

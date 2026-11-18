@@ -12,6 +12,23 @@ namespace DungeonGathering.Play
         float timer;
         bool cooling;
 
+        protected override void ApplyData()
+        {
+            base.ApplyData();
+            if (data == null) return;
+            warningTime = data.warningTime;
+            activeTime = data.activeTime;
+            cooldown = data.cooldown;
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            timer = 0f;
+            cooling = false;
+            SetPhase(TrapPhase.Inactive);
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             if (Disabled || cooling || Phase != TrapPhase.Inactive || !IsTarget(other)) return;

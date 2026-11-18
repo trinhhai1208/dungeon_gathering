@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 5dfaabfb750bd0143900d780bc150edf
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1669919314532846003
+    second: frost-cryomancer_attack_0
+  - first:
+      213: 3468868631854736107
+    second: frost-cryomancer_attack_1
+  - first:
+      213: 3503745941546502655
+    second: frost-cryomancer_attack_2
+  - first:
+      213: 8842358951803017050
+    second: frost-cryomancer_attack_3
+  - first:
+      213: 3460963529019088709
+    second: frost-cryomancer_attack_4
+  - first:
+      213: 5956640205465595760
+    second: frost-cryomancer_attack_5
+  - first:
+      213: 1998838800886176904
+    second: frost-cryomancer_attack_6
+  - first:
+      213: -1308720835409928360
+    second: frost-cryomancer_attack_7
+  - first:
+      213: 4090573874478428792
+    second: frost-cryomancer_attack_8
+  - first:
+      213: 8737228868176957450
+    second: frost-cryomancer_attack_9
+  - first:
+      213: 5163250324449746430
+    second: frost-cryomancer_attack_10
+  - first:
+      213: 2241419075422461855
+    second: frost-cryomancer_attack_11
+  - first:
+      213: 1824659227458020968
+    second: frost-cryomancer_attack_12
+  - first:
+      213: -2807185326798406111
+    second: frost-cryomancer_attack_13
+  - first:
+      213: 2993714797206211616
+    second: frost-cryomancer_attack_14
+  - first:
+      213: 2243211318693035665
+    second: frost-cryomancer_attack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46b4b52b3143d8e0800000000000000
+      internalID: -1669919314532846003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be2623e44a5e32030800000000000000
+      internalID: 3468868631854736107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 2
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff98815ce5ecf9030800000000000000
+      internalID: 3503745941546502655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57d6ba2e9e56ba70800000000000000
+      internalID: 8842358951803017050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 5
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54fd3cf1effc70030800000000000000
+      internalID: 3460963529019088709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 5
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f269d05bc3aa250800000000000000
+      internalID: 5956640205465595760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 5
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c96129c4d4dbb10800000000000000
+      internalID: 1998838800886176904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 5
+        width: 21
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f1d37855d76dde0800000000000000
+      internalID: -1308720835409928360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 5
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 872b7cb1443a4c830800000000000000
+      internalID: 4090573874478428792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 4
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a00d9f02d5fd04970800000000000000
+      internalID: 8737228868176957450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 3
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efd5f3360dc87a740800000000000000
+      internalID: 5163250324449746430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_11
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 5
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f175706ce1b1f10800000000000000
+      internalID: 2241419075422461855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_12
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 3
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86626c066ed725910800000000000000
+      internalID: 1824659227458020968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_13
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 2
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12efd7181dfda09d0800000000000000
+      internalID: -2807185326798406111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_14
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 2
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c8e462fbfcb8920800000000000000
+      internalID: 2993714797206211616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-cryomancer_attack_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 2
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e75de2fcc712f10800000000000000
+      internalID: 2243211318693035665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      frost-cryomancer_attack_0: -1669919314532846003
+      frost-cryomancer_attack_1: 3468868631854736107
+      frost-cryomancer_attack_10: 5163250324449746430
+      frost-cryomancer_attack_11: 2241419075422461855
+      frost-cryomancer_attack_12: 1824659227458020968
+      frost-cryomancer_attack_13: -2807185326798406111
+      frost-cryomancer_attack_14: 2993714797206211616
+      frost-cryomancer_attack_15: 2243211318693035665
+      frost-cryomancer_attack_2: 3503745941546502655
+      frost-cryomancer_attack_3: 8842358951803017050
+      frost-cryomancer_attack_4: 3460963529019088709
+      frost-cryomancer_attack_5: 5956640205465595760
+      frost-cryomancer_attack_6: 1998838800886176904
+      frost-cryomancer_attack_7: -1308720835409928360
+      frost-cryomancer_attack_8: 4090573874478428792
+      frost-cryomancer_attack_9: 8737228868176957450
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

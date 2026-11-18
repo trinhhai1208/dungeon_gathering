@@ -1219,6 +1219,430 @@ MonoBehaviour:
     m_Key: hud.open_chest
     m_Metadata:
       m_Items: []
+  - m_Id: 3224065771352064
+    m_Key: item.bow_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065918152704
+    m_Key: wp.bow_wood.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065918152705
+    m_Key: item.staff_apprentice
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347008
+    m_Key: wp.staff_apprentice.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347009
+    m_Key: item.spear_iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347010
+    m_Key: wp.spear_iron.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347011
+    m_Key: item.dagger_twin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347012
+    m_Key: wp.dagger_twin.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347013
+    m_Key: item.blood_necklace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347014
+    m_Key: eq.blood_necklace.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347015
+    m_Key: item.arcane_pendant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347016
+    m_Key: eq.arcane_pendant.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347017
+    m_Key: item.iron_amulet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347018
+    m_Key: eq.iron_amulet.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347019
+    m_Key: item.dragon_crown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347020
+    m_Key: eq.dragon_crown.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347021
+    m_Key: item.archmage_robe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347022
+    m_Key: eq.archmage_robe.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347023
+    m_Key: item.phantom_cloak
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347024
+    m_Key: eq.phantom_cloak.passive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347025
+    m_Key: ip.berserk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347026
+    m_Key: ip.innate_warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347027
+    m_Key: ip.innate_ranger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347028
+    m_Key: ip.innate_mage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347029
+    m_Key: ip.innate_assassin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347030
+    m_Key: skill.arrow_rain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347031
+    m_Key: skill.arrow_rain.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347032
+    m_Key: skill.summon_skeletons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347033
+    m_Key: skill.summon_skeletons.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347034
+    m_Key: skill.spear_charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347035
+    m_Key: skill.spear_charge.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347036
+    m_Key: skill.blood_frenzy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347037
+    m_Key: skill.blood_frenzy.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347038
+    m_Key: skill.shadow_step
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347039
+    m_Key: skill.shadow_step.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347040
+    m_Key: set.crimson_warrior.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347041
+    m_Key: set.archmage.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347042
+    m_Key: set.shadow_assassin.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347043
+    m_Key: set.wind_ranger.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347044
+    m_Key: buff.vampiric_fangs.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347045
+    m_Key: buff.vampiric_fangs.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347046
+    m_Key: buff.arcane_surge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347047
+    m_Key: buff.arcane_surge.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347048
+    m_Key: buff.swift_boots.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347049
+    m_Key: buff.swift_boots.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347050
+    m_Key: buff.iron_will.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3224065922347051
+    m_Key: buff.iron_will.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763051417600
+    m_Key: enemy.dark_archer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080896
+    m_Key: enemy.frost_wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080897
+    m_Key: enemy.dark_hunter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3249763152080898
+    m_Key: enemy.shadow_ghoul
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4348535273730048
+    m_Key: char.frost_knight.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4348535328256000
+    m_Key: char.frost_knight.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413760323584
+    m_Key: enemy.bone_captain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460928
+    m_Key: enemy.crimson_warlord
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460929
+    m_Key: enemy.iron_harvester
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460930
+    m_Key: enemy.void_wraith
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460931
+    m_Key: enemy.inferno_king
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460932
+    m_Key: enemy.shadow_stalker
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460933
+    m_Key: enemy.plague_assassin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460934
+    m_Key: enemy.dread_executioner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460935
+    m_Key: enemy.frost_acolyte
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460936
+    m_Key: enemy.frost_cryomancer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4355413806460937
+    m_Key: enemy.frost_lich_king
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529034145792
+    m_Key: hud.portal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283136
+    m_Key: hud.shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283137
+    m_Key: interact.open_chest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283138
+    m_Key: shop.hp_full
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283139
+    m_Key: stat.dps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283140
+    m_Key: stat.role_synergy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283141
+    m_Key: common.rarity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283142
+    m_Key: weapon.kind_melee
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283143
+    m_Key: weapon.kind_ranged
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283144
+    m_Key: role.any
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283145
+    m_Key: role.warrior
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283146
+    m_Key: role.ranger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283147
+    m_Key: role.mage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4356529080283148
+    m_Key: role.assassin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063580086272
+    m_Key: status.stun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612224
+    m_Key: status.freeze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612225
+    m_Key: status.slow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612226
+    m_Key: status.burn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4361063634612227
+    m_Key: status.poison
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4441895476965376
+    m_Key: pause.bag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4441895544074240
+    m_Key: pause.bag_empty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4617325039366144
+    m_Key: save.readonly_other_tab
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4617325102280704
+    m_Key: save.readonly_newer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246086877184
+    m_Key: char.innate_prefix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374656
+    m_Key: skill.dual_wield.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374657
+    m_Key: skill.dodge_roll.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374658
+    m_Key: skill.arcane_storm.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374659
+    m_Key: skill.frost_field.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374660
+    m_Key: skill.holy_light.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374661
+    m_Key: skill.sacred_blessing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374662
+    m_Key: skill.rune_vortex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374663
+    m_Key: skill.ice_spike
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374664
+    m_Key: skill.wind_whirlwind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374665
+    m_Key: skill.wind_whirlwind.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374666
+    m_Key: skill.shadow_curse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4639246162374667
+    m_Key: skill.shadow_curse.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518737121280
+    m_Key: skill.rejuvenate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424448
+    m_Key: skill.rejuvenate.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424449
+    m_Key: skill.mega_blast
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424450
+    m_Key: skill.mega_blast.desc
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424451
+    m_Key: skill.leaf_storm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4710518808424452
+    m_Key: skill.leaf_storm.desc
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

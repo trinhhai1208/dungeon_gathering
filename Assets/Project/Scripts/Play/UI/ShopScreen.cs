@@ -49,7 +49,9 @@ namespace DungeonGathering.Play
         [SerializeField] Sprite cardOn;
         [SerializeField] Sprite cardOff;
         [SerializeField] Sprite potionIcon;
-        [SerializeField] Color inkColor = new Color32(0x1b, 0x14, 0x20, 0xff);
+        [SerializeField] Color inkColor = new Color32(0x17, 0x11, 0x1e, 0xff);
+        [SerializeField] Color paperColor = new Color32(0xef, 0xe6, 0xdc, 0xff);
+        [SerializeField] Color softColor = new Color32(0xc8, 0xbc, 0xc9, 0xff);
 
         RunShopArgs run;
         readonly List<(ItemData item, int price, bool sold)> offers = new();
@@ -58,7 +60,7 @@ namespace DungeonGathering.Play
 
         void Awake()
         {
-            closeButton?.onClick.AddListener(() => Services.UI?.Back());
+            closeButton?.onClick.AddListener(CloseSelf);
             buyButton?.onClick.AddListener(Buy);
             for (int i = 0; i < cards.Length; i++)
             {
@@ -78,6 +80,25 @@ namespace DungeonGathering.Play
                 }
             }
         }
+
+        // Coin (run/ví sảnh) và HP đổi khi màn đang mở → vẽ lại để giá/khóa nút và "HP đầy" luôn đúng.
+        void OnEnable()
+        {
+            EventBus<RunCoinsChangedEvent>.Subscribe(OnRunCoins);
+            EventBus<WalletChangedEvent>.Subscribe(OnWallet);
+            EventBus<PlayerStatsChangedEvent>.Subscribe(OnPlayerStats);
+        }
+
+        void OnDisable()
+        {
+            EventBus<RunCoinsChangedEvent>.Unsubscribe(OnRunCoins);
+            EventBus<WalletChangedEvent>.Unsubscribe(OnWallet);
+            EventBus<PlayerStatsChangedEvent>.Unsubscribe(OnPlayerStats);
+        }
+
+        void OnRunCoins(RunCoinsChangedEvent _) { if (IsOpen && run != null) Redraw(); }
+        void OnWallet(WalletChangedEvent _) { if (IsOpen && run == null) Redraw(); }
+        void OnPlayerStats(PlayerStatsChangedEvent _) { if (IsOpen && run != null) Redraw(); }
 
         void SelectCard(int index)
         {
@@ -137,8 +158,8 @@ namespace DungeonGathering.Play
             var catalog = ItemCatalog.Current;
             var save = Services.Save?.Data;
             if (catalog == null) return;
-            foreach (var item in catalog.All<ItemData>().Where(i => i.shopPrice > 0 && (save == null || !save.Owns(i.id))).Take(cards.Length))
-                offers.Add((item, item.shopPrice, false));
+            foreach (var item in catalog.All<ItemData>().Where(i => i.Price > 0 && (save == null || !save.Owns(i.id))).Take(cards.Length))
+                offers.Add((item, item.Price, false));
         }
 
         int Wallet => run != null ? (Services.Session?.runCoins ?? 0) : (Services.Save?.Data.coins ?? 0);
@@ -153,11 +174,12 @@ namespace DungeonGathering.Play
                 if (c.button != null) c.button.gameObject.SetActive(has);
                 if (!has) continue;
                 var (item, price, sold) = offers[i];
-                if (c.frame != null) c.frame.sprite = i == selected ? cardOn : cardOff;
-                if (c.tile != null) { if (item != null) c.tile.SetItem(item.icon, item.rarity); else c.tile.SetItem(potionIcon, Rarity.F); }
-                if (c.name != null) { c.name.text = Name(item); c.name.color = inkColor; }
-                if (c.kind != null) c.kind.text = Kind(item);
-                if (c.price != null) c.price.text = sold ? "—" : price.ToString();
+                bool isSel = i == selected;
+                if (c.frame != null) c.frame.sprite = isSel ? cardOn : cardOff;
+                if (c.tile != null) { if (item != null) c.tile.SetItem(item.Icon, item.Rank); else c.tile.SetItem(potionIcon, Rarity.D); }
+                if (c.name != null) { c.name.text = Name(item); c.name.color = isSel ? inkColor : paperColor; }
+                if (c.kind != null) { c.kind.text = Kind(item); c.kind.color = isSel ? inkColor : softColor; }
+                if (c.price != null) { c.price.text = sold ? "—" : price.ToString(); c.price.color = isSel ? inkColor : paperColor; }
             }
             DrawDetail();
         }
@@ -175,11 +197,11 @@ namespace DungeonGathering.Play
                 return;
             }
             var (item, price, sold) = offers[selected];
-            if (detailTile != null) { if (item != null) detailTile.SetItem(item.icon, item.rarity); else detailTile.SetItem(potionIcon, Rarity.F); }
+            if (detailTile != null) { if (item != null) detailTile.SetItem(item.Icon, item.Rank); else detailTile.SetItem(potionIcon, Rarity.D); }
             if (detailName != null) detailName.text = Name(item);
             if (detailKind != null) detailKind.text = Kind(item);
             if (detailStats != null) detailStats.text = Stats(item);
-            if (detailDesc != null) detailDesc.text = item == null ? LocalizationLookup.Get("shop.potion_desc") : LocalizationLookup.Get(item.descKey, string.Empty);
+            if (detailDesc != null) detailDesc.text = item == null ? LocalizationLookup.Get("shop.potion_desc") : LocalizationLookup.Get(item.DescKey, string.Empty);
             if (buyPrice != null) buyPrice.text = price.ToString();
             bool hpFull = !sold && PotionBlocked(item);
             bool canBuy = !sold && !hpFull && Wallet >= price;
@@ -214,20 +236,40 @@ namespace DungeonGathering.Play
             Redraw();
         }
 
-        static string Name(ItemData item) => item == null ? LocalizationLookup.Get("item.potion", "Health Potion") : LocalizationLookup.Get(item.nameKey, item.id);
+        static string Name(ItemData item) => item == null ? LocalizationLookup.Get("item.potion", "Health Potion") : LocalizationLookup.Get(item.NameKey, item.id);
 
         static string Kind(ItemData item)
         {
             if (item == null) return LocalizationLookup.Get("shop.consumable", "Consumable");
-            return item is WeaponData ? $"{LocalizationLookup.Get("shop.weapon_prefix", "Weapon")} · {item.rarity}" : $"{item.GetType().Name.Replace("Data", "")} · {item.rarity}";
+            return item is WeaponData ? $"{LocalizationLookup.Get("shop.weapon_prefix", "Weapon")} · {item.Rank}" : $"{item.GetType().Name.Replace("Data", "")} · {item.Rank}";
         }
+
+        static string FormatEquipmentModifiers(List<StatModifier> mods)
+        {
+            var parts = new List<string>(mods.Count);
+            foreach (var m in mods)
+            {
+                string label = LocalizationLookup.Get(StatKey(m.Stat), m.Stat.ToString());
+                if (Mathf.Abs(m.PercentValue) > 0.0001f)
+                    parts.Add($"{(m.PercentValue > 0 ? "+" : "")}{m.PercentValue * 100f:0}% {label}");
+                if (Mathf.Abs(m.FlatValue) > 0.0001f)
+                    parts.Add($"{(m.FlatValue > 0 ? "+" : "")}{m.FlatValue:0.#} {label}");
+            }
+            return string.Join("\n", parts);
+        }
+
+        static string StatKey(StatType t) => t switch
+        {
+            StatType.MaxHp => "stat.hp", StatType.MaxArmor => "stat.armor", StatType.MaxMana => "stat.mana",
+            StatType.AttackDamage => "stat.dmg", StatType.AttackSpeed => "stat.aspd", StatType.MoveSpeed => "stat.spd", _ => "stat.crit"
+        };
 
         static string Stats(ItemData item) => item switch
         {
             // Giá trị thật của bình máu (LootSpawner.HealthPerPotion) — không dùng chuỗi cố định "shop.hp30".
             null => $"+{LootSpawner.HealthPerPotion} {LocalizationLookup.Get("stat.hp", "HP")}",
-            WeaponData w => $"{w.damage:0} {LocalizationLookup.Get("stat.dmg")}\n{w.fireRate:0.0} {LocalizationLookup.Get("stat.aspd")}",
-            EquipmentData e when e.baseModifiers != null => string.Join("\n", e.baseModifiers.Select(m => m.PercentValue != 0 ? $"+{m.PercentValue * 100:0}% {m.Stat}" : $"+{m.FlatValue:0} {m.Stat}")),
+            WeaponData w => $"{w.Spec.damage:0} {LocalizationLookup.Get("stat.dmg")}\n{w.Spec.fireRate:0.0} {LocalizationLookup.Get("stat.aspd")}",
+            EquipmentSO e when e.baseModifiers != null => FormatEquipmentModifiers(e.baseModifiers),
             _ => string.Empty
         };
     }

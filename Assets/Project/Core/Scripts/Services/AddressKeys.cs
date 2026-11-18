@@ -28,6 +28,7 @@ namespace DungeonGathering.Core
         public const string DataCatalog = "data/catalog";
         public const string CoreModuleRegistry = "core/module-registry";
         public const string CoreFontConfig = "core/localization/font-config";
+        public const string CoreSfxLibrary = "core/sfx-library";
 
         // Gameplay
         public const string PlayerShell = "char/player-shell";
@@ -43,6 +44,5 @@ namespace DungeonGathering.Core
         // Labels
         public const string LabelCore = "core";
         public const string LabelSharedUi = "shared-ui";
-        public const string LabelLocaleVi = "locale-vi";
     }
 }

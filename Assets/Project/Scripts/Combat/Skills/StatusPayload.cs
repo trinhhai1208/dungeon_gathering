@@ -1,33 +1,40 @@
 using System.Collections.Generic;
 using DungeonGathering.Catalog;
-using DungeonGathering.Core;
 using UnityEngine;
 
 namespace DungeonGathering.Combat
 {
-    /// <summary>Tham số trạng thái gây lên mục tiêu (dùng chung cho kỹ năng & passive).</summary>
+    /// <summary>
+    /// Hiệu ứng gây lên mục tiêu (dùng chung cho skill, passive, đòn quái, bẫy, đạn): danh sách StatusEffectRef —
+    /// mỗi phần tử trỏ tới một StatusEffectSO + ghi đè thời gian / độ mạnh / xác suất.
+    /// </summary>
     [System.Serializable]
     public struct StatusPayload
     {
-        [Range(0, 1)] public float slowPercent;
-        public float slowDuration;
-        public float dotDps;
-        public float dotDuration;
-        public string dotId;
-        public GameObject dotLoopVfx;
-        public float stunDuration;
-        public bool freeze;
+        [Tooltip("Hiệu ứng gây ra (StatusEffectSO + ghi đè thời gian / độ mạnh / xác suất)")]
+        public List<StatusEffectRef> effects;
 
-        public bool IsEmpty => slowPercent <= 0f && dotDps <= 0f && stunDuration <= 0f;
+        public bool IsEmpty
+        {
+            get
+            {
+                if (effects == null) return true;
+                foreach (var e in effects) if (e.IsValid) return false;
+                return true;
+            }
+        }
+
+        public void ApplyTo(IDamageable target, GameObject source)
+        {
+            if (target is Component c && c != null) ApplyTo(c.gameObject, source);
+        }
 
         public void ApplyTo(GameObject target, GameObject source)
         {
             if (IsEmpty || target == null) return;
             var s = target.GetComponentInParent<StatusEffectController>();
             if (s == null) return;
-            if (slowPercent > 0f) s.ApplySlow(slowPercent, slowDuration);
-            if (dotDps > 0f) s.ApplyDot(string.IsNullOrEmpty(dotId) ? "dot" : dotId, dotDps, dotDuration, source, dotLoopVfx);
-            if (stunDuration > 0f) s.ApplyStun(stunDuration, freeze);
+            foreach (var e in effects) s.Apply(e, source);
         }
     }
 }

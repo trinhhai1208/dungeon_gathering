@@ -24,14 +24,15 @@ namespace DungeonGathering.Enemies
     /// Đòn tấn công dạng module (ARCHITECTURE §6). Execute là async: windup bị hủy khi quái chết (DeadState)
     /// → không tung đòn sau khi chết.
     /// </summary>
-    public abstract class EnemyAttackSO : ScriptableObject
+    public abstract class EnemyAttackSO : Catalog.SkillBaseSO
     {
-        public float range = 1.2f;
-        public float cooldown = 2f;
-        public float windupTime = 0.4f;
+        [Tooltip("Khoảng cách tối đa (world-unit) từ điểm ra đòn tới Player để đòn này được chọn.")] public float range = 1.2f;
+        [Tooltip("Thời gian gồng/cảnh báo trước khi ra đòn (giây); bị hủy nếu quái chết.")] public float windupTime = 0.4f;
         [Tooltip("Trọng số chọn khi nhiều đòn sẵn sàng")] [Min(0)] public float weight = 1f;
         [Tooltip("Phải nhìn thấy Player (không bị tường chắn)")] public bool requireLineOfSight = true;
         [Tooltip("Đứng yên khi ra đòn")] public bool stopWhileAttacking = true;
+        [Tooltip("Hiệu ứng bất lợi kèm theo khi trúng mục tiêu (tùy chọn).")]
+        public StatusPayload status;
 
         public virtual bool CanUse(Enemy self, ITargetable target, float distance) => distance <= range;
 

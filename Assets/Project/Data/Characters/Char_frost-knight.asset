@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164143709f3901b45a8e7df499848c3f, type: 3}
+  m_Name: Char_frost-knight
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.CharacterData
+  characterId: frost-knight
+  nameKey: char.frost_knight.name
+  descKey: char.frost_knight.desc
+  role: 3
+  unlockPrice: 2000
+  released: 1
+  rank: 0
+  portrait: {fileID: -1841247198980747888, guid: 914bf0988cbdefd43ae8b2ed1f20ac07, type: 3}
+  animator: {fileID: 9100000, guid: 91109a753941f79468b33ebe7b733460, type: 2}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  stats:
+    profile: {fileID: 11400000, guid: a674fcb4f2b607d4ea58ea5bc35f922a, type: 2}
+    overrides: []
+  startingWeapon: {fileID: 11400000, guid: 783f30330afd66c4b8ec6d3c4c9477e7, type: 2}
+  skill: 8
+  innatePassive: {fileID: 11400000, guid: 5132b5189e43272449fd10c418ae0f9b, type: 2}

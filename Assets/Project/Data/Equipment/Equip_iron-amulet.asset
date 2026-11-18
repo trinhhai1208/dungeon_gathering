@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851a27d9a0d51a1419d2f1297173c272, type: 3}
+  m_Name: Equip_iron-amulet
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentData
+  id: iron-amulet
+  rarity: 3
+  icon: {fileID: -290771723, guid: 5e972451c203e0b45963009650a405bf, type: 3}
+  nameKey: item.iron_amulet
+  descKey: eq.iron_amulet.passive
+  activeSkill: {fileID: 0}
+  shopPrice: 60
+  slot: 4
+  baseModifiers:
+  - Stat: 1
+    FlatValue: 1
+    PercentValue: 0
+  - Stat: 0
+    FlatValue: 1
+    PercentValue: 0
+  synergyRole: 1
+  synergyPassive: {fileID: 11400000, guid: c15b96ac08a619643bb64a2812a0a01d, type: 2}
+  equipmentSet: {fileID: 11400000, guid: 4e8d08b93b4bca74cbbb5c97a2d262c6, type: 2}
+  onHitStatus: []

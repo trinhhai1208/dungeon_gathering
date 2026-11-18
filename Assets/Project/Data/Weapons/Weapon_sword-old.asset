@@ -19,29 +19,3 @@ MonoBehaviour:
   descKey: common.none
   activeSkill: {fileID: 0}
   shopPrice: 30
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: -1548253021, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 10
-  fireRate: 2.6
-  attackRange: 1
-  spread: 0
-  knockback: 5
-  critBonus: 0.05
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 0}

@@ -95,6 +95,7 @@ namespace DungeonGathering.Combat
         public float Accum;
         public float Until;
         public int Counter;
+        public int RefCount;
         public bool Busy;
         public bool Active;
     }

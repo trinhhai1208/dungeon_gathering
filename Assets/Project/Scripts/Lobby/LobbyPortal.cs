@@ -10,13 +10,18 @@ namespace DungeonGathering.Lobby
     {
         bool used;
 
+        void OnEnable() => used = false;
+        void OnDisable() => used = false;
+
         public void OnPointerClick(PointerEventData eventData) => Enter();
 
         public void Enter()
         {
             if (used || LobbyEntry.Current == null) return;
+            if (Services.Scenes != null && Services.Scenes.IsTransitioning) return;
             used = true;
-            if (!LobbyEntry.Current.StartRun()) used = false;
+            // Không gọi thẳng LobbyEntry — phát sự kiện, LobbyEntry thử vào run rồi báo kết quả.
+            EventBus<RunStartRequestedEvent>.Raise(new RunStartRequestedEvent { Done = ok => { if (!ok) used = false; } });
         }
     }
 }

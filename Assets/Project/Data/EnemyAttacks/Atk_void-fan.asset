@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7de0bdaea43b6f468a7579efeb9ad23, type: 3}
+  m_Name: Atk_void-fan
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ShootAttackSO
+  skillId: atk-void-fan
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
+  cooldown: 2.8
+  range: 7
+  windupTime: 0.5
+  weight: 1
+  requireLineOfSight: 1
+  stopWhileAttacking: 1
+  status:
+    effects: []
+  projectilePrefab: {fileID: 821309889816414631, guid: eb68de60f89f7bd4e9711a74083f1b59, type: 3}
+  impactVfx: {fileID: 368901354936306899, guid: 29e87ffde11374d4a96f6366beef14c9, type: 3}
+  damage: 1
+  speed: 5.5
+  knockback: 2
+  lifetime: 4
+  count: 3
+  spreadAngle: 30
+  radial: 0
+  bursts: 1
+  burstInterval: 0.15
+  radialSpin: 10

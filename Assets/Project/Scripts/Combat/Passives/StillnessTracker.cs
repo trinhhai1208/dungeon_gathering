@@ -11,6 +11,7 @@ namespace DungeonGathering.Combat
     {
         IPlayerContext ctx;
         StillnessEmpowerPassive cfg;
+        StatusEffectController status;
         float still;
         bool queued;
 
@@ -18,6 +19,7 @@ namespace DungeonGathering.Combat
         {
             if (ctx != null && ctx != c) ctx.Hooks.Attacked -= OnAttacked;
             ctx = c; cfg = p; still = 0f; queued = false;
+            status = ctx != null && ctx.GameObject != null ? ctx.GameObject.GetComponent<StatusEffectController>() : null;
             ctx.Hooks.Attacked -= OnAttacked;
             ctx.Hooks.Attacked += OnAttacked;
             enabled = true;
@@ -27,7 +29,7 @@ namespace DungeonGathering.Combat
         public void Unconfigure()
         {
             if (ctx != null) ctx.Hooks.Attacked -= OnAttacked;
-            ctx = null; cfg = null; still = 0f; queued = false;
+            ctx = null; cfg = null; status = null; still = 0f; queued = false;
             enabled = false;
         }
 
@@ -36,7 +38,7 @@ namespace DungeonGathering.Combat
         void Update()
         {
             if (ctx == null || cfg == null || ctx.IsDead) return;
-            if (ctx.MoveInput.sqrMagnitude > 0.01f) { still = 0f; return; }
+            if ((status != null && status.IsStunned) || ctx.MoveInput.sqrMagnitude > 0.01f) { still = 0f; return; }
             if (queued) return;
             still += Time.deltaTime;
             if (still >= cfg.stillTime)

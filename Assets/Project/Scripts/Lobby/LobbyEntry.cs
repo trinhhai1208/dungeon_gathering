@@ -11,9 +11,6 @@ namespace DungeonGathering.Lobby
     /// </summary>
     public sealed class LobbyEntry : MonoBehaviour, IModuleEntry
     {
-        [Tooltip("Catalog tham chiếu trực tiếp khi chưa có address data/catalog (dev)")]
-        [SerializeField] ItemCatalog fallbackCatalog;
-
         public static LobbyEntry Current { get; private set; }
         public ItemCatalog Catalog { get; private set; }
         public ModuleScope Scope { get; private set; }
@@ -30,8 +27,7 @@ namespace DungeonGathering.Lobby
             Scope = context.Scope;
             var token = destroyCancellationToken;
 
-            if (AddressablesUtil.KeyExists(AddressKeys.DataCatalog)) Catalog = await ItemCatalog.LoadAsync(Scope);
-            else if (fallbackCatalog != null) { fallbackCatalog.Register(); Catalog = fallbackCatalog; }
+            if (AddressablesUtil.KeyExists(AddressKeys.DataCatalog)) Catalog = await ItemCatalog.LoadAsync();
             if (token.IsCancellationRequested) return;
 
             SelectedCharacterId = ResolvePlayable(Services.Save?.Data.selectedCharacterId);
@@ -44,11 +40,10 @@ namespace DungeonGathering.Lobby
                 if (token.IsCancellationRequested) return;
             }
 
-            if (AddressablesUtil.KeyExists(AddressKeys.UiHudLobby))
-                await Services.UI.Open<UIScreen>(AddressKeys.UiHudLobby);
+            await Services.UI.Open<UIScreen>(AddressKeys.UiHudLobby);
         }
 
-        public CharacterData GetCharacter(string id) => Catalog != null ? Catalog.GetCharacter(id) : null;
+        public HeroDefinitionSO GetCharacter(string id) => Catalog != null ? Catalog.GetCharacter(id) : null;
 
         /// <summary>Nhân vật có thể chơi (đã ra mắt) — id không hợp lệ / chưa ra mắt → nhân vật đã ra mắt đầu tiên.</summary>
         string ResolvePlayable(string id)
@@ -76,8 +71,7 @@ namespace DungeonGathering.Lobby
                 SelectedCharacterId = characterId;
                 foreach (var s in spots) s.SetSelected(s.CharacterId == characterId);
             }
-            if (AddressablesUtil.KeyExists(AddressKeys.UiPanelCharacter))
-                await Services.UI.Open<UIScreen>(AddressKeys.UiPanelCharacter, characterId);
+            await Services.UI.Open<UIScreen>(AddressKeys.UiPanelCharacter, characterId);
         }
 
         /// <summary>Vào Portal: ghi loadout + config vào SessionData rồi Go(play). Trả false nếu chưa chọn / chưa mở khóa.</summary>
@@ -106,5 +100,14 @@ namespace DungeonGathering.Lobby
         }
 
         void OnDestroy() { if (Current == this) Current = null; }
+
+        void OnEnable() => EventBus<RunStartRequestedEvent>.Subscribe(OnRunStartRequested);
+        void OnDisable() => EventBus<RunStartRequestedEvent>.Unsubscribe(OnRunStartRequested);
+
+        void OnRunStartRequested(RunStartRequestedEvent e)
+        {
+            bool ok = Current == this && StartRun();
+            e.Done?.Invoke(ok);
+        }
     }
 }

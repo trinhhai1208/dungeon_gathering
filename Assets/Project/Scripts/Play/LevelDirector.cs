@@ -27,9 +27,9 @@ namespace DungeonGathering.Play
         public RunState State { get; private set; } = RunState.Loading;
         public bool IsPlaying => State == RunState.Playing;
         public PlayerController Player { get; private set; }
-        public DungeonConfig Config { get; private set; }
+        public LevelConfigSO Config { get; private set; }
         public ItemCatalog Catalog { get; private set; }
-        public CharacterData Character { get; private set; }
+        public HeroDefinitionSO Character { get; private set; }
         public ModuleScope Scope { get; private set; }
         public System.Random Rng { get; private set; }
         public LootSpawner Loot { get; private set; }
@@ -55,6 +55,7 @@ namespace DungeonGathering.Play
             EventBus<EnemyDiedEvent>.Subscribe(OnEnemyDied);
             EventBus<BossDefeatedEvent>.Subscribe(OnBossDefeated);
             EventBus<PlayerDiedEvent>.Subscribe(OnPlayerDied);
+            EventBus<LevelExitRequestedEvent>.Subscribe(OnLevelExitRequested);
             VirtualInput.Pause += OnPauseRequested;
         }
 
@@ -63,6 +64,7 @@ namespace DungeonGathering.Play
             EventBus<EnemyDiedEvent>.Unsubscribe(OnEnemyDied);
             EventBus<BossDefeatedEvent>.Unsubscribe(OnBossDefeated);
             EventBus<PlayerDiedEvent>.Unsubscribe(OnPlayerDied);
+            EventBus<LevelExitRequestedEvent>.Unsubscribe(OnLevelExitRequested);
             VirtualInput.Pause -= OnPauseRequested;
         }
 
@@ -86,17 +88,20 @@ namespace DungeonGathering.Play
             if (token.IsCancellationRequested) return;
             if (Config == null)
             {
-                Debug.LogError($"[Play] Không có DungeonConfig cho tầng {Floor}.");
+                Debug.LogError($"[Play] Không có LevelConfigSO cho tầng {Floor} — quay về sảnh.");
+                RunFlow.ReturnToLobby();
                 return;
             }
 
             Character = Catalog != null ? Catalog.GetCharacter(session.characterId) : null;
-            if (Character == null) Character = prefabs != null ? prefabs.fallbackCharacter : null;
 
             CombatFx.Configure(prefabs != null ? prefabs.damagePopup : null, prefabs != null ? prefabs.defaultHitVfx : null);
-            Loot = new LootSpawner(prefabs, Scope, Catalog, Rng, Floor);
+            DungeonGathering.Catalog.MonsterTierConfigSO.Current =prefabs != null ? prefabs.monsterTiers : null;
+            var lootCfg = prefabs != null ? prefabs.lootConfig : null;
+            DungeonGathering.Catalog.LootConfigSO.Current = lootCfg;
+            Loot = new LootSpawner(prefabs, Scope, Catalog, lootCfg, Rng, Floor, Config.lootLuck);
 
-            Layout = DungeonGenerator.Generate(session.seed, Config.ToGeneratorSettings());
+            Layout = DungeonGenerator.Generate(session.seed, Config.ToGeneratorSettings(new System.Random(session.seed ^ 0x2c1b3c6d)));
             builder.Build(Layout, Config, this, prefabs);
             Prewarm();
 
@@ -106,12 +111,8 @@ namespace DungeonGathering.Play
             State = RunState.Playing;
             if (builder.StartRoom != null) OnRoomEntered(builder.StartRoom);
 
-            if (AddressablesUtil.KeyExists(AddressKeys.UiHudPlay))
-            {
-                await Services.UI.Open<UIScreen>(AddressKeys.UiHudPlay);
-                if (token.IsCancellationRequested) return;
-            }
-            else Debug.LogWarning("[Play] Chưa có address ui/hud/play — chạy không HUD.");
+            await Services.UI.Open<UIScreen>(AddressKeys.UiHudPlay);
+            if (token.IsCancellationRequested) return;
 
             Player.SetInputEnabled(true);
             bossEncounter.Preload(Config, Scope);
@@ -122,34 +123,34 @@ namespace DungeonGathering.Play
         {
             var save = Services.Save?.Data;
             string id = save != null && !string.IsNullOrEmpty(save.selectedCharacterId) ? save.selectedCharacterId
-                      : prefabs != null && prefabs.fallbackCharacter != null ? prefabs.fallbackCharacter.characterId : "knight";
+                      : SaveData.DefaultCharacterId;
             var loadout = save != null ? save.GetCharacter(id).loadout : new LoadoutData();
             session.StartNewRun(id, loadout, UnityEngine.Random.Range(int.MinValue, int.MaxValue));
             Debug.Log($"[Play] Quick start: nhân vật '{id}', seed {session.seed}.");
         }
 
-        async Awaitable<ItemCatalog> LoadCatalog()
+        static async Awaitable<ItemCatalog> LoadCatalog()
         {
+            if (ItemCatalog.Current != null) return ItemCatalog.Current;
             if (AddressablesUtil.KeyExists(AddressKeys.DataCatalog))
             {
-                try { return await ItemCatalog.LoadAsync(Scope); }
+                try { return await ItemCatalog.LoadAsync(); }
                 catch (Exception e) when (e is not OperationCanceledException) { Debug.LogException(e); }
             }
-            var fb = prefabs != null ? prefabs.fallbackCatalog : null;
-            if (fb != null) fb.Register();
-            return fb;
+            return null;
         }
 
-        async Awaitable<DungeonConfig> LoadConfig(string theme, int floor)
+        async Awaitable<LevelConfigSO> LoadConfig(string theme, int floor)
         {
-            string address = AddressKeys.DungeonConfig(theme, floor);
+            // Thứ tự level do Campaign quyết định; chưa có Campaign thì dùng address mặc định theo tầng.
+            var campaign = Catalog != null ? Catalog.Campaign : null;
+            if (campaign != null && campaign.LevelCount > 0 && Services.Session != null) Services.Session.maxFloor = campaign.LevelCount;
+            string address = campaign != null && campaign.AddressOf(floor) is { } a ? a : AddressKeys.DungeonConfig(theme, floor);
             if (AddressablesUtil.KeyExists(address))
             {
-                try { return await Scope.Load<DungeonConfig>(address); }
+                try { return await Scope.Load<LevelConfigSO>(address); }
                 catch (Exception e) when (e is not OperationCanceledException) { Debug.LogException(e); }
             }
-            if (prefabs != null && prefabs.fallbackConfigs != null && prefabs.fallbackConfigs.Length > 0)
-                return prefabs.fallbackConfigs[Mathf.Clamp(floor - 1, 0, prefabs.fallbackConfigs.Length - 1)];
             return null;
         }
 
@@ -162,8 +163,18 @@ namespace DungeonGathering.Play
                 if (prefabs.damagePopup != null) pool.Prewarm(prefabs.damagePopup.gameObject, Scope, prefabs.prewarmPopups);
                 if (prefabs.spawnMarker != null) pool.Prewarm(prefabs.spawnMarker.gameObject, Scope, 6);
             }
+            // Quái theo định nghĩa dùng chung pool của prefab nền → cộng dồn số prewarm
+            int basePrewarm = 0;
             foreach (var e in Config.enemyTable)
-                if (e.prefab != null && e.prewarm > 0) pool.Prewarm(e.prefab.gameObject, Scope, e.prewarm);
+            {
+                if (e.prewarm <= 0) continue;
+                var unit = e.Resolve(prefabs != null ? prefabs.monsterBase : null);
+                if (!unit.IsValid) continue;
+                if (unit.Definition != null) basePrewarm += e.prewarm;
+                else pool.Prewarm(unit.Prefab.gameObject, Scope, e.prewarm);
+            }
+            if (basePrewarm > 0 && prefabs.monsterBase != null)
+                pool.Prewarm(prefabs.monsterBase.gameObject, Scope, Mathf.Min(basePrewarm, 24));
         }
 
         void SpawnPlayer(SessionData session)
@@ -179,13 +190,13 @@ namespace DungeonGathering.Play
             Player.name = "Player";
 
             WeaponData w1 = null, w2 = null;
-            var equips = new List<EquipmentData>();
+            var equips = new List<EquipmentSO>();
             if (Catalog != null)
             {
                 w1 = Catalog.Get<WeaponData>(session.loadout.GetWeapon(0));
                 w2 = Catalog.Get<WeaponData>(session.loadout.GetWeapon(1));
                 foreach (var id in session.loadout.equipment)
-                    if (Catalog.Get<EquipmentData>(id) is { } eq) equips.Add(eq);
+                    if (Catalog.Get<EquipmentSO>(id) is { } eq) equips.Add(eq);
             }
             Player.Init(Character, w1, w2, equips, session.runStats);
             if (cameraRig != null) cameraRig.Follow(Player.transform);
@@ -203,8 +214,29 @@ namespace DungeonGathering.Play
 
         public void OnRoomCleared(RoomController room)
         {
-            if (!IsPlaying || room.Type != RoomType.Combat || prefabs == null || prefabs.chest == null) return;
-            if (Rng.NextDouble() >= Config.chestOnClearChance) return;
+            if (!IsPlaying || prefabs == null) return;
+
+            if (room.Type == RoomType.Boss)
+            {
+                if (prefabs.portal != null)
+                {
+                    var portalAt = room.Template != null && room.Template.portalPoint != null
+                        ? room.Template.portalPoint.position
+                        : room.transform.position;
+                    var portal = Instantiate(prefabs.portal, portalAt, Quaternion.identity, room.transform);
+                    portal.Setup(LevelExitDestination.NextLevel);
+                }
+                else
+                {
+                    Finish(true);
+                }
+                return;
+            }
+
+            if ((room.Type != RoomType.Combat && room.Type != RoomType.Elite) || prefabs.chest == null) return;
+            var typeCfg = Config.TypeConfig(room.Type);
+            float chestChance = typeCfg != null && typeCfg.chestChance >= 0f ? typeCfg.chestChance : Config.chestOnClearChance;
+            if (Rng.NextDouble() >= chestChance) return;
             var at = room.Template.chestPoint != null ? room.Template.chestPoint.position : room.transform.position;
             var chest = Instantiate(prefabs.chest, at, Quaternion.identity, room.transform);
             chest.Setup(this, ChestKind.Item);
@@ -220,13 +252,21 @@ namespace DungeonGathering.Play
         void OnEnemyDied(EnemyDiedEvent e)
         {
             if (Services.Session != null) Services.Session.kills++;
-            if (e.Data != null) Loot?.Drop(e.Data.lootTable, e.Position);
+            Loot?.DropFromMonster(e.Data, e.Tier, e.Position);
             bossEncounter.NotifyEnemyDied(e);
         }
 
         void OnBossDefeated(BossDefeatedEvent e) => bossEncounter.NotifyBossDefeated();
 
         void OnPlayerDied(PlayerDiedEvent e) => Finish(false);
+
+        /// <summary>Portal phát sự kiện: sang level kế = chốt thắng tầng (màn kết quả → Tiếp tục); về sảnh = chốt rồi về.</summary>
+        void OnLevelExitRequested(LevelExitRequestedEvent e)
+        {
+            if (!IsPlaying) return;
+            Finish(true);
+            if (e.Destination == LevelExitDestination.Lobby) RunFlow.ReturnToLobby();
+        }
 
         void Update()
         {
@@ -244,8 +284,8 @@ namespace DungeonGathering.Play
             State = RunState.Finished;
 
             var session = Services.Session;
-            session.lastRunVictory = victory;
-            if (victory) SnapshotRunStats(); // chụp tạm; chụp lại khi vào Portal/mở màn kết quả (ShowResults)
+            if (session != null) session.lastRunVictory = victory;
+            if (victory) SnapshotRunStats(); // chụp tạm; chụp lại trước khi Settle ở ShowResults
             if (Player != null)
             {
                 Player.SetInvulnerable(this, true);
@@ -259,9 +299,8 @@ namespace DungeonGathering.Play
             EventBus<RunFinishedEvent>.Raise(new RunFinishedEvent { Victory = victory, Floor = Floor });
             Services.Game?.SetState(victory ? GameState.Victory : GameState.GameOver);
 
-            // SYS-04: Thua trận hoặc thắng tầng cuối cùng thì Settle() ngay để không mất thưởng.
-            // Thắng tầng giữa (floor < maxFloor) thì chưa Settle() để cho phép bấm Tiếp tục tầng kế.
-            if (!victory || (session != null && session.floor >= session.maxFloor))
+            // Nếu thua trận thì Settle ngay; nếu thắng tầng cuối, Settle trong ShowResults sau Snapshot cuối cùng để không sót coin nhặt trong delay.
+            if (!victory)
             {
                 RunFlow.Settle();
             }
@@ -314,7 +353,13 @@ namespace DungeonGathering.Play
             var token = destroyCancellationToken;
             try { if (delay > 0f) await Awaitable.WaitForSecondsAsync(delay, token); }
             catch (OperationCanceledException) { return; }
-            if (victory) SnapshotRunStats(); // chụp lại lúc vào Portal: tính cả máu/mana nhặt sau khi hạ boss
+            if (victory)
+            {
+                SnapshotRunStats(); // chụp lại lúc mở kết quả: tính cả máu/mana/coin nhặt sau khi vào Portal
+                var session = Services.Session;
+                if (session != null && session.floor >= session.maxFloor)
+                    RunFlow.Settle();
+            }
             if (Player != null) Player.SetInputEnabled(false);
             string address = victory ? AddressKeys.UiScreenVictory : AddressKeys.UiScreenDefeat;
             if (!AddressablesUtil.KeyExists(address))
@@ -323,7 +368,15 @@ namespace DungeonGathering.Play
                 RunFlow.ReturnToLobby();
                 return;
             }
-            await Services.UI.Open<UIScreen>(address, victory);
+            // Màn kết quả bắt buộc: Esc không được hủy lúc đang tải. Tải lỗi → thử lại một lần, vẫn lỗi → về sảnh (không kẹt run).
+            for (int attempt = 0; attempt < 2; attempt++)
+            {
+                var screen = await Services.UI.Open<UIScreen>(address, victory, cancellableByBack: false);
+                if (screen != null || this == null) return;
+                if (Services.Scenes == null || Services.Scenes.IsTransitioning) return;
+            }
+            Debug.LogWarning($"[Play] Không mở được {address} — về sảnh.");
+            RunFlow.ReturnToLobby();
         }
 
         async void OnPauseRequested()

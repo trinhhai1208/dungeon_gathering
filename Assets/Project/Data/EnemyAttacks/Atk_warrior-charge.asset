@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112a44208674f5e49921f5955ee258b3, type: 3}
   m_Name: Atk_warrior-charge
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ChargeAttackSO
-  range: 5
+  skillId: atk-warrior-charge
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 5
+  range: 5
   windupTime: 0.7
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
+  status:
+    effects: []
   damage: 1
   distance: 5
   chargeSpeed: 14
-  hitRadius: 0.6
+  hitRadius: 0.85
   knockback: 6
   warningPrefab: {fileID: 0}

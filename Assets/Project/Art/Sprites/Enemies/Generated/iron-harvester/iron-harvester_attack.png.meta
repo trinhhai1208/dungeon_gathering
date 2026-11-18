@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 8c0f987b50bbaba429b8cdc54cf06690
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4856146437513426480
+    second: iron-harvester_attack_0
+  - first:
+      213: 3475633698562053171
+    second: iron-harvester_attack_1
+  - first:
+      213: -3098290856282499062
+    second: iron-harvester_attack_2
+  - first:
+      213: 7629417128997692461
+    second: iron-harvester_attack_3
+  - first:
+      213: -984307920067184144
+    second: iron-harvester_attack_4
+  - first:
+      213: 530168583215427132
+    second: iron-harvester_attack_5
+  - first:
+      213: 3072637207556865349
+    second: iron-harvester_attack_6
+  - first:
+      213: -2619418591741961763
+    second: iron-harvester_attack_7
+  - first:
+      213: -3774187748321254331
+    second: iron-harvester_attack_8
+  - first:
+      213: 3825802195894661104
+    second: iron-harvester_attack_9
+  - first:
+      213: 8293465935571980024
+    second: iron-harvester_attack_10
+  - first:
+      213: 8989428561618894113
+    second: iron-harvester_attack_11
+  - first:
+      213: -1287173824179359072
+    second: iron-harvester_attack_12
+  - first:
+      213: 7846137239045988642
+    second: iron-harvester_attack_13
+  - first:
+      213: 2413407202456356700
+    second: iron-harvester_attack_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: iron-harvester_attack_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d9cbb64b808b9cb0800000000000000
+      internalID: -4856146437513426480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3341b242f6eeb3030800000000000000
+      internalID: 3475633698562053171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08d074b1e8a005d0800000000000000
+      internalID: -3098290856282499062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d242039d47221e960800000000000000
+      internalID: 7629417128997692461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 2
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f9baca69290752f0800000000000000
+      internalID: -984307920067184144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 2
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ea0a974898b5700800000000000000
+      internalID: 530168583215427132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 2
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54d3310c24334aa20800000000000000
+      internalID: 3072637207556865349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_7
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 2
+        width: 29
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd99a294ba4f5abd0800000000000000
+      internalID: -2619418591741961763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 2
+        width: 23
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5442ea94d346f9bc0800000000000000
+      internalID: -3774187748321254331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_9
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 2
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ffe533c3daf71530800000000000000
+      internalID: 3825802195894661104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_10
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 2
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe0296e35f481370800000000000000
+      internalID: 8293465935571980024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12d7b0516add0cc70800000000000000
+      internalID: 8989428561618894113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_12
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2bb950a3a032ee0800000000000000
+      internalID: -1287173824179359072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_13
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 1
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221ec409f3413ec60800000000000000
+      internalID: 7846137239045988642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iron-harvester_attack_14
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 2
+        width: 14
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57c7c850152e7120800000000000000
+      internalID: 2413407202456356700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      iron-harvester_attack_0: -4856146437513426480
+      iron-harvester_attack_1: 3475633698562053171
+      iron-harvester_attack_10: 8293465935571980024
+      iron-harvester_attack_11: 8989428561618894113
+      iron-harvester_attack_12: -1287173824179359072
+      iron-harvester_attack_13: 7846137239045988642
+      iron-harvester_attack_14: 2413407202456356700
+      iron-harvester_attack_2: -3098290856282499062
+      iron-harvester_attack_3: 7629417128997692461
+      iron-harvester_attack_4: -984307920067184144
+      iron-harvester_attack_5: 530168583215427132
+      iron-harvester_attack_6: 3072637207556865349
+      iron-harvester_attack_7: -2619418591741961763
+      iron-harvester_attack_8: -3774187748321254331
+      iron-harvester_attack_9: 3825802195894661104
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

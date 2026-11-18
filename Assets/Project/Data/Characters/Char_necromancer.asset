@@ -17,19 +17,25 @@ MonoBehaviour:
   descKey: char.necromancer.desc
   role: 3
   unlockPrice: 2000
-  released: 0
-  portrait: {fileID: 8424042194633685831, guid: 554f039f4176a5d4cb1eb88675aab3ed, type: 3}
-  animator: {fileID: 9100000, guid: 67e324dc7f7161a4193042192848a7df, type: 2}
-  baseStats:
-    maxHp: 4
-    maxArmor: 2
-    maxMana: 240
-    attackDamage: 1.1
-    attackSpeed: 1
-    moveSpeed: 4.8
-    critChance: 0.05
-  armorRegenDelay: 4
-  armorRegenRate: 1
-  manaRegen: 2
-  startingWeapon: {fileID: 11400000, guid: 71849f9c75f1e97408ac202ee4da9dab, type: 2}
-  activeSkill: {fileID: 0}
+  released: 1
+  rank: 0
+  portrait: {fileID: -4680820314033596569, guid: 38b4e3975153ffd4caf973998284eb1e, type: 3}
+  animator: {fileID: 9100000, guid: 745ae068fcfa1394297be431dea3a97a, type: 2}
+  attackVfx: {fileID: 0}
+  hitVfx: {fileID: 0}
+  stats:
+    profile: {fileID: 11400000, guid: a674fcb4f2b607d4ea58ea5bc35f922a, type: 2}
+    overrides:
+    - stat: 0
+      value: 4
+    - stat: 1
+      value: 2
+    - stat: 2
+      value: 240
+    - stat: 5
+      value: 4.8
+    - stat: 9
+      value: 3.5
+  startingWeapon: {fileID: 11400000, guid: c5dfe00e37f3aaf459c255167fb4c9f5, type: 2}
+  skill: 15
+  innatePassive: {fileID: 11400000, guid: 5132b5189e43272449fd10c418ae0f9b, type: 2}

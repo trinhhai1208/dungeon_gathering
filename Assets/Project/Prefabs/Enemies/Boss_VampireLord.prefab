@@ -205,12 +205,12 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1504920921590492608, guid: 45eca065187fdae49a9090e78ac2e2cc, type: 3}
-  m_Color: {r: 1, g: 0.65, b: 0.7, a: 1}
+  m_Sprite: {fileID: -5407429329131644609, guid: f964ad927e1c86c4daaa47ea1fd0acc0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 0.14, y: 0.22}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -225,7 +225,7 @@ Animator:
   m_GameObject: {fileID: 2926035819152894901}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ece854b7166dba747b49c2645bf5507f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 94f0951df36669c498ee9a773b857fec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -292,7 +292,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.1, y: 2.1, z: 1}
+  m_LocalScale: {x: 2.05, y: 2.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2985145012664268558}
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyMotor
   repathInterval: {x: 0.25, y: 0.4}
-  waypointTolerance: 0.2
   knockbackDecay: 12
+  navSnapDistance: 1.5
 --- !u!114 &6533407748205143342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48adf77a2af3d414fa18650e3a8f68ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyBrain
+  losRecheckInterval: 0.2
 --- !u!114 &1628762086350217554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +469,7 @@ MonoBehaviour:
   phases:
   - hpThreshold: 0.6
     speedMultiplier: 1.25
+    skills: 1a000000180000001c000000
     attacks:
     - {fileID: 11400000, guid: 5442652eda29e37488bad1b1828407ca, type: 2}
     - {fileID: 11400000, guid: 66c74cb9f9c8e7840a7fa64755db011d, type: 2}
@@ -476,6 +478,7 @@ MonoBehaviour:
     transitionInvulnerable: 0.8
   - hpThreshold: 0.3
     speedMultiplier: 1.5
+    skills: 1b0000001a000000180000001c000000
     attacks:
     - {fileID: 11400000, guid: e76f8267de46905479ea57b1a8519c2e, type: 2}
     - {fileID: 11400000, guid: 5442652eda29e37488bad1b1828407ca, type: 2}

@@ -27,6 +27,7 @@ namespace DungeonGathering.Core
         static int nextInstanceId;
 
         readonly Dictionary<string, AsyncOperationHandle> handles = new();
+        readonly List<AsyncOperationHandle> retained = new();
         // Lỗi của handle đã Release (để các Load khác đang chờ cùng handle báo đúng lỗi). Nhỏ: chỉ handle lỗi.
         readonly Dictionary<AsyncOperationHandle, string> failures = new();
         readonly CancellationTokenSource cts = new();
@@ -37,7 +38,7 @@ namespace DungeonGathering.Core
         public bool IsDisposed { get; private set; }
         public CancellationToken Token { get; }
         /// <summary>Số handle đang giữ (test rò handle).</summary>
-        public int HandleCount => handles.Count;
+        public int HandleCount => handles.Count + retained.Count;
         /// <summary>Scene của module (nếu có). Instantiate không parent sẽ đặt object vào scene này.</summary>
         public Scene Scene { get; internal set; }
 
@@ -147,6 +148,14 @@ namespace DungeonGathering.Core
             if (IsDisposed) throw new ObjectDisposedException(ToString());
         }
 
+        /// <summary>Nhận quyền sở hữu một handle (ví dụ từ DownloadService) và tự Release khi scope Dispose.</summary>
+        public void Retain(AsyncOperationHandle handle)
+        {
+            if (!handle.IsValid()) return;
+            if (IsDisposed) { Addressables.Release(handle); return; }
+            retained.Add(handle);
+        }
+
         public void Dispose()
         {
             if (IsDisposed) return;
@@ -159,6 +168,14 @@ namespace DungeonGathering.Core
                 else h.Completed += op => { if (op.IsValid()) Addressables.Release(op); };
             }
             handles.Clear();
+            for (int i = retained.Count - 1; i >= 0; i--)
+            {
+                var h = retained[i];
+                if (!h.IsValid()) continue;
+                if (h.IsDone) Addressables.Release(h);
+                else h.Completed += op => { if (op.IsValid()) Addressables.Release(op); };
+            }
+            retained.Clear();
             var d = Disposed;
             Disposed = null;
             try { d?.Invoke(this); } catch (Exception e) { Debug.LogException(e); }

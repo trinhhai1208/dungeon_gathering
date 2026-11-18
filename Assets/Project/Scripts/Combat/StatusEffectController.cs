@@ -1,140 +1,152 @@
 using System.Collections.Generic;
+using DungeonGathering.Catalog;
 using DungeonGathering.Core;
 using UnityEngine;
 
 namespace DungeonGathering.Combat
 {
     /// <summary>
-    /// Làm chậm / sát thương theo thời gian (thiêu đốt, độc, xuất huyết) / choáng / đóng băng.
-    /// Gắn lên quái và Player. Motor đọc SpeedMultiplier + IsStunned.
+    /// Bộ chạy hiệu ứng trạng thái gắn trên Player và quái (giữ tên cũ để không phải sửa prefab).
+    /// Logic cộng dồn / tick / hết hạn nằm ở <see cref="StatusEffectSet"/>; component này lo VFX lặp, màu phủ,
+    /// và nối hiệu ứng với StatSheet (Slow / buff là modifier) và IDamageable (DoT bỏ qua i-frame).
+    /// Gây hiệu ứng: <see cref="Apply(in StatusEffectRef, GameObject)"/>.
     /// </summary>
     [DisallowMultipleComponent]
-    public sealed class StatusEffectController : MonoBehaviour, IPoolable
+    public sealed class StatusEffectController : MonoBehaviour, IPoolable, IStatusTarget
     {
-        struct Dot
-        {
-            public float Dps, Remaining, TickTimer;
-            public string Id;
-            public GameObject Source;
-        }
-
         [SerializeField] SpriteRenderer tintTarget;
-        [SerializeField] Color slowTint = new(0.6f, 0.8f, 1f);
-        [SerializeField] Color freezeTint = new(0.5f, 0.75f, 1f);
         [SerializeField] Transform vfxSocket;
-        const float TickInterval = 0.5f;
 
         IDamageable owner;
-        float slowPct, slowRemaining;
-        float stunRemaining;
-        bool frozen;
-        readonly List<Dot> dots = new();
+        IStatSheetProvider statsProvider;
+        SpriteAnimDriver anim;
         Color baseColor = Color.white;
-        readonly Dictionary<string, GameObject> loopVfx = new();
+        StatusEffectSet set;
+        readonly Dictionary<StatusInstance, GameObject> loopVfx = new();
+        /// <summary>Phương án dự phòng khi mục tiêu không có StatSheet: hệ số chậm tự tính.</summary>
+        float fallbackSlow;
 
-        public float SpeedMultiplier => IsStunned ? 0f : 1f - slowPct;
-        public bool IsStunned => stunRemaining > 0f;
-        public bool IsFrozen => frozen && IsStunned;
+        public StatusEffectSet Effects => EnsureSet();
+        public bool IsStunned => set != null && set.IsCrowdControlled;
+        public bool IsFrozen
+        {
+            get
+            {
+                if (set == null) return false;
+                foreach (var i in set.Active) if (i.Effect is StunEffectSO s && s.freeze) return true;
+                return false;
+            }
+        }
+
+        /// <summary>Choáng → 0. Slow đã nằm trong chỉ số MoveSpeed; chỉ mục tiêu không có StatSheet mới nhân thêm ở đây.</summary>
+        public float SpeedMultiplier => IsStunned ? 0f : 1f - fallbackSlow;
+
+        // ---- IStatusTarget
+        bool IStatusTarget.IsDead => owner != null && owner.IsDead;
+        StatSheet IStatusTarget.Stats => statsProvider?.Stats;
+        void IStatusTarget.ApplyStatusDamage(float amount, GameObject source)
+        {
+            if (owner == null || owner.IsDead || amount <= 0f) return;
+            owner.TakeDamage(new DamageInfo(amount, 0f, Vector2.zero, 0f, false, source, Team.Neutral, DamageFlags.DoT));
+        }
 
         void Awake()
         {
             owner = GetComponentInParent<IDamageable>(); // gồm cả chính object
+            statsProvider = GetComponentInParent<IStatSheetProvider>();
+            anim = GetComponentInChildren<SpriteAnimDriver>();
             if (tintTarget == null) tintTarget = GetComponentInChildren<SpriteRenderer>();
             if (tintTarget != null) baseColor = tintTarget.color;
             if (vfxSocket == null) vfxSocket = transform;
+            EnsureSet();
         }
 
-        public void ApplySlow(float percent, float duration)
+        StatusEffectSet EnsureSet()
         {
-            if (owner != null && owner.IsDead) return;
-            percent = Mathf.Clamp01(percent);
-            if (percent >= slowPct || slowRemaining <= 0f) slowPct = percent;
-            slowRemaining = Mathf.Max(slowRemaining, duration);
-            RefreshTint();
+            if (set != null) return set;
+            set = new StatusEffectSet(this);
+            set.Added += OnAdded;
+            set.Removed += OnRemoved;
+            set.Changed += RefreshVisual;
+            return set;
         }
 
-        public void ApplyStun(float duration, bool freeze = false)
+        // ------------------------------------------------------------------ API mới
+
+        /// <summary>Gây hiệu ứng theo tham chiếu (có ghi đè thời gian / độ mạnh, xác suất).</summary>
+        public StatusInstance Apply(in StatusEffectRef r, GameObject source = null)
         {
-            if (owner != null && owner.IsDead) return;
-            stunRemaining = Mathf.Max(stunRemaining, duration);
-            frozen |= freeze;
-            RefreshTint();
+            if (!r.IsValid) return null;
+            if (r.Chance < 1f && Random.value > r.Chance) return null;
+            return EnsureSet().Apply(r, source);
         }
 
-        /// <summary>DoT cùng id không cộng dồn, chỉ làm mới thời gian + lấy dps lớn hơn.</summary>
-        public void ApplyDot(string id, float dps, float duration, GameObject source = null, GameObject loopVfxPrefab = null)
-        {
-            if (owner != null && owner.IsDead) return;
-            for (int i = 0; i < dots.Count; i++)
-            {
-                if (dots[i].Id != id) continue;
-                var d = dots[i];
-                d.Dps = Mathf.Max(d.Dps, dps);
-                d.Remaining = Mathf.Max(d.Remaining, duration);
-                dots[i] = d;
-                return;
-            }
-            dots.Add(new Dot { Id = id, Dps = dps, Remaining = duration, TickTimer = TickInterval, Source = source });
-            if (loopVfxPrefab != null && !loopVfx.ContainsKey(id) && Services.Pool != null)
-            {
-                var fx = Services.Pool.Get(loopVfxPrefab, vfxSocket.position, Quaternion.identity, vfxSocket);
-                if (fx != null) loopVfx[id] = fx;
-            }
-        }
+        public StatusInstance Apply(StatusEffectSO effect, float duration, float magnitude, GameObject source = null) =>
+            EnsureSet().Apply(effect, duration, magnitude, source);
+
+        public bool Remove(StatusEffectSO effect) => set != null && set.Remove(effect);
+
+        // ------------------------------------------------------------------ Vòng đời
 
         void Update()
         {
-            float dt = Time.deltaTime;
-            if (slowRemaining > 0f && (slowRemaining -= dt) <= 0f) { slowPct = 0f; RefreshTint(); }
-            if (stunRemaining > 0f && (stunRemaining -= dt) <= 0f) { frozen = false; RefreshTint(); }
-
-            for (int i = dots.Count - 1; i >= 0; i--)
-            {
-                var d = dots[i];
-                d.Remaining -= dt;
-                d.TickTimer -= dt;
-                if (d.TickTimer <= 0f)
-                {
-                    d.TickTimer += TickInterval;
-                    if (owner != null && !owner.IsDead)
-                    {
-                        owner.TakeDamage(new DamageInfo(d.Dps * TickInterval, 0f, Vector2.zero, 0f, false, d.Source, Team.Neutral));
-                        // Đòn DoT giết mục tiêu → HandleDeath gọi ClearAll() xóa list ngay trong vòng lặp này: dừng, không RemoveAt nữa.
-                        if (i >= dots.Count) return;
-                    }
-                }
-                if (d.Remaining <= 0f || owner == null || owner.IsDead)
-                {
-                    dots.RemoveAt(i);
-                    StopLoopVfx(d.Id);
-                }
-                else dots[i] = d;
-            }
+            if (set != null && set.Active.Count > 0) set.Tick(Time.deltaTime);
         }
 
-        void StopLoopVfx(string id)
+        void OnAdded(StatusInstance inst)
         {
-            if (!loopVfx.TryGetValue(id, out var fx)) return;
-            loopVfx.Remove(id);
+            if (inst.Effect is SlowEffectSO && statsProvider == null) RecomputeFallbackSlow();
+            if (inst.LoopVfxPrefab == null || Services.Pool == null) return;
+            bool overhead = inst.Effect is StunEffectSO s && !s.freeze;
+            var fx = CombatFx.AttachScaled(inst.LoopVfxPrefab, vfxSocket, overhead, fallbackDuration: -1f);
+            if (fx != null) loopVfx[inst] = fx;
+        }
+
+        void OnRemoved(StatusInstance inst)
+        {
+            if (inst.Effect is SlowEffectSO && statsProvider == null) RecomputeFallbackSlow();
+            if (!loopVfx.TryGetValue(inst, out var fx)) return;
+            loopVfx.Remove(inst);
             if (fx != null) Services.Pool?.Return(fx);
         }
 
-        void RefreshTint()
+        void RecomputeFallbackSlow()
         {
-            if (tintTarget == null) return;
-            tintTarget.color = IsFrozen ? freezeTint : slowRemaining > 0f ? slowTint : baseColor;
+            fallbackSlow = 0f;
+            if (set == null) return;
+            foreach (var i in set.Active)
+                if (i.Effect is SlowEffectSO) fallbackSlow = Mathf.Max(fallbackSlow, SlowEffectSO.Clamp(i.Magnitude));
         }
 
-        /// <summary>Gỡ hết (khi chết): VFX loop không được là con của object sắp vào pool.</summary>
+        void RefreshVisual()
+        {
+            if (statsProvider == null) RecomputeFallbackSlow();
+            Color? overlay = null;
+            int best = int.MinValue;
+            if (set != null)
+                foreach (var i in set.Active)
+                {
+                    var c = i.Effect.tint;
+                    if (c.a <= 0f || i.Effect.tintPriority < best) continue;
+                    best = i.Effect.tintPriority;
+                    overlay = new Color(c.r, c.g, c.b, 1f);
+                }
+            if (anim != null && anim.Renderer == tintTarget)
+            {
+                anim.SetStatusTint(overlay);
+                return;
+            }
+            if (tintTarget != null) tintTarget.color = overlay ?? baseColor;
+        }
+
+        /// <summary>Gỡ hết (khi chết / vào pool): trả modifier, trả VFX lặp về pool.</summary>
         public void ClearAll()
         {
-            slowPct = slowRemaining = stunRemaining = 0f;
-            frozen = false;
-            dots.Clear();
-            // Không cấp phát: trả từng VFX rồi xóa dictionary một lần.
+            set?.Clear();
             foreach (var fx in loopVfx.Values) if (fx != null) Services.Pool?.Return(fx);
             loopVfx.Clear();
-            RefreshTint();
+            fallbackSlow = 0f;
+            RefreshVisual();
         }
 
         public void OnSpawn() => ClearAll();

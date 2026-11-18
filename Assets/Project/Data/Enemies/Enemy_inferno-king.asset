@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_inferno-king
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: inferno-king
+  nameKey: enemy.inferno_king
+  animator: {fileID: 9100000, guid: ea50b2d86bec50a409a62c585f9a93f5, type: 2}
+  sprite: {fileID: -1099325045402942039, guid: 03860f8eabd1a424ab7896e6b56f4fd8, type: 3}
+  visualScale: 2
+  attackVfx: {fileID: 6661998169758968295, guid: 936debbe79c2eb34a900e7e7c278f755, type: 3}
+  hitVfx: {fileID: 2534004437307525629, guid: 3cb8d1534870aee41b721edd7d0e19bf, type: 3}
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 1
+  preferredDistance: 4
+  retreatDistance: 0
+  aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 680
+    - stat: 5
+      value: 2.6
+    - stat: 10
+      value: 0.9
+  tier: 2
+  spawnCost: 10
+  spawnDuration: 1
+  deathDuration: 2
+  skills: 1a0000001e000000
+  phases:
+  - hpThreshold: 0.65
+    speedMultiplier: 1.15
+    skills: 1a000000170000001e000000
+    transitionVfx: {fileID: 7642053781102449280, guid: 96c8814d0218c894bb720e6fe18bbb21, type: 3}
+    transitionInvulnerable: 0.8
+  - hpThreshold: 0.3
+    speedMultiplier: 1.35
+    skills: 1b000000170000001a000000
+    transitionVfx: {fileID: 223004030011534324, guid: 955cc2ed8b95f964e8bb4a62b4d7a34f, type: 3}
+    transitionInvulnerable: 1
+  customLoot: 0
+  lootTable:
+    minGold: 40
+    maxGold: 60
+    manaOrbChance: 1
+    manaOrbs: 1
+    healthPotionChance: 1
+    itemChance: 1
+    weapons: 1
+    equipment: 1

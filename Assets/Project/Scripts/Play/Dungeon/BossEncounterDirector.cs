@@ -16,12 +16,13 @@ namespace DungeonGathering.Play
     {
         readonly LevelDirector director;
 
-        DungeonConfig config;
+        LevelConfigSO config;
         ModuleScope scope;
         Enemy bossPrefab;
         Enemy bossInstance;
         bool bossLoading;
         bool bossKillPending;
+        bool bossDefeatedHandled;
         string bossError;
 
         public Enemy BossPrefab => bossPrefab;
@@ -35,20 +36,20 @@ namespace DungeonGathering.Play
             this.director = director;
         }
 
-        public void Preload(DungeonConfig config, ModuleScope scope)
+        public void Preload(LevelConfigSO config, ModuleScope scope)
         {
             this.config = config;
             this.scope = scope;
             _ = LoadBoss();
         }
 
-        /// <summary>Tải prefab boss (address hoặc tham chiếu trực tiếp). Gọi lại được (thử lại một lần khi lỗi).</summary>
+        /// <summary>Tải prefab boss qua Addressables. Gọi lại được (thử lại một lần khi lỗi).</summary>
         public async Awaitable LoadBoss()
         {
-            if (config == null) return;
+            if (config == null || bossLoading || bossPrefab != null) return;
             if (!HasBossAddress)
             {
-                bossPrefab = config.bossPrefab;
+                bossError = "chưa cấu hình bossAddress hoặc chưa có trong Addressables";
                 return;
             }
             bossLoading = true;
@@ -77,28 +78,40 @@ namespace DungeonGathering.Play
         }
 
         /// <summary>
+        /// Chờ lần tải boss KẾT THÚC (thành công hoặc lỗi). Quá timeout mà vẫn đang tải (mạng chậm) → cảnh báo và chờ tiếp,
+        /// giữ cửa phòng boss đóng; không coi "chậm" là "lỗi". False nếu director bị hủy.
+        /// </summary>
+        async Awaitable<bool> WaitBossLoadFinished(float timeout)
+        {
+            if (!await WaitBossLoaded(timeout)) return false;
+            if (!bossLoading) return true;
+            Debug.LogWarning($"[Play] Boss tải chậm (>{timeout:0}s) — tiếp tục chờ.");
+            return await WaitBossLoaded(float.PositiveInfinity);
+        }
+
+        /// <summary>
         /// Phòng boss kích hoạt: chờ boss tải nền (có timeout) rồi spawn. Lỗi/hết giờ → thử tải lại MỘT lần;
         /// vẫn lỗi → chốt thắng (mở Portal) thay vì kẹt run.
         /// </summary>
         public async void SpawnBoss(RoomController room)
         {
             float timeout = config != null ? config.bossLoadTimeout : 20f;
-            if (!await WaitBossLoaded(timeout)) return;
+            if (!await WaitBossLoadFinished(timeout)) return;
             if (!director.IsPlaying || room == null) return;
 
-            if (bossPrefab == null && !bossLoading && HasBossAddress)
+            if (bossPrefab == null && HasBossAddress)
             {
                 Debug.LogWarning($"[Play] Tải boss lỗi ({bossError ?? "không rõ"}) — thử lại một lần.");
                 _ = LoadBoss();
-                if (!await WaitBossLoaded(timeout)) return;
+                if (!await WaitBossLoadFinished(timeout)) return;
                 if (!director.IsPlaying || room == null) return;
             }
 
+            // Chỉ chốt thắng khi tải LỖI thật sự (không phải chỉ chậm) — tránh được thưởng thắng mà không đánh boss.
             if (bossPrefab == null)
             {
-                Debug.LogError($"[Play] Không spawn được boss: {(bossLoading ? "hết thời gian chờ tải" : bossError ?? "chưa cấu hình")} — chốt thắng để không kẹt run.");
-                room.WavesRemaining = false;
-                director.Finish(true);
+                Debug.LogError($"[Play] Không spawn được boss: {bossError ?? "chưa cấu hình"} — mở cửa/Portal để không kẹt run.");
+                room.ClearOnBossDefeated();
                 return;
             }
 
@@ -109,6 +122,7 @@ namespace DungeonGathering.Play
             boss.Init(room.CreateSpawnContext());
             room.Register(boss);
             bossInstance = boss;
+            if (Services.Session != null && boss.Data != null) Services.Session.currentBossNameKey = boss.Data.nameKey;
             // Dự phòng khi prefab boss không có BossPhaseController (không phát BossDefeatedEvent).
             // Died gọi trước EnemyDiedEvent nên KillAll ở đây không gây Raise lồng EnemyDiedEvent.
             boss.Died += OnBossInstanceDied;
@@ -119,13 +133,22 @@ namespace DungeonGathering.Play
 
         void OnBossInstanceDied(Enemy e) => HandleBossKilled();
 
-        /// <summary>Boss chết (BossDefeatedEvent / Enemy.Died / EnemyDiedEvent.IsBoss) → dọn quái con + chốt thắng. Idempotent.</summary>
+        /// <summary>Boss chết (BossDefeatedEvent / Enemy.Died / EnemyDiedEvent.IsBoss) → dọn quái con + mở phòng Boss + dựng Portal. Idempotent.</summary>
         public void HandleBossKilled()
         {
-            if (!director.IsPlaying) return;
-            if (director.Builder != null && director.Builder.BossRoom != null)
-                director.Builder.BossRoom.KillAll();
-            director.Finish(true);
+            if (!director.IsPlaying || bossDefeatedHandled) return;
+            bossDefeatedHandled = true;
+            bossKillPending = false;
+            var bossRoom = director.Builder != null ? director.Builder.BossRoom : null;
+            if (bossRoom != null)
+            {
+                bossRoom.KillAll();
+                bossRoom.ClearOnBossDefeated();
+            }
+            else
+            {
+                director.Finish(true);
+            }
         }
 
         public void NotifyEnemyDied(EnemyDiedEvent e)

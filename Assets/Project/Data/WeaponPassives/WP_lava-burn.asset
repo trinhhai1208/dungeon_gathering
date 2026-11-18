@@ -16,12 +16,14 @@ MonoBehaviour:
   descKey: wp.lava.passive
   chance: 1
   status:
-    slowPercent: 0
-    slowDuration: 0
-    dotDps: 5
-    dotDuration: 2
-    dotId: lava_burn
-    dotLoopVfx: {fileID: 5614814654711817810, guid: c6c287b5e53595f4a90fd8fc6060ef31, type: 3}
-    stunDuration: 0
-    freeze: 0
-  hitVfx: {fileID: 2534004437307525629, guid: 3cb8d1534870aee41b721edd7d0e19bf, type: 3}
+    effects:
+    - effect: {fileID: 11400000, guid: 8425c4775c94597458d4732ccf52a486, type: 2}
+      duration:
+        enabled: 1
+        value: 2
+      magnitude:
+        enabled: 1
+        value: 5
+      chance: 1
+      loopVfxOverride: {fileID: 0}
+  hitVfx: {fileID: 0}

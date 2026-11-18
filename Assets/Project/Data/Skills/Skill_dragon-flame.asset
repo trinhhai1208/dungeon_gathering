@@ -24,16 +24,19 @@ MonoBehaviour:
   radius: 3
   knockback: 8
   centerOnNearestEnemy: 1
-  targetRange: 6
+  followPlayer: 0
+  targetRange: 9
   pulses: 1
   pulseInterval: 0.5
   status:
-    slowPercent: 0
-    slowDuration: 0
-    dotDps: 5
-    dotDuration: 2
-    dotId: burn
-    dotLoopVfx: {fileID: 5614814654711817810, guid: c6c287b5e53595f4a90fd8fc6060ef31, type: 3}
-    stunDuration: 0
-    freeze: 0
-  vfx: {fileID: 7642053781102449280, guid: 96c8814d0218c894bb720e6fe18bbb21, type: 3}
+    effects:
+    - effect: {fileID: 11400000, guid: 8425c4775c94597458d4732ccf52a486, type: 2}
+      duration:
+        enabled: 1
+        value: 2
+      magnitude:
+        enabled: 1
+        value: 5
+      chance: 1
+      loopVfxOverride: {fileID: 0}
+  vfx: {fileID: 7302738517088268875, guid: 60464697e0e15464f98ffcc04ba7ae9e, type: 3}

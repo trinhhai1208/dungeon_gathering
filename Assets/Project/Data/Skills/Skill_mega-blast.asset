@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa38af9cc2560a4fb952b8e1f20b93b, type: 3}
+  m_Name: Skill_mega-blast
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
+  skillId: mega-blast
+  nameKey: skill.mega_blast
+  descKey: skill.mega_blast.desc
+  icon: {fileID: 21300000, guid: 0474fd601c7fef04fb58cfae96cc8029, type: 3}
+  cooldown: 20
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  damage: 75
+  radius: 3.5
+  knockback: 10
+  centerOnNearestEnemy: 1
+  followPlayer: 0
+  targetRange: 10
+  pulses: 1
+  pulseInterval: 0.5
+  status:
+    effects: []
+  vfx: {fileID: 1872661349548657037, guid: ba2baf59fd206a5418384d08a150f410, type: 3}

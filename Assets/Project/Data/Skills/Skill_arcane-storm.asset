@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.AreaBurstSkill
   skillId: arcane-storm
   nameKey: skill.arcane_storm
-  descKey: char.wizard.skill
+  descKey: skill.arcane_storm.desc
   icon: {fileID: 21300000, guid: d244db5884bff9e40850534348d3e877, type: 3}
   cooldown: 15
   duration: 3
@@ -23,17 +23,11 @@ MonoBehaviour:
   damage: 12
   radius: 3
   knockback: 2
-  centerOnNearestEnemy: 0
-  targetRange: 8
+  centerOnNearestEnemy: 1
+  followPlayer: 0
+  targetRange: 10
   pulses: 6
   pulseInterval: 0.5
   status:
-    slowPercent: 0
-    slowDuration: 0
-    dotDps: 0
-    dotDuration: 0
-    dotId: 
-    dotLoopVfx: {fileID: 0}
-    stunDuration: 0
-    freeze: 0
+    effects: []
   vfx: {fileID: 6164033997265489522, guid: 608da318504328b4cb0b35f0d9aa8edf, type: 3}

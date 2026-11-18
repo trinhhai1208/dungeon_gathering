@@ -39,7 +39,7 @@ namespace DungeonGathering.UI
 
         public bool IsEmpty { get; private set; } = true;
         public bool IsSelected => selectionFrame != null && selectionFrame.enabled;
-        public Rarity Rarity { get; private set; } = Rarity.F;
+        public Rarity Rarity { get; private set; } = Rarity.D;
 
         void Awake()
         {
@@ -70,10 +70,10 @@ namespace DungeonGathering.UI
         public void SetEmpty(Sprite slotSilhouette = null)
         {
             IsEmpty = true;
-            Rarity = Rarity.F;
+            Rarity = Rarity.D;
             if (background != null)
             {
-                background.sprite = Pick(raritySquares, Rarity.F);
+                background.sprite = Pick(raritySquares, Rarity.D);
                 background.color = emptySquareTint;
             }
             if (icon != null)
@@ -106,9 +106,17 @@ namespace DungeonGathering.UI
             if (cooldownText != null)
             {
                 cooldownText.enabled = on;
-                cooldownText.text = on ? Mathf.CeilToInt(remaining).ToString() : string.Empty;
+                // Gọi mỗi frame từ HUD: chỉ đổi text (cấp phát chuỗi) khi số giây nguyên thay đổi.
+                int seconds = on ? Mathf.CeilToInt(remaining) : -1;
+                if (seconds != shownCooldownSeconds)
+                {
+                    shownCooldownSeconds = seconds;
+                    cooldownText.text = on ? seconds.ToString() : string.Empty;
+                }
             }
         }
+
+        int shownCooldownSeconds = int.MinValue;   // giá trị đã ghi vào cooldownText (-1 = trống)
 
         public void ClearCooldown() => SetCooldown(0f, 0f);
 

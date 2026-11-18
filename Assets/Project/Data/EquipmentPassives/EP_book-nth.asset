@@ -17,4 +17,4 @@ MonoBehaviour:
   everyN: 3
   damage: 15
   radius: 1.5
-  vfx: {fileID: 6164033997265489522, guid: 608da318504328b4cb0b35f0d9aa8edf, type: 3}
+  vfx: {fileID: 5157225634152080322, guid: 9ab2ef7a8404c334dbbaf760053aca5f, type: 3}

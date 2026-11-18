@@ -16,7 +16,8 @@ namespace DungeonGathering.Enemies
         {
             transform.localScale = Vector3.one * 0.6f;
             Sfx.PlayAt(SfxId.SpawnWarning, transform.position);
-            transform.DOScale(pulseScale, 0.25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
+            // SetLink: object bị hủy cùng scene (không qua OnDespawn) → tween vô hạn tự Kill
+            transform.DOScale(pulseScale, 0.25f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine).SetLink(gameObject);
         }
 
         public void OnDespawn()

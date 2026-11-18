@@ -32,6 +32,7 @@ namespace DungeonGathering.Core
         float target;
         float tipTimer;
         int tipIndex;
+        int shownPercent = -1;   // % đã ghi vào percentLabel
         AwaitableCompletionSource retry;
 
         public bool Visible => gameObject.activeSelf;
@@ -104,7 +105,16 @@ namespace DungeonGathering.Core
         void Apply()
         {
             if (progressFill != null) progressFill.fillAmount = shown;
-            if (percentLabel != null) percentLabel.text = Mathf.RoundToInt(shown * 100f) + "%";
+            if (percentLabel != null)
+            {
+                // Apply chạy mỗi frame: chỉ tạo chuỗi mới khi % nguyên đổi.
+                int percent = Mathf.RoundToInt(shown * 100f);
+                if (percent != shownPercent)
+                {
+                    shownPercent = percent;
+                    percentLabel.text = percent + "%";
+                }
+            }
             if (runner != null) runner.anchoredPosition = new Vector2(runnerTravel * shown, runner.anchoredPosition.y);
         }
     }

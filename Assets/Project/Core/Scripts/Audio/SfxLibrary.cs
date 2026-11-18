@@ -7,16 +7,15 @@ namespace DungeonGathering.Core
     /// <summary>
     /// Bảng SfxId → clip + luật phát. Dựng tự động bằng menu
     /// <c>Dungeon Gathering/Audio/Rebuild SFX Library</c> (quét Audio/SFX), chỉnh tay được trong Inspector.
-    /// Đặt trong thư mục Resources để AudioManager tự nạp khi Bootstrap không gán sẵn.
+    /// Lưu tại <c>Assets/Project/Core/Data/SfxLibrary.asset</c> (group Core_Local, key <c>AddressKeys.CoreSfxLibrary</c>).
     /// </summary>
     [CreateAssetMenu(fileName = "SfxLibrary", menuName = "Dungeon Gathering/Audio/SFX Library")]
     public sealed class SfxLibrary : ScriptableObject
     {
-        public const string ResourcePath = "Audio/SfxLibrary";
-
         [Serializable]
         public sealed class Entry
         {
+            [Tooltip("SfxId mà entry này phục vụ; nếu trùng id thì chỉ entry đầu tiên được dùng.")]
             public SfxId id;
             [Tooltip("Nhiều clip = biến thể, chọn ngẫu nhiên (không lặp liền).")]
             public AudioClip[] clips = Array.Empty<AudioClip>();
@@ -32,6 +31,7 @@ namespace DungeonGathering.Core
             public bool positional = true;
         }
 
+        [Tooltip("Bảng SfxId → clip + luật phát; id không có entry thì không phát âm.")]
         public List<Entry> entries = new();
 
         public Entry Find(SfxId id)

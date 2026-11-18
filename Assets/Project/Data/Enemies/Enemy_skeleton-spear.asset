@@ -14,19 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: skeleton-spear
   nameKey: enemy.skeleton_spear
-  maxHp: 40
-  moveSpeed: 2.4
+  animator: {fileID: 9100000, guid: 11c7638c5cf57d14ca3319693827dfe4, type: 2}
+  sprite: {fileID: -8054786874749993974, guid: 82182106c2209a84294b0f0ea6c5f943, type: 3}
+  visualScale: 1
+  attackVfx: {fileID: 763339264080500313, guid: 19bd0b6293567ad46ba6dc7742cafd91, type: 3}
+  hitVfx: {fileID: 144331511795078685, guid: d71a5d35ad22faf4da98ea8a89fb5fc4, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 0
-  knockbackResist: 0
   preferredDistance: 1
+  retreatDistance: 0
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 5
+      value: 2.4
+  tier: 0
   spawnCost: 1
   spawnDuration: 0.4
   deathDuration: 0.8
-  attacks:
-  - {fileID: 11400000, guid: 1ebe432868cfe3e43ad03dc5fa4fbc1d, type: 2}
+  skills: 1f000000
+  phases: []
+  customLoot: 0
   lootTable:
     minGold: 1
     maxGold: 3

@@ -24,4 +24,6 @@ MonoBehaviour:
   armor: 0
   mana: 0
   invulnerableDuration: 2
+  moveSpeedBonus: 0
+  moveSpeedDuration: 3
   vfx: {fileID: 2256055265636997213, guid: badbe71c1067e33489bcad88a60730ce, type: 3}

@@ -19,29 +19,3 @@ MonoBehaviour:
   descKey: wp.dark.passive
   activeSkill: {fileID: 0}
   shopPrice: 60
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: 480110508, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 16
-  fireRate: 1.8
-  attackRange: 1.2
-  spread: 0
-  knockback: 5
-  critBonus: 0.05
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 5554892913095628266, guid: 9461cc0ae3ff4664eb1d79df8d307c5a, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 11400000, guid: 8c8afa1b439a4c94bbb508a834907896, type: 2}

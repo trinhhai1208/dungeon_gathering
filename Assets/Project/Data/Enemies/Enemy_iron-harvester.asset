@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924307d769012724388acf516a95cdab, type: 3}
+  m_Name: Enemy_iron-harvester
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
+  enemyId: iron-harvester
+  nameKey: enemy.iron_harvester
+  animator: {fileID: 9100000, guid: e60f380c6d02507428eff9372a7d2bc0, type: 2}
+  sprite: {fileID: -2680931489557720397, guid: 4a141fa94661081468b88a372751b773, type: 3}
+  visualScale: 1.4
+  attackVfx: {fileID: 763339264080500313, guid: 19bd0b6293567ad46ba6dc7742cafd91, type: 3}
+  hitVfx: {fileID: 7071395623542196232, guid: 8b37cd864f76ec44b84ea5dfeccf8737, type: 3}
+  contactDamage: 1
+  contactCooldown: 0.8
+  isFlying: 0
+  preferredDistance: 1
+  retreatDistance: 0
+  aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 160
+    - stat: 5
+      value: 2.4
+    - stat: 10
+      value: 0.5
+  tier: 0
+  spawnCost: 4
+  spawnDuration: 0.6
+  deathDuration: 1
+  skills: 1f00000023000000
+  phases: []
+  customLoot: 0
+  lootTable:
+    minGold: 6
+    maxGold: 10
+    manaOrbChance: 0.5
+    manaOrbs: 1
+    healthPotionChance: 0.1
+    itemChance: 0.15
+    weapons: 1
+    equipment: 1

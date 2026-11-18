@@ -9,11 +9,13 @@ namespace DungeonGathering.Combat
     [CreateAssetMenu(menuName = "Dungeon Gathering/Skills/Shield Heal", fileName = "Skill_ShieldHeal")]
     public class ShieldHealSkill : ActiveSkillSO
     {
-        public float heal = 2f;
-        public float armor = 2f;
-        public float mana;
-        public float invulnerableDuration = 2f;
-        public GameObject vfx;
+        [Tooltip("Lượng máu hồi (đơn vị HP, Player ~6 HP); 0 = không hồi.")] public float heal = 2f;
+        [Tooltip("Lượng giáp hồi (điểm giáp); 0 = không hồi.")] public float armor = 2f;
+        [Tooltip("Lượng mana hồi; 0 = không hồi.")] public float mana;
+        [Tooltip("Thời gian bất tử sau khi dùng (giây); 0 = không có khiên bất tử.")] public float invulnerableDuration = 2f;
+        [Tooltip("Tăng tốc chạy tạm thời (vd 0.2 = +20%); 0 = không tăng tốc.")] public float moveSpeedBonus;
+        [Tooltip("Thời gian tăng tốc chạy (giây).")] public float moveSpeedDuration = 3f;
+        [Tooltip("VFX gắn theo Player, tồn tại ít nhất 1 giây hoặc bằng invulnerableDuration / buff; null = không có.")] public GameObject vfx;
 
         protected override SfxId DefaultActivateSfx => SfxId.Shield;
 
@@ -22,11 +24,12 @@ namespace DungeonGathering.Combat
             if (heal > 0f) ctx.Heal(heal);
             if (armor > 0f) ctx.RestoreArmor(armor);
             if (mana > 0f) ctx.RestoreMana(mana);
+            if (moveSpeedBonus > 0f && moveSpeedDuration > 0f)
+                ctx.AddTimedModifier(new StatModifier(StatType.MoveSpeed, 0f, moveSpeedBonus), moveSpeedDuration);
+
+            float vfxDur = Mathf.Max(1f, invulnerableDuration, moveSpeedBonus > 0f ? moveSpeedDuration : 0f);
             if (vfx != null)
-            {
-                var fx = CombatFx.Play(vfx, ctx.Transform.position, Quaternion.identity, ctx.Transform, Mathf.Max(1f, invulnerableDuration));
-                if (fx != null) fx.transform.localPosition = Vector3.zero;
-            }
+                CombatFx.AttachScaled(vfx, ctx.Transform, overhead: false, fallbackDuration: vfxDur);
             if (invulnerableDuration > 0f) Invuln(ctx);
         }
 

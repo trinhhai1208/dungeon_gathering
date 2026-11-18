@@ -12,10 +12,10 @@ namespace DungeonGathering.Combat
     {
         public override void OnEquip(IPlayerContext player)
         {
-            OnUnequip(player);
             var rt = PassiveRuntime.For(player);
             if (rt == null) return;
             var state = rt.GetOrCreate(this);
+            if (++state.RefCount > 1) return;
             Action<HitReport> h = r => OnHit(player, state, r);
             state.Handler = h;
             player.Hooks.HitDealt += h;
@@ -26,6 +26,7 @@ namespace DungeonGathering.Combat
         {
             var rt = PassiveRuntime.For(player, false);
             if (rt == null || !rt.TryGet(this, out var state)) return;
+            if (--state.RefCount > 0) return;
             if (state.Handler is Action<HitReport> h) player.Hooks.HitDealt -= h;
             rt.Remove(this);
             OnUnequipped(player, state);

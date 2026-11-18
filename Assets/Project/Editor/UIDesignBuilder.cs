@@ -28,40 +28,44 @@ namespace DungeonGathering.EditorTools
         const string Sheet = "Assets/Project/Art/Sprites/UI/HUD/Basic Buttons 3 Fv.png";
         const string Items = "Assets/Project/Art/Sprites/Items/spritesheet_16x16.png";
         const string Gen = "Assets/Project/Art/Sprites/UI/Generated/";
+        const string DfDir = "Assets/Project/Art/Sprites/UI/DarkFantasy/";
         const string UiDir = "Assets/Project/Prefabs/UI/";
-        const string FontPath = "Assets/Project/Art/Fonts/Pixelta SDF.asset";
+        const string FontPath = "Assets/Project/Art/Fonts/dearpix SDF.asset";
         const float RefPpu = 100f;          // CanvasScaler.referencePixelsPerUnit của UIRoot
-        const float SrcBorder = 6f;         // viền nguồn của frame (px)
+        const float SrcBorder = 6f;         // viền nguồn mặc định (px)
 
-        static readonly Color Ink = new Color32(0x1b, 0x14, 0x20, 0xff);     // chữ tối trên nút sáng
+        static readonly Color Ink = new Color32(0x17, 0x11, 0x1e, 0xff);     // chữ tối trên nút sáng (FrLight)
         static readonly Color Paper = new Color32(0xef, 0xe6, 0xdc, 0xff);   // chữ sáng
-        static readonly Color Soft = new Color32(0xe6, 0xe9, 0xf2, 0xff);
-        static readonly Color Gold = new Color32(0xff, 0xd2, 0x7a, 0xff);
+        static readonly Color Soft = new Color32(0xc8, 0xbc, 0xc9, 0xff);
+        static readonly Color Gold = new Color32(0xff, 0xd4, 0x66, 0xff);
         static readonly Color Title = new Color32(0xf2, 0xb3, 0x3d, 0xff);
+        static readonly Color Green = new Color32(0x6d, 0xe0, 0x8c, 0xff);
 
         static TMP_FontAsset font;
         static Dictionary<string, string> en;
 
-        // frame & icon (lấy theo tọa độ trên sheet gốc, gốc trên-trái — trùng tọa độ Design/tools/cut*.py)
-        static Sprite FrDark => At(Sheet, 240, 70);
-        static Sprite FrMid => At(Sheet, 240, 20);
-        static Sprite FrLight => At(Sheet, 290, 20);
-        static Sprite FrBtn => At(Sheet, 290, 70);
+        // frame Dark Fantasy & giữ nguyên Rarity Slot SqF từ sheet gốc
+        static Sprite FrDark => D("fr_dark");
+        static Sprite FrMid => D("fr_mid");
+        static Sprite FrLight => D("fr_light");
+        static Sprite FrBtn => D("fr_btn");
+        static Sprite FrCrim => D("fr_crimson");
         static Sprite SqF => At(Sheet, 480, 230);
-        static Sprite IcBack => At(Sheet, 315, 186);
-        static Sprite IcNext => At(Sheet, 283, 186);
-        static Sprite IcGear => At(Sheet, 150, 20);
-        static Sprite IcPause => At(Sheet, 140, 226);
-        static Sprite IcSound => At(Sheet, 25, 194);
-        static Sprite IcMusic => At(Sheet, 25, 226);
-        static Sprite IcPlay => At(Sheet, 265, 140);
-        static Sprite IcSwordBtn => At(Sheet, 190, 190);
+        static Sprite IcBack => D("btn_back");
+        static Sprite IcNext => D("btn_next");
+        static Sprite IcGear => D("btn_gear");
+        static Sprite IcPause => D("btn_pause");
+        static Sprite IcSound => D("btn_sound");
+        static Sprite IcMusic => D("btn_music");
+        static Sprite IcSwordBtn => D("btn_attack");
+        static Sprite IcClose => D("btn_close");
         static Sprite IcSwap => At(Sheet, 515, 229);
         static Sprite Coin => Single("Assets/Project/Art/Sprites/Items/Coins/coin_1.png");
         static Sprite Item(int c, int r) => At(Items, c * 16 + 8, r * 16 + 8);
         static Sprite G(string n) => Single(Gen + n + ".png");
+        static Sprite D(string n) => Single(DfDir + n + ".png");
 
-        [MenuItem("Tools/Dungeon Gathering/UI/Build Design UI (Menu, Lobby, HUD, Pause)")]
+        // [Legacy — tắt] [MenuItem("Tools/Dungeon Gathering/UI/Build Design UI (Menu, Lobby, HUD, Pause)")]
         public static void BuildAll()
         {
             Prepare();
@@ -78,7 +82,7 @@ namespace DungeonGathering.EditorTools
 
         // ================= đợt 2: Loadout, Shop, Settings popup, Kết thúc, Loading =================
 
-        [MenuItem("Tools/Dungeon Gathering/UI/Build Design UI (Loadout, Shop, Results, Loading)")]
+        // [Legacy — tắt] [MenuItem("Tools/Dungeon Gathering/UI/Build Design UI (Loadout, Shop, Results, Loading)")]
         public static void BuildStage2()
         {
             Prepare();
@@ -112,6 +116,23 @@ namespace DungeonGathering.EditorTools
                 ti.textureType = TextureImporterType.Sprite; ti.spriteImportMode = SpriteImportMode.Single; ti.spritePixelsPerUnit = 16;
                 ti.filterMode = FilterMode.Point; ti.textureCompression = TextureImporterCompression.Uncompressed; ti.mipmapEnabled = false;
                 ti.wrapMode = TextureWrapMode.Clamp; ti.SaveAndReimport();
+            }
+            // import settings cho sprite DarkFantasy (kèm 9-slice border cho fr_* và bar_cell_*)
+            foreach (var guid in AssetDatabase.FindAssets("t:Texture2D", new[] { DfDir.TrimEnd('/') }))
+            {
+                var p = AssetDatabase.GUIDToAssetPath(guid);
+                var ti = (TextureImporter)AssetImporter.GetAtPath(p);
+                string fn = Path.GetFileNameWithoutExtension(p);
+                Vector4 wantBorder = fn.StartsWith("fr_") ? new Vector4(8, 8, 8, 8)
+                    : fn.StartsWith("bar_cell_") ? new Vector4(2, 2, 2, 2)
+                    : Vector4.zero;
+                bool dirty = ti.textureType != TextureImporterType.Sprite || ti.spriteImportMode != SpriteImportMode.Single
+                    || ti.spritePixelsPerUnit != 16 || ti.filterMode != FilterMode.Point
+                    || ti.textureCompression != TextureImporterCompression.Uncompressed || ti.spriteBorder != wantBorder;
+                if (!dirty) continue;
+                ti.textureType = TextureImporterType.Sprite; ti.spriteImportMode = SpriteImportMode.Single; ti.spritePixelsPerUnit = 16;
+                ti.filterMode = FilterMode.Point; ti.textureCompression = TextureImporterCompression.Uncompressed; ti.mipmapEnabled = false;
+                ti.wrapMode = TextureWrapMode.Clamp; ti.spriteBorder = wantBorder; ti.SaveAndReimport();
             }
             // viền 9-slice cho frame trên sheet: dark, mid, light, btn, 5 ô rarity
             SetBorders(Sheet, new[] { (240, 70), (240, 20), (290, 20), (290, 70), (480, 100), (480, 132), (480, 164), (480, 196), (480, 230) }, SrcBorder);
@@ -229,7 +250,8 @@ namespace DungeonGathering.EditorTools
         {
             var img = Img(parent, name, s, a, x, y, w, h);
             img.type = Image.Type.Sliced; img.fillCenter = true;
-            img.pixelsPerUnitMultiplier = SrcBorder / (borderUnits * (s != null ? s.pixelsPerUnit : 16f) / RefPpu);
+            float srcB = s != null && s.border.x > 0f ? s.border.x : SrcBorder;
+            img.pixelsPerUnitMultiplier = srcB / (borderUnits * (s != null ? s.pixelsPerUnit : 16f) / RefPpu);
             return img.rectTransform;
         }
 
@@ -288,17 +310,47 @@ namespace DungeonGathering.EditorTools
         }
         static Button IconButton(GameObject parent, string name, Sprite icon, float k, A a, float x, float y, float w, float h) => IconButton(parent.transform, name, icon, k, a, x, y, w, h);
 
-        static Button TextButton(GameObject parent, string name, Sprite frame, float border, string key, float size, Color color, A a, float x, float y, float w, float h, Sprite icon, float k)
-            => TextButton(parent.transform, name, frame, border, key, size, color, a, x, y, w, h, icon, k);
-        static Button TextButton(Component parent, string name, Sprite frame, float border, string key, float size, Color color, A a, float x, float y, float w, float h, Sprite icon, float k)
+        static Button TextButton(GameObject parent, string name, Sprite frame, float border, string key, float size, Color color, A a, float x, float y, float w, float h, Sprite icon, float k, string raw = null)
+            => TextButton(parent.transform, name, frame, border, key, size, color, a, x, y, w, h, icon, k, raw);
+        static Button TextButton(Component parent, string name, Sprite frame, float border, string key, float size, Color color, A a, float x, float y, float w, float h, Sprite icon, float k, string raw = null)
         {
             var rt = Frame(parent.transform, name, frame, border, a, x, y, w, h);
             var img = rt.GetComponent<Image>(); img.raycastTarget = true;
             var b = rt.gameObject.AddComponent<Button>(); b.targetGraphic = img;
             float shift = 0;
             if (icon != null) { Icon(rt, "Icon", icon, k, A.L, 22, -2); shift = icon.rect.width * k * 0.5f + 6; }
-            var t = Txt(rt, "Label", key, null, size, color, TextAlignmentOptions.Center, A.C, shift, -2, w - 24, h - 16);
+            Txt(rt, "Label", key, raw, size, color, TextAlignmentOptions.Center, A.C, shift, -2, w - 24, h - 16);
             return b;
+        }
+
+        /// <summary>Thanh chia ô động: khung tối 9-slice + HorizontalLayoutGroup chứa SegmentedBar + các ô cell 9-slice.</summary>
+        static SegmentedBar SegmentedBarTrack(Component parent, string name, string cellSprite, A a, float x, float y, float w, float h, float border, int cur, int max, int unitsPerCell, int prewarm = 12, float spacing = 2f)
+        {
+            var track = Frame(parent.transform, name, FrDark, border, a, x, y, w, h);
+            var cont = Rt(track, "Segments", A.Stretch, border, border, border, border);
+            var hlg = cont.gameObject.AddComponent<HorizontalLayoutGroup>();
+            hlg.spacing = spacing;
+            hlg.childControlWidth = true; hlg.childControlHeight = true;
+            hlg.childForceExpandWidth = true; hlg.childForceExpandHeight = true;
+            var bar = cont.gameObject.AddComponent<SegmentedBar>();
+            Sprite fillS = D(cellSprite);
+            Sprite emptyS = D("bar_cell_empty");
+            float ppuMul = 2f / (2f * (fillS != null ? fillS.pixelsPerUnit : 16f) / RefPpu);
+            var cells = new Object[prewarm];
+            for (int i = 0; i < prewarm; i++)
+            {
+                var c = Img(cont, "Seg_" + i, fillS, A.Stretch, 0, 0, 0, 0);
+                c.type = Image.Type.Sliced;
+                c.pixelsPerUnitMultiplier = ppuMul;
+                cells[i] = c;
+            }
+            Wire(bar, ("filledSprite", fillS), ("emptySprite", emptyS));
+            var so = new SerializedObject(bar);
+            so.FindProperty("pixelsPerUnitMultiplier").floatValue = ppuMul;
+            so.ApplyModifiedPropertiesWithoutUndo();
+            WireArray(bar, "cells", cells);
+            bar.SetValue(cur, max, unitsPerCell);
+            return bar;
         }
 
         /// <summary>Thanh: rãnh khung tối 9-slice + dải màu Filled Horizontal (driver: Image.fillAmount) + chữ giá trị ở giữa.</summary>

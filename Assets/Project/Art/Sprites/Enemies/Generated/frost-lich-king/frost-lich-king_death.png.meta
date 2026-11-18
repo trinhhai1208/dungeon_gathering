@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: d7d93aae3ee750d4e80db9bd456a3653
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -989562023109782413
+    second: frost-lich-king_death_0
+  - first:
+      213: -6611527953502108257
+    second: frost-lich-king_death_1
+  - first:
+      213: -6504189241886050267
+    second: frost-lich-king_death_2
+  - first:
+      213: -6787474557430938626
+    second: frost-lich-king_death_3
+  - first:
+      213: 3643266114900376533
+    second: frost-lich-king_death_4
+  - first:
+      213: -2015003033370360361
+    second: frost-lich-king_death_5
+  - first:
+      213: -2353214436151255360
+    second: frost-lich-king_death_6
+  - first:
+      213: 4616516707763592346
+    second: frost-lich-king_death_7
+  - first:
+      213: -8822385752988176119
+    second: frost-lich-king_death_8
+  - first:
+      213: 6250099415771393757
+    second: frost-lich-king_death_9
+  - first:
+      213: 1690517133127097222
+    second: frost-lich-king_death_10
+  - first:
+      213: -5322436573091181567
+    second: frost-lich-king_death_11
+  - first:
+      213: -1637960849940032238
+    second: frost-lich-king_death_12
+  - first:
+      213: 6373874931062634110
+    second: frost-lich-king_death_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frost-lich-king_death_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3741359359e5442f0800000000000000
+      internalID: -989562023109782413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 2
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9501fc0b522f34a0800000000000000
+      internalID: -6611527953502108257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_2
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 2
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528f67d585a7cb5a0800000000000000
+      internalID: -6504189241886050267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef3c3520adb0ec1a0800000000000000
+      internalID: -6787474557430938626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_4
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 2
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbbad88a3b7f8230800000000000000
+      internalID: 3643266114900376533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_5
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 2
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d500a6ca654904e0800000000000000
+      internalID: -2015003033370360361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce12ec20f3b75fd0800000000000000
+      internalID: -2353214436151255360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_7
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c97e18c79211040800000000000000
+      internalID: 4616516707763592346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9013ca196e6909580800000000000000
+      internalID: -8822385752988176119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dde2eefdd40dcb650800000000000000
+      internalID: 6250099415771393757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 2
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b90c6306ce57710800000000000000
+      internalID: 1690517133127097222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 2
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10c4a51e228e226b0800000000000000
+      internalID: -5322436573091181567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_12
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 2
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 215d357094bc449e0800000000000000
+      internalID: -1637960849940032238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frost-lich-king_death_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 2
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7671c4ca7d847850800000000000000
+      internalID: 6373874931062634110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      frost-lich-king_death_0: -989562023109782413
+      frost-lich-king_death_1: -6611527953502108257
+      frost-lich-king_death_10: 1690517133127097222
+      frost-lich-king_death_11: -5322436573091181567
+      frost-lich-king_death_12: -1637960849940032238
+      frost-lich-king_death_13: 6373874931062634110
+      frost-lich-king_death_2: -6504189241886050267
+      frost-lich-king_death_3: -6787474557430938626
+      frost-lich-king_death_4: 3643266114900376533
+      frost-lich-king_death_5: -2015003033370360361
+      frost-lich-king_death_6: -2353214436151255360
+      frost-lich-king_death_7: 4616516707763592346
+      frost-lich-king_death_8: -8822385752988176119
+      frost-lich-king_death_9: 6250099415771393757
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

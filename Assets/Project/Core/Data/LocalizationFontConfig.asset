@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonGathering.Localization.LocalizationFontConfig
   entries:
   - localeCode: en
-    fontAsset: {fileID: 11400000, guid: c70505f01bb477441bcab5b3cc494549, type: 2}
+    fontAsset: {fileID: 11400000, guid: e2317b9f0ac66584bab35704eb89669a, type: 2}
     sizeScale: 1
   - localeCode: vi
     fontAsset: {fileID: 11400000, guid: e2317b9f0ac66584bab35704eb89669a, type: 2}
     sizeScale: 1
-  fallbackFont: {fileID: 11400000, guid: c70505f01bb477441bcab5b3cc494549, type: 2}
+  fallbackFont: {fileID: 11400000, guid: e2317b9f0ac66584bab35704eb89669a, type: 2}

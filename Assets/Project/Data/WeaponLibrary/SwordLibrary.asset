@@ -1,0 +1,1141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db92e65cd4594047bdf1e738678bc4e, type: 3}
+  m_Name: SwordLibrary
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.SwordLibrarySO
+  baseConfig: {fileID: 11400000, guid: 1fced65b46a60434fb44eecc4449e943, type: 2}
+  swords:
+  - id: dagger-twin
+    nameKey: item.dagger_twin
+    descKey: wp.dagger_twin.passive
+    rank: 4
+    icon: {fileID: 1986505743, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 30
+    sprite: {fileID: 1986505743, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 9
+    fireRate:
+      enabled: 1
+      value: 3.2
+    attackRange:
+      enabled: 1
+      value: 1
+    knockback:
+      enabled: 1
+      value: 2.5
+    critBonus:
+      enabled: 1
+      value: 0.15
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 0}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 1
+      value: 95
+    swingDuration:
+      enabled: 1
+      value: 0.1
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 5713789335845563850, guid: 81ceaa129a975d94cbcb8d9b898691f9, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: spear-iron
+    nameKey: item.spear_iron
+    descKey: wp.spear_iron.passive
+    rank: 4
+    icon: {fileID: 764206772, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 30
+    sprite: {fileID: 764206772, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 1
+      value: 3
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 15
+    fireRate:
+      enabled: 1
+      value: 1.9
+    attackRange:
+      enabled: 1
+      value: 1.7
+    knockback:
+      enabled: 1
+      value: 7
+    critBonus:
+      enabled: 1
+      value: 0.06
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 0}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 1
+      value: 1
+    swingArc:
+      enabled: 1
+      value: 55
+    swingDuration:
+      enabled: 1
+      value: 0.14
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 7993064157583642845, guid: 7493d14abf31a1b478a3bb81faf1d30c, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-dark
+    nameKey: sword.dark
+    descKey: wp.dark.passive
+    rank: 3
+    icon: {fileID: 480110508, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 60
+    sprite: {fileID: 480110508, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 16
+    fireRate:
+      enabled: 1
+      value: 1.8
+    attackRange:
+      enabled: 0
+      value: 0
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 8c8afa1b439a4c94bbb508a834907896, type: 2}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 3205480452797295053, guid: 4ad3e3eea89fa9c4c9903bb11ceb6209, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-fire
+    nameKey: sword.fire
+    descKey: wp.fire.passive
+    rank: 0
+    icon: {fileID: -8976271568068494015, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 160
+    sprite: {fileID: -8976271568068494015, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 28
+    fireRate:
+      enabled: 0
+      value: 0
+    attackRange:
+      enabled: 1
+      value: 1.6
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 1
+      value: 0.1
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 66d499692b8c65e4291747288a92e388, type: 2}
+    activeSkill: {fileID: 11400000, guid: 4b08ecaa80cb9484786a93fec5a69239, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 1141889836389366875, guid: 648c69caa1350bd42bf937fa0348388b, type: 3}
+    waveProjectileId: wave-fire
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-gold
+    nameKey: sword.gold
+    descKey: wp.gold.passive
+    rank: 1
+    icon: {fileID: -731201204, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 110
+    sprite: {fileID: -731201204, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 20
+    fireRate:
+      enabled: 0
+      value: 0
+    attackRange:
+      enabled: 1
+      value: 1.4
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 1
+      value: 0.06
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 35103ac8b3dd30f49bb5da81467eb7d9, type: 2}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 5434304453337589161, guid: cf258910bb670564d93b6a947cabedde, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-holy
+    nameKey: sword.holy
+    descKey: wp.holy.passive
+    rank: 0
+    icon: {fileID: -1250558059, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 80
+    sprite: {fileID: -1250558059, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 15
+    fireRate:
+      enabled: 1
+      value: 2.2
+    attackRange:
+      enabled: 1
+      value: 1.3
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 6999065b6b4651e47b17e950e1e10fe5, type: 2}
+    activeSkill: {fileID: 11400000, guid: e234bc087d97f174da382af5fad7923c, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 4101056358958709433, guid: 48ec624ace1949e43baefbe9d465ba6a, type: 3}
+    waveProjectileId: wave-holy
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 1
+      value: 12
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-ice
+    nameKey: sword.ice
+    descKey: wp.ice.passive
+    rank: 2
+    icon: {fileID: 6944993636166800022, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 80
+    sprite: {fileID: 6944993636166800022, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 18
+    fireRate:
+      enabled: 1
+      value: 1.8
+    attackRange:
+      enabled: 1
+      value: 1.4
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 221ab0b8acf1cc0479c8327d4d8ff3b3, type: 2}
+    activeSkill: {fileID: 11400000, guid: e4477dbc7b2d4804088d3bb4529c8731, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 6674133926881432308, guid: 5434bef8771b4744b94d01157b4cb292, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-iron
+    nameKey: sword.iron
+    descKey: wp.iron.passive
+    rank: 4
+    icon: {fileID: 831368574, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 30
+    sprite: {fileID: 831368574, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 0
+      value: 0
+    fireRate:
+      enabled: 0
+      value: 0
+    attackRange:
+      enabled: 0
+      value: 0
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 0}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 5670506074256586141, guid: 1d61de68b45b5764c9b968f7b8dc509b, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-lava
+    nameKey: sword.lava
+    descKey: wp.lava.passive
+    rank: 1
+    icon: {fileID: -5094286353425474703, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 110
+    sprite: {fileID: -5094286353425474703, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 24
+    fireRate:
+      enabled: 1
+      value: 1.6
+    attackRange:
+      enabled: 1
+      value: 1.4
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 93eaac704e775244f800826e4a8d4413, type: 2}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 1
+      value: 2
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 1141889836389366875, guid: 648c69caa1350bd42bf937fa0348388b, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-old
+    nameKey: sword.old
+    descKey: common.none
+    rank: 4
+    icon: {fileID: -1548253021, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 30
+    sprite: {fileID: -1548253021, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 10
+    fireRate:
+      enabled: 1
+      value: 2.6
+    attackRange:
+      enabled: 1
+      value: 1
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 0}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 5670506074256586141, guid: 1d61de68b45b5764c9b968f7b8dc509b, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-purple
+    nameKey: sword.purple
+    descKey: common.none
+    rank: 1
+    icon: {fileID: -2127000279, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 110
+    sprite: {fileID: -2127000279, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 21
+    fireRate:
+      enabled: 0
+      value: 0
+    attackRange:
+      enabled: 1
+      value: 1.4
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 1
+      value: 0.07
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 0}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 3205480452797295053, guid: 4ad3e3eea89fa9c4c9903bb11ceb6209, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 1
+      value: 12
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-thorn
+    nameKey: sword.thorn
+    descKey: wp.thorn.passive
+    rank: 2
+    icon: {fileID: -6475567878920213498, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 80
+    sprite: {fileID: -6475567878920213498, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 17
+    fireRate:
+      enabled: 0
+      value: 0
+    attackRange:
+      enabled: 1
+      value: 1.3
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: c44cbd6e8dc4b14488c32dd2992d83d9, type: 2}
+    activeSkill: {fileID: 11400000, guid: 043c12661e1a43242ae4ba4b34deb774, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 2345997756902887544, guid: 5d176169e67ee374ab1124b6beb7ee7c, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-thunder
+    nameKey: sword.thunder
+    descKey: wp.thunder.passive
+    rank: 0
+    icon: {fileID: 820613558, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 160
+    sprite: {fileID: 820613558, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 25
+    fireRate:
+      enabled: 1
+      value: 2.4
+    attackRange:
+      enabled: 1
+      value: 1.5
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 1
+      value: 0.12
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: f58021759c8db7d47b33361d660cf4dc, type: 2}
+    activeSkill: {fileID: 11400000, guid: 9f841a0c87166184da7ff3fc3a745fdd, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 4265271155893972347, guid: b4daa1db7f8238e4980e70e715db14b1, type: 3}
+    waveProjectileId: wave-thunder
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-venom
+    nameKey: sword.venom
+    descKey: wp.venom.passive
+    rank: 3
+    icon: {fileID: 528954961, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 60
+    sprite: {fileID: 528954961, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 13
+    fireRate:
+      enabled: 1
+      value: 2.2
+    attackRange:
+      enabled: 0
+      value: 0
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 0
+      value: 0
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: dfec7e4bd23da3447a0865363ff956dc, type: 2}
+    activeSkill: {fileID: 0}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 6699188477339727459, guid: 92db0602c2bd93f458e16e7b85863877, type: 3}
+    waveProjectileId: 
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0
+  - id: sword-void
+    nameKey: sword.void
+    descKey: wp.void.passive
+    rank: 0
+    icon: {fileID: -1136435792311686488, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    shopPrice: 110
+    sprite: {fileID: -1136435792311686488, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
+    holdOffset: {x: 0, y: 0}
+    visualScale:
+      enabled: 0
+      value: 0
+    spriteForwardAngle:
+      enabled: 0
+      value: 0
+    holdStyle:
+      enabled: 0
+      value: 0
+    restAngle: 0
+    viewPrefab: {fileID: 0}
+    damage:
+      enabled: 1
+      value: 22
+    fireRate:
+      enabled: 1
+      value: 1.8
+    attackRange:
+      enabled: 1
+      value: 1.5
+    knockback:
+      enabled: 0
+      value: 0
+    critBonus:
+      enabled: 1
+      value: 0.08
+    manaCost:
+      enabled: 0
+      value: 0
+    hitVfx: {fileID: 0}
+    attackSfx: {fileID: 0}
+    statusEffects: []
+    passive: {fileID: 11400000, guid: 2962c406912a2004ba128889e0a28679, type: 2}
+    activeSkill: {fileID: 11400000, guid: 8d149eb8284324b479a3e3a16bf98122, type: 2}
+    meleeStyle:
+      enabled: 0
+      value: 0
+    swingArc:
+      enabled: 0
+      value: 0
+    swingDuration:
+      enabled: 0
+      value: 0
+    hitbox:
+      enabled: 0
+      value:
+        shape: 0
+        offset: {x: 0, y: 0}
+        size: {x: 0, y: 0}
+        arc: 0
+    destroysProjectiles:
+      enabled: 0
+      value: 0
+    slashVfx: {fileID: 3205480452797295053, guid: 4ad3e3eea89fa9c4c9903bb11ceb6209, type: 3}
+    waveProjectileId: wave-void
+    swordWaveDamageRatio:
+      enabled: 0
+      value: 0
+    waveSpeed:
+      enabled: 0
+      value: 0
+    pierce:
+      enabled: 0
+      value: 0
+    explosionRadius:
+      enabled: 0
+      value: 0

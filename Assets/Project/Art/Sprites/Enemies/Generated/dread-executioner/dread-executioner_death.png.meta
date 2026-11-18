@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: ca0a595ee5736c54985fd469b991d01f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1272739801136603106
+    second: dread-executioner_death_0
+  - first:
+      213: -1629175339086047241
+    second: dread-executioner_death_1
+  - first:
+      213: -455251886835225598
+    second: dread-executioner_death_2
+  - first:
+      213: -7817174762372209739
+    second: dread-executioner_death_3
+  - first:
+      213: 4586512989662452938
+    second: dread-executioner_death_4
+  - first:
+      213: -8632089942512616399
+    second: dread-executioner_death_5
+  - first:
+      213: 5763426093384298629
+    second: dread-executioner_death_6
+  - first:
+      213: -4012360356569215134
+    second: dread-executioner_death_7
+  - first:
+      213: 788325964926134072
+    second: dread-executioner_death_8
+  - first:
+      213: 5941945114859487099
+    second: dread-executioner_death_9
+  - first:
+      213: -4696796155803613471
+    second: dread-executioner_death_10
+  - first:
+      213: -7952166604703612454
+    second: dread-executioner_death_11
+  - first:
+      213: -4984704014673080450
+    second: dread-executioner_death_12
+  - first:
+      213: -3686240438411544677
+    second: dread-executioner_death_13
+  - first:
+      213: -4081761286277479787
+    second: dread-executioner_death_14
+  - first:
+      213: 7660294116741946421
+    second: dread-executioner_death_15
+  - first:
+      213: -1381452590948792802
+    second: dread-executioner_death_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dread-executioner_death_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1060c5e4e1565ee0800000000000000
+      internalID: -1272739801136603106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 19
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f713fc29a10469e0800000000000000
+      internalID: -1629175339086047241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c2cd922de9ea9f0800000000000000
+      internalID: -455251886835225598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_3
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b3e7a588f0d38390800000000000000
+      internalID: -7817174762372209739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc9b82834196af30800000000000000
+      internalID: 4586512989662452938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c305b9ee7a43880800000000000000
+      internalID: -8632089942512616399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5807369fe7dcbff40800000000000000
+      internalID: 5763426093384298629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f05db938b3158c0800000000000000
+      internalID: -4012360356569215134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837a3a2d942b0fa00800000000000000
+      internalID: 788325964926134072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7f3116a997067250800000000000000
+      internalID: 5941945114859487099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6c7eee7c0a1deb0800000000000000
+      internalID: -4696796155803613471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1caebfa9a34a190800000000000000
+      internalID: -7952166604703612454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f82f6db16c2dab0800000000000000
+      internalID: -4984704014673080450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_13
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 2
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b97bccf0ad7d7dcc0800000000000000
+      internalID: -3686240438411544677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5924d797cbbaa57c0800000000000000
+      internalID: -4081761286277479787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c1b67c9e4de4a60800000000000000
+      internalID: 7660294116741946421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dread-executioner_death_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 2
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e164472103814dce0800000000000000
+      internalID: -1381452590948792802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dread-executioner_death_0: -1272739801136603106
+      dread-executioner_death_1: -1629175339086047241
+      dread-executioner_death_10: -4696796155803613471
+      dread-executioner_death_11: -7952166604703612454
+      dread-executioner_death_12: -4984704014673080450
+      dread-executioner_death_13: -3686240438411544677
+      dread-executioner_death_14: -4081761286277479787
+      dread-executioner_death_15: 7660294116741946421
+      dread-executioner_death_16: -1381452590948792802
+      dread-executioner_death_2: -455251886835225598
+      dread-executioner_death_3: -7817174762372209739
+      dread-executioner_death_4: 4586512989662452938
+      dread-executioner_death_5: -8632089942512616399
+      dread-executioner_death_6: 5763426093384298629
+      dread-executioner_death_7: -4012360356569215134
+      dread-executioner_death_8: 788325964926134072
+      dread-executioner_death_9: 5941945114859487099
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

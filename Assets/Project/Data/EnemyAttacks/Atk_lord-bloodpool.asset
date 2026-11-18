@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b260f1736a9a74bb0c36f5adea0036, type: 3}
+  m_Name: Atk_lord-bloodpool
+  m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.AreaTelegraphAttackSO
+  skillId: atk-lord-bloodpool
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
+  cooldown: 5
+  range: 10
+  windupTime: 0.9
+  weight: 1.2
+  requireLineOfSight: 0
+  stopWhileAttacking: 1
+  status:
+    effects:
+    - effect: {fileID: 11400000, guid: fc8f5cd3289b38d4fbebdbbfef560fc1, type: 2}
+      duration:
+        enabled: 0
+        value: 2
+      magnitude:
+        enabled: 0
+        value: 0.3
+      chance: 1
+      loopVfxOverride: {fileID: 0}
+  damage: 2
+  radius: 1.6
+  knockback: 5
+  zonesCount: 3
+  zoneScatterRadius: 2.6
+  warningPrefab: {fileID: 4291125856921205601, guid: ddd785e81d03a5f44b4dc16e1d896ed5, type: 3}
+  explosionVfx: {fileID: 6164033997265489522, guid: 608da318504328b4cb0b35f0d9aa8edf, type: 3}

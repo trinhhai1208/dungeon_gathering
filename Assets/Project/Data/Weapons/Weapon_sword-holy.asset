@@ -13,35 +13,9 @@ MonoBehaviour:
   m_Name: Weapon_sword-holy
   m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.WeaponData
   id: sword-holy
-  rarity: 2
+  rarity: 0
   icon: {fileID: -1250558059, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
   nameKey: sword.holy
   descKey: wp.holy.passive
-  activeSkill: {fileID: 11400000, guid: e234bc087d97f174da382af5fad7923c, type: 2}
+  activeSkill: {fileID: 0}
   shopPrice: 80
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: -1250558059, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 15
-  fireRate: 2.2
-  attackRange: 1.3
-  spread: 0
-  knockback: 5
-  critBonus: 0.05
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 5724288336320555420, guid: b7cdf7cecef8494449704c598eada859, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 11400000, guid: 6999065b6b4651e47b17e950e1e10fe5, type: 2}

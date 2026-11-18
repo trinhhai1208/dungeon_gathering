@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DG.Tweening;
+using DungeonGathering.Catalog;
 using DungeonGathering.Core;
 using DungeonGathering.Localization;
 using DungeonGathering.UI;
@@ -21,6 +22,10 @@ namespace DungeonGathering.Play
         [SerializeField] Image hpFill;
         [SerializeField] Image armorFill;
         [SerializeField] Image manaFill;
+        [SerializeField] SegmentedBar hpSegments;
+        [SerializeField] SegmentedBar armorSegments;
+        [SerializeField] SegmentedBar manaSegments;
+        [SerializeField] int manaPerSegment = 20;
         [SerializeField] TMP_Text hpText;
         [SerializeField] TMP_Text armorText;
         [SerializeField] TMP_Text manaText;
@@ -38,6 +43,7 @@ namespace DungeonGathering.Play
         [Header("Boss Bar")]
         [SerializeField] GameObject bossBar;
         [SerializeField] Image bossFill;
+        [SerializeField] SegmentedBar bossSegments;
         [SerializeField] LocalizedTMPText bossName;
 
         [Header("Action Cluster (Bottom-Right: -28, 28)")]
@@ -129,7 +135,7 @@ namespace DungeonGathering.Play
             if (s != null)
             {
                 OnCoins(new RunCoinsChangedEvent { Coins = s.runCoins });
-                if (floorLabel != null) floorLabel.SetKey(floorKey, s.floor, s.maxFloor); // "TẦNG {0}/{1}"
+                if (floorLabel != null) floorLabel.SetKey(floorKey, s.floor); // "TẦNG {0}" — bắt đầu từ Tầng 1
             }
 
             if (skillSlot1 != null) skillSlot1.SetShowRarityLetter(false);
@@ -148,14 +154,14 @@ namespace DungeonGathering.Play
             if (skillSlot1 != null)
             {
                 var src1 = player.Skills.GetSource(1);
-                if (src1 != null) skillSlot1.SetItem(src1.icon, src1.rarity);
+                if (src1 != null) skillSlot1.SetItem(src1.Icon, src1.Rank);
                 else skillSlot1.SetEmpty();
             }
 
             if (skillSlot2 != null)
             {
                 var src2 = player.Skills.GetSource(2);
-                if (src2 != null) skillSlot2.SetItem(src2.icon, src2.rarity);
+                if (src2 != null) skillSlot2.SetItem(src2.Icon, src2.Rank);
                 else skillSlot2.SetEmpty();
             }
 
@@ -167,7 +173,7 @@ namespace DungeonGathering.Play
             }
             if (characterSkillCooldown != null) characterSkillCooldown.enabled = false;
             if (characterSkillCooldownText != null) characterSkillCooldownText.enabled = false;
-            int cost = cs != null ? Mathf.CeilToInt(cs.manaCost) : 0;
+            int cost = cs != null ? Mathf.CeilToInt(SkillRegistry.ManaCost(cs)) : 0;
             if (characterSkillManaBadge != null) characterSkillManaBadge.SetActive(cost > 0);
             if (characterSkillManaText != null) characterSkillManaText.text = cost.ToString();
             if (characterSkillGlow != null) characterSkillGlow.color = new Color(1f, 1f, 1f, 0f);
@@ -179,6 +185,10 @@ namespace DungeonGathering.Play
             Fill(hpFill, e.Hp, e.MaxHp);
             Fill(armorFill, e.Armor, e.MaxArmor);
             Fill(manaFill, e.Mana, e.MaxMana);
+
+            if (hpSegments != null) hpSegments.SetValue(e.Hp, e.MaxHp, 1);
+            if (armorSegments != null) armorSegments.SetValue(e.Armor, e.MaxArmor, 1);
+            if (manaSegments != null) manaSegments.SetValue(e.Mana, e.MaxMana, manaPerSegment);
 
             if (hpText != null) hpText.text = $"{e.Hp}/{e.MaxHp}";
             if (armorText != null) armorText.text = $"{e.Armor}/{e.MaxArmor}";
@@ -210,7 +220,7 @@ namespace DungeonGathering.Play
             if (currentWeaponIcon != null)
             {
                 currentWeaponIcon.enabled = w != null;
-                if (w != null) currentWeaponIcon.sprite = w.weaponSprite != null ? w.weaponSprite : w.icon;
+                if (w != null) currentWeaponIcon.sprite = w.Spec.weaponSprite != null ? w.Spec.weaponSprite : w.Icon;
             }
             if (swapWeaponButton != null)
             {
@@ -224,6 +234,8 @@ namespace DungeonGathering.Play
             if (bossBar == null) return;
             bossBar.SetActive(e.Current > 0);
             Fill(bossFill, e.Current, e.Max);
+            if (bossSegments != null)
+                bossSegments.SetNormalized(e.Max > 0 ? (float)e.Current / e.Max : 0f, 10);
             if (bossName != null && e.BossName != lastBossKey)
             {
                 lastBossKey = e.BossName;
@@ -248,8 +260,8 @@ namespace DungeonGathering.Play
         {
             if (toast == null) return;
             var item = Catalog.ItemCatalog.Current != null ? Catalog.ItemCatalog.Current.GetItem(e.ItemId) : null;
-            if (item == null || string.IsNullOrEmpty(item.nameKey)) toast.SetRaw(e.ItemId);
-            else toast.SetKey(item.nameKey);
+            if (item == null || string.IsNullOrEmpty(item.NameKey)) toast.SetRaw(e.ItemId);
+            else toast.SetKey(item.NameKey);
             toast.gameObject.SetActive(true);
             toastUntil = Time.unscaledTime + toastDuration;
         }
@@ -334,7 +346,8 @@ namespace DungeonGathering.Play
             var cs = player.Skills.GetSkill(0);
             if (cs == null) return;
             bool cooling = player.Skills.GetRemaining(0) > 0f;
-            bool hasMana = cs.manaCost <= 0f || player.Stats.Mana >= cs.manaCost;
+            float csMana = SkillRegistry.ManaCost(cs);
+            bool hasMana = csMana <= 0f || player.Stats.Mana >= csMana;
             if (characterSkillIcon != null)
                 characterSkillIcon.color = hasMana ? Color.white : skillNoManaTint;
             if (characterSkillManaText != null)

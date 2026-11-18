@@ -14,19 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: 8703e080d3057c9438b611a47a436109
-  m_SerializeEntries:
-  - m_GUID: 1472707d7e186e744aa69367c94d7ddd
-    m_Address: char/player-shell
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - play
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d96514f9a83b8354db942b36f9f6ebac
-    m_Address: play/prefab-set
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - play
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 22f14522f4a53044194d950c594d2c09, type: 2}
   m_SchemaSet:

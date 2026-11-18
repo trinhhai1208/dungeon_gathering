@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 7622a7e4c0e75ae40aefacf13e02a86b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4786014255808220729
+    second: plague-assassin_death_0
+  - first:
+      213: 689773041499453812
+    second: plague-assassin_death_1
+  - first:
+      213: -5744390009496280537
+    second: plague-assassin_death_2
+  - first:
+      213: -2135698958735624789
+    second: plague-assassin_death_3
+  - first:
+      213: 2479275821135322288
+    second: plague-assassin_death_4
+  - first:
+      213: 2993348143317874289
+    second: plague-assassin_death_5
+  - first:
+      213: -2148553843480958213
+    second: plague-assassin_death_6
+  - first:
+      213: -3628158219070517130
+    second: plague-assassin_death_7
+  - first:
+      213: 182694260189897856
+    second: plague-assassin_death_8
+  - first:
+      213: -6073519405090375275
+    second: plague-assassin_death_9
+  - first:
+      213: -6583710547114698414
+    second: plague-assassin_death_10
+  - first:
+      213: -5089969530179281739
+    second: plague-assassin_death_11
+  - first:
+      213: 6506118947937239362
+    second: plague-assassin_death_12
+  - first:
+      213: -446400109552370331
+    second: plague-assassin_death_13
+  - first:
+      213: -1600789037393254244
+    second: plague-assassin_death_14
+  - first:
+      213: 3544580084717413732
+    second: plague-assassin_death_15
+  - first:
+      213: 753869453536329640
+    second: plague-assassin_death_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: plague-assassin_death_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e8767bb965b6240800000000000000
+      internalID: 4786014255808220729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479373a3de0929900800000000000000
+      internalID: 689773041499453812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 2
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722eba0b8b3d740b0800000000000000
+      internalID: -5744390009496280537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 2
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba53469cc197c52e0800000000000000
+      internalID: -2135698958735624789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bc5cfa3938286220800000000000000
+      internalID: 2479275821135322288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_5
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 2
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1767983e6428a8920800000000000000
+      internalID: 2993348143317874289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa6482b9adce22e0800000000000000
+      internalID: -2148553843480958213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_7
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6705363925136adc0800000000000000
+      internalID: -3628158219070517130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0842f11367f098200800000000000000
+      internalID: 182694260189897856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_9
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 2
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 599752ba74686bba0800000000000000
+      internalID: -6073519405090375275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_10
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 2
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2595c3fa326f1a4a0800000000000000
+      internalID: -6583710547114698414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_11
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 2
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bc1a1c1eabcc59b0800000000000000
+      internalID: -5089969530179281739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 241cc3656b06a4a50800000000000000
+      internalID: 6506118947937239362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_13
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 2
+        width: 22
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56d7f6a27711ec9f0800000000000000
+      internalID: -446400109552370331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98e5d11adad8c9e0800000000000000
+      internalID: -1600789037393254244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_15
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1
+        width: 24
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465618b9ec0e03130800000000000000
+      internalID: 3544580084717413732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plague-assassin_death_16
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 2
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8affc091648467a00800000000000000
+      internalID: 753869453536329640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      plague-assassin_death_0: 4786014255808220729
+      plague-assassin_death_1: 689773041499453812
+      plague-assassin_death_10: -6583710547114698414
+      plague-assassin_death_11: -5089969530179281739
+      plague-assassin_death_12: 6506118947937239362
+      plague-assassin_death_13: -446400109552370331
+      plague-assassin_death_14: -1600789037393254244
+      plague-assassin_death_15: 3544580084717413732
+      plague-assassin_death_16: 753869453536329640
+      plague-assassin_death_2: -5744390009496280537
+      plague-assassin_death_3: -2135698958735624789
+      plague-assassin_death_4: 2479275821135322288
+      plague-assassin_death_5: 2993348143317874289
+      plague-assassin_death_6: -2148553843480958213
+      plague-assassin_death_7: -3628158219070517130
+      plague-assassin_death_8: 182694260189897856
+      plague-assassin_death_9: -6073519405090375275
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

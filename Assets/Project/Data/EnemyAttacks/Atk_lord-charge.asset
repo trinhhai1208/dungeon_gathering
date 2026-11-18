@@ -12,15 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112a44208674f5e49921f5955ee258b3, type: 3}
   m_Name: Atk_lord-charge
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ChargeAttackSO
-  range: 7
+  skillId: atk-lord-charge
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 6
+  range: 7
   windupTime: 0.8
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
+  status:
+    effects: []
   damage: 2
   distance: 6
   chargeSpeed: 16
-  hitRadius: 0.6
+  hitRadius: 1
   knockback: 6
   warningPrefab: {fileID: 0}

@@ -17,31 +17,5 @@ MonoBehaviour:
   icon: {fileID: 820613558, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
   nameKey: sword.thunder
   descKey: wp.thunder.passive
-  activeSkill: {fileID: 11400000, guid: 9f841a0c87166184da7ff3fc3a745fdd, type: 2}
+  activeSkill: {fileID: 0}
   shopPrice: 160
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: 820613558, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 25
-  fireRate: 2.4
-  attackRange: 1.5
-  spread: 0
-  knockback: 5
-  critBonus: 0.12
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 7894807342021122902, guid: ede97fda9a1cbba49af704cb56d0b42f, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 11400000, guid: f58021759c8db7d47b33361d660cf4dc, type: 2}

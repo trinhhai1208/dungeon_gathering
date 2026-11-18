@@ -14,50 +14,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Play::DungeonGathering.Play.DungeonConfig
   themeId: dungeon
   floor: 2
-  mainPathLength: 6
-  branchCount: 2
-  branchLength: {x: 1, y: 2}
+  nameKey: hud.floor
+  combatRoomCount: {x: 4, y: 6}
+  specialRooms:
+  - type: 2
+    count: 1
+  - type: 3
+    count: 1
+  - type: 5
+    count: 1
+  roomTypes:
+  - {fileID: 11400000, guid: aaca58c643d55bb43963fe1c75267d65, type: 2}
+  - {fileID: 11400000, guid: 056aa050a7aa82745b71d54c349e782e, type: 2}
+  - {fileID: 11400000, guid: 44b4991dd85d2d842986d568e52e806b, type: 2}
+  - {fileID: 11400000, guid: eaea1286fe1620e43beca73601715ecc, type: 2}
+  - {fileID: 11400000, guid: d958187847e148c4f8c233e0692a9e60, type: 2}
+  - {fileID: 11400000, guid: d552966e1447af54a9922fbfeab441b5, type: 2}
+  eliteChance: 0.1
+  lootLuck: 0.25
   gridSize: {x: 8, y: 8}
   cellSpacing: 26
-  includeTreasure: 1
-  includeShop: 1
-  startRooms:
-  - {fileID: 3627364820548323883, guid: 8855981437caa66418918bb1d3a9660c, type: 3}
-  combatRooms:
-  - {fileID: 8167690392892711252, guid: 34dc084db0ccb54469ae9730f6271d86, type: 3}
-  treasureRooms:
-  - {fileID: 5620328855892738834, guid: 0d153d98ddc227b49ad4cd9d1119fa3c, type: 3}
-  shopRooms:
-  - {fileID: 8936213224568587988, guid: 5e541955259ccda4f8c25b0d54439e6d, type: 3}
-  bossRooms:
-  - {fileID: 4211951212529151486, guid: 5017cf9c3b8ef094eb83aad6ca4c9700, type: 3}
   corridorFloorTile: {fileID: 11400000, guid: 809a76594dc96874bb4b346576a4f292, type: 2}
   corridorWallTile: {fileID: 11400000, guid: 215e8e47e75225445a46b731b1ca70f7, type: 2}
   sealWallTile: {fileID: 11400000, guid: ac8142829f1bdf04b800979bb4174737, type: 2}
   corridorWidth: 3
   sealDepth: 2
   enemyTable:
-  - prefab: {fileID: 8830509281171993290, guid: c01340b25f8ccd748955ab29fe91665b, type: 3}
-    weight: 8
-    prewarm: 4
-  - prefab: {fileID: 7736695031059731442, guid: 44fd4bbc36af0f5418d347b2befc3d00, type: 3}
-    weight: 5
-    prewarm: 3
-  - prefab: {fileID: 4635513400010254897, guid: 7c3ae17edae397c4b83a31ad46960363, type: 3}
-    weight: 8
-    prewarm: 3
-  - prefab: {fileID: 2514637148265257352, guid: c62bc986e02c2f949bd74a471501c84e, type: 3}
+  - monster: {fileID: 11400000, guid: 4f8a5c92c7a3ede4e9accabe0ecfbe06, type: 2}
     weight: 6
     prewarm: 3
-  - prefab: {fileID: 4654750794091321900, guid: 579a651852a011a4e94a8a600cbeaead, type: 3}
+  - monster: {fileID: 11400000, guid: e9649a073f209a948a49f190fd687fbf, type: 2}
+    weight: 6
+    prewarm: 3
+  - monster: {fileID: 11400000, guid: feb7feb0035a56e488c5b5bb9bffd424, type: 2}
+    weight: 5
+    prewarm: 3
+  - monster: {fileID: 11400000, guid: aeef374c189e36445b3462dcece97620, type: 2}
     weight: 4
     prewarm: 2
+  - monster: {fileID: 11400000, guid: 9684268a3c199ad45be35cfa5054f798, type: 2}
+    weight: 5
+    prewarm: 3
+  - monster: {fileID: 11400000, guid: 437e79353248a1949927add231722ec3, type: 2}
+    weight: 5
+    prewarm: 2
+  - monster: {fileID: 11400000, guid: ff0ca7905647f4f4d84feb260899b890, type: 2}
+    weight: 3
+    prewarm: 2
+  - monster: {fileID: 11400000, guid: 9d1ad2bd5c6c59f47b3e45802b716aad, type: 2}
+    weight: 3
+    prewarm: 2
+  - monster: {fileID: 11400000, guid: b9d65572dcd2bfb4abbc35e34a554dfc, type: 2}
+    weight: 3
+    prewarm: 2
+  - monster: {fileID: 11400000, guid: 643225fc38891cc4ea5b707b788ea7f9, type: 2}
+    weight: 2
+    prewarm: 1
+  - monster: {fileID: 11400000, guid: 71d0d3422094be740823b99f6ca142fc, type: 2}
+    weight: 2
+    prewarm: 1
   spawnBudget: 6
   budgetGrowth: 2
   wavesPerRoom: {x: 2, y: 3}
   enemyHealthMultiplier: 1.25
   spawnWarningTime: 1
   bossAddress: boss/elite-vampire
-  bossPrefab: {fileID: 3431131496001861796, guid: 54ccd536d57d26e4199e94e998e90013, type: 3}
   bossLoadTimeout: 20
   chestOnClearChance: 0.3

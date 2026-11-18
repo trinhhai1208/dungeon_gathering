@@ -14,20 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.EnemyData
   enemyId: elite-vampire
   nameKey: enemy.elite_vampire
-  maxHp: 260
-  moveSpeed: 2.8
+  animator: {fileID: 9100000, guid: 4c40fd398ad3651469ed2462a8643e1e, type: 2}
+  sprite: {fileID: -7124564323976398612, guid: 19cfd32a7a771c94ab26987450222bb6, type: 3}
+  visualScale: 1.55
+  attackVfx: {fileID: 9064071070495278911, guid: 4f099d8cbaf95114c9bc5435f63c1d37, type: 3}
+  hitVfx: {fileID: 8034088177677510928, guid: 10f8f7402a7a1974db4db4e7a1374861, type: 3}
   contactDamage: 1
   contactCooldown: 0.8
   isFlying: 0
-  knockbackResist: 0.5
   preferredDistance: 4
+  retreatDistance: 0
   aggroRange: 12
+  stats:
+    profile: {fileID: 11400000, guid: 57404ce959abf5246a7d8c8b5e76b29d, type: 2}
+    overrides:
+    - stat: 0
+      value: 320
+    - stat: 5
+      value: 2.8
+    - stat: 10
+      value: 0.5
+  tier: 2
   spawnCost: 6
   spawnDuration: 0.8
   deathDuration: 1.2
-  attacks:
-  - {fileID: 11400000, guid: 7bdaff9986f743641b02c3d6a4e2376e, type: 2}
-  - {fileID: 11400000, guid: b53b34733a2369742b814da0423e79cf, type: 2}
+  skills: 1400000013000000
+  phases: []
+  customLoot: 0
   lootTable:
     minGold: 20
     maxGold: 30

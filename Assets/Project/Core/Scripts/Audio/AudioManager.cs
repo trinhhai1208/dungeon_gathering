@@ -21,7 +21,7 @@ namespace DungeonGathering.Core
         [SerializeField] AudioMixerGroup bgmGroup;
         [SerializeField] AudioMixerGroup sfxGroup;
         [SerializeField, Min(1)] int sfxVoices = 16;
-        [Tooltip("Trống → tự nạp Resources/" + SfxLibrary.ResourcePath)]
+        [Tooltip("Nạp từ Addressables Core_Local (core/sfx-library) qua Systems.Start hoặc gán trực tiếp trong Inspector")]
         [SerializeField] SfxLibrary sfxLibrary;
         [Tooltip("Độ lệch trái/phải tối đa của PlayAt (0 = tắt).")]
         [SerializeField, Range(0f, 1f)] float maxPan = 0.45f;
@@ -67,7 +67,7 @@ namespace DungeonGathering.Core
             voices = new Voice[sfxVoices];
             for (int i = 0; i < sfxVoices; i++) voices[i].Source = CreateSource("SFX_" + i, sfxGroup, false);
             for (int i = 0; i < MaxId; i++) { lastPlayed[i] = -999f; lastClip[i] = -1; }
-            SetLibrary(sfxLibrary != null ? sfxLibrary : Resources.Load<SfxLibrary>(SfxLibrary.ResourcePath));
+            if (sfxLibrary != null) SetLibrary(sfxLibrary);
         }
 
         void OnEnable()
@@ -101,7 +101,7 @@ namespace DungeonGathering.Core
             Array.Clear(entries, 0, entries.Length);
             if (library == null)
             {
-                Debug.LogWarning($"[Audio] Không có SfxLibrary (Resources/{SfxLibrary.ResourcePath}) — SFX theo id sẽ im lặng.");
+                Debug.LogWarning("[Audio] Không có SfxLibrary — SFX theo id sẽ im lặng.");
                 return;
             }
             foreach (var e in library.entries)

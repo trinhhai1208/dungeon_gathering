@@ -58,7 +58,7 @@ namespace DungeonGathering.Play
                     string charName = !string.IsNullOrEmpty(character.nameKey)
                         ? DungeonGathering.Localization.LocalizationLookup.Get(character.nameKey, fallback)
                         : fallback;
-                    characterClassText.text = $"{charName} · {character.role}";
+                    characterClassText.text = $"{charName} · {DungeonGathering.Localization.LocalizationLookup.Role(character.role)}";
                 }
             }
             if (abandonButton != null) abandonButton.interactable = true;
@@ -67,18 +67,35 @@ namespace DungeonGathering.Play
 
         void BuildLoot(SessionData s)
         {
-            foreach (var t in tiles) if (t != null) Destroy(t.gameObject);
-            tiles.Clear();
-            if (lootGrid == null || lootTilePrefab == null || s == null) return;
+            if (lootGrid == null || lootTilePrefab == null || s == null)
+            {
+                for (int i = 0; i < tiles.Count; i++)
+                    if (tiles[i] != null) tiles[i].gameObject.SetActive(false);
+                return;
+            }
             var cat = ItemCatalog.Current;
+            int idx = 0;
             foreach (var id in s.runBag)
             {
                 var item = cat != null ? cat.GetItem(id) : null;
                 if (item == null) continue;
-                var tile = Instantiate(lootTilePrefab, lootGrid);
-                tile.SetItem(item.icon, item.rarity);
-                tiles.Add(tile);
+                ItemTile tile;
+                if (idx < tiles.Count && tiles[idx] != null)
+                {
+                    tile = tiles[idx];
+                    tile.gameObject.SetActive(true);
+                }
+                else
+                {
+                    tile = Instantiate(lootTilePrefab, lootGrid);
+                    if (idx < tiles.Count) tiles[idx] = tile;
+                    else tiles.Add(tile);
+                }
+                tile.SetItem(item.Icon, item.Rank);
+                idx++;
             }
+            for (int i = idx; i < tiles.Count; i++)
+                if (tiles[i] != null) tiles[i].gameObject.SetActive(false);
         }
 
         public override void OnClose() => Services.Game?.Resume();
@@ -92,7 +109,6 @@ namespace DungeonGathering.Play
 
         async void OpenSettings()
         {
-            if (!AddressablesUtil.KeyExists(AddressKeys.UiPopupSettings)) return;
             await Services.UI.Open<UIScreen>(AddressKeys.UiPopupSettings);
         }
     }

@@ -5,7 +5,6 @@ using DungeonGathering.Core;
 using UnityEngine;
 
 
-
 namespace DungeonGathering.Combat
 
 {
@@ -47,20 +46,16 @@ namespace DungeonGathering.Combat
         [SerializeField] float restRaiseAngle = 35f;
 
 
-
         [Tooltip("Khoảng cách lệch sang bên sườn nhân vật (Soul Knight style)")]
 
         [SerializeField] float sideOffset = 0.22f;
 
 
-
         SpriteRenderer bodyRenderer;
-
 
         float handBaseY;
 
         bool lastFacingRight = true;
-
 
 
         readonly WeaponData[] weapons = new WeaponData[2];
@@ -80,7 +75,6 @@ namespace DungeonGathering.Combat
         bool autoAim = true;
 
         WeaponPassiveSO activePassive;
-
 
 
         public int ActiveSlot => activeSlot;
@@ -110,7 +104,6 @@ namespace DungeonGathering.Combat
         public int WeaponSortingOrder => weaponSortingOrder;
 
 
-
         void Awake()
 
         {
@@ -126,7 +119,6 @@ namespace DungeonGathering.Combat
         }
 
 
-
         Transform GetSocket(int slot)
 
         {
@@ -136,7 +128,6 @@ namespace DungeonGathering.Combat
             return socketPrimary != null ? socketPrimary : (weaponSocket != null ? weaponSocket : (weaponPivot != null ? weaponPivot : transform));
 
         }
-
 
 
         /// <summary>
@@ -162,7 +153,6 @@ namespace DungeonGathering.Combat
         }
 
 
-
         void UpdatePivotPosition(bool facingRight)
 
         {
@@ -180,7 +170,6 @@ namespace DungeonGathering.Combat
         }
 
 
-
         public void Init(IPlayerContext ctx, WeaponData primary, WeaponData secondary, int startSlot = 0)
 
         {
@@ -190,7 +179,6 @@ namespace DungeonGathering.Combat
             var animDriver = ctx != null ? ctx.Transform.GetComponentInChildren<SpriteAnimDriver>(true) : null;
 
             bodyRenderer = animDriver != null ? animDriver.Renderer : null;
-
 
             for (int i = 0; i < 2; i++)
 
@@ -227,7 +215,6 @@ namespace DungeonGathering.Combat
                 if (weapons[i] != null) views[i] = CreateView(weapons[i], i);
 
 
-
             activeSlot = weapons[startSlot] != null ? startSlot : (weapons[0] != null ? 0 : 1);
 
             ApplyActive();
@@ -235,16 +222,16 @@ namespace DungeonGathering.Combat
         }
 
 
-
         WeaponBase CreateView(WeaponData data, int slot = 0)
 
         {
 
+            var spec = data.Spec;
             Transform targetSocket = GetSocket(slot);
 
             GameObject go;
 
-            if (data.weaponPrefab != null) go = Instantiate(data.weaponPrefab, targetSocket, false);
+            if (spec.weaponPrefab != null) go = Instantiate(spec.weaponPrefab, targetSocket, false);
 
             else
 
@@ -254,8 +241,7 @@ namespace DungeonGathering.Combat
 
                 go.transform.SetParent(targetSocket, false);
 
-                go.transform.localScale = Vector3.one * (data.visualScale > 0f ? data.visualScale : 0.55f);
-
+                go.transform.localScale = Vector3.one * (spec.visualScale > 0f ? spec.visualScale : 0.55f);
 
 
                 // Căn sprite để hướng chuôi→mũi trùng trục +X của socket (hướng ngắm):
@@ -266,17 +252,16 @@ namespace DungeonGathering.Combat
 
                 visual.transform.SetParent(go.transform, false);
 
-                visual.transform.localPosition = data.holdOffset;
+                visual.transform.localPosition = spec.holdOffset;
 
-                float spriteForward = data.GetForwardAngle(meleeSpriteForwardAngle, rangedSpriteForwardAngle);
+                float spriteForward = spec.GetForwardAngle(meleeSpriteForwardAngle, rangedSpriteForwardAngle);
 
                 visual.transform.localRotation = Quaternion.Euler(0f, 0f, -spriteForward);
 
 
-
                 var sr = visual.AddComponent<SpriteRenderer>();
 
-                sr.sprite = data.weaponSprite;
+                sr.sprite = spec.weaponSprite;
 
                 sr.sortingOrder = weaponSortingOrder;
 
@@ -286,7 +271,7 @@ namespace DungeonGathering.Combat
 
             if (view == null)
 
-                view = data.weaponType == WeaponType.Melee ? go.AddComponent<MeleeWeapon>() : go.AddComponent<RangedWeapon>();
+                view = spec.weaponType == WeaponType.Melee ? go.AddComponent<MeleeWeapon>() : go.AddComponent<RangedWeapon>();
 
             view.Bind(data, owner);
 
@@ -295,7 +280,6 @@ namespace DungeonGathering.Combat
             return view;
 
         }
-
 
 
         void ApplyActive()
@@ -315,19 +299,16 @@ namespace DungeonGathering.Combat
                 }
 
 
-
             if (activePassive != null && owner != null) activePassive.OnUnequip(owner);
 
-            activePassive = Active != null ? Active.passive : null;
+            activePassive = Active != null ? Active.Passive : null;
 
             if (activePassive != null && owner != null) activePassive.OnEquip(owner);
 
         }
 
 
-
         float swapCooldown;
-
 
 
         /// <summary>Đổi giữa vũ khí 1 ↔ 2 (nút ô vũ khí trên HUD).</summary>
@@ -348,13 +329,11 @@ namespace DungeonGathering.Combat
 
             activeSlot = other;
 
-
             ApplyActive();
 
             EventBus<WeaponSwappedEvent>.Raise(new WeaponSwappedEvent { ActiveSlot = activeSlot });
 
         }
-
 
 
         public bool TryAttack()
@@ -368,7 +347,6 @@ namespace DungeonGathering.Combat
         }
 
 
-
         /// <summary>Cập nhật hướng ngắm (gọi mỗi frame từ Player với hướng di chuyển hiện tại).</summary>
 
         public void UpdateAim(Vector2 moveDir)
@@ -380,20 +358,19 @@ namespace DungeonGathering.Combat
             Vector2 origin = owner.Transform.position;
 
 
-
             if (autoAim)
 
             {
 
                 retargetTimer -= Time.deltaTime;
 
-                if (retargetTimer <= 0f || aimTarget == null || aimTarget.IsDead || !aimTarget.transform.gameObject.activeInHierarchy)
+                if (retargetTimer <= 0f || aimTarget == null || (aimTarget is Component tc && tc == null) || aimTarget.IsDead || !aimTarget.transform.gameObject.activeInHierarchy)
 
                 {
 
                     retargetTimer = 0.15f;
 
-                    float range = Active != null ? Mathf.Max(aimRange, Active.attackRange) : aimRange;
+                    float range = Active != null ? Mathf.Max(aimRange, Active.Spec.attackRange) : aimRange;
 
                     aimTarget = CombatUtil.FindNearest(origin, range, CombatLayers.EnemyTargets, CombatLayers.Walls);
 
@@ -404,10 +381,9 @@ namespace DungeonGathering.Combat
             else aimTarget = null;
 
 
-
             bool hasAimTarget = false;
 
-            if (aimTarget != null && !aimTarget.IsDead)
+            if (aimTarget != null && !(aimTarget is Component tc2 && tc2 == null) && !aimTarget.IsDead)
 
             {
 
@@ -428,11 +404,9 @@ namespace DungeonGathering.Combat
             }
 
 
-
             var view = views[activeSlot];
 
             bool busy = view != null && view.IsBusy;
-
 
 
             if (hasAimTarget || busy)
@@ -464,7 +438,6 @@ namespace DungeonGathering.Combat
             }
 
             UpdatePivotPosition(lastFacingRight);
-
 
 
             float pivotAngle;
@@ -510,16 +483,17 @@ namespace DungeonGathering.Combat
         }
 
 
-
         float GetRestAngle(WeaponData data)
 
         {
 
             if (data == null) return restRaiseAngle;
 
-            if (data.customRestAngle != 0f) return data.customRestAngle;
+            var spec = data.Spec;
 
-            return data.EffectiveHoldStyle switch
+            if (spec.customRestAngle != 0f) return spec.customRestAngle;
+
+            return spec.EffectiveHoldStyle switch
 
             {
 
@@ -531,12 +505,11 @@ namespace DungeonGathering.Combat
 
                 WeaponHoldStyle.Spear => 15f,
 
-                _ => data.weaponType == WeaponType.Melee ? restRaiseAngle : 0f
+                _ => spec.weaponType == WeaponType.Melee ? restRaiseAngle : 0f
 
             };
 
         }
-
 
 
         /// <summary>Trong Soul Knight & top-down pixel art, vũ khí luôn vẽ ở phía trước thân (+1) để không bị mũ/đầu che.</summary>
@@ -552,9 +525,7 @@ namespace DungeonGathering.Combat
             int targetOrder = (bodyRenderer != null ? bodyRenderer.sortingOrder : weaponSortingOrder) + 1;
 
 
-
             if (view.Sprite.sortingLayerID == targetLayerId && view.Sprite.sortingOrder == targetOrder) return;
-
 
 
             foreach (var v in views)
@@ -572,27 +543,22 @@ namespace DungeonGathering.Combat
         }
 
 
+        public void CancelAttack()
+        {
+            foreach (var v in views)
+                if (v != null) v.CancelAttack();
+        }
 
         public void SetEnabled(bool on)
-
         {
-
             enabled = on;
-
-            if (!on) foreach (var v in views) v?.CancelAttack();
-
+            if (!on) CancelAttack();
         }
-
-
 
         void OnDisable()
-
         {
-
-            foreach (var v in views) if (v != null) v.CancelAttack();
-
+            CancelAttack();
         }
-
 
 
         void OnDestroy()

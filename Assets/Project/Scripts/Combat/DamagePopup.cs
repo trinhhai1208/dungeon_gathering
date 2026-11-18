@@ -26,8 +26,8 @@ namespace DungeonGathering.Combat
                 label.alpha = 1f;
             }
             transform.localScale = Vector3.one * (crit ? 1.3f : 1f);
-            transform.DOMoveY(transform.position.y + rise, lifetime).SetEase(Ease.OutQuad);
-            if (label != null) DOTween.To(() => label.alpha, a => label.alpha = a, 0f, lifetime * 0.5f).SetDelay(lifetime * 0.5f).SetTarget(transform);
+            transform.DOMoveY(transform.position.y + rise, lifetime).SetEase(Ease.OutQuad).SetLink(gameObject);
+            if (label != null) DOTween.To(() => label.alpha, a => label.alpha = a, 0f, lifetime * 0.5f).SetDelay(lifetime * 0.5f).SetTarget(transform).SetLink(gameObject);
             Services.Pool.ReturnAfter(gameObject, lifetime);
         }
 

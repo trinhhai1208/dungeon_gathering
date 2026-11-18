@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.ShieldHealSkill
   skillId: holy-light
   nameKey: skill.holy_light
-  descKey: wp.holy.active
+  descKey: skill.holy_light.desc
   icon: {fileID: 21300000, guid: 03d22b0a5eb118a489c913e472ff8b74, type: 3}
   cooldown: 25
   duration: 0
@@ -24,4 +24,6 @@ MonoBehaviour:
   armor: 2
   mana: 0
   invulnerableDuration: 1
-  vfx: {fileID: 2890952299872522546, guid: cbc048527ebba1048a863bd038fff34d, type: 3}
+  moveSpeedBonus: 0
+  moveSpeedDuration: 3
+  vfx: {fileID: 6932785896028381532, guid: 67003d515549e784faa3bd4455c1a6d5, type: 3}

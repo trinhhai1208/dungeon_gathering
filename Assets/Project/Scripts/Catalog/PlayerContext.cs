@@ -21,7 +21,7 @@ namespace DungeonGathering.Catalog
     {
         GameObject GameObject { get; }
         Transform Transform { get; }
-        CharacterData Character { get; }
+        HeroDefinitionSO Character { get; }
         PlayerCombatHooks Hooks { get; }
         Vector2 AimDirection { get; }
         Vector2 MoveInput { get; }

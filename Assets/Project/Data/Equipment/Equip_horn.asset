@@ -26,3 +26,5 @@ MonoBehaviour:
     PercentValue: 0
   synergyRole: 1
   synergyPassive: {fileID: 11400000, guid: 9db0927911b5bb94d93b12e8fe2d0b0d, type: 2}
+  equipmentSet: {fileID: 11400000, guid: 4e8d08b93b4bca74cbbb5c97a2d262c6, type: 2}
+  onHitStatus: []

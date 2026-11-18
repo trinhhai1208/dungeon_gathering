@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9041f05eae067d40aed8d1536a45394, type: 3}
+  m_Name: Skill_arrow-rain
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.ProjectileVolleySkill
+  skillId: arrow-rain
+  nameKey: skill.arrow_rain
+  descKey: skill.arrow_rain.desc
+  icon: {fileID: 21300000, guid: 8b1763a8b02bbd64d8bcf89d9c976d3d, type: 3}
+  cooldown: 8
+  duration: 0
+  manaCost: 0
+  activateSfx: 0
+  projectilePrefab: {fileID: 148695736900847178, guid: 68957b4f62c8e4a4ca346523a6718d91, type: 3}
+  impactVfx: {fileID: 3593071516705914305, guid: 0d349db50b4f3bc4ead5de7c67fbfb4c, type: 3}
+  damage: 14
+  speed: 13
+  knockback: 2.5
+  count: 5
+  spreadAngle: 35
+  pierce: 1
+  status:
+    effects: []

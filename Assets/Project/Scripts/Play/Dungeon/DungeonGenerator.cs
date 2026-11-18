@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace DungeonGathering.Play
 {
-    public enum RoomType { Start, Combat, Treasure, Shop, Boss }
+    /// <summary>Loại phòng. Elite = phòng quái mà mọi con sinh ra là Elite. Thêm mới luôn nối vào cuối.</summary>
+    public enum RoomType { Start, Combat, Treasure, Shop, Boss, Elite }
 
     [Flags]
     public enum DoorMask { None = 0, North = 1, East = 2, South = 4, West = 8 }
@@ -73,48 +74,54 @@ namespace DungeonGathering.Play
         }
     }
 
-    /// <summary>Tham số sinh map (lấy từ DungeonConfig).</summary>
+    /// <summary>Tham số sinh map (LevelConfigSO.ToGeneratorSettings).</summary>
     public struct GeneratorSettings
     {
-        public int MainPathLength;     // số phòng trên đường chính (gồm Start + Boss)
-        public int BranchCount;
-        public Vector2Int BranchLength; // min..max
         public Vector2Int GridSize;
-        public bool Treasure;
-        public bool Shop;
+        /// <summary>Số phòng có quái chính xác (không tính Start / Boss / phòng đặc biệt).</summary>
+        public int CombatRooms;
+        /// <summary>Các phòng đặc biệt, mỗi phòng ở cuối một nhánh riêng.</summary>
+        public List<RoomType> Specials;
     }
 
     /// <summary>
-    /// Sinh bố cục phòng theo seed (ARCHITECTURE §2): random walk đường chính + 1–2 nhánh phụ.
-    /// Phòng lá xa Start nhất = Boss; cuối nhánh phụ = Treasure / Shop. Cùng seed → cùng map.
-    /// Thuần C# (không phụ thuộc scene) để dùng chung cho runtime và Dungeon Preview.
+    /// Sinh bố cục phòng theo seed: đường chính Start → phòng Combat → Boss, mỗi phòng đặc biệt ở cuối một nhánh riêng,
+    /// đúng số phòng theo cấu hình. Cùng seed → cùng map. Thuần C# (không phụ thuộc scene), có EditMode test.
     /// </summary>
     public static class DungeonGenerator
     {
         public static DungeonLayout Generate(int seed, GeneratorSettings s)
         {
-            s.MainPathLength = Mathf.Max(2, s.MainPathLength);
             s.GridSize = new Vector2Int(Mathf.Max(3, s.GridSize.x), Mathf.Max(3, s.GridSize.y));
             var rng = new System.Random(seed);
             for (int attempt = 0; attempt < 64; attempt++)
             {
-                var layout = TryGenerate(rng, s);
+                var layout = TryGenerateCounts(rng, s);
                 if (layout != null) { layout.Seed = seed; return layout; }
             }
             Debug.LogWarning($"[Dungeon] Không sinh được map đủ điều kiện với seed {seed} — dùng đường thẳng.");
-            return Fallback(seed, s);
+            return FallbackCounts(seed, s);
         }
 
-        static DungeonLayout TryGenerate(System.Random rng, GeneratorSettings s)
+        /// <summary>
+        /// Đúng <see cref="GeneratorSettings.CombatRooms"/> phòng Combat + mỗi phòng đặc biệt ở cuối một nhánh riêng.
+        /// Đường chính: Start → ~60% phòng Combat → Boss (lá cuối đường chính). Phần Combat còn lại chia vào các nhánh
+        /// (nhánh có phòng đặc biệt thì phòng đặc biệt ở cuối; thừa Combat thì thêm nhánh cụt).
+        /// </summary>
+        static DungeonLayout TryGenerateCounts(System.Random rng, GeneratorSettings s)
         {
+            int combat = Mathf.Max(0, s.CombatRooms);
+            var specials = s.Specials ?? new List<RoomType>();
+            int mainCombat = specials.Count == 0 && combat <= 3 ? combat : Mathf.Clamp(Mathf.CeilToInt(combat * 0.6f), Mathf.Min(1, combat), combat);
+            int restCombat = combat - mainCombat;
+
             var layout = new DungeonLayout();
-            var start = new Vector2Int(s.GridSize.x / 2, s.GridSize.y / 2);
-            var startNode = Add(layout, start, 0, true);
+            var startNode = Add(layout, new Vector2Int(s.GridSize.x / 2, s.GridSize.y / 2), 0, true);
+            startNode.Type = RoomType.Start;
             layout.Start = startNode;
 
-            // Đường chính
             var cur = startNode;
-            for (int i = 1; i < s.MainPathLength; i++)
+            for (int i = 0; i <= mainCombat; i++)            // mainCombat phòng Combat + 1 phòng Boss
             {
                 var next = Step(layout, rng, cur.Cell, s.GridSize);
                 if (next == null) return null;
@@ -122,71 +129,104 @@ namespace DungeonGathering.Play
                 Link(cur, node);
                 cur = node;
             }
-            var mainEnd = cur;
-
-            // Nhánh phụ (không mọc từ Start hay cuối đường chính)
+            cur.Type = RoomType.Boss;
+            layout.Boss = cur;
             var mainRooms = new List<RoomNode>(layout.Rooms);
-            for (int b = 0; b < s.BranchCount; b++)
+            mainRooms.Remove(cur);                              // không mọc nhánh từ phòng Boss
+
+            // Kế hoạch nhánh: (số Combat trên nhánh, loại phòng cuối nhánh — Combat nếu là nhánh cụt)
+            var plans = new List<(int combat, RoomType end)>();
+            foreach (var sp in specials) plans.Add((0, sp));
+            if (plans.Count == 0 && restCombat > 0)
+                for (int i = 0, n = Mathf.CeilToInt(restCombat / 3f); i < n; i++) plans.Add((0, RoomType.Combat)); // nhánh cụt ≤ ~3 phòng
+            for (int b = 0; restCombat > 0; b = (b + 1) % plans.Count)
             {
+                plans[b] = (plans[b].combat + 1, plans[b].end);
+                restCombat--;
+            }
+
+            for (int p = 0; p < plans.Count; p++)
+            {
+                var (branchCombat, end) = plans[p];
                 bool grown = false;
-                for (int tries = 0; tries < 12 && !grown; tries++)
-                {
-                    var from = mainRooms[rng.Next(1, Mathf.Max(2, mainRooms.Count - 1))];
-                    if (from == mainEnd) continue;
-                    int len = rng.Next(Mathf.Max(1, s.BranchLength.x), Mathf.Max(1, s.BranchLength.y) + 1);
-                    var branch = new List<RoomNode>();
-                    var c = from;
-                    for (int i = 0; i < len; i++)
-                    {
-                        var next = Step(layout, rng, c.Cell, s.GridSize);
-                        if (next == null) break;
-                        var node = Add(layout, next.Value, c.Depth + 1, false);
-                        node.BranchIndex = b;
-                        Link(c, node);
-                        branch.Add(node);
-                        c = node;
-                    }
-                    grown = branch.Count > 0;
-                }
+                for (int tries = 0; tries < 16 && !grown; tries++)
+                    grown = TryGrowExactBranch(layout, rng, s, mainRooms[rng.Next(mainRooms.Count)], p, branchCombat, end);
+                for (int i = 0; i < mainRooms.Count && !grown; i++)
+                    grown = TryGrowExactBranch(layout, rng, s, mainRooms[i], p, branchCombat, end);
+                if (!grown) return null;
             }
-
-            // Boss = phòng lá xa Start nhất (ưu tiên trên đường chính khi bằng nhau)
-            RoomNode boss = null;
-            foreach (var r in layout.Rooms)
-            {
-                if (r == startNode || CountDoors(r) != 1) continue;
-                if (boss == null || r.Depth > boss.Depth || (r.Depth == boss.Depth && r.OnMainPath && !boss.OnMainPath)) boss = r;
-            }
-            if (boss == null) return null;
-            boss.Type = RoomType.Boss;
-            layout.Boss = boss;
-            startNode.Type = RoomType.Start;
-
-            // Treasure / Shop ở cuối các nhánh
-            var leaves = new List<RoomNode>();
-            foreach (var r in layout.Rooms)
-                if (r != boss && r != startNode && CountDoors(r) == 1) leaves.Add(r);
-            leaves.Sort((x, y) => y.Depth.CompareTo(x.Depth));
-            int li = 0;
-            if (s.Treasure && li < leaves.Count) leaves[li++].Type = RoomType.Treasure;
-            if (s.Shop && li < leaves.Count) leaves[li++].Type = RoomType.Shop;
             return layout;
         }
 
-        static DungeonLayout Fallback(int seed, GeneratorSettings s)
+        /// <summary>Mọc nhánh đủ <paramref name="combat"/> phòng Combat rồi phòng <paramref name="end"/>; thất bại thì gỡ hết.</summary>
+        static bool TryGrowExactBranch(DungeonLayout layout, System.Random rng, GeneratorSettings s, RoomNode from,
+                                       int branchIndex, int combat, RoomType end)
+        {
+            if (from == null) return false;
+            var added = new List<RoomNode>();
+            var c = from;
+            int total = end == RoomType.Combat ? combat : combat + 1;
+            for (int i = 0; i < total; i++)
+            {
+                var next = Step(layout, rng, c.Cell, s.GridSize);
+                if (next == null)
+                {
+                    Rollback(layout, from, added);
+                    return false;
+                }
+                var node = Add(layout, next.Value, c.Depth + 1, false);
+                node.BranchIndex = branchIndex;
+                Link(c, node);
+                added.Add(node);
+                c = node;
+            }
+            if (end != RoomType.Combat) c.Type = end;
+            return true;
+        }
+
+        static void Rollback(DungeonLayout layout, RoomNode from, List<RoomNode> added)
+        {
+            for (int i = added.Count - 1; i >= 0; i--)
+            {
+                var n = added[i];
+                var parent = i == 0 ? from : added[i - 1];
+                var d = DoorMaskExt.FromOffset(n.Cell - parent.Cell);
+                parent.Doors &= ~d;
+                layout.ByCell.Remove(n.Cell);
+                layout.Rooms.Remove(n);
+            }
+            for (int i = 0; i < layout.Rooms.Count; i++) layout.Rooms[i].Id = i;
+        }
+
+        /// <summary>Dự phòng hệ mới: đường thẳng Start → Combat… → Boss, phòng đặc biệt treo phía trên (cách cột).</summary>
+        static DungeonLayout FallbackCounts(int seed, GeneratorSettings s)
         {
             var layout = new DungeonLayout { Seed = seed };
+            int combat = Mathf.Max(0, s.CombatRooms);
+            var specials = s.Specials ?? new List<RoomType>();
+            int length = combat + 2;                       // Start + Combat… + Boss: đúng số phòng Combat
             RoomNode prev = null;
-            for (int i = 0; i < s.MainPathLength; i++)
+            for (int i = 0; i < length; i++)
             {
                 var n = Add(layout, new Vector2Int(i, 0), i, true);
+                n.Type = i == 0 ? RoomType.Start : i == length - 1 ? RoomType.Boss : RoomType.Combat;
                 if (prev != null) Link(prev, n);
                 prev = n;
             }
             layout.Start = layout.Rooms[0];
-            layout.Start.Type = RoomType.Start;
             layout.Boss = prev;
-            prev.Type = RoomType.Boss;
+            // Phòng đặc biệt: cột dọc phía trên các phòng (trừ Boss); hết cột thì xếp chồng lên cột đầu.
+            int hosts = length - 1;
+            var top = new RoomNode[hosts];
+            for (int k = 0; k < specials.Count; k++)
+            {
+                int col = k % hosts;
+                var below = top[col] ?? layout.Rooms[col];
+                var sp = Add(layout, below.Cell + Vector2Int.up, below.Depth + 1, false);
+                sp.Type = specials[k];
+                Link(below, sp);
+                top[col] = sp;
+            }
             return layout;
         }
 

@@ -19,29 +19,3 @@ MonoBehaviour:
   descKey: wp.thorn.passive
   activeSkill: {fileID: 0}
   shopPrice: 80
-  weaponType: 0
-  fireMode: 0
-  weaponSprite: {fileID: -6475567878920213498, guid: 480306009ddf0ca4f9adf6d847e73d34, type: 3}
-  holdOffset: {x: 0, y: 0}
-  muzzleOffset: {x: 0.5, y: 0}
-  weaponPrefab: {fileID: 0}
-  damage: 17
-  fireRate: 2
-  attackRange: 1.3
-  spread: 0
-  knockback: 5
-  critBonus: 0.05
-  manaCost: 0
-  projectileSpeed: 14
-  projectileCount: 1
-  pierce: 0
-  explosionRadius: 0
-  swingArc: 110
-  swingDuration: 0.15
-  destroysProjectiles: 1
-  slashVfxPrefab: {fileID: 7930028287979326601, guid: dc55c8b55afaafa4e941068536b4068f, type: 3}
-  projectilePrefab: {fileID: 0}
-  muzzleVfxPrefab: {fileID: 0}
-  hitImpactVfxPrefab: {fileID: 7729591583374227883, guid: 06c70b09911bb7d4194d41714e6b679a, type: 3}
-  attackSfx: {fileID: 0}
-  passive: {fileID: 11400000, guid: c44cbd6e8dc4b14488c32dd2992d83d9, type: 2}

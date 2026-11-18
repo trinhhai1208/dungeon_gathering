@@ -39,7 +39,7 @@ namespace DungeonGathering.Inventory
             if (item == null) return true;
             if (!item.HasActive) return true;
             if (loadout == null) return true;
-            string replaced = item is EquipmentData eq ? loadout.GetEquipment(eq.slot)
+            string replaced = item is EquipmentSO eq ? loadout.GetEquipment(eq.slot)
                 : item.IsWeapon ? loadout.GetWeapon(slotIndex) : loadout.GetEquipment((EquipmentSlotType)slotIndex);
             int count = CountActive(loadout, catalog, replaced, item.id);
             return count < MaxActiveItems;
@@ -58,7 +58,7 @@ namespace DungeonGathering.Inventory
                 loadout.SetWeapon(slotIndex, item.id);
                 return true;
             }
-            if (item is EquipmentData eq)
+            if (item is EquipmentSO eq)
             {
                 loadout.SetEquipment(eq.slot, eq.id);
                 return true;
@@ -67,7 +67,7 @@ namespace DungeonGathering.Inventory
         }
 
         /// <summary>Đảm bảo loadout hợp lệ khi bắt đầu run (cắt bớt món kích hoạt vượt giới hạn, khử trùng lặp vũ khí).</summary>
-        public static void Sanitize(LoadoutData loadout, ItemCatalog catalog, CharacterData character)
+        public static void Sanitize(LoadoutData loadout, ItemCatalog catalog, HeroDefinitionSO character)
         {
             loadout.Normalize();
             // Nếu ô 0 trống nhưng ô 1 có vũ khí thì đẩy sang ô 0

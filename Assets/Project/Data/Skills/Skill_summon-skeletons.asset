@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e982269f979f32b428fe530ddc6a9264, type: 3}
+  m_Name: Skill_summon-skeletons
+  m_EditorClassIdentifier: Project.Combat::DungeonGathering.Combat.SummonCompanionSkill
+  skillId: summon-skeletons
+  nameKey: skill.summon_skeletons
+  descKey: skill.summon_skeletons.desc
+  icon: {fileID: 21300000, guid: 99bf216de1fca474684d0ceb274c3088, type: 3}
+  cooldown: 16
+  duration: 12
+  manaCost: 0
+  activateSfx: 0
+  companionSprite: {fileID: -510194180926327622, guid: 28c31af6406267e4493528dfaa5f2c20, type: 3}
+  count: 2
+  companionHp: 35
+  companionDamage: 10
+  moveSpeed: 3.8
+  summonDuration: 12
+  tauntRadius: 5
+  summonVfx: {fileID: 4057718330594125546, guid: c485f43bc4c84ac4e97edcb91ce52873, type: 3}

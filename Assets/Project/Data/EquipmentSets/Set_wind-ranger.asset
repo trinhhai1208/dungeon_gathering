@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee88269dd3a55843aa381cf44cf64f5, type: 3}
+  m_Name: Set_wind-ranger
+  m_EditorClassIdentifier: Project.Catalog::DungeonGathering.Catalog.EquipmentSetSO
+  setId: wind-ranger
+  nameKey: set.wind_ranger.name
+  pieces:
+  - {fileID: 11400000, guid: e343c4398d6b0b54091c591a8488672d, type: 2}
+  - {fileID: 11400000, guid: f02c7f4e6d9aa0047b97f56cca514ba3, type: 2}
+  - {fileID: 11400000, guid: 86191e2b6e3e95f4586f25caf33348d2, type: 2}
+  - {fileID: 11400000, guid: f3f4862977f3da84e96ff5b3d08b9ec2, type: 2}
+  bonus2Pieces:
+  - Stat: 5
+    FlatValue: 0
+    PercentValue: 0.12
+  - Stat: 4
+    FlatValue: 0
+    PercentValue: 0.1
+  bonus4Passive: {fileID: 11400000, guid: f897c54e8bce10b4aac41f679c2b0d24, type: 2}

@@ -98,8 +98,10 @@ namespace DungeonGathering.Core
                 }
                 token.ThrowIfCancellationRequested();
 
-                // (4) scope mới
+                // (4) scope mới — Adopt PHẢI chạy trước khi Dispose scope cũ (bước 7): cùng module (Play → Play)
+                // thì label đã tải nằm trong scope cũ, Adopt Acquire thêm tham chiếu để bundle không bị unload.
                 newScope = Services.Assets.CreateScope(def.moduleId);
+                Services.Downloads.Adopt(def.requiredLabels, newScope);
 
                 // (5) load scene additive
                 while (true)
@@ -146,6 +148,7 @@ namespace DungeonGathering.Core
 
                 ui?.SetBackdrop(def.showBackdrop);
                 if (!string.IsNullOrEmpty(def.bgmAddress)) Services.Audio?.PlayBgm(def.bgmAddress);
+                Services.Downloads.ReleaseUnadopted(def.prefetchLabels);
                 _ = Services.Downloads.Prefetch(def.prefetchLabels);
             }
             catch (OperationCanceledException) { }
@@ -204,6 +207,7 @@ namespace DungeonGathering.Core
                 ActiveModule = def.moduleId;
                 Services.Game?.SetState(def.gameState);
                 await Services.Downloads.Ensure(def.requiredLabels, null);
+                Services.Downloads.Adopt(def.requiredLabels, scope);
                 await BeginEntry(scene, new ModuleContext(scope, def, args));
                 ui?.SetBackdrop(def.showBackdrop);
                 if (!string.IsNullOrEmpty(def.bgmAddress)) Services.Audio?.PlayBgm(def.bgmAddress);

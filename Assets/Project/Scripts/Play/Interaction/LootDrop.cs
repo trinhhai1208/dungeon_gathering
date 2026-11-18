@@ -78,7 +78,7 @@ namespace DungeonGathering.Play
         {
             settled = false;
             room = RoomController.FindAt(target);
-            transform.DOJump(target, 0.6f, 1, 0.45f).SetEase(Ease.OutQuad).OnComplete(OnSettled);
+            transform.DOJump(target, 0.6f, 1, 0.45f).SetEase(Ease.OutQuad).SetLink(gameObject).OnComplete(OnSettled);
         }
 
         void OnSettled()
@@ -160,20 +160,23 @@ namespace DungeonGathering.Play
         void Collect(PlayerController player)
         {
             if (collected) return;
+            // Bình máu chỉ nhặt khi Player thực sự thiếu máu (tránh nhặt lãng phí khi đầy máu).
+            if (kind == LootKind.Health && player.Stats != null && player.Stats.Hp >= player.Stats.MaxHp) return;
             collected = true; // R11: Đặt cờ đồng bộ trước khi thực thi side-effects
 
             switch (kind)
             {
-                case LootKind.Gold:
-                    Services.Session?.AddRunCoins(amount);
-                    break;
-
                 case LootKind.Mana:
                     player.RestoreMana(amount);
                     break;
 
                 case LootKind.Health:
                     player.Heal(amount);
+                    break;
+
+                case LootKind.Gold:
+                default:
+                    Services.Session?.AddRunCoins(amount);
                     break;
             }
 

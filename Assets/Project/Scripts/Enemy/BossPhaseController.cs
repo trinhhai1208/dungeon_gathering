@@ -18,8 +18,13 @@ namespace DungeonGathering.Enemies
         public class Phase
         {
             [Range(0, 1)] [Tooltip("Vào phase khi máu ≤ ngưỡng này (tỉ lệ)")] public float hpThreshold = 0.6f;
+            [Tooltip("Hệ số nhân tốc chạy của boss trong phase này (1 = giữ nguyên).")]
             public float speedMultiplier = 1.2f;
-            public List<EnemyAttackSO> attacks = new();
+            [Tooltip("Skill / đòn của phase (chọn trong SkillLibrary)")]
+            public List<Catalog.SkillId> skills = new();
+
+            public List<EnemyAttackSO> ResolveAttacks() => Catalog.SkillRegistry.GetAll<EnemyAttackSO>(skills);
+            [Tooltip("VFX phát tại vị trí boss khi vào phase. Trống = không có.")]
             public GameObject transitionVfx;
             [Tooltip("Bất tử trong lúc chuyển phase")] public float transitionInvulnerable = 0.8f;
         }
@@ -33,6 +38,10 @@ namespace DungeonGathering.Enemies
 
         public string BossId => bossId;
         public int PhaseIndex => phaseIndex;
+        IReadOnlyList<Phase> ActivePhases =>
+            enemy != null && enemy.Data != null && enemy.Data.phases != null && enemy.Data.phases.Count > 0
+                ? enemy.Data.phases
+                : phases;
 
         void Awake() => enemy = GetComponent<Enemy>();
 
@@ -72,18 +81,20 @@ namespace DungeonGathering.Enemies
                 return;
             }
             float frac = max > 0f ? cur / max : 0f;
+            var list = ActivePhases;
             int target = phaseIndex;
-            for (int i = phaseIndex + 1; i < phases.Count; i++)
-                if (frac <= phases[i].hpThreshold) target = i;
+            for (int i = phaseIndex + 1; i < list.Count; i++)
+                if (frac <= list[i].hpThreshold) target = i;
             if (target != phaseIndex) EnterPhase(target);
         }
 
         async void EnterPhase(int index)
         {
             phaseIndex = index;
-            var p = phases[index];
+            var p = ActivePhases[index];
             enemy.Motor.SpeedMultiplier = p.speedMultiplier;
-            if (p.attacks.Count > 0) enemy.Attacks.SetAttacks(p.attacks);
+            var phaseAttacks = p.ResolveAttacks();
+            if (phaseAttacks.Count > 0) enemy.Attacks.SetAttacks(phaseAttacks);
             CombatFx.Play(p.transitionVfx, transform.position, Quaternion.identity);
             if (p.transitionInvulnerable <= 0f) return;
             int id = ++transitionId;

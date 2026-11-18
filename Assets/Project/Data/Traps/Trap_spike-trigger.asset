@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9efe003210ebe3f4b8cf84f849fcd8cb, type: 3}
+  m_Name: Trap_spike-trigger
+  m_EditorClassIdentifier: Project.Play::DungeonGathering.Play.TrapDataSO
+  trapId: spike-trigger
+  damage: 1
+  knockback: 3.5
+  inactiveTime: 0
+  warningTime: 0.35
+  activeTime: 0.5
+  cooldown: 1
+  onHitStatus:
+    effects: []
+  zoneEffects: []

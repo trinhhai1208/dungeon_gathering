@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,9 @@ namespace DungeonGathering.Localization
         [SerializeField] Image frame;
         [SerializeField] Sprite selectedFrame;
         [SerializeField] Sprite normalFrame;
+        [SerializeField] TMP_Text label;
+        [SerializeField] Color selectedTextColor = new Color32(0x17, 0x11, 0x1e, 0xff);
+        [SerializeField] Color normalTextColor = new Color32(0xef, 0xe6, 0xdc, 0xff);
 
         void Awake() => GetComponent<Button>().onClick.AddListener(() => GameLanguage.Apply(languageCode));
 
@@ -26,8 +30,11 @@ namespace DungeonGathering.Localization
 
         void OnChanged(string code)
         {
-            if (frame == null) return;
-            frame.sprite = GameLanguage.Normalize(code) == GameLanguage.Normalize(languageCode) ? selectedFrame : normalFrame;
+            bool selected = GameLanguage.Normalize(code) == GameLanguage.Normalize(languageCode);
+            if (frame != null)
+                frame.sprite = selected ? selectedFrame : normalFrame;
+            if (label != null)
+                label.color = selected ? selectedTextColor : normalTextColor;
         }
     }
 }

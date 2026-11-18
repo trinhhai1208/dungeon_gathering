@@ -11,17 +11,20 @@ namespace DungeonGathering.Core
         Awaitable<long> GetSize(IEnumerable<string> labels);
         Awaitable Ensure(IEnumerable<string> labels, IProgress<float> progress);
         Awaitable Prefetch(IEnumerable<string> labels);
+        void Adopt(IEnumerable<string> labels, ModuleScope scope);
+        void ReleaseUnadopted(IEnumerable<string> keep);
     }
 
     /// <summary>
     /// Tải phụ thuộc theo label (MODULES §7.4). Ensure gặp label đang Prefetch thì gộp vào thao tác đó.
+    /// Handle DownloadDependenciesAsync được giữ lại cho tới khi Adopt vào ModuleScope hoặc ReleaseUnadopted.
     /// Label chưa tồn tại trong catalog (chưa làm M2) bị bỏ qua kèm cảnh báo thay vì ném lỗi.
     /// </summary>
     public sealed class DownloadService : IDownloadService
     {
         /// <summary>
         /// Một lần tải label, có thể có nhiều người chờ (Prefetch + Ensure). Người chờ đầu tiên thấy handle xong
-        /// sẽ chốt kết quả vào Job rồi Release handle; người chờ sau đọc kết quả từ Job (không đụng handle đã Release).
+        /// sẽ chốt kết quả vào Job; handle thành công được giữ trong retained để Adopt vào ModuleScope.
         /// </summary>
         sealed class Job
         {
@@ -32,6 +35,9 @@ namespace DungeonGathering.Core
         }
 
         readonly Dictionary<string, Job> running = new();
+        readonly Dictionary<string, AsyncOperationHandle> retained = new();
+        // Handle đã giao cho (ít nhất một) ModuleScope — để Acquire thêm khi module mới cần cùng label.
+        readonly Dictionary<string, AsyncOperationHandle> adopted = new();
         readonly HashSet<string> done = new();
         readonly HashSet<string> warnedMissing = new();
 
@@ -73,7 +79,7 @@ namespace DungeonGathering.Core
 
         static bool IsDone(Job job) => job.Finished || !job.Handle.IsValid() || job.Handle.IsDone;
 
-        /// <summary>Chốt kết quả + Release handle đúng một lần (người chờ đầu tiên làm).</summary>
+        /// <summary>Chốt kết quả job đúng một lần; handle thành công được giữ trong retained cho tới khi Adopt/ReleaseUnadopted.</summary>
         void Complete(string label, Job job)
         {
             if (job.Finished) return;
@@ -81,8 +87,17 @@ namespace DungeonGathering.Core
             if (job.Handle.IsValid())
             {
                 job.Succeeded = job.Handle.Status == AsyncOperationStatus.Succeeded;
-                if (!job.Succeeded) job.Error = job.Handle.OperationException?.Message;
-                Addressables.Release(job.Handle);
+                if (job.Succeeded)
+                {
+                    if (retained.TryGetValue(label, out var prev) && prev.IsValid())
+                        Addressables.Release(prev);
+                    retained[label] = job.Handle;
+                }
+                else
+                {
+                    job.Error = job.Handle.OperationException?.Message;
+                    Addressables.Release(job.Handle);
+                }
             }
             else
             {
@@ -93,10 +108,91 @@ namespace DungeonGathering.Core
             if (running.TryGetValue(label, out var cur) && cur == job) running.Remove(label);
         }
 
+        /// <summary>
+        /// Giao handle của label cho scope. Label đã nằm trong scope khác (vd chuyển Play → Play: Ensure bỏ qua vì đã
+        /// <c>done</c>, retained trống) → Acquire thêm một tham chiếu trên cùng handle để scope mới cũng giữ bundle;
+        /// scope cũ Dispose chỉ trừ refcount, bundle chỉ bị unload khi không còn scope nào giữ.
+        /// </summary>
+        public void Adopt(IEnumerable<string> labels, ModuleScope scope)
+        {
+            if (labels == null || scope == null) return;
+            foreach (var raw in labels)
+            {
+                if (string.IsNullOrEmpty(raw)) continue;
+                string label = raw;
+                AsyncOperationHandle h;
+                if (retained.Remove(label, out var fresh))
+                {
+                    h = fresh;
+                }
+                else if (adopted.TryGetValue(label, out var shared) && shared.IsValid())
+                {
+                    Addressables.ResourceManager.Acquire(shared);   // +1 refcount, scope mới Release phần của mình
+                    h = shared;
+                }
+                else continue;
+
+                adopted[label] = h;
+                scope.Retain(h);
+                if (!scope.IsDisposed) scope.Disposed += _ => OnScopeReleased(label);
+                else OnScopeReleased(label);
+            }
+        }
+
+        /// <summary>Một scope vừa Release handle của label: chỉ coi là "chưa tải" khi không còn scope nào giữ handle.</summary>
+        void OnScopeReleased(string label)
+        {
+            if (adopted.TryGetValue(label, out var h) && h.IsValid()) return;   // scope khác vẫn giữ
+            adopted.Remove(label);
+            if (!retained.ContainsKey(label)) done.Remove(label);
+        }
+
+        /// <summary>Label đã tải và handle vẫn còn người giữ (retained hoặc scope nào đó).</summary>
+        bool IsHeld(string label)
+        {
+            if (!done.Contains(label)) return false;
+            if (retained.TryGetValue(label, out var r) && r.IsValid()) return true;
+            if (adopted.TryGetValue(label, out var a) && a.IsValid()) return true;
+            done.Remove(label);
+            adopted.Remove(label);
+            return false;
+        }
+
+        public void ReleaseUnadopted(IEnumerable<string> keep)
+        {
+            if (retained.Count == 0) return;
+            HashSet<string> keepSet = keep != null ? new HashSet<string>(keep) : null;
+            var toRemove = new List<string>();
+            foreach (var kv in retained)
+            {
+                if (keepSet != null && keepSet.Contains(kv.Key)) continue;
+                if (kv.Value.IsValid()) Addressables.Release(kv.Value);
+                toRemove.Add(kv.Key);
+            }
+            foreach (var k in toRemove)
+            {
+                retained.Remove(k);
+                // Còn scope giữ (đã Adopt trước đó) thì label vẫn "đã tải".
+                if (!(adopted.TryGetValue(k, out var a) && a.IsValid())) done.Remove(k);
+            }
+        }
+
+        public void ReleaseAll()
+        {
+            foreach (var kv in retained)
+                if (kv.Value.IsValid()) Addressables.Release(kv.Value);
+            retained.Clear();
+            foreach (var kv in running)
+                if (kv.Value.Handle.IsValid()) Addressables.Release(kv.Value.Handle);
+            running.Clear();
+            adopted.Clear();   // handle trong scope do scope tự Release
+            done.Clear();
+        }
+
         public async Awaitable Ensure(IEnumerable<string> labels, IProgress<float> progress)
         {
             var keys = Filter(labels);
-            keys.RemoveAll(done.Contains);
+            keys.RemoveAll(IsHeld);
             if (keys.Count == 0) { progress?.Report(1f); return; }
 
             var ops = new List<(string label, Job job)>();

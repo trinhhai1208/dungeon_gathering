@@ -35,14 +35,13 @@ namespace DungeonGathering.EditorTools
             var row = Rt(root, "Heroes", A.C, 0, -80, 620, 100);
             var h = row.gameObject.AddComponent<HorizontalLayoutGroup>();
             h.childAlignment = TextAnchor.LowerCenter; h.spacing = 28; h.childControlWidth = h.childControlHeight = false; h.childForceExpandWidth = h.childForceExpandHeight = false;
-            string chars = "Assets/Project/Art/Sprites/Characters/";
             foreach (var (s, k) in new[] {
                 (G("menu_hero_0"), 4), (G("menu_hero_1"), 4),
-                (At(chars + "Knight/Blue Knight idle Sprite-sheet 16x16.png", 8, 8), 6),
+                (At(KnightIdle, 24, 24), 2),
                 (G("menu_hero_2"), 4), (G("menu_hero_3"), 4) })
                 Icon(row, "Hero", s, k, A.C, 0, 0);
 
-            var play = IconButton(root, "Play", IcPlay, 4, A.B, 0, 96, 248, 120);
+            var play = TextButton(root, "Play", FrCrim, 24, null, 44, Gold, A.B, 0, 96, 260, 112, null, 0, "PLAY");
             var tap = Txt(root, "Tap", "menu.tap", null, 22, new Color32(0xd9, 0xcd, 0xd6, 0xff), TextAlignmentOptions.Center, A.B, 0, 56, 420, 30);
             tap.characterSpacing = 8;
 
@@ -77,25 +76,28 @@ namespace DungeonGathering.EditorTools
             var inner = Rt(win, "Inner", A.Stretch, 28, 24, 28, 24); // 414 ├ù 572
 
             var slot = Frame(inner, "AvatarSlot", SqF, 12, A.TL, 0, 0, 104, 104);
-            var avatar = Img(slot, "Avatar", At("Assets/Project/Art/Sprites/Characters/Knight/Blue Knight idle Sprite-sheet 16x16.png", 8, 8), A.C, 0, -2, 64, 64); avatar.preserveAspect = true;
+            var avatar = Img(slot, "Avatar", At(KnightIdle, 24, 24), A.C, 0, -2, 72, 72); avatar.preserveAspect = true;
             var name = Txt(inner, "Name", null, "Knight", 32, Paper, TextAlignmentOptions.Left, A.TL, 118, 2, 296, 36);
             var roleIcon = Img(inner, "RoleIcon", Item(5, 18), A.TL, 118, 44, 18, 18); roleIcon.preserveAspect = true;
-            var role = Txt(inner, "Role", null, "WARRIOR", 12, Paper, TextAlignmentOptions.Left, A.TL, 142, 44, 200, 18);
+            var role = Txt(inner, "Role", null, "WARRIOR", 12, Soft, TextAlignmentOptions.Left, A.TL, 142, 44, 200, 18);
             role.characterSpacing = 4;
-            var skill = Txt(inner, "Skill", null, "Dual Wield ┬╖ 12s cooldown", 13, Gold, TextAlignmentOptions.Left, A.TL, 118, 66, 296, 20);
+            var skill = Txt(inner, "Skill", null, "Dual Wield · 12s cooldown", 13, Gold, TextAlignmentOptions.Left, A.TL, 118, 66, 296, 20);
             var desc = Txt(inner, "Desc", null, En("char.knight.desc"), 13, Soft, TextAlignmentOptions.TopLeft, A.TL, 0, 112, 414, 40);
             desc.textWrappingMode = TextWrappingModes.Normal;
 
-            var bars = new (string key, string strip, string tf, string ff)[] {
-                ("stat.hp", "bar_strip_red", "hpText", "hpFill"), ("stat.armor", "bar_strip_grey", "armorText", "armorFill"),
-                ("stat.mana", "bar_strip_blue", "manaText", "manaFill"), ("stat.dmg", "bar_strip_green", "damageText", "damageFill") };
+            var bars = new (string key, string cell, string tf, string sf, int cur, int mx, int step, string val)[] {
+                ("stat.hp", "bar_cell_hp", "hpText", "hpSegments", 7, 8, 1, "7"),
+                ("stat.armor", "bar_cell_armor", "armorText", "armorSegments", 6, 8, 1, "6"),
+                ("stat.mana", "bar_cell_mana", "manaText", "manaSegments", 120, 240, 20, "120"),
+                ("stat.dmg", "bar_cell_dmg", "damageText", "damageSegments", 5, 8, 1, "18") };
             var refs = new List<(string, Object)>();
             for (int i = 0; i < bars.Length; i++)
             {
                 float x = (i % 2) * 213, y = 160 + (i / 2) * 34;
-                Txt(inner, "Label_" + i, bars[i].key, null, 12, Paper, TextAlignmentOptions.Left, A.TL, x, y + 6, 70, 16);
-                var (fill, value) = Bar(inner, "Bar_" + i, bars[i].strip, A.TL, x + 70, y, 131, 28, 8, 13, "80");
-                refs.Add((bars[i].tf, value)); refs.Add((bars[i].ff, fill));
+                Txt(inner, "Label_" + i, bars[i].key, null, 12, Paper, TextAlignmentOptions.Left, A.TL, x, y + 6, 68, 16);
+                var seg = SegmentedBarTrack(inner, "Bar_" + i, bars[i].cell, A.TL, x + 68, y + 2, 102, 24, 4, bars[i].cur, bars[i].mx, bars[i].step, 12, 2f);
+                var value = Txt(inner, "Val_" + i, null, bars[i].val, 12, Gold, TextAlignmentOptions.Right, A.TL, x + 174, y + 6, 30, 16);
+                refs.Add((bars[i].tf, value)); refs.Add((bars[i].sf, seg));
             }
 
             var tilePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(UiDir + "ItemTileSmall.prefab");
@@ -103,11 +105,12 @@ namespace DungeonGathering.EditorTools
             for (int i = 0; i < 6; i++) equipTiles[i] = Tile(tilePrefab, inner, "Equip_" + i, A.TL, i * 52, 236, 52, 54, false);
             for (int i = 0; i < 2; i++) weaponTiles[i] = Tile(tilePrefab, inner, "Weapon_" + i, A.TL, 318 + i * 52, 236, 52, 54, false);
 
-            var summary = Txt(inner, "ActiveSummary", null, "Active <color=#9FD0FF>2/2</color> ┬╖ Frost Field ┬╖ Arcane Storm", 13, Soft, TextAlignmentOptions.Left, A.TL, 0, 302, 414, 20);
+            var summary = Txt(inner, "ActiveSummary", null, "Active <color=#9FD0FF>2/2</color> · Frost Field · Arcane Storm", 13, Soft, TextAlignmentOptions.Left, A.TL, 0, 302, 414, 20);
+            var skillBox = BuildCharacterSkillBox(inner);
 
             var playable = Rt(inner, "Playable", A.Stretch, 0, 0, 0, 0);
-            var equip = TextButton(playable, "Equip", FrBtn, 24, "common.equip", 20, Ink, A.TL, 0, 410, 202, 76, Item(12, 11), 2);
-            var weapons = TextButton(playable, "Weapons", FrBtn, 24, "common.weapons", 20, Ink, A.TL, 212, 410, 202, 76, At("Assets/Project/Art/Sprites/Items/Weapon/Sword/File.png", 16, 144), 1);
+            var equip = TextButton(playable, "Equip", FrBtn, 24, "common.equip", 20, Paper, A.TL, 0, 410, 202, 76, Item(12, 11), 2);
+            var weapons = TextButton(playable, "Weapons", FrBtn, 24, "common.weapons", 20, Paper, A.TL, 212, 410, 202, 76, At("Assets/Project/Art/Sprites/Items/Weapon/Sword/File.png", 16, 144), 1);
             var enter = TextButton(playable, "EnterPortal", FrLight, 24, "lobby.enter", 24, Ink, A.TL, 0, 496, 414, 76, null, 0);
             Icon(enter, "Arrow", IcNext, 1, A.R, 22, 0);
 
@@ -120,7 +123,7 @@ namespace DungeonGathering.EditorTools
             var price = Txt(unlock, "Price", null, "800", 24, Ink, TextAlignmentOptions.Left, A.C, 140, 0, 100, 32);
             locked.gameObject.SetActive(false);
 
-            // Ch╞░a ra mß║»t (CharacterData.released = false): chß╗ë xem giß╗¢i thiß╗çu, kh├┤ng n├║t ch╞íi / mß╗ƒ kh├│a.
+            // Ch╞░a ra mß║»t (HeroDefinitionSO.released = false): chß╗ë xem giß╗¢i thiß╗çu, kh├┤ng n├║t ch╞íi / mß╗ƒ kh├│a.
             var soon = Rt(inner, "ComingSoon", A.Stretch, 0, 0, 0, 0);
             var soonHint = Txt(soon, "Hint", "char.coming_soon_hint", null, 13, Soft, TextAlignmentOptions.TopLeft, A.TL, 0, 410, 414, 60);
             soonHint.textWrappingMode = TextWrappingModes.Normal;
@@ -132,7 +135,9 @@ namespace DungeonGathering.EditorTools
             var panel = root.GetComponent<Lobby.CharacterPanel>();
             refs.AddRange(new (string, Object)[] {
                 ("contentWindow", win), ("closeButton", close), ("avatarImage", avatar), ("nameText", name), ("roleText", role), ("roleIcon", roleIcon),
-                ("skillNameText", skill), ("descriptionText", desc), ("activeSkillsSummaryText", summary), ("playableGroup", playable.gameObject),
+                ("skillNameText", skill), ("descriptionText", desc),
+                ("skillIconImage", skillBox.icon), ("skillTitleText", skillBox.title), ("skillDescText", skillBox.desc), ("innatePassiveText", skillBox.passive),
+                ("activeSkillsSummaryText", summary), ("playableGroup", playable.gameObject),
                 ("equipButton", equip), ("weaponsButton", weapons), ("enterPortalButton", enter), ("lockedGroup", locked.gameObject),
                 ("unlockButton", unlock), ("unlockPriceText", price), ("comingSoonGroup", soon.gameObject),
                 ("warriorIcon", Item(5, 18)), ("rangerIcon", Item(5, 4)), ("mageIcon", Item(10, 2)), ("assassinIcon", Item(0, 21)) });
@@ -143,8 +148,59 @@ namespace DungeonGathering.EditorTools
             Save(root, UiDir + "CharacterPanel.prefab", AddressKeys.UiPanelCharacter);
         }
 
+        static (Image icon, TMP_Text title, TMP_Text desc, TMP_Text passive) BuildCharacterSkillBox(Transform inner)
+        {
+            var box = Frame(inner, "SkillBox", FrMid, 12, A.TL, 0, 326, 414, 78);
+            var iconSlot = Frame(box, "SkillIconFrame", SqF, 8, A.TL, 10, 15, 48, 48);
+            var icon = Img(iconSlot, "SkillIcon", null, A.C, 0, 0, 32, 32);
+            icon.preserveAspect = true;
+            var title = Txt(box, "SkillTitle", null, "Dual Wield · 12s", 12, Gold, TextAlignmentOptions.Left, A.TL, 68, 6, 336, 16);
+            var desc = Txt(box, "SkillDesc", null, string.Empty, 11, Paper, TextAlignmentOptions.TopLeft, A.TL, 68, 23, 336, 26);
+            desc.textWrappingMode = TextWrappingModes.Normal;
+            var passive = Txt(box, "InnatePassive", null, string.Empty, 11, Green, TextAlignmentOptions.TopLeft, A.TL, 68, 51, 336, 22);
+            passive.textWrappingMode = TextWrappingModes.Normal;
+            return (icon, title, desc, passive);
+        }
 
-        static readonly string KnightIdle = "Assets/Project/Art/Sprites/Characters/Knight/Blue Knight idle Sprite-sheet 16x16.png";
+        /// <summary>Chèn hoặc dựng lại SkillBox trên CharacterPanel.prefab hiện có (giữ nguyên phần UI còn lại).</summary>
+        [MenuItem("Tools/Dungeon Gathering/UI/Patch CharacterPanel Skill Box")]
+        public static void PatchCharacterPanelSkillBox()
+        {
+            Prepare();
+            string path = UiDir + "CharacterPanel.prefab";
+            var root = PrefabUtility.LoadPrefabContents(path);
+            try
+            {
+                var inner = root.transform.Find("Window/Inner") as RectTransform;
+                if (inner == null) { Debug.LogError("[UIDesign] CharacterPanel thiếu node 'Window/Inner'"); return; }
+
+                var old = inner.Find("SkillBox");
+                int sibling = old != null ? old.GetSiblingIndex() : -1;
+                if (sibling < 0)
+                {
+                    var summary = inner.Find("ActiveSummary");
+                    sibling = summary != null ? summary.GetSiblingIndex() + 1 : inner.childCount;
+                }
+                if (old != null) Object.DestroyImmediate(old.gameObject);
+
+                var sb = BuildCharacterSkillBox(inner);
+                var boxTransform = sb.title.transform.parent;
+                boxTransform.SetSiblingIndex(sibling);
+                SetLayerRecursive(boxTransform);
+
+                Wire(root.GetComponent<Lobby.CharacterPanel>(),
+                    ("skillIconImage", sb.icon),
+                    ("skillTitleText", sb.title),
+                    ("skillDescText", sb.desc),
+                    ("innatePassiveText", sb.passive));
+                PrefabUtility.SaveAsPrefabAsset(root, path);
+                Debug.Log("[UIDesign] Đã dựng SkillBox trên " + path);
+            }
+            finally { PrefabUtility.UnloadPrefabContents(root); }
+        }
+
+
+        static readonly string KnightIdle = "Assets/Project/Art/Sprites/Characters/FantasyKnights/01Knight.png";
 
         /// <summary>Khung chung 3 cß╗Öt cß╗ºa Equipment/Weapon. Trß║ú vß╗ü (root, inner tr├íi, inner giß╗»a, inner phß║úi).</summary>
         static (GameObject root, RectTransform left, RectTransform mid, RectTransform right) LoadoutShell<T>(string name, string titleKey) where T : UIScreen
@@ -167,11 +223,11 @@ namespace DungeonGathering.EditorTools
             var group = Rt(li, "DetailGroup", A.Stretch, 0, 0, 0, 0);
             var tile = Tile(tilePrefab, group, "Tile", A.TL, 0, 0, 104, 108, true);
             var name = Txt(group, "Name", null, "Item", 24, Paper, TextAlignmentOptions.Left, A.TL, 118, 6, 198, 30);
-            var meta = Txt(group, "Meta", null, "Helmet ┬╖ Rarity C", 13, Soft, TextAlignmentOptions.Left, A.TL, 118, 40, 198, 18);
+            var meta = Txt(group, "Meta", null, "Helmet · Rarity C", 13, Soft, TextAlignmentOptions.Left, A.TL, 118, 40, 198, 18);
             var state = Txt(group, "State", null, "", 12, Gold, TextAlignmentOptions.Left, A.TL, 118, 62, 198, 18);
             var box = Frame(group, "StatsBox", FrMid, 12, A.TL, 0, 124, 316, 104);
-            if (flatKey != null) Txt(box, "Label", flatKey, null, 11, Ink, TextAlignmentOptions.Left, A.TL, 12, 8, 290, 16);
-            var stats = Txt(box, "Stats", null, "+1 Armor", 18, new Color32(0x14, 0x53, 0x2d, 0xff), TextAlignmentOptions.TopLeft, A.TL, 12, flatKey != null ? 28 : 10, 292, 66);
+            if (flatKey != null) Txt(box, "Label", flatKey, null, 11, Soft, TextAlignmentOptions.Left, A.TL, 12, 8, 290, 16);
+            var stats = Txt(box, "Stats", null, "+1 Armor", 18, Green, TextAlignmentOptions.TopLeft, A.TL, 12, flatKey != null ? 28 : 10, 292, 66);
             stats.textWrappingMode = TextWrappingModes.Normal;
             Txt(group, "PassiveLabel", passiveKey, null, 11, Paper, TextAlignmentOptions.Left, A.TL, 0, 240, 316, 16);
             var passive = Txt(group, "Passive", null, "", 13, Color.white, TextAlignmentOptions.TopLeft, A.TL, 0, 260, 316, 84);
@@ -228,9 +284,9 @@ namespace DungeonGathering.EditorTools
             for (int i = 0; i < rows.Length; i++)
             {
                 var cell = Frame(mi, "Stat_" + i, FrMid, 12, A.TL, (i % 2) * 220, top + (i / 2) * 46, 204, 40);
-                Txt(cell, "Label", rows[i].key, rows[i].raw, 12, Ink, TextAlignmentOptions.Left, A.L, 10, 0, 100, 20);
-                var v = Txt(cell, "Value", null, "0", 18, Ink, TextAlignmentOptions.Right, A.R, 54, 0, 70, 24);
-                var d = Txt(cell, "Delta", null, "", 15, Ink, TextAlignmentOptions.Right, A.R, 10, 0, 44, 20);
+                Txt(cell, "Label", rows[i].key, rows[i].raw, 12, Soft, TextAlignmentOptions.Left, A.L, 10, 0, 100, 20);
+                var v = Txt(cell, "Value", null, "0", 18, Paper, TextAlignmentOptions.Right, A.R, 54, 0, 70, 24);
+                var d = Txt(cell, "Delta", null, "", 15, Paper, TextAlignmentOptions.Right, A.R, 10, 0, 44, 20);
                 var e = arr.GetArrayElementAtIndex(i);
                 e.FindPropertyRelative("value").objectReferenceValue = v;
                 e.FindPropertyRelative("delta").objectReferenceValue = d;
@@ -244,7 +300,7 @@ namespace DungeonGathering.EditorTools
             var refs = new List<(string, Object)>();
             refs.Add(("backButton", IconButton(root, "Back", IcBack, 2, A.TL, 24, 16, 64, 64)));
             var chip = Frame(root, "CharacterChip", FrLight, 12, A.TL, 430, 18, 230, 48);
-            refs.Add(("characterChip", Txt(chip, "Text", null, "Knight ┬╖ WARRIOR", 18, Ink, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0)));
+            refs.Add(("characterChip", Txt(chip, "Text", null, "Knight · WARRIOR", 18, Ink, TextAlignmentOptions.Center, A.Stretch, 0, 0, 0, 0)));
             var act = Frame(root, "ActiveChip", FrDark, 12, A.TR, 254, 18, 180, 48);
             Txt(act, "Label", "common.active", null, 14, Paper, TextAlignmentOptions.Left, A.L, 10, 0, 90, 22);
             refs.Add(("activeCountText", Txt(act, "Value", null, "2 / 2", 22, new Color32(0x9f, 0xd0, 0xff, 0xff), TextAlignmentOptions.Right, A.R, 10, 0, 60, 28)));
@@ -254,7 +310,7 @@ namespace DungeonGathering.EditorTools
 
             refs.AddRange(DetailColumn(li, "equip.flat_stats", "equip.passive_role", "equip.active_hdr", 316));
 
-            var portrait = Img(mi, "Portrait", At(KnightIdle, 8, 8), A.T, 0, 40, 128, 128); portrait.preserveAspect = true;
+            var portrait = Img(mi, "Portrait", At(KnightIdle, 24, 24), A.T, 0, 40, 128, 128); portrait.preserveAspect = true;
             refs.Add(("portrait", portrait));
             var tilePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(UiDir + "ItemTile.prefab");
             string[] labels = { "slot.helmet", "stat.armor", "slot.gloves", "slot.boots", "slot.neck", "slot.acc" };
@@ -292,9 +348,9 @@ namespace DungeonGathering.EditorTools
             Txt(hintChip, "Text", "weapon.carry_hint", null, 13, Paper, TextAlignmentOptions.Left, A.L, 44, 0, 410, 22);
 
             refs.AddRange(DetailColumn(li, null, "weapon.passive_hdr", "weapon.active_hdr", 153));
-            var slot2 = TextButton(li.Find("DetailGroup"), "ToSlot2", FrBtn, 24, "weapon.to_slot2", 20, Ink, A.TL, 163, 496, 153, 76, null, 0);
+            var slot2 = TextButton(li.Find("DetailGroup"), "ToSlot2", FrBtn, 24, "weapon.to_slot2", 20, Paper, A.TL, 163, 496, 153, 76, null, 0);
 
-            var portrait = Img(mi, "Portrait", At(KnightIdle, 8, 8), A.T, 0, 40, 128, 128); portrait.preserveAspect = true;
+            var portrait = Img(mi, "Portrait", At(KnightIdle, 24, 24), A.T, 0, 40, 128, 128); portrait.preserveAspect = true;
             refs.Add(("portrait", portrait));
             var tilePrefab = AssetDatabase.LoadAssetAtPath<GameObject>(UiDir + "ItemTile.prefab");
             var s0 = Tile(tilePrefab, mi, "Slot_0", A.TL, 0, 40, 104, 108, true);
@@ -338,14 +394,15 @@ namespace DungeonGathering.EditorTools
             var cards = so.FindProperty("cards"); cards.arraySize = 6;
             for (int i = 0; i < 6; i++)
             {
-                var c = Frame(gi, "Card_" + i, i == 0 ? FrLight : FrMid, 24, A.TL, (i % 3) * 241, (i / 3) * 282, 229, 270);
+                bool selCard = i == 0;
+                var c = Frame(gi, "Card_" + i, selCard ? FrLight : FrMid, 24, A.TL, (i % 3) * 241, (i / 3) * 282, 229, 270);
                 var img = c.GetComponent<Image>(); img.raycastTarget = true;
                 var b = c.gameObject.AddComponent<Button>(); b.targetGraphic = img;
                 var t = Tile(tilePrefab, c, "Tile", A.T, 0, 24, 104, 108, true);
-                var n = Txt(c, "Name", null, "Item", 20, Ink, TextAlignmentOptions.Center, A.T, 0, 136, 180, 44); n.textWrappingMode = TextWrappingModes.Normal;
-                var k = Txt(c, "Kind", null, "Weapon ┬╖ A", 16, Ink, TextAlignmentOptions.Center, A.T, 0, 180, 180, 22);
+                var n = Txt(c, "Name", null, "Item", 20, selCard ? Ink : Paper, TextAlignmentOptions.Center, A.T, 0, 136, 180, 44); n.textWrappingMode = TextWrappingModes.Normal;
+                var k = Txt(c, "Kind", null, "Weapon · A", 16, selCard ? Ink : Soft, TextAlignmentOptions.Center, A.T, 0, 180, 180, 22);
                 Icon(c, "Coin", Coin, 2, A.B, -22, 30);
-                var p = Txt(c, "Price", null, "120", 22, Ink, TextAlignmentOptions.Left, A.B, 32, 28, 70, 28);
+                var p = Txt(c, "Price", null, "120", 22, selCard ? Ink : Paper, TextAlignmentOptions.Left, A.B, 32, 28, 70, 28);
                 var e = cards.GetArrayElementAtIndex(i);
                 e.FindPropertyRelative("button").objectReferenceValue = b;
                 e.FindPropertyRelative("frame").objectReferenceValue = img;
@@ -360,9 +417,9 @@ namespace DungeonGathering.EditorTools
             var di = Rt(det, "Inner", A.Stretch, 24, 24, 24, 24); // 408 ├ù 552
             refs.Add(("detailTile", Tile(tilePrefab, di, "Tile", A.TL, 0, 0, 104, 108, true)));
             refs.Add(("detailName", Txt(di, "Name", null, "Item", 28, Paper, TextAlignmentOptions.Left, A.TL, 118, 14, 290, 36)));
-            refs.Add(("detailKind", Txt(di, "Kind", null, "Weapon ┬╖ A", 18, Soft, TextAlignmentOptions.Left, A.TL, 118, 52, 290, 24)));
+            refs.Add(("detailKind", Txt(di, "Kind", null, "Weapon · A", 18, Soft, TextAlignmentOptions.Left, A.TL, 118, 52, 290, 24)));
             var box = Frame(di, "StatsBox", FrMid, 12, A.TL, 0, 124, 408, 92);
-            var stats = Txt(box, "Stats", null, "22 damage", 20, new Color32(0x14, 0x53, 0x2d, 0xff), TextAlignmentOptions.TopLeft, A.TL, 12, 10, 380, 70);
+            var stats = Txt(box, "Stats", null, "22 damage", 20, Green, TextAlignmentOptions.TopLeft, A.TL, 12, 10, 380, 70);
             stats.textWrappingMode = TextWrappingModes.Normal; refs.Add(("detailStats", stats));
             var desc = Txt(di, "Desc", null, "", 18, Color.white, TextAlignmentOptions.TopLeft, A.TL, 0, 232, 408, 140);
             desc.textWrappingMode = TextWrappingModes.Normal; refs.Add(("detailDesc", desc));
@@ -383,7 +440,7 @@ namespace DungeonGathering.EditorTools
             var root = Root<SettingsPopup>("SettingsPopup", UILayer.Popup);
             var dim = Img(root, "Dim", null, A.Stretch, 0, 0, 0, 0); dim.color = new Color(0, 0, 0, 0.4f); dim.raycastTarget = true;
             var panel = BuildSettings(root.transform, A.C, 0, 0);
-            var close = IconButton(panel, "Close", At(Sheet, 216, 56), 2, A.TR, 14, 14, 48, 48);
+            var close = IconButton(panel, "Close", IcClose, 2, A.TR, 14, 14, 48, 48);
             Wire(root.GetComponent<SettingsPopup>(), ("closeButton", close), ("panel", panel.GetComponent<SettingsPanel>()));
             Save(root, UiDir + "SettingsPopup.prefab", AddressKeys.UiPopupSettings);
         }

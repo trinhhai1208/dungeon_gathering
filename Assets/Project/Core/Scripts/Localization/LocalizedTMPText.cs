@@ -44,6 +44,7 @@ namespace DungeonGathering.Localization
         void OnEnable()
         {
             LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged;
+            LocalizationFontConfig.InstanceChanged += ApplyFont;
             if (!rawMode && !localizedString.IsEmpty) localizedString.StringChanged += ApplyText;
             Refresh();
         }
@@ -51,6 +52,7 @@ namespace DungeonGathering.Localization
         void OnDisable()
         {
             LocalizationSettings.SelectedLocaleChanged -= OnLocaleChanged;
+            LocalizationFontConfig.InstanceChanged -= ApplyFont;
             localizedString.StringChanged -= ApplyText;
         }
 

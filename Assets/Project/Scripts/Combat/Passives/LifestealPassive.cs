@@ -9,6 +9,7 @@ namespace DungeonGathering.Combat
     {
         [Range(0, 1)] public float percent = 0.04f;
         public float damagePerHp = 25f; // HP của Player nhỏ (kiểu Soul Knight): quy đổi sát thương → HP
+        [Tooltip("Prefab VFX gắn theo người chơi, phát mỗi lần hút máu thực sự hồi HP; null = không hiệu ứng.")]
         public GameObject vfx;
 
         protected override void OnEquipped(IPlayerContext p, PassiveState state) => state.Accum = 0f;

@@ -106,6 +106,7 @@ namespace DungeonGathering.Play
                         RoomType.Treasure => new Color32(0xe6, 0xa8, 0x32, 0xff), // Cam vàng: Kho báu
                         RoomType.Shop => new Color32(0x4e, 0xb8, 0x82, 0xff),     // Xanh ngọc: Shop
                         RoomType.Start => new Color32(0x7a, 0x9e, 0xc9, 0xff),    // Xanh dương: Start
+                        RoomType.Elite => new Color32(0xb0, 0x5c, 0xe0, 0xff),    // Tím: Elite
                         _ => rc.IsCleared || rc.Visited
                             ? new Color32(0x9a, 0x94, 0xa8, 0xff)                 // Xám sáng: Đã dọn
                             : new Color32(0x4a, 0x42, 0x58, 0xcc)                 // Tím tối: Chưa vào

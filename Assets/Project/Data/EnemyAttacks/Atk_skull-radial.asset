@@ -12,14 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7de0bdaea43b6f468a7579efeb9ad23, type: 3}
   m_Name: Atk_skull-radial
   m_EditorClassIdentifier: Project.Enemy::DungeonGathering.Enemies.ShootAttackSO
-  range: 6
+  skillId: atk-skull-radial
+  nameKey: 
+  descKey: 
+  icon: {fileID: 0}
   cooldown: 3
+  range: 6
   windupTime: 0.5
   weight: 1
   requireLineOfSight: 1
   stopWhileAttacking: 1
-  projectilePrefab: {fileID: 5976482321836580138, guid: 9962dc1ef1bc2ca41867c2bc9cfac4b3, type: 3}
-  impactVfx: {fileID: 3014300180798335620, guid: 7b102d23c53a44f4fbfde3c3d650e4a9, type: 3}
+  status:
+    effects: []
+  projectilePrefab: {fileID: 821309889816414631, guid: eb68de60f89f7bd4e9711a74083f1b59, type: 3}
+  impactVfx: {fileID: 368901354936306899, guid: 29e87ffde11374d4a96f6366beef14c9, type: 3}
   damage: 1
   speed: 4.5
   knockback: 2
